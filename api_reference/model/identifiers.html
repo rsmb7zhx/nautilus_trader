@@ -673,13 +673,2001 @@
      </div>
      <div class="md-content">
       <article class="md-content__inner md-typeset" role="main">
-       <section class="tex2jax_ignore mathjax_ignore" id="identifiers">
+       <section class="tex2jax_ignore mathjax_ignore" id="module-nautilus_trader.model.identifiers">
+        <span id="identifiers">
+        </span>
         <h1 id="api-reference-model-identifiers--page-root">
          Identifiers
          <a class="headerlink" href="#api-reference-model-identifiers--page-root" title="Permalink to this headline">
           ¶
          </a>
         </h1>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.AccountId">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            AccountId
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             unicode
+            </span>
+            <span class="pre">
+             value
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.identifiers.AccountId" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <a class="reference internal" href="#nautilus_trader.model.identifiers.Identifier" title="nautilus_trader.model.identifiers.Identifier">
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              nautilus_trader.model.identifiers.Identifier
+             </span>
+            </code>
+           </a>
+          </p>
+          <p>
+           Represents a valid account ID.
+          </p>
+          <p>
+           Must be correctly formatted with two valid strings either side of a hyphen.
+It is expected an account ID is the name of the issuer with an account number
+separated by a hyphen.
+          </p>
+          <p>
+           Example: “IB-D02851908”.
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <p>
+             <strong>
+              value
+             </strong>
+             (
+             <em>
+              str
+             </em>
+             ) – The account ID value.
+            </p>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <p>
+             <strong>
+              ValueError
+             </strong>
+             – If
+             <cite>
+              value
+             </cite>
+             is not a valid string.
+            </p>
+           </dd>
+          </dl>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <p>
+            The issuer and number ID combination must be unique at the firm level.
+           </p>
+          </div>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.AccountId.get_issuer">
+            <span class="sig-name descname">
+             <span class="pre">
+              get_issuer
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <span class="pre">
+               unicode
+              </span>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.AccountId.get_issuer" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return the account issuer for this ID.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.AccountId.value">
+            <span class="sig-name descname">
+             <span class="pre">
+              value
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.AccountId.value" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The identifier (ID) value.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.ClientId">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            ClientId
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             unicode
+            </span>
+            <span class="pre">
+             value
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.identifiers.ClientId" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <a class="reference internal" href="#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId">
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              nautilus_trader.model.identifiers.ComponentId
+             </span>
+            </code>
+           </a>
+          </p>
+          <p>
+           Represents a system client ID.
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <p>
+             <strong>
+              value
+             </strong>
+             (
+             <em>
+              str
+             </em>
+             ) – The client ID value.
+            </p>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <p>
+             <strong>
+              ValueError
+             </strong>
+             – If
+             <cite>
+              value
+             </cite>
+             is not a valid string.
+            </p>
+           </dd>
+          </dl>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <p>
+            The ID value must be unique at the trader level.
+           </p>
+          </div>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.ClientId.value">
+            <span class="sig-name descname">
+             <span class="pre">
+              value
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.ClientId.value" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The identifier (ID) value.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.ClientOrderId">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            ClientOrderId
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             unicode
+            </span>
+            <span class="pre">
+             value
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.identifiers.ClientOrderId" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <a class="reference internal" href="#nautilus_trader.model.identifiers.Identifier" title="nautilus_trader.model.identifiers.Identifier">
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              nautilus_trader.model.identifiers.Identifier
+             </span>
+            </code>
+           </a>
+          </p>
+          <p>
+           Represents a valid client order ID (assigned by the Nautilus system).
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <p>
+             <strong>
+              value
+             </strong>
+             (
+             <em>
+              str
+             </em>
+             ) – The client order ID value.
+            </p>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <p>
+             <strong>
+              ValueError
+             </strong>
+             – If
+             <cite>
+              value
+             </cite>
+             is not a valid string.
+            </p>
+           </dd>
+          </dl>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <p>
+            The ID value must be unique at the firm level.
+           </p>
+          </div>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.ClientOrderId.value">
+            <span class="sig-name descname">
+             <span class="pre">
+              value
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.ClientOrderId.value" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The identifier (ID) value.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.ComponentId">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            ComponentId
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             unicode
+            </span>
+            <span class="pre">
+             value
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.identifiers.ComponentId" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <a class="reference internal" href="#nautilus_trader.model.identifiers.Identifier" title="nautilus_trader.model.identifiers.Identifier">
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              nautilus_trader.model.identifiers.Identifier
+             </span>
+            </code>
+           </a>
+          </p>
+          <p>
+           Represents a valid component ID.
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <p>
+             <strong>
+              value
+             </strong>
+             (
+             <em>
+              str
+             </em>
+             ) – The component ID value.
+            </p>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <p>
+             <strong>
+              ValueError
+             </strong>
+             – If
+             <cite>
+              value
+             </cite>
+             is not a valid string.
+            </p>
+           </dd>
+          </dl>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <p>
+            The ID value must be unique at the trader level.
+           </p>
+          </div>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.ComponentId.value">
+            <span class="sig-name descname">
+             <span class="pre">
+              value
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.ComponentId.value" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The identifier (ID) value.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.Identifier">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            Identifier
+           </span>
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.identifiers.Identifier" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <code class="xref py py-class docutils literal notranslate">
+            <span class="pre">
+             object
+            </span>
+           </code>
+          </p>
+          <p>
+           The base class for all identifiers.
+          </p>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.Identifier.value">
+            <span class="sig-name descname">
+             <span class="pre">
+              value
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.Identifier.value" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The identifier (ID) value.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.InstrumentId">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            InstrumentId
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             Symbol
+            </span>
+            <span class="pre">
+             symbol
+            </span>
+           </span>
+          </em>
+          ,
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             Venue
+            </span>
+            <span class="pre">
+             venue
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.identifiers.InstrumentId" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <a class="reference internal" href="#nautilus_trader.model.identifiers.Identifier" title="nautilus_trader.model.identifiers.Identifier">
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              nautilus_trader.model.identifiers.Identifier
+             </span>
+            </code>
+           </a>
+          </p>
+          <p>
+           Represents a valid instrument ID.
+          </p>
+          <p>
+           The symbol and venue combination should uniquely identify the instrument.
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                symbol
+               </strong>
+               (
+               <a class="reference internal" href="#nautilus_trader.model.identifiers.Symbol" title="nautilus_trader.model.identifiers.Symbol">
+                <em>
+                 Symbol
+                </em>
+               </a>
+               ) – The instruments ticker symbol.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                venue
+               </strong>
+               (
+               <a class="reference internal" href="#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+                <em>
+                 Venue
+                </em>
+               </a>
+               ) – The instruments trading venue.
+              </p>
+             </li>
+            </ul>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.InstrumentId.from_str">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              from_str
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               unicode
+              </span>
+              <span class="pre">
+               value:
+              </span>
+              <span class="pre">
+               str
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+               <span class="pre">
+                InstrumentId
+               </span>
+              </a>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.InstrumentId.from_str" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return an instrument ID parsed from the given string value.
+Must be correctly formatted including characters either side of a single
+period.
+            </p>
+            <p>
+             Examples: “AUD/USD.IDEALPRO”, “BTCUSDT.BINANCE”
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                value
+               </strong>
+               (
+               <em>
+                str
+               </em>
+               ) – The instrument ID string value to parse.
+              </p>
+             </dd>
+             <dt class="field-even">
+              Returns
+             </dt>
+             <dd class="field-even">
+              <p>
+               <em>
+                InstrumentId
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.InstrumentId.symbol">
+            <span class="sig-name descname">
+             <span class="pre">
+              symbol
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.InstrumentId.symbol" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The instrument ticker symbol.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                Symbol
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.InstrumentId.value">
+            <span class="sig-name descname">
+             <span class="pre">
+              value
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.InstrumentId.value" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The identifier (ID) value.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.InstrumentId.venue">
+            <span class="sig-name descname">
+             <span class="pre">
+              venue
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.InstrumentId.venue" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The instrument trading venue.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                Venue
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.OrderListId">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            OrderListId
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             unicode
+            </span>
+            <span class="pre">
+             value
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.identifiers.OrderListId" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <a class="reference internal" href="#nautilus_trader.model.identifiers.Identifier" title="nautilus_trader.model.identifiers.Identifier">
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              nautilus_trader.model.identifiers.Identifier
+             </span>
+            </code>
+           </a>
+          </p>
+          <p>
+           Represents a valid order list ID (assigned by the Nautilus system).
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <p>
+             <strong>
+              value
+             </strong>
+             (
+             <em>
+              str
+             </em>
+             ) – The order list ID value.
+            </p>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <p>
+             <strong>
+              ValueError
+             </strong>
+             – If
+             <cite>
+              value
+             </cite>
+             is not a valid string.
+            </p>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.OrderListId.value">
+            <span class="sig-name descname">
+             <span class="pre">
+              value
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.OrderListId.value" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The identifier (ID) value.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.PositionId">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            PositionId
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             unicode
+            </span>
+            <span class="pre">
+             value
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.identifiers.PositionId" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <a class="reference internal" href="#nautilus_trader.model.identifiers.Identifier" title="nautilus_trader.model.identifiers.Identifier">
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              nautilus_trader.model.identifiers.Identifier
+             </span>
+            </code>
+           </a>
+          </p>
+          <p>
+           Represents a valid position ID.
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <p>
+             <strong>
+              value
+             </strong>
+             (
+             <em>
+              str
+             </em>
+             ) – The position ID value.
+            </p>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <p>
+             <strong>
+              ValueError
+             </strong>
+             – If
+             <cite>
+              value
+             </cite>
+             is not a valid string.
+            </p>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.PositionId.value">
+            <span class="sig-name descname">
+             <span class="pre">
+              value
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.PositionId.value" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The identifier (ID) value.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.StrategyId">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            StrategyId
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             unicode
+            </span>
+            <span class="pre">
+             value
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.identifiers.StrategyId" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <a class="reference internal" href="#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId">
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              nautilus_trader.model.identifiers.ComponentId
+             </span>
+            </code>
+           </a>
+          </p>
+          <p>
+           Represents a valid strategy ID.
+          </p>
+          <p>
+           Must be correctly formatted with two valid strings either side of a hyphen.
+It is expected a strategy ID is the class name of the strategy,
+with an order ID tag number separated by a hyphen.
+          </p>
+          <p>
+           Example: “EMACross-001”.
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <p>
+             <strong>
+              value
+             </strong>
+             (
+             <em>
+              str
+             </em>
+             ) – The strategy ID value.
+            </p>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <p>
+             <strong>
+              ValueError
+             </strong>
+             – If
+             <cite>
+              value
+             </cite>
+             is not a valid string containing a hyphen.
+            </p>
+           </dd>
+          </dl>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <p>
+            The name and tag combination must be unique at the trader level.
+           </p>
+          </div>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.StrategyId.get_tag">
+            <span class="sig-name descname">
+             <span class="pre">
+              get_tag
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <span class="pre">
+               unicode
+              </span>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.StrategyId.get_tag" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return the order ID tag value for this ID.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.StrategyId.is_external">
+            <span class="sig-name descname">
+             <span class="pre">
+              is_external
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <span class="pre">
+               bool
+              </span>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.StrategyId.is_external" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             If the strategy ID is the global ‘external’ strategy. This represents
+the strategy for all orders interacting with this instance of the system
+which did not originate from any strategy being managed by the system.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                bool
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.StrategyId.value">
+            <span class="sig-name descname">
+             <span class="pre">
+              value
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.StrategyId.value" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The identifier (ID) value.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.Symbol">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            Symbol
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             unicode
+            </span>
+            <span class="pre">
+             value
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.identifiers.Symbol" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <a class="reference internal" href="#nautilus_trader.model.identifiers.Identifier" title="nautilus_trader.model.identifiers.Identifier">
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              nautilus_trader.model.identifiers.Identifier
+             </span>
+            </code>
+           </a>
+          </p>
+          <p>
+           Represents a valid ticker symbol ID for a tradable financial market
+instrument.
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <p>
+             <strong>
+              value
+             </strong>
+             (
+             <em>
+              str
+             </em>
+             ) – The ticker symbol ID value.
+            </p>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <p>
+             <strong>
+              ValueError
+             </strong>
+             – If
+             <cite>
+              value
+             </cite>
+             is not a valid string.
+            </p>
+           </dd>
+          </dl>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <p>
+            The ID value must be unique for a trading venue.
+           </p>
+          </div>
+          <p class="rubric">
+           References
+          </p>
+          <p>
+           <a class="reference external" href="https://en.wikipedia.org/wiki/Ticker_symbol">
+            https://en.wikipedia.org/wiki/Ticker_symbol
+           </a>
+          </p>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.Symbol.value">
+            <span class="sig-name descname">
+             <span class="pre">
+              value
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.Symbol.value" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The identifier (ID) value.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.TradeId">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            TradeId
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             unicode
+            </span>
+            <span class="pre">
+             value
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.identifiers.TradeId" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <a class="reference internal" href="#nautilus_trader.model.identifiers.Identifier" title="nautilus_trader.model.identifiers.Identifier">
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              nautilus_trader.model.identifiers.Identifier
+             </span>
+            </code>
+           </a>
+          </p>
+          <p>
+           Represents a valid trade match ID (assigned by a trading venue).
+          </p>
+          <p>
+           Can correspond to the
+           <cite>
+            TradeID &lt;1003&gt; field
+           </cite>
+           of the FIX protocol.
+          </p>
+          <p>
+           The unique ID assigned to the trade entity once it is received or matched by
+the exchange or central counterparty.
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <p>
+             <strong>
+              value
+             </strong>
+             (
+             <em>
+              str
+             </em>
+             ) – The trade match ID value.
+            </p>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <p>
+             <strong>
+              ValueError
+             </strong>
+             – If
+             <cite>
+              value
+             </cite>
+             is not a valid string.
+            </p>
+           </dd>
+          </dl>
+          <p class="rubric">
+           References
+          </p>
+          <p>
+           <a class="reference external" href="https://www.onixs.biz/fix-dictionary/5.0/tagnum_1003.html">
+            https://www.onixs.biz/fix-dictionary/5.0/tagnum_1003.html
+           </a>
+          </p>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.TradeId.value">
+            <span class="sig-name descname">
+             <span class="pre">
+              value
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.TradeId.value" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The identifier (ID) value.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.TraderId">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            TraderId
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             unicode
+            </span>
+            <span class="pre">
+             value
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.identifiers.TraderId" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <a class="reference internal" href="#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId">
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              nautilus_trader.model.identifiers.ComponentId
+             </span>
+            </code>
+           </a>
+          </p>
+          <p>
+           Represents a valid trader ID.
+          </p>
+          <p>
+           Must be correctly formatted with two valid strings either side of a hyphen.
+It is expected a trader ID is the abbreviated name of the trader
+with an order ID tag number separated by a hyphen.
+          </p>
+          <p>
+           Example: “TESTER-001”.
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <p>
+             <strong>
+              value
+             </strong>
+             (
+             <em>
+              str
+             </em>
+             ) – The trader ID value.
+            </p>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <p>
+             <strong>
+              ValueError
+             </strong>
+             – If
+             <cite>
+              value
+             </cite>
+             is not a valid string containing a hyphen.
+            </p>
+           </dd>
+          </dl>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <p>
+            The name and tag combination ID value must be unique at the firm level.
+           </p>
+          </div>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.TraderId.get_tag">
+            <span class="sig-name descname">
+             <span class="pre">
+              get_tag
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <span class="pre">
+               unicode
+              </span>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.TraderId.get_tag" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return the order ID tag value for this ID.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.TraderId.value">
+            <span class="sig-name descname">
+             <span class="pre">
+              value
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.TraderId.value" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The identifier (ID) value.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.Venue">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            Venue
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             unicode
+            </span>
+            <span class="pre">
+             name
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.identifiers.Venue" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <a class="reference internal" href="#nautilus_trader.model.identifiers.Identifier" title="nautilus_trader.model.identifiers.Identifier">
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              nautilus_trader.model.identifiers.Identifier
+             </span>
+            </code>
+           </a>
+          </p>
+          <p>
+           Represents a valid trading venue ID.
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <p>
+             <strong>
+              name
+             </strong>
+             (
+             <em>
+              str
+             </em>
+             ) – The venue ID value.
+            </p>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <p>
+             <strong>
+              ValueError
+             </strong>
+             – If
+             <cite>
+              name
+             </cite>
+             is not a valid string.
+            </p>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.Venue.value">
+            <span class="sig-name descname">
+             <span class="pre">
+              value
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.Venue.value" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The identifier (ID) value.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.VenueOrderId">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            VenueOrderId
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             unicode
+            </span>
+            <span class="pre">
+             value
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.identifiers.VenueOrderId" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <a class="reference internal" href="#nautilus_trader.model.identifiers.Identifier" title="nautilus_trader.model.identifiers.Identifier">
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              nautilus_trader.model.identifiers.Identifier
+             </span>
+            </code>
+           </a>
+          </p>
+          <p>
+           Represents a valid venue order ID (assigned by a trading venue).
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <p>
+             <strong>
+              value
+             </strong>
+             (
+             <em>
+              str
+             </em>
+             ) – The venue assigned order ID value.
+            </p>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <p>
+             <strong>
+              ValueError
+             </strong>
+             – If
+             <cite>
+              value
+             </cite>
+             is not a valid string.
+            </p>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.VenueOrderId.value">
+            <span class="sig-name descname">
+             <span class="pre">
+              value
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.identifiers.VenueOrderId.value" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The identifier (ID) value.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
        </section>
       </article>
      </div>

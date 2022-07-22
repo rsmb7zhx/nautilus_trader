@@ -671,32 +671,32 @@
            <nav class="md-nav">
             <ul class="md-nav__list">
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#collections">
+              <a class="md-nav__link" href="#module-nautilus_trader.core.collections">
                Collections
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#datetime">
+              <a class="md-nav__link" href="#module-nautilus_trader.core.datetime">
                Datetime
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#finite-state-machine-fsm">
+              <a class="md-nav__link" href="#module-nautilus_trader.core.fsm">
                Finite-State Machine (FSM)
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#message">
+              <a class="md-nav__link" href="#module-nautilus_trader.core.message">
                Message
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#stats">
+              <a class="md-nav__link" href="#module-nautilus_trader.core.stats">
                Stats
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#uuid">
+              <a class="md-nav__link" href="#module-nautilus_trader.core.uuid">
                UUID
               </a>
              </li>
@@ -739,53 +739,4214 @@ the message base types are contained here.
          operates with C-level enums, ensuring correct
 state transitions for both domain entities and more complex components.
         </p>
-        <section id="collections">
-         <h2 id="collections">
+        <section id="module-nautilus_trader.core.collections">
+         <span id="collections">
+         </span>
+         <h2 id="module-nautilus_trader.core.collections">
           Collections
-          <a class="headerlink" href="#collections" title="Permalink to this headline">
+          <a class="headerlink" href="#module-nautilus_trader.core.collections" title="Permalink to this headline">
            ¶
           </a>
          </h2>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.collections.bisect_left">
+           <span class="sig-name descname">
+            <span class="pre">
+             bisect_left
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              list
+             </span>
+             <span class="pre">
+              a
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              double
+             </span>
+             <span class="pre">
+              x
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int
+             </span>
+             <span class="pre">
+              lo=0
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              hi=None
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              int
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.collections.bisect_left" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return the index where to insert item x in list a, assuming a is sorted.
+The return value i is such that all e in a[:i] have e &lt;= x, and all e in
+a[i:] have e &gt; x.  So if x already appears in the list, a.insert(i, x) will
+insert just after the rightmost x already there.
+Optional args lo (default 0) and hi (default len(a)) bound the
+slice of a to be searched.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Returns
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <em>
+               int
+              </em>
+             </p>
+            </dd>
+            <dt class="field-even">
+             Raises
+            </dt>
+            <dd class="field-even">
+             <p>
+              <strong>
+               ValueError
+              </strong>
+              – If lo is negative (&lt; 0).
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.collections.bisect_right">
+           <span class="sig-name descname">
+            <span class="pre">
+             bisect_right
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              list
+             </span>
+             <span class="pre">
+              a
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              double
+             </span>
+             <span class="pre">
+              x
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int
+             </span>
+             <span class="pre">
+              lo=0
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              hi=None
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              int
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.collections.bisect_right" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return the index where to insert item x in list a, assuming a is sorted.
+The return value i is such that all e in a[:i] have e &lt;= x, and all e in
+a[i:] have e &gt; x.  So if x already appears in the list, a.insert(i, x) will
+insert just after the rightmost x already there.
+Optional args lo (default 0) and hi (default len(a)) bound the
+slice of a to be searched.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Returns
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <em>
+               int
+              </em>
+             </p>
+            </dd>
+            <dt class="field-even">
+             Raises
+            </dt>
+            <dd class="field-even">
+             <p>
+              <strong>
+               ValueError
+              </strong>
+              – If lo is negative (&lt; 0).
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
         </section>
-        <section id="datetime">
-         <h2 id="datetime">
+        <section id="module-nautilus_trader.core.datetime">
+         <span id="datetime">
+         </span>
+         <h2 id="module-nautilus_trader.core.datetime">
           Datetime
-          <a class="headerlink" href="#datetime" title="Permalink to this headline">
+          <a class="headerlink" href="#module-nautilus_trader.core.datetime" title="Permalink to this headline">
            ¶
           </a>
          </h2>
+         <p>
+          This module provides efficient functions for performing standard datetime related operations.
+         </p>
+         <p>
+          Functions include awareness/tz checks and conversions, as well as ISO 8601 conversion.
+         </p>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.datetime.as_utc_index">
+           <span class="sig-name descname">
+            <span class="pre">
+             as_utc_index
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              data
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              pd.DataFrame
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.datetime.as_utc_index" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Ensure the given data has a DateTimeIndex which is tz-aware UTC.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               data
+              </strong>
+              (
+              <em>
+               pd.Series
+              </em>
+              <em>
+               or
+              </em>
+              <em>
+               pd.DataFrame.
+              </em>
+              ) – The object to ensure is UTC.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              pd.Series, pd.DataFrame or
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                None
+               </span>
+              </code>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.datetime.as_utc_timestamp">
+           <span class="sig-name descname">
+            <span class="pre">
+             as_utc_timestamp
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              datetime
+             </span>
+             <span class="pre">
+              dt
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              datetime
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.datetime.as_utc_timestamp" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Ensure the given timestamp is tz-aware UTC.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               dt
+              </strong>
+              (
+              <em>
+               datetime
+              </em>
+              ) – The timestamp to check.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               datetime
+              </em>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.datetime.dt_to_unix_nanos">
+           <span class="sig-name descname">
+            <span class="pre">
+             dt_to_unix_nanos
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              dt
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              pd.Timestamp
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.datetime.dt_to_unix_nanos" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return the UNIX time (nanoseconds) from the given datetime (UTC).
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               dt
+              </strong>
+              (
+              <em>
+               pd.Timestamp
+              </em>
+              <em>
+               ,
+              </em>
+              <em>
+               optional
+              </em>
+              ) – The datetime to convert.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              uint64_t or
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                None
+               </span>
+              </code>
+             </p>
+            </dd>
+           </dl>
+           <div class="admonition warning">
+            <p class="admonition-title">
+             Warning
+            </p>
+            <p>
+             This function expects a pandas
+             <cite>
+              Timestamp
+             </cite>
+             as standard Python
+             <cite>
+              datetime
+             </cite>
+             objects are only accurate to 1 microsecond (μs).
+            </p>
+           </div>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.datetime.format_iso8601">
+           <span class="sig-name descname">
+            <span class="pre">
+             format_iso8601
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              datetime
+             </span>
+             <span class="pre">
+              dt
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              unicode
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.datetime.format_iso8601" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Format the given datetime to a millisecond accurate ISO 8601 specification
+string.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               dt
+              </strong>
+              (
+              <em>
+               datetime
+              </em>
+              ) – The input datetime to format.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               str
+              </em>
+              – The formatted string.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.datetime.is_datetime_utc">
+           <span class="sig-name descname">
+            <span class="pre">
+             is_datetime_utc
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              datetime
+             </span>
+             <span class="pre">
+              dt
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              bool
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.datetime.is_datetime_utc" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return a value indicating whether the given timestamp is timezone aware UTC.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               dt
+              </strong>
+              (
+              <em>
+               datetime
+              </em>
+              ) – The datetime to check.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               bool
+              </em>
+              – True if timezone aware UTC, else False.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.datetime.is_tz_aware">
+           <span class="sig-name descname">
+            <span class="pre">
+             is_tz_aware
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              time_object
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              bool
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.datetime.is_tz_aware" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return a value indicating whether the given object is timezone aware.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               time_object
+              </strong>
+              (
+              <em>
+               datetime
+              </em>
+              <em>
+               ,
+              </em>
+              <em>
+               pd.Timestamp
+              </em>
+              <em>
+               ,
+              </em>
+              <em>
+               pd.Series
+              </em>
+              <em>
+               ,
+              </em>
+              <em>
+               pd.DataFrame
+              </em>
+              ) – The time object to check.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               bool
+              </em>
+              – True if timezone aware, else False.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.datetime.is_tz_naive">
+           <span class="sig-name descname">
+            <span class="pre">
+             is_tz_naive
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              time_object
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              bool
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.datetime.is_tz_naive" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return a value indicating whether the given object is timezone naive.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               time_object
+              </strong>
+              (
+              <em>
+               datetime
+              </em>
+              <em>
+               ,
+              </em>
+              <em>
+               pd.Timestamp
+              </em>
+              <em>
+               ,
+              </em>
+              <em>
+               pd.DataFrame
+              </em>
+              ) – The time object to check.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               bool
+              </em>
+              – True if object timezone naive, else False.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.datetime.maybe_dt_to_unix_nanos">
+           <span class="sig-name descname">
+            <span class="pre">
+             maybe_dt_to_unix_nanos
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              dt
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              pd.Timestamp
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.datetime.maybe_dt_to_unix_nanos" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return the UNIX time (nanoseconds) from the given datetime, or
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              None
+             </span>
+            </code>
+            .
+           </p>
+           <p>
+            If dt is
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              None
+             </span>
+            </code>
+            , then will return None.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               dt
+              </strong>
+              (
+              <em>
+               pd.Timestamp
+              </em>
+              <em>
+               ,
+              </em>
+              <em>
+               optional
+              </em>
+              ) – The datetime to convert.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              int64 or
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                None
+               </span>
+              </code>
+             </p>
+            </dd>
+           </dl>
+           <div class="admonition warning">
+            <p class="admonition-title">
+             Warning
+            </p>
+            <p>
+             If the input is not
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               None
+              </span>
+             </code>
+             then this function expects a pandas
+             <cite>
+              Timestamp
+             </cite>
+             as standard Python
+             <cite>
+              datetime
+             </cite>
+             objects are only accurate to 1 microsecond (μs).
+            </p>
+           </div>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.datetime.maybe_unix_nanos_to_dt">
+           <span class="sig-name descname">
+            <span class="pre">
+             maybe_unix_nanos_to_dt
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              nanos
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.datetime.maybe_unix_nanos_to_dt" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return the datetime (UTC) from the given UNIX time (nanoseconds), or
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              None
+             </span>
+            </code>
+            .
+           </p>
+           <p>
+            If nanos is
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              None
+             </span>
+            </code>
+            , then will return None.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               nanos
+              </strong>
+              (
+              <em>
+               int
+              </em>
+              <em>
+               ,
+              </em>
+              <em>
+               optional
+              </em>
+              ) – The UNIX time (nanoseconds) to convert.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              pd.Timestamp or
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                None
+               </span>
+              </code>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.datetime.micros_to_nanos">
+           <span class="sig-name descname">
+            <span class="pre">
+             micros_to_nanos
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              double
+             </span>
+             <span class="pre">
+              micros
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              uint64_t
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.datetime.micros_to_nanos" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return round nanoseconds (ns) converted from the given microseconds (μs).
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               micros
+              </strong>
+              (
+              <em>
+               double
+              </em>
+              ) – The microseconds to convert.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               uint64_t
+              </em>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.datetime.millis_to_nanos">
+           <span class="sig-name descname">
+            <span class="pre">
+             millis_to_nanos
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              double
+             </span>
+             <span class="pre">
+              millis
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              uint64_t
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.datetime.millis_to_nanos" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return round nanoseconds (ns) converted from the given milliseconds (ms).
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               millis
+              </strong>
+              (
+              <em>
+               double
+              </em>
+              ) – The milliseconds to convert.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               uint64_t
+              </em>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.datetime.nanos_to_micros">
+           <span class="sig-name descname">
+            <span class="pre">
+             nanos_to_micros
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              nanos
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              uint64_t
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.datetime.nanos_to_micros" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return round microseconds (μs) converted from the given nanoseconds (ns).
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               nanos
+              </strong>
+              (
+              <em>
+               uint64_t
+              </em>
+              ) – The nanoseconds to convert.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               uint64_t
+              </em>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.datetime.nanos_to_millis">
+           <span class="sig-name descname">
+            <span class="pre">
+             nanos_to_millis
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              nanos
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              uint64_t
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.datetime.nanos_to_millis" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return round milliseconds (ms) converted from the given nanoseconds (ns).
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               nanos
+              </strong>
+              (
+              <em>
+               uint64_t
+              </em>
+              ) – The nanoseconds to convert.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               uint64_t
+              </em>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.datetime.nanos_to_secs">
+           <span class="sig-name descname">
+            <span class="pre">
+             nanos_to_secs
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              nanos
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              double
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.datetime.nanos_to_secs" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return seconds converted from the given nanoseconds (ns).
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               nanos
+              </strong>
+              (
+              <em>
+               uint64_t
+              </em>
+              ) – The nanoseconds to convert.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               double
+              </em>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.datetime.secs_to_millis">
+           <span class="sig-name descname">
+            <span class="pre">
+             secs_to_millis
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              double
+             </span>
+             <span class="pre">
+              secs
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              uint64_t
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.datetime.secs_to_millis" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return round milliseconds (ms) converted from the given seconds.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               secs
+              </strong>
+              (
+              <em>
+               double
+              </em>
+              ) – The seconds to convert.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               uint64_t
+              </em>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.datetime.secs_to_nanos">
+           <span class="sig-name descname">
+            <span class="pre">
+             secs_to_nanos
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              double
+             </span>
+             <span class="pre">
+              secs
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              uint64_t
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.datetime.secs_to_nanos" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return round nanoseconds (ns) converted from the given seconds.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               secs
+              </strong>
+              (
+              <em>
+               double
+              </em>
+              ) – The seconds to convert.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               uint64_t
+              </em>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.datetime.unix_nanos_to_dt">
+           <span class="sig-name descname">
+            <span class="pre">
+             unix_nanos_to_dt
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              nanos
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.datetime.unix_nanos_to_dt" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return the datetime (UTC) from the given UNIX time (nanoseconds).
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               nanos
+              </strong>
+              (
+              <em>
+               uint64_t
+              </em>
+              ) – The UNIX time (nanoseconds) to convert.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               pd.Timestamp
+              </em>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
         </section>
-        <section id="finite-state-machine-fsm">
-         <h2 id="finite-state-machine-fsm">
+        <section id="module-nautilus_trader.core.fsm">
+         <span id="finite-state-machine-fsm">
+         </span>
+         <h2 id="module-nautilus_trader.core.fsm">
           Finite-State Machine (FSM)
-          <a class="headerlink" href="#finite-state-machine-fsm" title="Permalink to this headline">
+          <a class="headerlink" href="#module-nautilus_trader.core.fsm" title="Permalink to this headline">
            ¶
           </a>
          </h2>
+         <p>
+          Defines a generic
+          <cite>
+           Finite-State Machine
+          </cite>
+          (FSM).
+         </p>
+         <p>
+          The FSM operates with a state-transition table of tuples and C-level enums. The
+intended use case is to ensure correct state transitions, as well as holding a
+deterministic state value.
+         </p>
+         <p class="rubric">
+          References
+         </p>
+         <p>
+          <a class="reference external" href="https://en.wikipedia.org/wiki/Finite-state_machine">
+           https://en.wikipedia.org/wiki/Finite-state_machine
+          </a>
+         </p>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.core.fsm.FiniteStateMachine">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             FiniteStateMachine
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="pre">
+             dict
+            </span>
+            <span class="pre">
+             state_transition_table,
+            </span>
+            <span class="pre">
+             int
+            </span>
+            <span class="pre">
+             initial_state,
+            </span>
+            <span class="pre">
+             trigger_parser:
+            </span>
+            <span class="pre">
+             Callable[[int],
+            </span>
+            <span class="pre">
+             str]
+            </span>
+            <span class="pre">
+             =
+            </span>
+            <span class="pre">
+             str,
+            </span>
+            <span class="pre">
+             state_parser:
+            </span>
+            <span class="pre">
+             Callable[[int],
+            </span>
+            <span class="pre">
+             str]
+            </span>
+            <span class="pre">
+             =
+            </span>
+            <span class="pre">
+             str
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.fsm.FiniteStateMachine" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              object
+             </span>
+            </code>
+           </p>
+           <p>
+            Provides a generic finite state machine.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 state_transition_table
+                </strong>
+                (
+                <em>
+                 dict of tuples and states
+                </em>
+                ) – The state-transition table for the FSM consisting of a tuple of
+starting state and trigger as keys, and resulting states as values.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 initial_state
+                </strong>
+                (
+                <em>
+                 int / C Enum
+                </em>
+                ) – The initial state for the FSM.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 trigger_parser
+                </strong>
+                (
+                <em>
+                 Callable
+                </em>
+                <em>
+                 [
+                </em>
+                <em>
+                 [
+                </em>
+                <em>
+                 int
+                </em>
+                <em>
+                 ]
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 str
+                </em>
+                <em>
+                 ]
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The trigger parser needed to convert C Enum ints into strings.
+If
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                then will just print the integer.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 state_parser
+                </strong>
+                (
+                <em>
+                 Callable
+                </em>
+                <em>
+                 [
+                </em>
+                <em>
+                 [
+                </em>
+                <em>
+                 int
+                </em>
+                <em>
+                 ]
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 str
+                </em>
+                <em>
+                 ]
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The state parser needed to convert C Enum ints into strings.
+If
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                then will just print the integer.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Raises
+            </dt>
+            <dd class="field-even">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 state_transition_table
+                </cite>
+                is empty.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 state_transition_table
+                </cite>
+                key not tuple.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 trigger_parser
+                </cite>
+                not of type
+                <cite>
+                 Callable
+                </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                .
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 state_parser
+                </cite>
+                not of type
+                <cite>
+                 Callable
+                </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                .
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.fsm.FiniteStateMachine.state">
+             <span class="sig-name descname">
+              <span class="pre">
+               state
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.fsm.FiniteStateMachine.state" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The current state of the FSM.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int / C Enum
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.fsm.FiniteStateMachine.state_string">
+             <span class="sig-name descname">
+              <span class="pre">
+               state_string
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.fsm.FiniteStateMachine.state_string" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The current state as a string.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.core.fsm.FiniteStateMachine.trigger">
+             <span class="sig-name descname">
+              <span class="pre">
+               trigger
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                int
+               </span>
+               <span class="pre">
+                trigger
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.fsm.FiniteStateMachine.trigger" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Process the FSM with the given trigger. The trigger must be valid for
+the FSMs current state.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 trigger
+                </strong>
+                (
+                <em>
+                 int / C Enum
+                </em>
+                ) – The trigger to combine with the current state providing the key for
+the transition table lookup.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <p>
+                <a class="reference internal" href="#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
+                 <strong>
+                  InvalidStateTrigger
+                 </strong>
+                </a>
+                – If the state and
+                <cite>
+                 trigger
+                </cite>
+                combination is not found in the transition table.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py exception">
+          <dt class="sig sig-object py" id="nautilus_trader.core.fsm.InvalidStateTrigger">
+           <em class="property">
+            <span class="pre">
+             exception
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             InvalidStateTrigger
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.fsm.InvalidStateTrigger" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              Exception
+             </span>
+            </code>
+           </p>
+           <p>
+            Represents an invalid trigger for the current state.
+           </p>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.core.fsm.InvalidStateTrigger.with_traceback">
+             <span class="sig-name descname">
+              <span class="pre">
+               with_traceback
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.fsm.InvalidStateTrigger.with_traceback" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
         </section>
-        <section id="message">
-         <h2 id="message">
+        <section id="module-nautilus_trader.core.message">
+         <span id="message">
+         </span>
+         <h2 id="module-nautilus_trader.core.message">
           Message
-          <a class="headerlink" href="#message" title="Permalink to this headline">
+          <a class="headerlink" href="#module-nautilus_trader.core.message" title="Permalink to this headline">
            ¶
           </a>
          </h2>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.core.message.Command">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             Command
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              UUID4
+             </span>
+             <span class="pre">
+              command_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              ts_init
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.message.Command" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.core.message.Message
+              </span>
+             </code>
+            </a>
+           </p>
+           <p>
+            The abstract base class for all commands.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 command_id
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The command ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 uint64_t
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <div class="admonition warning">
+            <p class="admonition-title">
+             Warning
+            </p>
+            <p>
+             This class should not be used directly, but through a concrete subclass.
+            </p>
+           </div>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Command.category">
+             <span class="sig-name descname">
+              <span class="pre">
+               category
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Command.category" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message category.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 MessageCategory
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Command.id">
+             <span class="sig-name descname">
+              <span class="pre">
+               id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Command.id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 UUID4
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Command.ts_init">
+             <span class="sig-name descname">
+              <span class="pre">
+               ts_init
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Command.ts_init" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The UNIX timestamp (nanoseconds) when the object was initialized.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 uint64_t
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.core.message.Document">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             Document
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              UUID4
+             </span>
+             <span class="pre">
+              document_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              ts_init
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.message.Document" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.core.message.Message
+              </span>
+             </code>
+            </a>
+           </p>
+           <p>
+            The abstract base class for all documents.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 document_id
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The document ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 uint64_t
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <div class="admonition warning">
+            <p class="admonition-title">
+             Warning
+            </p>
+            <p>
+             This class should not be used directly, but through a concrete subclass.
+            </p>
+           </div>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Document.category">
+             <span class="sig-name descname">
+              <span class="pre">
+               category
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Document.category" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message category.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 MessageCategory
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Document.id">
+             <span class="sig-name descname">
+              <span class="pre">
+               id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Document.id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 UUID4
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Document.ts_init">
+             <span class="sig-name descname">
+              <span class="pre">
+               ts_init
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Document.ts_init" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The UNIX timestamp (nanoseconds) when the object was initialized.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 uint64_t
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.core.message.Event">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             Event
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              UUID4
+             </span>
+             <span class="pre">
+              event_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              ts_event
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              ts_init
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.message.Event" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.core.message.Message
+              </span>
+             </code>
+            </a>
+           </p>
+           <p>
+            The abstract base class for all events.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 event_id
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The event ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_event
+                </strong>
+                (
+                <em>
+                 uint64_t
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the event occurred.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 uint64_t
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <div class="admonition warning">
+            <p class="admonition-title">
+             Warning
+            </p>
+            <p>
+             This class should not be used directly, but through a concrete subclass.
+            </p>
+           </div>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Event.category">
+             <span class="sig-name descname">
+              <span class="pre">
+               category
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Event.category" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message category.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 MessageCategory
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Event.id">
+             <span class="sig-name descname">
+              <span class="pre">
+               id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Event.id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 UUID4
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Event.ts_event">
+             <span class="sig-name descname">
+              <span class="pre">
+               ts_event
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Event.ts_event" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The UNIX timestamp (nanoseconds) when the event occurred.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 uint64_t
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Event.ts_init">
+             <span class="sig-name descname">
+              <span class="pre">
+               ts_init
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Event.ts_init" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The UNIX timestamp (nanoseconds) when the object was initialized.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 uint64_t
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.core.message.Message">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             Message
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              MessageCategory
+             </span>
+             <span class="pre">
+              category
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              UUID4
+             </span>
+             <span class="pre">
+              message_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              ts_init
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.message.Message" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              object
+             </span>
+            </code>
+           </p>
+           <p>
+            The abstract base class for all messages.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 category
+                </strong>
+                (
+                <em>
+                 MessageCategory
+                </em>
+                ) – The message category.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 message_id
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The message ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 uint64_t
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <div class="admonition warning">
+            <p class="admonition-title">
+             Warning
+            </p>
+            <p>
+             This class should not be used directly, but through a concrete subclass.
+            </p>
+           </div>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Message.category">
+             <span class="sig-name descname">
+              <span class="pre">
+               category
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Message.category" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message category.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 MessageCategory
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Message.id">
+             <span class="sig-name descname">
+              <span class="pre">
+               id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Message.id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 UUID4
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Message.ts_init">
+             <span class="sig-name descname">
+              <span class="pre">
+               ts_init
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Message.ts_init" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The UNIX timestamp (nanoseconds) when the object was initialized.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 uint64_t
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.core.message.Request">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             Request
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="pre">
+             callback:
+            </span>
+            <span class="pre">
+             Callable[[Any],
+            </span>
+            <span class="pre">
+             None],
+            </span>
+            <span class="pre">
+             UUID4
+            </span>
+            <span class="pre">
+             request_id,
+            </span>
+            <span class="pre">
+             uint64_t
+            </span>
+            <span class="pre">
+             ts_init
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.message.Request" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.core.message.Message
+              </span>
+             </code>
+            </a>
+           </p>
+           <p>
+            The abstract base class for all requests.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 callback
+                </strong>
+                (
+                <em>
+                 Callable
+                </em>
+                <em>
+                 [
+                </em>
+                <em>
+                 [
+                </em>
+                <em>
+                 Any
+                </em>
+                <em>
+                 ]
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 None
+                </em>
+                <em>
+                 ]
+                </em>
+                ) – The delegate to call with the response.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 request_id
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The request ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 uint64_t
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <div class="admonition warning">
+            <p class="admonition-title">
+             Warning
+            </p>
+            <p>
+             This class should not be used directly, but through a concrete subclass.
+            </p>
+           </div>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Request.callback">
+             <span class="sig-name descname">
+              <span class="pre">
+               callback
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Request.callback" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The callback for the response.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Callable
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Request.category">
+             <span class="sig-name descname">
+              <span class="pre">
+               category
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Request.category" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message category.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 MessageCategory
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Request.id">
+             <span class="sig-name descname">
+              <span class="pre">
+               id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Request.id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 UUID4
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Request.ts_init">
+             <span class="sig-name descname">
+              <span class="pre">
+               ts_init
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Request.ts_init" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The UNIX timestamp (nanoseconds) when the object was initialized.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 uint64_t
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.core.message.Response">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             Response
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              UUID4
+             </span>
+             <span class="pre">
+              correlation_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              UUID4
+             </span>
+             <span class="pre">
+              response_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              ts_init
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.message.Response" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.core.message.Message
+              </span>
+             </code>
+            </a>
+           </p>
+           <p>
+            The abstract base class for all responses.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 correlation_id
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The correlation ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 response_id
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The response ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 uint64_t
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <div class="admonition warning">
+            <p class="admonition-title">
+             Warning
+            </p>
+            <p>
+             This class should not be used directly, but through a concrete subclass.
+            </p>
+           </div>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Response.category">
+             <span class="sig-name descname">
+              <span class="pre">
+               category
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Response.category" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message category.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 MessageCategory
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Response.correlation_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               correlation_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Response.correlation_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The response correlation ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 UUID4
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Response.id">
+             <span class="sig-name descname">
+              <span class="pre">
+               id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Response.id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 UUID4
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.core.message.Response.ts_init">
+             <span class="sig-name descname">
+              <span class="pre">
+               ts_init
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.core.message.Response.ts_init" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The UNIX timestamp (nanoseconds) when the object was initialized.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 uint64_t
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
         </section>
-        <section id="stats">
-         <h2 id="stats">
+        <section id="module-nautilus_trader.core.stats">
+         <span id="stats">
+         </span>
+         <h2 id="module-nautilus_trader.core.stats">
           Stats
-          <a class="headerlink" href="#stats" title="Permalink to this headline">
+          <a class="headerlink" href="#module-nautilus_trader.core.stats" title="Permalink to this headline">
            ¶
           </a>
          </h2>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.stats.basis_points_as_percentage">
+           <span class="sig-name descname">
+            <span class="pre">
+             basis_points_as_percentage
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              double
+             </span>
+             <span class="pre">
+              basis_points
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              double
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.stats.basis_points_as_percentage" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return the given basis points expressed as a percentage where 100% = 1.0.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               basis_points
+              </strong>
+              (
+              <em>
+               double
+              </em>
+              ) – The basis points to convert to percentage.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               double
+              </em>
+             </p>
+            </dd>
+           </dl>
+           <p class="rubric">
+            Notes
+           </p>
+           <p>
+            1 basis point = 0.01%.
+           </p>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.stats.fast_mad">
+           <span class="sig-name descname">
+            <span class="pre">
+             fast_mad
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              ndarray
+             </span>
+             <span class="pre">
+              values
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              double
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.stats.fast_mad" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return the mean absolute deviation from the given values.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               values
+              </strong>
+              (
+              <em>
+               numpy.ndarray
+              </em>
+              ) – The array for the calculation.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               double
+              </em>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.stats.fast_mad_with_mean">
+           <span class="sig-name descname">
+            <span class="pre">
+             fast_mad_with_mean
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              ndarray
+             </span>
+             <span class="pre">
+              values
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              double
+             </span>
+             <span class="pre">
+              mean
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              double
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.stats.fast_mad_with_mean" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return the mean absolute deviation from the given values and mean.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 values
+                </strong>
+                (
+                <em>
+                 numpy.ndarray
+                </em>
+                ) – The array for the calculation.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 mean
+                </strong>
+                (
+                <em>
+                 double
+                </em>
+                ) – The pre-calculated mean of the given values.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               double
+              </em>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.stats.fast_mean">
+           <span class="sig-name descname">
+            <span class="pre">
+             fast_mean
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              ndarray
+             </span>
+             <span class="pre">
+              values
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              double
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.stats.fast_mean" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return the average value for numpy.ndarray values.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               values
+              </strong>
+              (
+              <em>
+               numpy.ndarray
+              </em>
+              ) – The array to evaluate.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               double
+              </em>
+             </p>
+            </dd>
+           </dl>
+           <p class="rubric">
+            Notes
+           </p>
+           <p>
+            &gt; 10x faster than
+            <cite>
+             np.mean
+            </cite>
+            if the array length &lt; ~200.
+           </p>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.stats.fast_mean_iterated">
+           <span class="sig-name descname">
+            <span class="pre">
+             fast_mean_iterated
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              ndarray
+             </span>
+             <span class="pre">
+              values
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              double
+             </span>
+             <span class="pre">
+              next_value
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              double
+             </span>
+             <span class="pre">
+              current_value
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int
+             </span>
+             <span class="pre">
+              expected_length
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+             <span class="pre">
+              drop_left=True
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              double
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.stats.fast_mean_iterated" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return the calculated average from the given inputs.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 values
+                </strong>
+                (
+                <em>
+                 list
+                </em>
+                <em>
+                 [
+                </em>
+                <em>
+                 double
+                </em>
+                <em>
+                 ]
+                </em>
+                ) – The values for the calculation.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 next_value
+                </strong>
+                (
+                <em>
+                 double
+                </em>
+                ) – The next input value for the average.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 current_value
+                </strong>
+                (
+                <em>
+                 double
+                </em>
+                ) – The current value for the average.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 expected_length
+                </strong>
+                (
+                <em>
+                 int
+                </em>
+                ) – The expected length of the inputs.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 drop_left
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                ) – If the value to be dropped should be from the left side of the inputs
+(index 0).
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               double
+              </em>
+             </p>
+            </dd>
+           </dl>
+           <p class="rubric">
+            Notes
+           </p>
+           <p>
+            &gt; 10x faster than
+            <cite>
+             np.mean
+            </cite>
+            .
+           </p>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.stats.fast_std">
+           <span class="sig-name descname">
+            <span class="pre">
+             fast_std
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              ndarray
+             </span>
+             <span class="pre">
+              values
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              double
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.stats.fast_std" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return the standard deviation from the given values.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               values
+              </strong>
+              (
+              <em>
+               numpy.ndarray
+              </em>
+              ) – The array for the calculation.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               double
+              </em>
+             </p>
+            </dd>
+           </dl>
+           <p class="rubric">
+            Notes
+           </p>
+           <p>
+            &gt; 10x faster than
+            <cite>
+             np.std
+            </cite>
+            .
+           </p>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.stats.fast_std_with_mean">
+           <span class="sig-name descname">
+            <span class="pre">
+             fast_std_with_mean
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              ndarray
+             </span>
+             <span class="pre">
+              values
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              double
+             </span>
+             <span class="pre">
+              mean
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              double
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.stats.fast_std_with_mean" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return the standard deviation from the given values and mean.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 values
+                </strong>
+                (
+                <em>
+                 numpy.ndarray
+                </em>
+                ) – The array for the calculation.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 mean
+                </strong>
+                (
+                <em>
+                 double
+                </em>
+                ) – The pre-calculated mean of the given values.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               double
+              </em>
+             </p>
+            </dd>
+           </dl>
+           <p class="rubric">
+            Notes
+           </p>
+           <p>
+            &gt; 25x faster than
+            <cite>
+             np.std
+            </cite>
+            if the array length &lt; ~200.
+           </p>
+          </dd>
+         </dl>
         </section>
-        <section id="uuid">
-         <h2 id="uuid">
+        <section id="module-nautilus_trader.core.uuid">
+         <span id="uuid">
+         </span>
+         <h2 id="module-nautilus_trader.core.uuid">
           UUID
-          <a class="headerlink" href="#uuid" title="Permalink to this headline">
+          <a class="headerlink" href="#module-nautilus_trader.core.uuid" title="Permalink to this headline">
            ¶
           </a>
          </h2>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID4">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             UUID4
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              unicode
+             </span>
+             <span class="pre">
+              value=None
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.uuid.UUID4" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              object
+             </span>
+            </code>
+           </p>
+           <p>
+            Represents a pseudo-random UUID (universally unique identifier) version 4
+based on a 128-bit label as specified in RFC 4122.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               value
+              </strong>
+              (
+              <em>
+               str
+              </em>
+              <em>
+               ,
+              </em>
+              <em>
+               optional
+              </em>
+              ) – The UUID value. If
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                None
+               </span>
+              </code>
+              then a value will be generated.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Raises
+            </dt>
+            <dd class="field-even">
+             <p>
+              <strong>
+               ValueError
+              </strong>
+              – If
+              <cite>
+               value
+              </cite>
+              is not
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                None
+               </span>
+              </code>
+              and not a valid UUID.
+             </p>
+            </dd>
+           </dl>
+           <p class="rubric">
+            References
+           </p>
+           <p>
+            <a class="reference external" href="https://en.wikipedia.org/wiki/Universally_unique_identifier">
+             https://en.wikipedia.org/wiki/Universally_unique_identifier
+            </a>
+           </p>
+          </dd>
+         </dl>
         </section>
        </section>
       </article>

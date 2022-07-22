@@ -673,13 +673,761 @@
      </div>
      <div class="md-content">
       <article class="md-content__inner md-typeset" role="main">
-       <section class="tex2jax_ignore mathjax_ignore" id="currency">
+       <section class="tex2jax_ignore mathjax_ignore" id="module-nautilus_trader.model.currency">
+        <span id="currency">
+        </span>
         <h1 id="api-reference-model-currency--page-root">
          Currency
          <a class="headerlink" href="#api-reference-model-currency--page-root" title="Permalink to this headline">
           ¶
          </a>
         </h1>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.currency.Currency">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            Currency
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             unicode
+            </span>
+            <span class="pre">
+             code
+            </span>
+           </span>
+          </em>
+          ,
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             uint8_t
+            </span>
+            <span class="pre">
+             precision
+            </span>
+           </span>
+          </em>
+          ,
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             uint16_t
+            </span>
+            <span class="pre">
+             iso4217
+            </span>
+           </span>
+          </em>
+          ,
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             unicode
+            </span>
+            <span class="pre">
+             name
+            </span>
+           </span>
+          </em>
+          ,
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             CurrencyType
+            </span>
+            <span class="pre">
+             currency_type
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.currency.Currency" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <code class="xref py py-class docutils literal notranslate">
+            <span class="pre">
+             object
+            </span>
+           </code>
+          </p>
+          <p>
+           Represents a medium of exchange in a specified denomination with a fixed
+decimal precision.
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                code
+               </strong>
+               (
+               <em>
+                str
+               </em>
+               ) – The currency code.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                precision
+               </strong>
+               (
+               <em>
+                uint8
+               </em>
+               ) – The currency decimal precision.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                iso4217
+               </strong>
+               (
+               <em>
+                uint16
+               </em>
+               ) – The currency ISO 4217 code.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                name
+               </strong>
+               (
+               <em>
+                str
+               </em>
+               ) – The currency name.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                currency_type
+               </strong>
+               (
+               <em>
+                CurrencyType
+               </em>
+               ) – The currency type.
+              </p>
+             </li>
+            </ul>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                code
+               </cite>
+               is not a valid string.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                OverflowError
+               </strong>
+               – If
+               <cite>
+                precision
+               </cite>
+               is negative (&lt; 0).
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                precision
+               </cite>
+               greater than 9.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                name
+               </cite>
+               is not a valid string.
+              </p>
+             </li>
+            </ul>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.currency.Currency.code">
+            <span class="sig-name descname">
+             <span class="pre">
+              code
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.currency.Currency.code" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The currency code.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.currency.Currency.currency_type">
+            <span class="sig-name descname">
+             <span class="pre">
+              currency_type
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.currency.Currency.currency_type" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The currency type.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                CurrencyType
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.currency.Currency.from_str">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              from_str
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               unicode
+              </span>
+              <span class="pre">
+               code
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               bool
+              </span>
+              <span class="pre">
+               strict=False
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.currency.Currency.from_str" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Parse a currency from the given string (if found).
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <ul class="simple">
+               <li>
+                <p>
+                 <strong>
+                  code
+                 </strong>
+                 (
+                 <em>
+                  str
+                 </em>
+                 ) – The code of the currency to get.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  strict
+                 </strong>
+                 (
+                 <em>
+                  bool
+                 </em>
+                 <em>
+                  ,
+                 </em>
+                 <em>
+                  default False
+                 </em>
+                 ) – If strict mode is enabled. If not strict mode then it’s very likely
+the currency is a crypto, so for robustness will then return a new
+cryptocurrency using the code and a default precision of 8.
+                </p>
+               </li>
+              </ul>
+             </dd>
+             <dt class="field-even">
+              Returns
+             </dt>
+             <dd class="field-even">
+              <p>
+               Currency or
+               <code class="docutils literal notranslate">
+                <span class="pre">
+                 None
+                </span>
+               </code>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.currency.Currency.is_crypto">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              is_crypto
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               unicode
+              </span>
+              <span class="pre">
+               code
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.currency.Currency.is_crypto" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return a value indicating whether a currency with the given code is
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               CRYPTO
+              </span>
+             </code>
+             .
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                code
+               </strong>
+               (
+               <em>
+                str
+               </em>
+               ) – The code of the currency.
+              </p>
+             </dd>
+             <dt class="field-even">
+              Returns
+             </dt>
+             <dd class="field-even">
+              <p>
+               <em>
+                bool
+               </em>
+               – True if
+               <code class="docutils literal notranslate">
+                <span class="pre">
+                 CRYPTO
+                </span>
+               </code>
+               , else False.
+              </p>
+             </dd>
+             <dt class="field-odd">
+              Raises
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                code
+               </cite>
+               is not a valid string.
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.currency.Currency.is_fiat">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              is_fiat
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               unicode
+              </span>
+              <span class="pre">
+               code
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.currency.Currency.is_fiat" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return a value indicating whether a currency with the given code is
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               FIAT
+              </span>
+             </code>
+             .
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                code
+               </strong>
+               (
+               <em>
+                str
+               </em>
+               ) – The code of the currency.
+              </p>
+             </dd>
+             <dt class="field-even">
+              Returns
+             </dt>
+             <dd class="field-even">
+              <p>
+               <em>
+                bool
+               </em>
+               – True if
+               <code class="docutils literal notranslate">
+                <span class="pre">
+                 FIAT
+                </span>
+               </code>
+               , else False.
+              </p>
+             </dd>
+             <dt class="field-odd">
+              Raises
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                code
+               </cite>
+               is not a valid string.
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.currency.Currency.iso4217">
+            <span class="sig-name descname">
+             <span class="pre">
+              iso4217
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.currency.Currency.iso4217" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The currency ISO 4217 code.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.currency.Currency.name">
+            <span class="sig-name descname">
+             <span class="pre">
+              name
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.currency.Currency.name" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The currency name.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.currency.Currency.precision">
+            <span class="sig-name descname">
+             <span class="pre">
+              precision
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.currency.Currency.precision" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The currency decimal precision.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                uint8
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.currency.Currency.register">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              register
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               Currency
+              </span>
+              <span class="pre">
+               currency
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               bool
+              </span>
+              <span class="pre">
+               overwrite=False
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.currency.Currency.register" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Register the given currency.
+            </p>
+            <p>
+             Will override the internal currency map.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <ul class="simple">
+               <li>
+                <p>
+                 <strong>
+                  currency
+                 </strong>
+                 (
+                 <a class="reference internal" href="#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency">
+                  <em>
+                   Currency
+                  </em>
+                 </a>
+                 ) – The currency to register
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  overwrite
+                 </strong>
+                 (
+                 <em>
+                  bool
+                 </em>
+                 ) – If the currency in the internal currency map should be overwritten.
+                </p>
+               </li>
+              </ul>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
        </section>
       </article>
      </div>

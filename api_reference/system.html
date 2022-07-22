@@ -671,7 +671,7 @@
            <nav class="md-nav">
             <ul class="md-nav__list">
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#kernel">
+              <a class="md-nav__link" href="#module-nautilus_trader.system.kernel">
                Kernel
               </a>
              </li>
@@ -694,13 +694,1453 @@
           ¶
          </a>
         </h1>
-        <section id="kernel">
-         <h2 id="kernel">
+        <section id="module-nautilus_trader.system.kernel">
+         <span id="kernel">
+         </span>
+         <h2 id="module-nautilus_trader.system.kernel">
           Kernel
-          <a class="headerlink" href="#kernel" title="Permalink to this headline">
+          <a class="headerlink" href="#module-nautilus_trader.system.kernel" title="Permalink to this headline">
            ¶
           </a>
          </h2>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             NautilusKernel
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="pre">
+             environment:
+            </span>
+            <span class="pre">
+             Environment,
+            </span>
+            <span class="pre">
+             unicode
+            </span>
+            <span class="pre">
+             name,
+            </span>
+            <span class="pre">
+             TraderId
+            </span>
+            <span class="pre">
+             trader_id,
+            </span>
+            <span class="pre">
+             cache_config:
+            </span>
+            <span class="pre">
+             CacheConfig,
+            </span>
+            <span class="pre">
+             cache_database_config:
+            </span>
+            <span class="pre">
+             CacheDatabaseConfig,
+            </span>
+            <span class="pre">
+             data_config:
+            </span>
+            <span class="pre">
+             Union[DataEngineConfig,
+            </span>
+            <span class="pre">
+             LiveDataEngineConfig],
+            </span>
+            <span class="pre">
+             risk_config:
+            </span>
+            <span class="pre">
+             Union[RiskEngineConfig,
+            </span>
+            <span class="pre">
+             LiveRiskEngineConfig],
+            </span>
+            <span class="pre">
+             exec_config:
+            </span>
+            <span class="pre">
+             Union[ExecEngineConfig,
+            </span>
+            <span class="pre">
+             LiveExecEngineConfig],
+            </span>
+            <span class="pre">
+             streaming_config:
+            </span>
+            <span class="pre">
+             Optional[StreamingConfig]
+            </span>
+            <span class="pre">
+             =
+            </span>
+            <span class="pre">
+             None,
+            </span>
+            <span class="pre">
+             actor_configs:
+            </span>
+            <span class="pre">
+             Optional[List[ImportableActorConfig]]
+            </span>
+            <span class="pre">
+             =
+            </span>
+            <span class="pre">
+             None,
+            </span>
+            <span class="pre">
+             strategy_configs:
+            </span>
+            <span class="pre">
+             Optional[List[ImportableStrategyConfig]]
+            </span>
+            <span class="pre">
+             =
+            </span>
+            <span class="pre">
+             None,
+            </span>
+            <span class="pre">
+             loop:
+            </span>
+            <span class="pre">
+             Optional[AbstractEventLoop]
+            </span>
+            <span class="pre">
+             =
+            </span>
+            <span class="pre">
+             None,
+            </span>
+            <span class="pre">
+             loop_sig_callback:
+            </span>
+            <span class="pre">
+             Optional[Callable]
+            </span>
+            <span class="pre">
+             =
+            </span>
+            <span class="pre">
+             None,
+            </span>
+            <span class="pre">
+             loop_debug:
+            </span>
+            <span class="pre">
+             bool
+            </span>
+            <span class="pre">
+             =
+            </span>
+            <span class="pre">
+             False,
+            </span>
+            <span class="pre">
+             load_state:
+            </span>
+            <span class="pre">
+             bool
+            </span>
+            <span class="pre">
+             =
+            </span>
+            <span class="pre">
+             False,
+            </span>
+            <span class="pre">
+             save_state:
+            </span>
+            <span class="pre">
+             bool
+            </span>
+            <span class="pre">
+             =
+            </span>
+            <span class="pre">
+             False,
+            </span>
+            <span class="pre">
+             LogLevel
+            </span>
+            <span class="pre">
+             log_level=LogLevel.INFO,
+            </span>
+            <span class="pre">
+             bypass_logging:
+            </span>
+            <span class="pre">
+             bool
+            </span>
+            <span class="pre">
+             =
+            </span>
+            <span class="pre">
+             False
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              object
+             </span>
+            </code>
+           </p>
+           <p>
+            Provides the core Nautilus system kernel
+           </p>
+           <p>
+            The kernel is common between backtest, sandbox and live system types.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 environment
+                </strong>
+                (Environment {
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  BACKTEST
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  SANDBOX
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  LIVE
+                 </span>
+                </code>
+                }) – The environment context for the kernel.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 name
+                </strong>
+                (
+                <em>
+                 str
+                </em>
+                ) – The name for the kernel (will prepend all log messages).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 trader_id
+                </strong>
+                (
+                <em>
+                 str
+                </em>
+                ) – The trader ID for the kernel (must be a name and ID tag separated by a hyphen).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 cache_config
+                </strong>
+                (
+                <a class="reference internal" href="config.html#nautilus_trader.config.common.CacheConfig" title="nautilus_trader.config.common.CacheConfig">
+                 <em>
+                  CacheConfig
+                 </em>
+                </a>
+                ) – The cache configuration for the kernel.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 cache_database_config
+                </strong>
+                (
+                <a class="reference internal" href="config.html#nautilus_trader.config.common.CacheDatabaseConfig" title="nautilus_trader.config.common.CacheDatabaseConfig">
+                 <em>
+                  CacheDatabaseConfig
+                 </em>
+                </a>
+                ) – The cache database configuration for the kernel.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 data_config
+                </strong>
+                (
+                <em>
+                 Union
+                </em>
+                <em>
+                 [
+                </em>
+                <a class="reference internal" href="config.html#nautilus_trader.config.common.DataEngineConfig" title="nautilus_trader.config.common.DataEngineConfig">
+                 <em>
+                  DataEngineConfig
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <a class="reference internal" href="config.html#nautilus_trader.config.live.LiveDataEngineConfig" title="nautilus_trader.config.live.LiveDataEngineConfig">
+                 <em>
+                  LiveDataEngineConfig
+                 </em>
+                </a>
+                <em>
+                 ]
+                </em>
+                ) – The live data engine configuration for the kernel.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 risk_config
+                </strong>
+                (
+                <em>
+                 Union
+                </em>
+                <em>
+                 [
+                </em>
+                <a class="reference internal" href="config.html#nautilus_trader.config.common.RiskEngineConfig" title="nautilus_trader.config.common.RiskEngineConfig">
+                 <em>
+                  RiskEngineConfig
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <a class="reference internal" href="config.html#nautilus_trader.config.live.LiveRiskEngineConfig" title="nautilus_trader.config.live.LiveRiskEngineConfig">
+                 <em>
+                  LiveRiskEngineConfig
+                 </em>
+                </a>
+                <em>
+                 ]
+                </em>
+                ) – The risk engine configuration for the kernel.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 exec_config
+                </strong>
+                (
+                <em>
+                 Union
+                </em>
+                <em>
+                 [
+                </em>
+                <a class="reference internal" href="config.html#nautilus_trader.config.common.ExecEngineConfig" title="nautilus_trader.config.common.ExecEngineConfig">
+                 <em>
+                  ExecEngineConfig
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <a class="reference internal" href="config.html#nautilus_trader.config.live.LiveExecEngineConfig" title="nautilus_trader.config.live.LiveExecEngineConfig">
+                 <em>
+                  LiveExecEngineConfig
+                 </em>
+                </a>
+                <em>
+                 ]
+                </em>
+                ) – The execution engine configuration for the kernel.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 streaming_config
+                </strong>
+                (
+                <a class="reference internal" href="config.html#nautilus_trader.config.common.StreamingConfig" title="nautilus_trader.config.common.StreamingConfig">
+                 <em>
+                  StreamingConfig
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The configuration for streaming to feather files.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 actor_configs
+                </strong>
+                (
+                <em>
+                 List
+                </em>
+                <em>
+                 [
+                </em>
+                <a class="reference internal" href="config.html#nautilus_trader.config.common.ImportableActorConfig" title="nautilus_trader.config.common.ImportableActorConfig">
+                 <em>
+                  ImportableActorConfig
+                 </em>
+                </a>
+                <em>
+                 ]
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The list of importable actor configs.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 strategy_configs
+                </strong>
+                (
+                <em>
+                 List
+                </em>
+                <em>
+                 [
+                </em>
+                <a class="reference internal" href="config.html#nautilus_trader.config.common.ImportableStrategyConfig" title="nautilus_trader.config.common.ImportableStrategyConfig">
+                 <em>
+                  ImportableStrategyConfig
+                 </em>
+                </a>
+                <em>
+                 ]
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The list of importable strategy configs.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 loop
+                </strong>
+                (
+                <em>
+                 AbstractEventLoop
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The event loop for the kernel.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 loop_sig_callback
+                </strong>
+                (
+                <em>
+                 Callable
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The callback for the signal handler.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 loop_debug
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default False
+                </em>
+                ) – If the event loop should run in debug mode.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 load_state
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default False
+                </em>
+                ) – If strategy state should be loaded on start.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 save_state
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default False
+                </em>
+                ) – If strategy state should be saved on stop.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 log_level
+                </strong>
+                (
+                <a class="reference internal" href="common.html#nautilus_trader.common.enums.LogLevel" title="nautilus_trader.common.enums.LogLevel">
+                 <em>
+                  LogLevel
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default LogLevel.INFO
+                </em>
+                ) – The log level for the kernels logger.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 bypass_logging
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default False
+                </em>
+                ) – If logging to stdout should be bypassed.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Raises
+            </dt>
+            <dd class="field-even">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 TypeError
+                </strong>
+                – If
+                <cite>
+                 environment
+                </cite>
+                is not of type
+                <cite>
+                 Environment
+                </cite>
+                .
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 name
+                </cite>
+                is not a valid string.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 TypeError
+                </strong>
+                – If any configuration object is not of the expected type.
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.add_log_sink">
+             <span class="sig-name descname">
+              <span class="pre">
+               add_log_sink
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                handler
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Callable
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                Dict
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
+               </span>
+               <span class="w">
+               </span>
+               <span class="pre">
+                None
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.add_log_sink" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Register the given sink handler with the nodes logger.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 handler
+                </strong>
+                (
+                <em>
+                 Callable
+                </em>
+                <em>
+                 [
+                </em>
+                <em>
+                 [
+                </em>
+                <em>
+                 Dict
+                </em>
+                <em>
+                 ]
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 None
+                </em>
+                <em>
+                 ]
+                </em>
+                ) – The sink handler to register.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <p>
+                <strong>
+                 KeyError
+                </strong>
+                – If
+                <cite>
+                 handler
+                </cite>
+                already registered.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.cache">
+             <span class="sig-name descname">
+              <span class="pre">
+               cache
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.cache" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels read-only cache instance.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 CacheFacade
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.cancel_all_tasks">
+             <span class="sig-name descname">
+              <span class="pre">
+               cancel_all_tasks
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.cancel_all_tasks" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.clock">
+             <span class="sig-name descname">
+              <span class="pre">
+               clock
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.clock" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels clock.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Clock
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.data_engine">
+             <span class="sig-name descname">
+              <span class="pre">
+               data_engine
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.data_engine" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels data engine.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 DataEngine
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.environment">
+             <span class="sig-name descname">
+              <span class="pre">
+               environment
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.environment" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels environment context {
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                BACKTEST
+               </span>
+              </code>
+              ,
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                SANDBOX
+               </span>
+              </code>
+              ,
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                LIVE
+               </span>
+              </code>
+              }.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Environment
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.exec_engine">
+             <span class="sig-name descname">
+              <span class="pre">
+               exec_engine
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.exec_engine" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels execution engine.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 ExecutionEngine
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.executor">
+             <span class="sig-name descname">
+              <span class="pre">
+               executor
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.executor" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels default executor.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 ThreadPoolExecutor
+                </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.instance_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               instance_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.instance_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels instance ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 UUID4
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.log">
+             <span class="sig-name descname">
+              <span class="pre">
+               log
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.log" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels logger adapter.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 LoggerAdapter
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.logger">
+             <span class="sig-name descname">
+              <span class="pre">
+               logger
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.logger" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels logger.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Logger
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.loop">
+             <span class="sig-name descname">
+              <span class="pre">
+               loop
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.loop" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels event loop.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 AbstractEventLoop
+                </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.loop_sig_callback">
+             <span class="sig-name descname">
+              <span class="pre">
+               loop_sig_callback
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.loop_sig_callback" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels signal handling callback.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Callable
+                </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.machine_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               machine_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.machine_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels machine ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 str
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.msgbus">
+             <span class="sig-name descname">
+              <span class="pre">
+               msgbus
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.msgbus" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels message bus.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 MessageBus
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.name">
+             <span class="sig-name descname">
+              <span class="pre">
+               name
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels name.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 str
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.portfolio">
+             <span class="sig-name descname">
+              <span class="pre">
+               portfolio
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.portfolio" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels read-only portfolio instance.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 PortfolioFacade
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.risk_engine">
+             <span class="sig-name descname">
+              <span class="pre">
+               risk_engine
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.risk_engine" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels risk engine.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 RiskEngine
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.trader">
+             <span class="sig-name descname">
+              <span class="pre">
+               trader
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.trader" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels trader instance.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Trader
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.trader_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               trader_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.trader_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels trader ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 TraderId
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.ts_created">
+             <span class="sig-name descname">
+              <span class="pre">
+               ts_created
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.ts_created" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The UNIX timestamp (nanoseconds) when the kernel was created.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 uint64_t
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.writer">
+             <span class="sig-name descname">
+              <span class="pre">
+               writer
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.writer" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The kernels writer.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 StreamingFeatherWriter
+                </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
         </section>
        </section>
       </article>

@@ -671,12 +671,12 @@
            <nav class="md-nav">
             <ul class="md-nav__list">
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#engine">
+              <a class="md-nav__link" href="#module-nautilus_trader.risk.engine">
                Engine
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#sizing">
+              <a class="md-nav__link" href="#module-nautilus_trader.risk.sizing">
                Sizing
               </a>
              </li>
@@ -714,21 +714,2770 @@
          component which can be used by trading strategies
 to help with risk management through position sizing.
         </p>
-        <section id="engine">
-         <h2 id="engine">
+        <section id="module-nautilus_trader.risk.engine">
+         <span id="engine">
+         </span>
+         <h2 id="module-nautilus_trader.risk.engine">
           Engine
-          <a class="headerlink" href="#engine" title="Permalink to this headline">
+          <a class="headerlink" href="#module-nautilus_trader.risk.engine" title="Permalink to this headline">
            ¶
           </a>
          </h2>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             RiskEngine
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              PortfolioFacade
+             </span>
+             <span class="pre">
+              portfolio
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              MessageBus
+             </span>
+             <span class="pre">
+              msgbus
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              CacheFacade
+             </span>
+             <span class="pre">
+              cache
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Clock
+             </span>
+             <span class="pre">
+              clock
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Logger
+             </span>
+             <span class="pre">
+              logger
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              config:
+             </span>
+             <span class="pre">
+              Optional[RiskEngineConfig]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <a class="reference internal" href="common.html#nautilus_trader.common.component.Component" title="nautilus_trader.common.component.Component">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.common.component.Component
+              </span>
+             </code>
+            </a>
+           </p>
+           <p>
+            Provides a high-performance risk engine.
+           </p>
+           <p>
+            The
+            <cite>
+             RiskEngine
+            </cite>
+            is responsible for global strategy and portfolio risk
+within the platform. This includes both pre-trade risk checks and post-trade
+risk monitoring.
+           </p>
+           <dl class="simple">
+            <dt>
+             Possible trading states:
+            </dt>
+            <dd>
+             <ul class="simple">
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ACTIVE
+                 </span>
+                </code>
+                (trading is enabled).
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  REDUCING
+                 </span>
+                </code>
+                (only new orders or updates which reduce an open position are allowed).
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  HALTED
+                 </span>
+                </code>
+                (all trading commands except cancels are denied).
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 portfolio
+                </strong>
+                (
+                <a class="reference internal" href="portfolio.html#nautilus_trader.portfolio.base.PortfolioFacade" title="nautilus_trader.portfolio.base.PortfolioFacade">
+                 <em>
+                  PortfolioFacade
+                 </em>
+                </a>
+                ) – The portfolio for the engine.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 msgbus
+                </strong>
+                (
+                <a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus">
+                 <em>
+                  MessageBus
+                 </em>
+                </a>
+                ) – The message bus for the engine.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 cache
+                </strong>
+                (
+                <a class="reference internal" href="cache.html#nautilus_trader.cache.base.CacheFacade" title="nautilus_trader.cache.base.CacheFacade">
+                 <em>
+                  CacheFacade
+                 </em>
+                </a>
+                ) – The read-only cache for the engine.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 clock
+                </strong>
+                (
+                <a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock">
+                 <em>
+                  Clock
+                 </em>
+                </a>
+                ) – The clock for the engine.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 logger
+                </strong>
+                (
+                <a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger">
+                 <em>
+                  Logger
+                 </em>
+                </a>
+                ) – The logger for the engine.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 config
+                </strong>
+                (
+                <a class="reference internal" href="config.html#nautilus_trader.config.common.RiskEngineConfig" title="nautilus_trader.config.common.RiskEngineConfig">
+                 <em>
+                  RiskEngineConfig
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The configuration for the instance.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Raises
+            </dt>
+            <dd class="field-even">
+             <p>
+              <strong>
+               TypeError
+              </strong>
+              – If
+              <cite>
+               config
+              </cite>
+              is not of type
+              <cite>
+               RiskEngineConfig
+              </cite>
+              .
+             </p>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.command_count">
+             <span class="sig-name descname">
+              <span class="pre">
+               command_count
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.command_count" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The total count of commands received by the engine.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.debug">
+             <span class="sig-name descname">
+              <span class="pre">
+               debug
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.debug" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If debug mode is active (will provide extra debug logging).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 bool
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.degrade">
+             <span class="sig-name descname">
+              <span class="pre">
+               degrade
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.degrade" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Degrade the component.
+             </p>
+             <p>
+              While executing
+              <cite>
+               on_degrade()
+              </cite>
+              , any exception will be logged and reraised.
+The component will remain in a
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                DEGRADING
+               </span>
+              </code>
+              state.
+             </p>
+             <div class="admonition warning">
+              <p class="admonition-title">
+               Warning
+              </p>
+              <p>
+               Do not override.
+              </p>
+              <p>
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
+              </p>
+             </div>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.dispose">
+             <span class="sig-name descname">
+              <span class="pre">
+               dispose
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.dispose" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Dispose of the component.
+             </p>
+             <p>
+              While executing
+              <cite>
+               on_dispose()
+              </cite>
+              , any exception will be logged and reraised.
+The component will remain in a
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                DISPOSING
+               </span>
+              </code>
+              state.
+             </p>
+             <div class="admonition warning">
+              <p class="admonition-title">
+               Warning
+              </p>
+              <p>
+               Do not override.
+              </p>
+              <p>
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
+              </p>
+             </div>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.event_count">
+             <span class="sig-name descname">
+              <span class="pre">
+               event_count
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.event_count" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The total count of events received by the engine.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.execute">
+             <span class="sig-name descname">
+              <span class="pre">
+               execute
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Command
+               </span>
+               <span class="pre">
+                command
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.execute" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Execute the given command.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 command
+                </strong>
+                (
+                <a class="reference internal" href="core.html#nautilus_trader.core.message.Command" title="nautilus_trader.core.message.Command">
+                 <em>
+                  Command
+                 </em>
+                </a>
+                ) – The command to execute.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.fault">
+             <span class="sig-name descname">
+              <span class="pre">
+               fault
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.fault" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Fault the component.
+             </p>
+             <p>
+              This method is idempotent and irreversible. No other methods should be
+called after faulting.
+             </p>
+             <p>
+              While executing
+              <cite>
+               on_fault()
+              </cite>
+              , any exception will be logged and reraised.
+The component will remain in a
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                FAULTING
+               </span>
+              </code>
+              state.
+             </p>
+             <div class="admonition warning">
+              <p class="admonition-title">
+               Warning
+              </p>
+              <p>
+               Do not override.
+              </p>
+              <p>
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
+              </p>
+             </div>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                type
+               </span>
+               <span class="pre">
+                cls
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the components class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
+             </p>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.id">
+             <span class="sig-name descname">
+              <span class="pre">
+               id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The components ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 ComponentId
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.is_bypassed">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_bypassed
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.is_bypassed" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If the risk engine is completely bypassed..
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 bool
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.is_degraded">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_degraded
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.is_degraded" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If the current component state is
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                DEGRADED
+               </span>
+              </code>
+              .
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.is_disposed">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_disposed
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.is_disposed" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If the current component state is
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                DISPOSED
+               </span>
+              </code>
+              .
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.is_faulted">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_faulted
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.is_faulted" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If the current component state is
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                FAULTED
+               </span>
+              </code>
+              .
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.is_initialized">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_initialized
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.is_initialized" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If the component has been initialized (component.state &gt;=
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                INITIALIZED
+               </span>
+              </code>
+              ).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.is_running">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_running
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.is_running" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If the current component state is
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                RUNNING
+               </span>
+              </code>
+              .
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.is_stopped">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_stopped
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.is_stopped" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If the current component state is
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                STOPPED
+               </span>
+              </code>
+              .
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.max_notional_per_order">
+             <span class="sig-name descname">
+              <span class="pre">
+               max_notional_per_order
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                InstrumentId
+               </span>
+               <span class="pre">
+                instrument_id
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.max_notional_per_order" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the current maximum notional per order for the given instrument ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                Decimal or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.max_notionals_per_order">
+             <span class="sig-name descname">
+              <span class="pre">
+               max_notionals_per_order
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                dict
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.max_notionals_per_order" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the current maximum notionals per order settings.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 dict[InstrumentId, Decimal]
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.max_order_rate">
+             <span class="sig-name descname">
+              <span class="pre">
+               max_order_rate
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                tuple
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.max_order_rate" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the current maximum order rate limit setting.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 (int, timedelta)
+                </em>
+                – The limit per timedelta interval.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.process">
+             <span class="sig-name descname">
+              <span class="pre">
+               process
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Event
+               </span>
+               <span class="pre">
+                event
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.process" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Process the given event.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 event
+                </strong>
+                (
+                <a class="reference internal" href="core.html#nautilus_trader.core.message.Event" title="nautilus_trader.core.message.Event">
+                 <em>
+                  Event
+                 </em>
+                </a>
+                ) – The event to process.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.reset">
+             <span class="sig-name descname">
+              <span class="pre">
+               reset
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.reset" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Reset the component.
+             </p>
+             <p>
+              All stateful fields are reset to their initial value.
+             </p>
+             <p>
+              While executing
+              <cite>
+               on_reset()
+              </cite>
+              , any exception will be logged and reraised.
+The component will remain in a
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                RESETTING
+               </span>
+              </code>
+              state.
+             </p>
+             <div class="admonition warning">
+              <p class="admonition-title">
+               Warning
+              </p>
+              <p>
+               Do not override.
+              </p>
+              <p>
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
+              </p>
+             </div>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.resume">
+             <span class="sig-name descname">
+              <span class="pre">
+               resume
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.resume" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Resume the component.
+             </p>
+             <p>
+              While executing
+              <cite>
+               on_resume()
+              </cite>
+              , any exception will be logged and reraised.
+The component will remain in a
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                RESUMING
+               </span>
+              </code>
+              state.
+             </p>
+             <div class="admonition warning">
+              <p class="admonition-title">
+               Warning
+              </p>
+              <p>
+               Do not override.
+              </p>
+              <p>
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
+              </p>
+             </div>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.set_max_notional_per_order">
+             <span class="sig-name descname">
+              <span class="pre">
+               set_max_notional_per_order
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                InstrumentId
+               </span>
+               <span class="pre">
+                instrument_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                new_value
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.set_max_notional_per_order" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Set the maximum notional value per order for the given instrument ID.
+             </p>
+             <p>
+              Passing a new_value of
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                None
+               </span>
+              </code>
+              will disable the pre-trade risk max
+notional check.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The instrument ID for the max notional.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   new_value
+                  </strong>
+                  (
+                  <em>
+                   integer
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   float
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   string
+                  </em>
+                  <em>
+                   or
+                  </em>
+                  <em>
+                   Decimal
+                  </em>
+                  ) – The max notional value to set.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   decimal.InvalidOperation
+                  </strong>
+                  – If
+                  <cite>
+                   new_value
+                  </cite>
+                  not a valid input for
+                  <cite>
+                   decimal.Decimal
+                  </cite>
+                  .
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   new_value
+                  </cite>
+                  is not
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  and not positive.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.set_trading_state">
+             <span class="sig-name descname">
+              <span class="pre">
+               set_trading_state
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                TradingState
+               </span>
+               <span class="pre">
+                state
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.set_trading_state" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Set the trading state for the engine.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 state
+                </strong>
+                (
+                <em>
+                 TradingState
+                </em>
+                ) – The state to set.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.start">
+             <span class="sig-name descname">
+              <span class="pre">
+               start
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.start" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Start the component.
+             </p>
+             <p>
+              While executing
+              <cite>
+               on_start()
+              </cite>
+              , any exception will be logged and reraised.
+The component will remain in a
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                STARTING
+               </span>
+              </code>
+              state.
+             </p>
+             <div class="admonition warning">
+              <p class="admonition-title">
+               Warning
+              </p>
+              <p>
+               Do not override.
+              </p>
+              <p>
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
+              </p>
+             </div>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.state">
+             <span class="sig-name descname">
+              <span class="pre">
+               state
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.state" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The components current state.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 ComponentState
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.stop">
+             <span class="sig-name descname">
+              <span class="pre">
+               stop
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.stop" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Stop the component.
+             </p>
+             <p>
+              While executing
+              <cite>
+               on_stop()
+              </cite>
+              , any exception will be logged and reraised.
+The component will remain in a
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                STOPPING
+               </span>
+              </code>
+              state.
+             </p>
+             <div class="admonition warning">
+              <p class="admonition-title">
+               Warning
+              </p>
+              <p>
+               Do not override.
+              </p>
+              <p>
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
+              </p>
+             </div>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.trader_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               trader_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.trader_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The trader ID associated with the component.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 TraderId
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.trading_state">
+             <span class="sig-name descname">
+              <span class="pre">
+               trading_state
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.trading_state" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The current trading state for the engine.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 TradingState
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.type">
+             <span class="sig-name descname">
+              <span class="pre">
+               type
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.type" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The components type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 type
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
         </section>
-        <section id="sizing">
-         <h2 id="sizing">
+        <section id="module-nautilus_trader.risk.sizing">
+         <span id="sizing">
+         </span>
+         <h2 id="module-nautilus_trader.risk.sizing">
           Sizing
-          <a class="headerlink" href="#sizing" title="Permalink to this headline">
+          <a class="headerlink" href="#module-nautilus_trader.risk.sizing" title="Permalink to this headline">
            ¶
           </a>
          </h2>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.risk.sizing.FixedRiskSizer">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             FixedRiskSizer
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Instrument
+             </span>
+             <span class="pre">
+              instrument
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.risk.sizing.FixedRiskSizer" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <a class="reference internal" href="#nautilus_trader.risk.sizing.PositionSizer" title="nautilus_trader.risk.sizing.PositionSizer">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.risk.sizing.PositionSizer
+              </span>
+             </code>
+            </a>
+           </p>
+           <p>
+            Provides position sizing calculations based on a given risk.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               instrument
+              </strong>
+              (
+              <a class="reference internal" href="model/instruments.html#nautilus_trader.model.instruments.base.Instrument" title="nautilus_trader.model.instruments.base.Instrument">
+               <em>
+                Instrument
+               </em>
+              </a>
+              ) – The instrument for position sizing.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.sizing.FixedRiskSizer.calculate">
+             <span class="sig-name descname">
+              <span class="pre">
+               calculate
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Price
+               </span>
+               <span class="pre">
+                entry
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Price
+               </span>
+               <span class="pre">
+                stop_loss
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Money
+               </span>
+               <span class="pre">
+                equity
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                risk:
+               </span>
+               <span class="pre">
+                Decimal
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                commission_rate:
+               </span>
+               <span class="pre">
+                Decimal
+               </span>
+               <span class="pre">
+                =
+               </span>
+               <span class="pre">
+                Decimal(0)
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                exchange_rate:
+               </span>
+               <span class="pre">
+                Decimal
+               </span>
+               <span class="pre">
+                =
+               </span>
+               <span class="pre">
+                Decimal(1)
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                hard_limit:
+               </span>
+               <span class="pre">
+                Decimal
+               </span>
+               <span class="pre">
+                =
+               </span>
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                unit_batch_size:
+               </span>
+               <span class="pre">
+                Decimal
+               </span>
+               <span class="pre">
+                =
+               </span>
+               <span class="pre">
+                Decimal(1)
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                int
+               </span>
+               <span class="pre">
+                units=1
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+                <span class="pre">
+                 Quantity
+                </span>
+               </a>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.sizing.FixedRiskSizer.calculate" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Calculate the position size quantity.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   entry
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+                   <em>
+                    Price
+                   </em>
+                  </a>
+                  ) – The entry price.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   stop_loss
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+                   <em>
+                    Price
+                   </em>
+                  </a>
+                  ) – The stop loss price.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   equity
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money">
+                   <em>
+                    Money
+                   </em>
+                  </a>
+                  ) – The account equity.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   risk
+                  </strong>
+                  (
+                  <em>
+                   Decimal
+                  </em>
+                  ) – The risk percentage.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   exchange_rate
+                  </strong>
+                  (
+                  <em>
+                   Decimal
+                  </em>
+                  ) – The exchange rate for the instrument quote currency vs account currency.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   commission_rate
+                  </strong>
+                  (
+                  <em>
+                   Decimal
+                  </em>
+                  ) – The commission rate (&gt;= 0).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   hard_limit
+                  </strong>
+                  (
+                  <em>
+                   Decimal
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The hard limit for the total quantity (&gt;= 0).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   unit_batch_size
+                  </strong>
+                  (
+                  <em>
+                   Decimal
+                  </em>
+                  ) – The unit batch size (&gt; 0).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   units
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  ) – The number of units to batch the position into (&gt; 0).
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   risk_bp
+                  </cite>
+                  is not positive (&gt; 0).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   xrate
+                  </cite>
+                  is not positive (&gt; 0).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   commission_rate
+                  </cite>
+                  is negative (&lt; 0).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   hard_limit
+                  </cite>
+                  is not
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  and is not positive (&gt; 0).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   unit_batch_size
+                  </cite>
+                  is not positive (&gt; 0).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   units
+                  </cite>
+                  is not positive (&gt; 0).
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 Quantity
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.sizing.FixedRiskSizer.instrument">
+             <span class="sig-name descname">
+              <span class="pre">
+               instrument
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.sizing.FixedRiskSizer.instrument" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The instrument for position sizing.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Instrument
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.sizing.FixedRiskSizer.update_instrument">
+             <span class="sig-name descname">
+              <span class="pre">
+               update_instrument
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Instrument
+               </span>
+               <span class="pre">
+                instrument
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.sizing.FixedRiskSizer.update_instrument" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Update the internal instrument with the given instrument.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument
+                </strong>
+                (
+                <a class="reference internal" href="model/instruments.html#nautilus_trader.model.instruments.base.Instrument" title="nautilus_trader.model.instruments.base.Instrument">
+                 <em>
+                  Instrument
+                 </em>
+                </a>
+                ) – The instrument for the update.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 instrument
+                </cite>
+                does not equal the currently held instrument.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.risk.sizing.PositionSizer">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             PositionSizer
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Instrument
+             </span>
+             <span class="pre">
+              instrument
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.risk.sizing.PositionSizer" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              object
+             </span>
+            </code>
+           </p>
+           <p>
+            The abstract base class for all position sizers.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               instrument
+              </strong>
+              (
+              <a class="reference internal" href="model/instruments.html#nautilus_trader.model.instruments.base.Instrument" title="nautilus_trader.model.instruments.base.Instrument">
+               <em>
+                Instrument
+               </em>
+              </a>
+              ) – The instrument for position sizing.
+             </p>
+            </dd>
+           </dl>
+           <div class="admonition warning">
+            <p class="admonition-title">
+             Warning
+            </p>
+            <p>
+             This class should not be used directly, but through a concrete subclass.
+            </p>
+           </div>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.sizing.PositionSizer.calculate">
+             <span class="sig-name descname">
+              <span class="pre">
+               calculate
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Price
+               </span>
+               <span class="pre">
+                entry
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Price
+               </span>
+               <span class="pre">
+                stop_loss
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Money
+               </span>
+               <span class="pre">
+                equity
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                risk:
+               </span>
+               <span class="pre">
+                Decimal
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                commission_rate:
+               </span>
+               <span class="pre">
+                Decimal
+               </span>
+               <span class="pre">
+                =
+               </span>
+               <span class="pre">
+                Decimal(0)
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                exchange_rate:
+               </span>
+               <span class="pre">
+                Decimal
+               </span>
+               <span class="pre">
+                =
+               </span>
+               <span class="pre">
+                Decimal(1)
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                hard_limit:
+               </span>
+               <span class="pre">
+                Decimal
+               </span>
+               <span class="pre">
+                =
+               </span>
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                unit_batch_size:
+               </span>
+               <span class="pre">
+                Decimal
+               </span>
+               <span class="pre">
+                =
+               </span>
+               <span class="pre">
+                Decimal(1)
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                int
+               </span>
+               <span class="pre">
+                units=1
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+                <span class="pre">
+                 Quantity
+                </span>
+               </a>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.sizing.PositionSizer.calculate" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Abstract method (implement in subclass).
+             </p>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.sizing.PositionSizer.instrument">
+             <span class="sig-name descname">
+              <span class="pre">
+               instrument
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.sizing.PositionSizer.instrument" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The instrument for position sizing.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Instrument
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.risk.sizing.PositionSizer.update_instrument">
+             <span class="sig-name descname">
+              <span class="pre">
+               update_instrument
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Instrument
+               </span>
+               <span class="pre">
+                instrument
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.risk.sizing.PositionSizer.update_instrument" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Update the internal instrument with the given instrument.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument
+                </strong>
+                (
+                <a class="reference internal" href="model/instruments.html#nautilus_trader.model.instruments.base.Instrument" title="nautilus_trader.model.instruments.base.Instrument">
+                 <em>
+                  Instrument
+                 </em>
+                </a>
+                ) – The instrument for the update.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 instrument
+                </cite>
+                does not equal the currently held instrument.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
         </section>
        </section>
       </article>

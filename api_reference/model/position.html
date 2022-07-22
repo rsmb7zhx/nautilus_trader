@@ -673,13 +673,2209 @@
      </div>
      <div class="md-content">
       <article class="md-content__inner md-typeset" role="main">
-       <section class="tex2jax_ignore mathjax_ignore" id="position">
+       <section class="tex2jax_ignore mathjax_ignore" id="module-nautilus_trader.model.position">
+        <span id="position">
+        </span>
         <h1 id="api-reference-model-position--page-root">
          Position
          <a class="headerlink" href="#api-reference-model-position--page-root" title="Permalink to this headline">
           ¶
          </a>
         </h1>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.position.Position">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            Position
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             Instrument
+            </span>
+            <span class="pre">
+             instrument
+            </span>
+           </span>
+          </em>
+          ,
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             OrderFilled
+            </span>
+            <span class="pre">
+             fill
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.position.Position" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <code class="xref py py-class docutils literal notranslate">
+            <span class="pre">
+             object
+            </span>
+           </code>
+          </p>
+          <p>
+           Represents a position in a financial market.
+          </p>
+          <p>
+           The position ID may be assigned at the trading venue, or can be system
+generated depending on a strategies OMS (Order Management System) settings.
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                instrument
+               </strong>
+               (
+               <a class="reference internal" href="instruments.html#nautilus_trader.model.instruments.base.Instrument" title="nautilus_trader.model.instruments.base.Instrument">
+                <em>
+                 Instrument
+                </em>
+               </a>
+               ) – The trading instrument for the position.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                fill
+               </strong>
+               (
+               <a class="reference internal" href="events.html#nautilus_trader.model.events.order.OrderFilled" title="nautilus_trader.model.events.order.OrderFilled">
+                <em>
+                 OrderFilled
+                </em>
+               </a>
+               ) – The order fill event which opened the position.
+              </p>
+             </li>
+            </ul>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                instrument.id
+               </cite>
+               is not equal to
+               <cite>
+                fill.instrument_id
+               </cite>
+               .
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                event.position_id
+               </cite>
+               is
+               <code class="docutils literal notranslate">
+                <span class="pre">
+                 None
+                </span>
+               </code>
+               .
+              </p>
+             </li>
+            </ul>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.account_id">
+            <span class="sig-name descname">
+             <span class="pre">
+              account_id
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.account_id" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The account ID associated with the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                AccountId
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.apply">
+            <span class="sig-name descname">
+             <span class="pre">
+              apply
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               OrderFilled
+              </span>
+              <span class="pre">
+               fill
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <span class="pre">
+               void
+              </span>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.apply" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Applies the given order fill event to the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                fill
+               </strong>
+               (
+               <a class="reference internal" href="events.html#nautilus_trader.model.events.order.OrderFilled" title="nautilus_trader.model.events.order.OrderFilled">
+                <em>
+                 OrderFilled
+                </em>
+               </a>
+               ) – The order fill event to apply.
+              </p>
+             </dd>
+             <dt class="field-even">
+              Raises
+             </dt>
+             <dd class="field-even">
+              <p>
+               <strong>
+                KeyError
+               </strong>
+               – If
+               <cite>
+                fill.trade_id
+               </cite>
+               already applied to the position.
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.avg_px_close">
+            <span class="sig-name descname">
+             <span class="pre">
+              avg_px_close
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.avg_px_close" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The average close price.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                double
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.avg_px_open">
+            <span class="sig-name descname">
+             <span class="pre">
+              avg_px_open
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.avg_px_open" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The average open price.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                double
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.base_currency">
+            <span class="sig-name descname">
+             <span class="pre">
+              base_currency
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.base_currency" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The position base currency (if applicable).
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                Currency
+               </cite>
+               or
+               <code class="docutils literal notranslate">
+                <span class="pre">
+                 None
+                </span>
+               </code>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.calculate_pnl">
+            <span class="sig-name descname">
+             <span class="pre">
+              calculate_pnl
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               double
+              </span>
+              <span class="pre">
+               avg_px_open
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               double
+              </span>
+              <span class="pre">
+               avg_px_close
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               Quantity
+              </span>
+              <span class="pre">
+               quantity
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money">
+               <span class="pre">
+                Money
+               </span>
+              </a>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.calculate_pnl" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return a calculated PnL.
+            </p>
+            <p>
+             Result will be in quote currency for standard instruments, or base
+currency for inverse instruments.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <ul class="simple">
+               <li>
+                <p>
+                 <strong>
+                  avg_px_open
+                 </strong>
+                 (
+                 <em>
+                  double
+                 </em>
+                 ) – The average open price.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  avg_px_close
+                 </strong>
+                 (
+                 <em>
+                  double
+                 </em>
+                 ) – The average close price.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  quantity
+                 </strong>
+                 (
+                 <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+                  <em>
+                   Quantity
+                  </em>
+                 </a>
+                 ) – The quantity for the calculation.
+                </p>
+               </li>
+              </ul>
+             </dd>
+             <dt class="field-even">
+              Returns
+             </dt>
+             <dd class="field-even">
+              <p>
+               <em>
+                Money
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.client_order_ids">
+            <span class="sig-name descname">
+             <span class="pre">
+              client_order_ids
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.client_order_ids" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The client order IDs associated with the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                list[VenueOrderId]
+               </em>
+              </p>
+             </dd>
+            </dl>
+            <p class="rubric">
+             Notes
+            </p>
+            <p>
+             Guaranteed not to contain duplicate IDs.
+            </p>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.closing_order_id">
+            <span class="sig-name descname">
+             <span class="pre">
+              closing_order_id
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.closing_order_id" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The client order ID for the order which closed the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                ClientOrderId
+               </cite>
+               or
+               <code class="docutils literal notranslate">
+                <span class="pre">
+                 None
+                </span>
+               </code>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.commissions">
+            <span class="sig-name descname">
+             <span class="pre">
+              commissions
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <span class="pre">
+               list
+              </span>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.commissions" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return the total commissions generated by the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                list[Money]
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.cost_currency">
+            <span class="sig-name descname">
+             <span class="pre">
+              cost_currency
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.cost_currency" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The position cost currency (for PnL).
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                Currency
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.duration_ns">
+            <span class="sig-name descname">
+             <span class="pre">
+              duration_ns
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.duration_ns" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The total open duration (nanoseconds).
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                uint64_t
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.entry">
+            <span class="sig-name descname">
+             <span class="pre">
+              entry
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.entry" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The position entry order side.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                OrderSide
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.event_count">
+            <span class="sig-name descname">
+             <span class="pre">
+              event_count
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.event_count" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The count of order fill events applied to the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                int
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.events">
+            <span class="sig-name descname">
+             <span class="pre">
+              events
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.events" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The order fill events of the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                list[Event]
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.id">
+            <span class="sig-name descname">
+             <span class="pre">
+              id
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.id" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The position ID.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                PositionId
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.info">
+            <span class="sig-name descname">
+             <span class="pre">
+              info
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <span class="pre">
+               unicode
+              </span>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.info" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return a summary description of the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.instrument_id">
+            <span class="sig-name descname">
+             <span class="pre">
+              instrument_id
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.instrument_id" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The position instrument ID.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                InstrumentId
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.is_closed">
+            <span class="sig-name descname">
+             <span class="pre">
+              is_closed
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.is_closed" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             If the position side is
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               FLAT
+              </span>
+             </code>
+             .
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                bool
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.is_inverse">
+            <span class="sig-name descname">
+             <span class="pre">
+              is_inverse
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.is_inverse" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             If the quantity is expressed in quote currency.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                bool
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.is_long">
+            <span class="sig-name descname">
+             <span class="pre">
+              is_long
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.is_long" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             If the position side is
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               LONG
+              </span>
+             </code>
+             .
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                bool
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.is_open">
+            <span class="sig-name descname">
+             <span class="pre">
+              is_open
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.is_open" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             If the position side is
+             <strong>
+              not
+             </strong>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               FLAT
+              </span>
+             </code>
+             .
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                bool
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.is_opposite_side">
+            <span class="sig-name descname">
+             <span class="pre">
+              is_opposite_side
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               OrderSide
+              </span>
+              <span class="pre">
+               side
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <span class="pre">
+               bool
+              </span>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.is_opposite_side" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return a value indicating whether the given order side is opposite to
+the current position side.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                side
+               </strong>
+               (OrderSide {
+               <code class="docutils literal notranslate">
+                <span class="pre">
+                 BUY
+                </span>
+               </code>
+               ,
+               <code class="docutils literal notranslate">
+                <span class="pre">
+                 SELL
+                </span>
+               </code>
+               }) –
+              </p>
+             </dd>
+             <dt class="field-even">
+              Returns
+             </dt>
+             <dd class="field-even">
+              <p>
+               <em>
+                bool
+               </em>
+               – True if side is opposite, else False.
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.is_short">
+            <span class="sig-name descname">
+             <span class="pre">
+              is_short
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.is_short" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             If the position side is
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               SHORT
+              </span>
+             </code>
+             .
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                bool
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.last_event">
+            <span class="sig-name descname">
+             <span class="pre">
+              last_event
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.last_event" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The last order fill event.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                OrderFilled
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.last_trade_id">
+            <span class="sig-name descname">
+             <span class="pre">
+              last_trade_id
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.last_trade_id" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The last trade match ID for the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                TradeId
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.multiplier">
+            <span class="sig-name descname">
+             <span class="pre">
+              multiplier
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.multiplier" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The multiplier for the positions instrument.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                Quantity
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.net_qty">
+            <span class="sig-name descname">
+             <span class="pre">
+              net_qty
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.net_qty" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The current net quantity (positive for position side
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               LONG
+              </span>
+             </code>
+             , negative for
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               SHORT
+              </span>
+             </code>
+             ).
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                double
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.notional_value">
+            <span class="sig-name descname">
+             <span class="pre">
+              notional_value
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               Price
+              </span>
+              <span class="pre">
+               last
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money">
+               <span class="pre">
+                Money
+               </span>
+              </a>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.notional_value" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return the current notional value of the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                last
+               </strong>
+               (
+               <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+                <em>
+                 Price
+                </em>
+               </a>
+               ) – The last close price for the position.
+              </p>
+             </dd>
+             <dt class="field-even">
+              Returns
+             </dt>
+             <dd class="field-even">
+              <p>
+               <em>
+                Money
+               </em>
+               – In quote currency.
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.opening_order_id">
+            <span class="sig-name descname">
+             <span class="pre">
+              opening_order_id
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.opening_order_id" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The client order ID for the order which opened the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                ClientOrderId
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.peak_qty">
+            <span class="sig-name descname">
+             <span class="pre">
+              peak_qty
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.peak_qty" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The peak directional quantity reached by the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                Quantity
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.price_precision">
+            <span class="sig-name descname">
+             <span class="pre">
+              price_precision
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.price_precision" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The price precision for the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                uint8
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.quantity">
+            <span class="sig-name descname">
+             <span class="pre">
+              quantity
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.quantity" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The current open quantity.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                Quantity
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.quote_currency">
+            <span class="sig-name descname">
+             <span class="pre">
+              quote_currency
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.quote_currency" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The position quote currency.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                Currency
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.realized_pnl">
+            <span class="sig-name descname">
+             <span class="pre">
+              realized_pnl
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.realized_pnl" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The current realized PnL for the position (including commissions).
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                Money
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.realized_return">
+            <span class="sig-name descname">
+             <span class="pre">
+              realized_return
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.realized_return" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The current realized return for the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                double
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.side">
+            <span class="sig-name descname">
+             <span class="pre">
+              side
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.side" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The current position side.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                PositionSide
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.side_from_order_side">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              side_from_order_side
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               OrderSide
+              </span>
+              <span class="pre">
+               side
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.side_from_order_side" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return the position side resulting from the given order side (from
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               FLAT
+              </span>
+             </code>
+             ).
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                side
+               </strong>
+               (OrderSide {
+               <code class="docutils literal notranslate">
+                <span class="pre">
+                 BUY
+                </span>
+               </code>
+               ,
+               <code class="docutils literal notranslate">
+                <span class="pre">
+                 SELL
+                </span>
+               </code>
+               }) – The order side
+              </p>
+             </dd>
+             <dt class="field-even">
+              Returns
+             </dt>
+             <dd class="field-even">
+              <p>
+               <em>
+                PositionSide
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.size_precision">
+            <span class="sig-name descname">
+             <span class="pre">
+              size_precision
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.size_precision" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The size precision for the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                uint8
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.strategy_id">
+            <span class="sig-name descname">
+             <span class="pre">
+              strategy_id
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.strategy_id" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The strategy ID associated with the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                StrategyId
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.symbol">
+            <span class="sig-name descname">
+             <span class="pre">
+              symbol
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.symbol" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The positions ticker symbol.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                Symbol
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.to_dict">
+            <span class="sig-name descname">
+             <span class="pre">
+              to_dict
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <span class="pre">
+               dict
+              </span>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.to_dict" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return a dictionary representation of this object.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                dict[str, object]
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.total_pnl">
+            <span class="sig-name descname">
+             <span class="pre">
+              total_pnl
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               Price
+              </span>
+              <span class="pre">
+               last
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money">
+               <span class="pre">
+                Money
+               </span>
+              </a>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.total_pnl" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return the total PnL from the given last quote tick.
+            </p>
+            <p>
+             Result will be in quote currency for standard instruments, or base
+currency for inverse instruments.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                last
+               </strong>
+               (
+               <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+                <em>
+                 Price
+                </em>
+               </a>
+               ) – The last price for the calculation.
+              </p>
+             </dd>
+             <dt class="field-even">
+              Returns
+             </dt>
+             <dd class="field-even">
+              <p>
+               <em>
+                Money
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.trade_ids">
+            <span class="sig-name descname">
+             <span class="pre">
+              trade_ids
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.trade_ids" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The trade match IDs associated with the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                list[TradeId]
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.trader_id">
+            <span class="sig-name descname">
+             <span class="pre">
+              trader_id
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.trader_id" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The trader ID associated with the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                TraderId
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.ts_closed">
+            <span class="sig-name descname">
+             <span class="pre">
+              ts_closed
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.ts_closed" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The UNIX timestamp (nanoseconds) when the position was closed.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                uint64_t
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.ts_init">
+            <span class="sig-name descname">
+             <span class="pre">
+              ts_init
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.ts_init" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The UNIX timestamp (nanoseconds) when the object was initialized.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                uint64_t
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.ts_last">
+            <span class="sig-name descname">
+             <span class="pre">
+              ts_last
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.ts_last" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The UNIX timestamp (nanoseconds) when the last fill occurred.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                uint64_t
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.ts_opened">
+            <span class="sig-name descname">
+             <span class="pre">
+              ts_opened
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.ts_opened" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The UNIX timestamp (nanoseconds) when the position was opened.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                uint64_t
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.unrealized_pnl">
+            <span class="sig-name descname">
+             <span class="pre">
+              unrealized_pnl
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               Price
+              </span>
+              <span class="pre">
+               last
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money">
+               <span class="pre">
+                Money
+               </span>
+              </a>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.unrealized_pnl" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return the unrealized PnL from the given last quote tick.
+            </p>
+            <p>
+             Result will be in quote currency for standard instruments, or base
+currency for inverse instruments.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                last
+               </strong>
+               (
+               <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+                <em>
+                 Price
+                </em>
+               </a>
+               ) – The last price for the calculation.
+              </p>
+             </dd>
+             <dt class="field-even">
+              Returns
+             </dt>
+             <dd class="field-even">
+              <p>
+               <em>
+                Money
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.venue">
+            <span class="sig-name descname">
+             <span class="pre">
+              venue
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.venue" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The positions trading venue.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                Venue
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.venue_order_ids">
+            <span class="sig-name descname">
+             <span class="pre">
+              venue_order_ids
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.venue_order_ids" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The venue order IDs associated with the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                list[VenueOrderId]
+               </em>
+              </p>
+             </dd>
+            </dl>
+            <p class="rubric">
+             Notes
+            </p>
+            <p>
+             Guaranteed not to contain duplicate IDs.
+            </p>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
        </section>
       </article>
      </div>

@@ -665,7 +665,49 @@
       <div class="md-sidebar__scrollwrap">
        <div class="md-sidebar__inner">
         <nav class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          Contents
+         </label>
          <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#api-reference-model-enums--page-root">
+            Enums
+           </a>
+           <nav class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#account-type">
+               Account Type
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#aggregation-source">
+               Aggregation Source
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#aggregssor-side">
+               Aggregssor Side
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#asset-class">
+               Asset Class
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#asset-type">
+               Asset Type
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#bar-aggregation">
+               Bar Aggregation
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
          </ul>
         </nav>
        </div>
@@ -673,13 +715,192 @@
      </div>
      <div class="md-content">
       <article class="md-content__inner md-typeset" role="main">
-       <section class="tex2jax_ignore mathjax_ignore" id="enums">
+       <section class="tex2jax_ignore mathjax_ignore" id="module-nautilus_trader.model.enums">
+        <span id="enums">
+        </span>
         <h1 id="api-reference-model-enums--page-root">
          Enums
          <a class="headerlink" href="#api-reference-model-enums--page-root" title="Permalink to this headline">
           ¶
          </a>
         </h1>
+        <p>
+         Defines the enums of the trading domain model.
+        </p>
+        <section id="account-type">
+         <h2 id="account-type">
+          Account Type
+          <a class="headerlink" href="#account-type" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Represents a trading account type.
+         </p>
+         <div class="doctest highlight-default notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">nautilus_trader.model.enums</span> <span class="kn">import</span> <span class="n">AccountType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AccountType</span><span class="o">.</span><span class="n">CASH</span>
+<span class="go">&lt;AccountType.CASH: 1&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AccountType</span><span class="o">.</span><span class="n">MARGIN</span>
+<span class="go">&lt;AccountType.MARGIN: 2&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AccountType</span><span class="o">.</span><span class="n">BETTING</span>
+<span class="go">&lt;AccountType.BETTING: 3&gt;</span>
+</pre>
+          </div>
+         </div>
+        </section>
+        <section id="aggregation-source">
+         <h2 id="aggregation-source">
+          Aggregation Source
+          <a class="headerlink" href="#aggregation-source" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Represents where a bar was aggregated in relation to the platform.
+         </p>
+         <div class="doctest highlight-default notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">nautilus_trader.model.enums</span> <span class="kn">import</span> <span class="n">AggregationSource</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AggregationSource</span><span class="o">.</span><span class="n">EXTERNAL</span>  <span class="c1"># Bar was aggregated externally to the platform</span>
+<span class="go">&lt;AggregationSource.EXTERNAL: 1&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AggregationSource</span><span class="o">.</span><span class="n">INTERNAL</span>  <span class="c1"># Bar was aggregated internally within the platform</span>
+<span class="go">&lt;AggregationSource.INTERNAL: 2&gt;</span>
+</pre>
+          </div>
+         </div>
+        </section>
+        <section id="aggregssor-side">
+         <h2 id="aggregssor-side">
+          Aggregssor Side
+          <a class="headerlink" href="#aggregssor-side" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Represents the order side of the aggressor (liquidity taker) for a particular trade.
+         </p>
+         <div class="doctest highlight-default notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">nautilus_trader.model.enums</span> <span class="kn">import</span> <span class="n">AggressorSide</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AggressorSide</span><span class="o">.</span><span class="n">BUY</span>
+<span class="go">&lt;AggressorSide.BUY: 1&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AggressorSide</span><span class="o">.</span><span class="n">SELL</span>
+<span class="go">&lt;AggressorSide.SELL: 2&gt;</span>
+</pre>
+          </div>
+         </div>
+        </section>
+        <section id="asset-class">
+         <h2 id="asset-class">
+          Asset Class
+          <a class="headerlink" href="#asset-class" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Represents a group of investment vehicles with similar properties and risk profiles.
+         </p>
+         <div class="doctest highlight-default notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">nautilus_trader.model.enums</span> <span class="kn">import</span> <span class="n">AssetClass</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AssetClass</span><span class="o">.</span><span class="n">FX</span>
+<span class="go">&lt;AssetClass.FX: 1&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AssetClass</span><span class="o">.</span><span class="n">EQUITY</span>
+<span class="go">&lt;AssetClass.EQUITY: 2&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AssetClass</span><span class="o">.</span><span class="n">COMMODITY</span>
+<span class="go">&lt;AssetClass.COMMODITY: 3&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AssetClass</span><span class="o">.</span><span class="n">METAL</span>
+<span class="go">&lt;AssetClass.METAL: 4&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AssetClass</span><span class="o">.</span><span class="n">ENERGY</span>
+<span class="go">&lt;AssetClass.ENERGY: 5&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AssetClass</span><span class="o">.</span><span class="n">BOND</span>
+<span class="go">&lt;AssetClass.BOND: 6&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AssetClass</span><span class="o">.</span><span class="n">INDEX</span>
+<span class="go">&lt;AssetClass.INDEX: 7&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AssetClass</span><span class="o">.</span><span class="n">CRYPTO</span>
+<span class="go">&lt;AssetClass.CRYPTO: 8&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AssetClass</span><span class="o">.</span><span class="n">BETTING</span>
+<span class="go">&lt;AssetClass.BETTING: 9&gt;</span>
+</pre>
+          </div>
+         </div>
+        </section>
+        <section id="asset-type">
+         <h2 id="asset-type">
+          Asset Type
+          <a class="headerlink" href="#asset-type" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Represents a group of financial product types.
+         </p>
+         <div class="doctest highlight-default notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">nautilus_trader.model.enums</span> <span class="kn">import</span> <span class="n">AssetType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AssetType</span><span class="o">.</span><span class="n">SPOT</span>
+<span class="go">&lt;AssetType.SPOT: 1&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AssetType</span><span class="o">.</span><span class="n">SWAP</span>
+<span class="go">&lt;AssetType.SWAP: 2&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AssetType</span><span class="o">.</span><span class="n">FUTURE</span>
+<span class="go">&lt;AssetType.FUTURE: 3&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AssetType</span><span class="o">.</span><span class="n">FORWARD</span>
+<span class="go">&lt;AssetType.FORWARD: 4&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AssetType</span><span class="o">.</span><span class="n">CFD</span>
+<span class="go">&lt;AssetType.CFD: 5&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AssetType</span><span class="o">.</span><span class="n">OPTION</span>
+<span class="go">&lt;AssetType.OPTION: 6&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AssetType</span><span class="o">.</span><span class="n">WARRANT</span>
+<span class="go">&lt;AssetType.WARRANT: 7&gt;</span>
+</pre>
+          </div>
+         </div>
+        </section>
+        <section id="bar-aggregation">
+         <h2 id="bar-aggregation">
+          Bar Aggregation
+          <a class="headerlink" href="#bar-aggregation" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Represents a method of aggregating an OHLCV bar.
+         </p>
+         <div class="doctest highlight-default notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">nautilus_trader.model.enums</span> <span class="kn">import</span> <span class="n">BarAggregation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BarAggregation</span><span class="o">.</span><span class="n">TICK</span>
+<span class="go">&lt;BarAggregation.TICK: 1&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BarAggregation</span><span class="o">.</span><span class="n">TICK_IMBALANCE</span>
+<span class="go">&lt;BarAggregation.TICK_IMBALANCE: 2&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BarAggregation</span><span class="o">.</span><span class="n">TICK_RUNS</span>
+<span class="go">&lt;BarAggregation.TICK_RUNS: 3&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BarAggregation</span><span class="o">.</span><span class="n">VOLUME</span>
+<span class="go">&lt;BarAggregation.VOLUME: 4&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BarAggregation</span><span class="o">.</span><span class="n">VOLUME_IMBALANCE</span>
+<span class="go">&lt;BarAggregation.VOLUME_IMBALANCE: 5&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BarAggregation</span><span class="o">.</span><span class="n">VOLUME_RUNS</span>
+<span class="go">&lt;BarAggregation.VOLUME_RUNS: 6&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BarAggregation</span><span class="o">.</span><span class="n">VALUE</span>
+<span class="go">&lt;BarAggregation.VALUE: 7&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BarAggregation</span><span class="o">.</span><span class="n">VALUE_IMBALANCE</span>
+<span class="go">&lt;BarAggregation.VALUE_IMBALANCE: 8&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BarAggregation</span><span class="o">.</span><span class="n">VALUE_RUNS</span>
+<span class="go">&lt;BarAggregation.VALUE_RUNS: 9&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BarAggregation</span><span class="o">.</span><span class="n">SECOND</span>
+<span class="go">&lt;BarAggregation.SECOND: 10&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BarAggregation</span><span class="o">.</span><span class="n">MINUTE</span>
+<span class="go">&lt;BarAggregation.MINUTE: 11&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BarAggregation</span><span class="o">.</span><span class="n">HOUR</span>
+<span class="go">&lt;BarAggregation.HOUR: 12&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BarAggregation</span><span class="o">.</span><span class="n">DAY</span>
+<span class="go">&lt;BarAggregation.DAY: 13&gt;</span>
+</pre>
+          </div>
+         </div>
+        </section>
        </section>
       </article>
      </div>

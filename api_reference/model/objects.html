@@ -673,13 +673,2614 @@
      </div>
      <div class="md-content">
       <article class="md-content__inner md-typeset" role="main">
-       <section class="tex2jax_ignore mathjax_ignore" id="objects">
+       <section class="tex2jax_ignore mathjax_ignore" id="module-nautilus_trader.model.objects">
+        <span id="objects">
+        </span>
         <h1 id="api-reference-model-objects--page-root">
          Objects
          <a class="headerlink" href="#api-reference-model-objects--page-root" title="Permalink to this headline">
           ¶
          </a>
         </h1>
+        <p>
+         Defines fundamental value objects for the trading domain.
+        </p>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.objects.AccountBalance">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            AccountBalance
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             Money
+            </span>
+            <span class="pre">
+             total
+            </span>
+           </span>
+          </em>
+          ,
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             Money
+            </span>
+            <span class="pre">
+             locked
+            </span>
+           </span>
+          </em>
+          ,
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             Money
+            </span>
+            <span class="pre">
+             free
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.objects.AccountBalance" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <code class="xref py py-class docutils literal notranslate">
+            <span class="pre">
+             object
+            </span>
+           </code>
+          </p>
+          <p>
+           Represents an account balance denominated in a particular currency.
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                total
+               </strong>
+               (
+               <a class="reference internal" href="#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money">
+                <em>
+                 Money
+                </em>
+               </a>
+               ) – The total account balance.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                locked
+               </strong>
+               (
+               <a class="reference internal" href="#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money">
+                <em>
+                 Money
+                </em>
+               </a>
+               ) – The account balance locked (assigned to pending orders).
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                free
+               </strong>
+               (
+               <a class="reference internal" href="#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money">
+                <em>
+                 Money
+                </em>
+               </a>
+               ) – The account balance free for trading.
+              </p>
+             </li>
+            </ul>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If money currencies are not equal.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If any money is negative (&lt; 0).
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                total
+               </cite>
+               -
+               <cite>
+                locked
+               </cite>
+               !=
+               <cite>
+                free
+               </cite>
+               .
+              </p>
+             </li>
+            </ul>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.AccountBalance.currency">
+            <span class="sig-name descname">
+             <span class="pre">
+              currency
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.AccountBalance.currency" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The currency of the account.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                Currency
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.AccountBalance.free">
+            <span class="sig-name descname">
+             <span class="pre">
+              free
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.AccountBalance.free" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The account balance free for trading.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                Money
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.AccountBalance.from_dict">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              from_dict
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               dict
+              </span>
+              <span class="pre">
+               values
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <a class="reference internal" href="#nautilus_trader.model.objects.AccountBalance" title="nautilus_trader.model.objects.AccountBalance">
+               <span class="pre">
+                AccountBalance
+               </span>
+              </a>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.AccountBalance.from_dict" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return an account balance from the given dict values.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                values
+               </strong>
+               (
+               <em>
+                dict
+               </em>
+               <em>
+                [
+               </em>
+               <em>
+                str
+               </em>
+               <em>
+                ,
+               </em>
+               <em>
+                object
+               </em>
+               <em>
+                ]
+               </em>
+               ) – The values for initialization.
+              </p>
+             </dd>
+             <dt class="field-even">
+              Returns
+             </dt>
+             <dd class="field-even">
+              <p>
+               <em>
+                AccountBalance
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.AccountBalance.locked">
+            <span class="sig-name descname">
+             <span class="pre">
+              locked
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.AccountBalance.locked" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The account balance locked (assigned to pending orders).
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                Money
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.AccountBalance.to_dict">
+            <span class="sig-name descname">
+             <span class="pre">
+              to_dict
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <span class="pre">
+               dict
+              </span>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.AccountBalance.to_dict" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return a dictionary representation of this object.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                dict[str, object]
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.AccountBalance.total">
+            <span class="sig-name descname">
+             <span class="pre">
+              total
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.AccountBalance.total" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The total account balance.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                Money
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.objects.MarginBalance">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            MarginBalance
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             Money
+            </span>
+            <span class="pre">
+             initial
+            </span>
+           </span>
+          </em>
+          ,
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             Money
+            </span>
+            <span class="pre">
+             maintenance
+            </span>
+           </span>
+          </em>
+          ,
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             InstrumentId
+            </span>
+            <span class="pre">
+             instrument_id=None
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.objects.MarginBalance" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <code class="xref py py-class docutils literal notranslate">
+            <span class="pre">
+             object
+            </span>
+           </code>
+          </p>
+          <p>
+           Represents a margin balance optionally associated with a particular instrument.
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                initial
+               </strong>
+               (
+               <a class="reference internal" href="#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money">
+                <em>
+                 Money
+                </em>
+               </a>
+               ) – The initial (order) margin requirement for the instrument.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                maintenance
+               </strong>
+               (
+               <a class="reference internal" href="#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money">
+                <em>
+                 Money
+                </em>
+               </a>
+               ) – The maintenance (position) margin requirement for the instrument.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                instrument_id
+               </strong>
+               (
+               <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                <em>
+                 InstrumentId
+                </em>
+               </a>
+               <em>
+                ,
+               </em>
+               <em>
+                optional
+               </em>
+               ) – The instrument ID associated with the margin.
+              </p>
+             </li>
+            </ul>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                margin_init
+               </cite>
+               currency does not equal
+               <cite>
+                currency
+               </cite>
+               .
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                margin_maint
+               </cite>
+               currency does not equal
+               <cite>
+                currency
+               </cite>
+               .
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If any margin is negative (&lt; 0).
+              </p>
+             </li>
+            </ul>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.MarginBalance.currency">
+            <span class="sig-name descname">
+             <span class="pre">
+              currency
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.MarginBalance.currency" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The currency of the margin.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                Currency
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.MarginBalance.from_dict">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              from_dict
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               dict
+              </span>
+              <span class="pre">
+               values
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <a class="reference internal" href="#nautilus_trader.model.objects.MarginBalance" title="nautilus_trader.model.objects.MarginBalance">
+               <span class="pre">
+                MarginBalance
+               </span>
+              </a>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.MarginBalance.from_dict" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return a margin balance from the given dict values.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                values
+               </strong>
+               (
+               <em>
+                dict
+               </em>
+               <em>
+                [
+               </em>
+               <em>
+                str
+               </em>
+               <em>
+                ,
+               </em>
+               <em>
+                object
+               </em>
+               <em>
+                ]
+               </em>
+               ) – The values for initialization.
+              </p>
+             </dd>
+             <dt class="field-even">
+              Returns
+             </dt>
+             <dd class="field-even">
+              <p>
+               <em>
+                MarginAccountBalance
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.MarginBalance.initial">
+            <span class="sig-name descname">
+             <span class="pre">
+              initial
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.MarginBalance.initial" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The initial margin requirement.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                Money
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.MarginBalance.instrument_id">
+            <span class="sig-name descname">
+             <span class="pre">
+              instrument_id
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.MarginBalance.instrument_id" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The instrument ID associated with the margin.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                InstrumentId
+               </cite>
+               or
+               <code class="docutils literal notranslate">
+                <span class="pre">
+                 None
+                </span>
+               </code>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.MarginBalance.maintenance">
+            <span class="sig-name descname">
+             <span class="pre">
+              maintenance
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.MarginBalance.maintenance" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The maintenance margin requirement.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                Money
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.MarginBalance.to_dict">
+            <span class="sig-name descname">
+             <span class="pre">
+              to_dict
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <span class="pre">
+               dict
+              </span>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.MarginBalance.to_dict" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return a dictionary representation of this object.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                dict[str, object]
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.objects.Money">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            Money
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             value
+            </span>
+           </span>
+          </em>
+          ,
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             Currency
+            </span>
+            <span class="pre">
+             currency
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.objects.Money" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <code class="xref py py-class docutils literal notranslate">
+            <span class="pre">
+             object
+            </span>
+           </code>
+          </p>
+          <p>
+           Represents an amount of money in a specified currency denomination.
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                value
+               </strong>
+               (
+               <em>
+                integer
+               </em>
+               <em>
+                ,
+               </em>
+               <em>
+                float
+               </em>
+               <em>
+                ,
+               </em>
+               <em>
+                string
+               </em>
+               <em>
+                or
+               </em>
+               <em>
+                Decimal
+               </em>
+               ) – The amount of money in the currency denomination.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                currency
+               </strong>
+               (
+               <a class="reference internal" href="currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency">
+                <em>
+                 Currency
+                </em>
+               </a>
+               ) – The currency of the money.
+              </p>
+             </li>
+            </ul>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.as_decimal">
+            <span class="sig-name descname">
+             <span class="pre">
+              as_decimal
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Money.as_decimal" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return the value as a built-in
+             <cite>
+              Decimal
+             </cite>
+             .
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                Decimal
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.as_double">
+            <span class="sig-name descname">
+             <span class="pre">
+              as_double
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <span class="pre">
+               double
+              </span>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Money.as_double" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return the value as a
+             <cite>
+              double
+             </cite>
+             .
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                double
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.currency">
+            <span class="sig-name descname">
+             <span class="pre">
+              currency
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Money.currency" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The currency of the money.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                Currency
+               </cite>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.from_raw">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              from_raw
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               uint64_t
+              </span>
+              <span class="pre">
+               raw
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               uint8_t
+              </span>
+              <span class="pre">
+               precision
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Money.from_raw" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.from_str">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              from_str
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               unicode
+              </span>
+              <span class="pre">
+               value
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <a class="reference internal" href="#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money">
+               <span class="pre">
+                Money
+               </span>
+              </a>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Money.from_str" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return money parsed from the given string.
+            </p>
+            <p>
+             Must be correctly formatted with a value and currency separated by a
+whitespace delimiter.
+            </p>
+            <p>
+             Example: “1000000.00 USD”.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                value
+               </strong>
+               (
+               <em>
+                str
+               </em>
+               ) – The value to parse.
+              </p>
+             </dd>
+             <dt class="field-even">
+              Returns
+             </dt>
+             <dd class="field-even">
+              <p>
+               <em>
+                Money
+               </em>
+              </p>
+             </dd>
+             <dt class="field-odd">
+              Raises
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                value
+               </cite>
+               is malformed.
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.to_str">
+            <span class="sig-name descname">
+             <span class="pre">
+              to_str
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <span class="pre">
+               unicode
+              </span>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Money.to_str" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return the formatted string representation of the money.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.objects.Price">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            Price
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             double
+            </span>
+            <span class="pre">
+             value
+            </span>
+           </span>
+          </em>
+          ,
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             uint8_t
+            </span>
+            <span class="pre">
+             precision
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.objects.Price" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <code class="xref py py-class docutils literal notranslate">
+            <span class="pre">
+             object
+            </span>
+           </code>
+          </p>
+          <p>
+           Represents a price in a financial market.
+          </p>
+          <p>
+           The number of decimal places may vary. For certain asset classes, prices may
+have negative values. For example, prices for options instruments can be
+negative under certain conditions.
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                value
+               </strong>
+               (
+               <em>
+                integer
+               </em>
+               <em>
+                ,
+               </em>
+               <em>
+                float
+               </em>
+               <em>
+                ,
+               </em>
+               <em>
+                string
+               </em>
+               <em>
+                or
+               </em>
+               <em>
+                Decimal
+               </em>
+               ) – The value of the price.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                precision
+               </strong>
+               (
+               <em>
+                uint8
+               </em>
+               ) – The precision for the price. Use a precision of 0 for whole numbers
+(no fractional units).
+              </p>
+             </li>
+            </ul>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                precision
+               </cite>
+               greater than 9.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                OverflowError
+               </strong>
+               – If
+               <cite>
+                precision
+               </cite>
+               is negative (&lt; 0).
+              </p>
+             </li>
+            </ul>
+           </dd>
+          </dl>
+          <p class="rubric">
+           References
+          </p>
+          <p>
+           <a class="reference external" href="https://www.onixs.biz/fix-dictionary/5.0.SP2/index.html#Price">
+            https://www.onixs.biz/fix-dictionary/5.0.SP2/index.html#Price
+           </a>
+          </p>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Price.as_decimal">
+            <span class="sig-name descname">
+             <span class="pre">
+              as_decimal
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Price.as_decimal" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return the value as a built-in
+             <cite>
+              Decimal
+             </cite>
+             .
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                Decimal
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Price.as_double">
+            <span class="sig-name descname">
+             <span class="pre">
+              as_double
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <span class="pre">
+               double
+              </span>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Price.as_double" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return the value as a
+             <cite>
+              double
+             </cite>
+             .
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                double
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Price.from_int">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              from_int
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               int
+              </span>
+              <span class="pre">
+               value
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <a class="reference internal" href="#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+               <span class="pre">
+                Price
+               </span>
+              </a>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Price.from_int" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return a price from the given integer value.
+            </p>
+            <p>
+             A precision of zero will be inferred.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                value
+               </strong>
+               (
+               <em>
+                int
+               </em>
+               ) – The value for the price.
+              </p>
+             </dd>
+             <dt class="field-even">
+              Returns
+             </dt>
+             <dd class="field-even">
+              <p>
+               <em>
+                Price
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Price.from_raw">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              from_raw
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               int64_t
+              </span>
+              <span class="pre">
+               raw
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               uint8_t
+              </span>
+              <span class="pre">
+               precision
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Price.from_raw" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Price.from_str">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              from_str
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               unicode
+              </span>
+              <span class="pre">
+               value
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <a class="reference internal" href="#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+               <span class="pre">
+                Price
+               </span>
+              </a>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Price.from_str" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return a price parsed from the given string.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                value
+               </strong>
+               (
+               <em>
+                str
+               </em>
+               ) – The value to parse.
+              </p>
+             </dd>
+             <dt class="field-even">
+              Returns
+             </dt>
+             <dd class="field-even">
+              <p>
+               <em>
+                Price
+               </em>
+              </p>
+             </dd>
+            </dl>
+            <div class="admonition warning">
+             <p class="admonition-title">
+              Warning
+             </p>
+             <p>
+              The decimal precision will be inferred from the number of digits
+following the ‘.’ point (if no point then precision zero).
+             </p>
+            </div>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Raises
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If inferred precision greater than 9.
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Price.precision">
+            <span class="sig-name descname">
+             <span class="pre">
+              precision
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Price.precision" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The precision for the price.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                uint8
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Price.raw_to_f64">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              raw_to_f64
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               raw
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <span class="pre">
+               float
+              </span>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Price.raw_to_f64" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
+        <dl class="py class">
+         <dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity">
+          <em class="property">
+           <span class="pre">
+            class
+           </span>
+           <span class="w">
+           </span>
+          </em>
+          <span class="sig-name descname">
+           <span class="pre">
+            Quantity
+           </span>
+          </span>
+          <span class="sig-paren">
+           (
+          </span>
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             double
+            </span>
+            <span class="pre">
+             value
+            </span>
+           </span>
+          </em>
+          ,
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             uint8_t
+            </span>
+            <span class="pre">
+             precision
+            </span>
+           </span>
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="#nautilus_trader.model.objects.Quantity" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Bases:
+           <code class="xref py py-class docutils literal notranslate">
+            <span class="pre">
+             object
+            </span>
+           </code>
+          </p>
+          <p>
+           Represents a quantity with a non-negative value.
+          </p>
+          <p>
+           Capable of storing either a whole number (no decimal places) of ‘contracts’
+or ‘shares’ (securities denominated in whole units) or a decimal value
+containing decimal places for non-share quantity asset classes (securities
+denominated in fractional units).
+          </p>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Parameters
+           </dt>
+           <dd class="field-odd">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                value
+               </strong>
+               (
+               <em>
+                integer
+               </em>
+               <em>
+                ,
+               </em>
+               <em>
+                float
+               </em>
+               <em>
+                ,
+               </em>
+               <em>
+                string
+               </em>
+               <em>
+                ,
+               </em>
+               <em>
+                Decimal
+               </em>
+               ) – The value of the quantity.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                precision
+               </strong>
+               (
+               <em>
+                uint8
+               </em>
+               ) – The precision for the quantity. Use a precision of 0 for whole numbers
+(no fractional units).
+              </p>
+             </li>
+            </ul>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                value
+               </cite>
+               is negative (&lt; 0).
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                precision
+               </cite>
+               greater than 9.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                OverflowError
+               </strong>
+               – If
+               <cite>
+                precision
+               </cite>
+               is negative (&lt; 0).
+              </p>
+             </li>
+            </ul>
+           </dd>
+          </dl>
+          <p class="rubric">
+           References
+          </p>
+          <p>
+           <a class="reference external" href="https://www.onixs.biz/fix-dictionary/5.0.SP2/index.html#Qty">
+            https://www.onixs.biz/fix-dictionary/5.0.SP2/index.html#Qty
+           </a>
+          </p>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.as_decimal">
+            <span class="sig-name descname">
+             <span class="pre">
+              as_decimal
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Quantity.as_decimal" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return the value as a built-in
+             <cite>
+              Decimal
+             </cite>
+             .
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                Decimal
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.as_double">
+            <span class="sig-name descname">
+             <span class="pre">
+              as_double
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <span class="pre">
+               double
+              </span>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Quantity.as_double" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return the value as a
+             <cite>
+              double
+             </cite>
+             .
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                double
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.from_int">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              from_int
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               int
+              </span>
+              <span class="pre">
+               value
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+               <span class="pre">
+                Quantity
+               </span>
+              </a>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Quantity.from_int" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return a quantity from the given integer value.
+            </p>
+            <p>
+             A precision of zero will be inferred.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                value
+               </strong>
+               (
+               <em>
+                int
+               </em>
+               ) – The value for the quantity.
+              </p>
+             </dd>
+             <dt class="field-even">
+              Returns
+             </dt>
+             <dd class="field-even">
+              <p>
+               <em>
+                Quantity
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.from_raw">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              from_raw
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               uint64_t
+              </span>
+              <span class="pre">
+               raw
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               uint8_t
+              </span>
+              <span class="pre">
+               precision
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Quantity.from_raw" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.from_str">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              from_str
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               unicode
+              </span>
+              <span class="pre">
+               value
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+               <span class="pre">
+                Quantity
+               </span>
+              </a>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Quantity.from_str" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return a quantity parsed from the given string.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                value
+               </strong>
+               (
+               <em>
+                str
+               </em>
+               ) – The value to parse.
+              </p>
+             </dd>
+             <dt class="field-even">
+              Returns
+             </dt>
+             <dd class="field-even">
+              <p>
+               <em>
+                Quantity
+               </em>
+              </p>
+             </dd>
+            </dl>
+            <div class="admonition warning">
+             <p class="admonition-title">
+              Warning
+             </p>
+             <p>
+              The decimal precision will be inferred from the number of digits
+following the ‘.’ point (if no point then precision zero).
+             </p>
+            </div>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Raises
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If inferred precision greater than 9.
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.precision">
+            <span class="sig-name descname">
+             <span class="pre">
+              precision
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Quantity.precision" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The precision for the quantity.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                uint8
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.raw_to_f64">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              raw_to_f64
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               raw
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <span class="pre">
+               float
+              </span>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Quantity.raw_to_f64" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.to_str">
+            <span class="sig-name descname">
+             <span class="pre">
+              to_str
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               self
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <span class="pre">
+               unicode
+              </span>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Quantity.to_str" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return the formatted string representation of the quantity.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                str
+               </em>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.zero">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              zero
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               uint8_t
+              </span>
+              <span class="pre">
+               precision=0
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <span class="sig-return">
+             <span class="sig-return-icon">
+              →
+             </span>
+             <span class="sig-return-typehint">
+              <a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+               <span class="pre">
+                Quantity
+               </span>
+              </a>
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Quantity.zero" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Return a quantity with a value of zero.
+            </p>
+            <dl class="simple">
+             <dt>
+              precision
+              <span class="classifier">
+               uint8, default 0
+              </span>
+             </dt>
+             <dd>
+              <p>
+               The precision for the quantity.
+              </p>
+             </dd>
+            </dl>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <em>
+                Quantity
+               </em>
+              </p>
+             </dd>
+             <dt class="field-even">
+              Raises
+             </dt>
+             <dd class="field-even">
+              <p>
+               <strong>
+                OverflowError
+               </strong>
+               – If
+               <cite>
+                precision
+               </cite>
+               is negative (&lt; 0).
+              </p>
+             </dd>
+            </dl>
+            <div class="admonition warning">
+             <p class="admonition-title">
+              Warning
+             </p>
+             <p>
+              The default precision is zero.
+             </p>
+            </div>
+           </dd>
+          </dl>
+         </dd>
+        </dl>
        </section>
       </article>
      </div>
