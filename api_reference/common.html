@@ -9116,11 +9116,7 @@ If
             <em>
              active
             </em>
-            timer is one which has not expired (
-            <cite>
-             timer.is_expired == False
-            </cite>
-            ).
+            timer is one which has not expired.
            </p>
            <div class="admonition warning">
             <p class="admonition-title">
@@ -10644,8 +10640,20 @@ then the default handler (if registered) will receive the
               <em>
                active
               </em>
-              timers in the clock.
+              timers running in the clock.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 int
+                </em>
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py attribute">
@@ -10665,8 +10673,20 @@ then the default handler (if registered) will receive the
               <em>
                active
               </em>
-              timers in the clock.
+              timers running in the clock.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 list[str]
+                </em>
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -12179,6 +12199,22 @@ then the default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
+             <p>
+              Return the current time (UTC).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 datetime
+                </em>
+                – The current tz-aware UTC time of the clock.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
           </dd>
@@ -13584,6 +13620,22 @@ then the default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
+             <p>
+              Return the current time (UTC).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 datetime
+                </em>
+                – The current tz-aware UTC time of the clock.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
           </dd>
