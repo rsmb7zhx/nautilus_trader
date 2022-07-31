@@ -9108,6 +9108,20 @@ If
            <p>
             The abstract base class for all clocks.
            </p>
+           <p class="rubric">
+            Notes
+           </p>
+           <p>
+            An
+            <em>
+             active
+            </em>
+            timer is one which has not expired (
+            <cite>
+             timer.is_expired == False
+            </cite>
+            ).
+           </p>
            <div class="admonition warning">
             <p class="admonition-title">
              Warning
@@ -9231,68 +9245,6 @@ already been canceled).
              </p>
             </dd>
            </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.is_default_handler_registered">
-             <span class="sig-name descname">
-              <span class="pre">
-               is_default_handler_registered
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.Clock.is_default_handler_registered" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the clock has a default handler registered.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 bool
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.is_test_clock">
-             <span class="sig-name descname">
-              <span class="pre">
-               is_test_clock
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.Clock.is_test_clock" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the clock is a
-              <cite>
-               TestClock
-              </cite>
-              .
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 bool
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
            <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.local_now">
              <span class="sig-name descname">
@@ -9379,88 +9331,94 @@ the target timezone).
              </dl>
             </dd>
            </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.next_event_name">
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.next_time_ns">
              <span class="sig-name descname">
               <span class="pre">
-               next_event_name
+               next_time_ns
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.Clock.next_event_name" title="Permalink to this definition">
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                unicode
+               </span>
+               <span class="pre">
+                name
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                uint64_t
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.common.clock.Clock.next_time_ns" title="Permalink to this definition">
               ¶
              </a>
             </dt>
             <dd>
              <p>
-              The name of the next time event.
+              Find a particular timer.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
-               Returns
+               Parameters
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <strong>
+                 name
+                </strong>
+                (
+                <em>
                  str
-                </cite>
+                </em>
+                ) – The name of the timer.
                </p>
               </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.next_event_time">
-             <span class="sig-name descname">
-              <span class="pre">
-               next_event_time
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.Clock.next_event_time" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The timestamp of the next time event.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
+              <dt class="field-even">
                Returns
               </dt>
-              <dd class="field-odd">
+              <dd class="field-even">
                <p>
-                <cite>
-                 datetime
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.next_event_time_ns">
-             <span class="sig-name descname">
-              <span class="pre">
-               next_event_time_ns
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.Clock.next_event_time_ns" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The UNIX timestamp (nanoseconds) of the next time event.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
+                <em>
                  uint64_t
+                </em>
+               </p>
+              </dd>
+              <dt class="field-odd">
+               Raises
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 name
                 </cite>
+                is not a valid string.
                </p>
               </dd>
              </dl>
@@ -10669,105 +10627,6 @@ then the default handler (if registered) will receive the
              </dl>
             </dd>
            </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.timer">
-             <span class="sig-name descname">
-              <span class="pre">
-               timer
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                unicode
-               </span>
-               <span class="pre">
-                name
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <a class="reference internal" href="#nautilus_trader.common.timer.Timer" title="nautilus_trader.common.timer.Timer">
-                <span class="pre">
-                 Timer
-                </span>
-               </a>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.Clock.timer" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Find a particular timer.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 name
-                </strong>
-                (
-                <em>
-                 str
-                </em>
-                ) – The name of the timer.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                Timer or
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-                – The timer with the given name (if found).
-               </p>
-              </dd>
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 name
-                </cite>
-                is not a valid string.
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
            <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.timer_count">
              <span class="sig-name descname">
@@ -10781,50 +10640,19 @@ then the default handler (if registered) will receive the
             </dt>
             <dd>
              <p>
-              The number of timers active in the clock.
+              Return the count of
+              <em>
+               active
+              </em>
+              timers in the clock.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 int
-                </cite>
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
-           <dl class="py method">
+           <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.timer_names">
              <span class="sig-name descname">
               <span class="pre">
                timer_names
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                list
-               </span>
               </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.common.clock.Clock.timer_names" title="Permalink to this definition">
@@ -10833,20 +10661,12 @@ then the default handler (if registered) will receive the
             </dt>
             <dd>
              <p>
-              The timer names held by the clock.
+              Return the names of
+              <em>
+               active
+              </em>
+              timers in the clock.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 list[str]
-                </em>
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -11202,33 +11022,6 @@ then the default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
-             <p>
-              Cancel the timer corresponding to the given label.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 name
-                </strong>
-                (
-                <em>
-                 str
-                </em>
-                ) – The name for the timer to cancel.
-               </p>
-              </dd>
-             </dl>
-             <p class="rubric">
-              Notes
-             </p>
-             <p>
-              Logs a warning if a timer with the given name is not found (it may have
-already been canceled).
-             </p>
             </dd>
            </dl>
            <dl class="py method">
@@ -11266,71 +11059,6 @@ already been canceled).
              </a>
             </dt>
             <dd>
-             <p>
-              Cancel all timers.
-             </p>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.is_default_handler_registered">
-             <span class="sig-name descname">
-              <span class="pre">
-               is_default_handler_registered
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.is_default_handler_registered" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the clock has a default handler registered.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 bool
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.is_test_clock">
-             <span class="sig-name descname">
-              <span class="pre">
-               is_test_clock
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.is_test_clock" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the clock is a
-              <cite>
-               TestClock
-              </cite>
-              .
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 bool
-                </cite>
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -11419,91 +11147,52 @@ the target timezone).
              </dl>
             </dd>
            </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.next_event_name">
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.next_time_ns">
              <span class="sig-name descname">
               <span class="pre">
-               next_event_name
+               next_time_ns
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.next_event_name" title="Permalink to this definition">
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                unicode
+               </span>
+               <span class="pre">
+                name
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                uint64_t
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.next_time_ns" title="Permalink to this definition">
               ¶
              </a>
             </dt>
             <dd>
-             <p>
-              The name of the next time event.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 str
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.next_event_time">
-             <span class="sig-name descname">
-              <span class="pre">
-               next_event_time
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.next_event_time" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The timestamp of the next time event.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 datetime
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.next_event_time_ns">
-             <span class="sig-name descname">
-              <span class="pre">
-               next_event_time_ns
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.next_event_time_ns" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The UNIX timestamp (nanoseconds) of the next time event.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 uint64_t
-                </cite>
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -11917,166 +11606,6 @@ default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
-             <p>
-              Set a time alert for the given time.
-             </p>
-             <p>
-              When the time is reached the handler will be passed the
-              <cite>
-               TimeEvent
-              </cite>
-              containing the timers unique name. If no callback is passed then the
-default handler (if registered) will receive the
-              <cite>
-               TimeEvent
-              </cite>
-              .
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   name
-                  </strong>
-                  (
-                  <em>
-                   str
-                  </em>
-                  ) – The name for the alert (must be unique for this clock).
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   alert_time_ns
-                  </strong>
-                  (
-                  <em>
-                   uint64_t
-                  </em>
-                  ) – The UNIX time (nanoseconds) for the alert.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   callback
-                  </strong>
-                  (
-                  <em>
-                   Callable
-                  </em>
-                  <em>
-                   [
-                  </em>
-                  <em>
-                   [
-                  </em>
-                  <a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent">
-                   <em>
-                    TimeEvent
-                   </em>
-                  </a>
-                  <em>
-                   ]
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   None
-                  </em>
-                  <em>
-                   ]
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The callback to receive time events.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-              <dt class="field-even">
-               Raises
-              </dt>
-              <dd class="field-even">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   name
-                  </cite>
-                  is not unique for this clock.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   alert_time
-                  </cite>
-                  is not &gt;= the clocks current time.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   TypeError
-                  </strong>
-                  – If
-                  <cite>
-                   callback
-                  </cite>
-                  is not of type
-                  <cite>
-                   Callable
-                  </cite>
-                  or
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    None
-                   </span>
-                  </code>
-                  .
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   callback
-                  </cite>
-                  is
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    None
-                   </span>
-                  </code>
-                  and no default handler is registered.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -12474,338 +12003,6 @@ then the default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
-             <p>
-              Set a timer to run.
-             </p>
-             <p>
-              The timer will run from the start time until the stop time.
-When the intervals are reached the handlers will be passed the
-              <cite>
-               TimeEvent
-              </cite>
-              containing the timers unique name. If no handler is passed
-then the default handler (if registered) will receive the
-              <cite>
-               TimeEvent
-              </cite>
-              .
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   name
-                  </strong>
-                  (
-                  <em>
-                   str
-                  </em>
-                  ) – The name for the timer (must be unique for this clock).
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   interval_ns
-                  </strong>
-                  (
-                  <em>
-                   uint64_t
-                  </em>
-                  ) – The time interval (nanoseconds) for the timer.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   start_time_ns
-                  </strong>
-                  (
-                  <em>
-                   uint64_t
-                  </em>
-                  ) – The start UNIX time (nanoseconds) for the timer.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   stop_time_ns
-                  </strong>
-                  (
-                  <em>
-                   uint64_t
-                  </em>
-                  ) – The stop UNIX time (nanoseconds) for the timer.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   callback
-                  </strong>
-                  (
-                  <em>
-                   Callable
-                  </em>
-                  <em>
-                   [
-                  </em>
-                  <em>
-                   [
-                  </em>
-                  <a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent">
-                   <em>
-                    TimeEvent
-                   </em>
-                  </a>
-                  <em>
-                   ]
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   None
-                  </em>
-                  <em>
-                   ]
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The callback to receive time events.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-              <dt class="field-even">
-               Raises
-              </dt>
-              <dd class="field-even">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   name
-                  </cite>
-                  is not unique for this clock.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   interval
-                  </cite>
-                  is not positive (&gt; 0).
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   stop_time
-                  </cite>
-                  is not
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    None
-                   </span>
-                  </code>
-                  and
-                  <cite>
-                   stop_time
-                  </cite>
-                  &lt; time now.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   stop_time
-                  </cite>
-                  is not
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    None
-                   </span>
-                  </code>
-                  and
-                  <cite>
-                   start_time
-                  </cite>
-                  + interval &gt;
-                  <cite>
-                   stop_time
-                  </cite>
-                  .
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   TypeError
-                  </strong>
-                  – If
-                  <cite>
-                   callback
-                  </cite>
-                  is not of type
-                  <cite>
-                   Callable
-                  </cite>
-                  or
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    None
-                   </span>
-                  </code>
-                  .
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   callback
-                  </cite>
-                  is
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    None
-                   </span>
-                  </code>
-                  and no default handler is registered.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.timer">
-             <span class="sig-name descname">
-              <span class="pre">
-               timer
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                unicode
-               </span>
-               <span class="pre">
-                name
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <a class="reference internal" href="#nautilus_trader.common.timer.Timer" title="nautilus_trader.common.timer.Timer">
-                <span class="pre">
-                 Timer
-                </span>
-               </a>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.timer" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Find a particular timer.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 name
-                </strong>
-                (
-                <em>
-                 str
-                </em>
-                ) – The name of the timer.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                Timer or
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-                – The timer with the given name (if found).
-               </p>
-              </dd>
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 name
-                </cite>
-                is not a valid string.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py attribute">
@@ -12820,51 +12017,13 @@ then the default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
-             <p>
-              The number of timers active in the clock.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 int
-                </cite>
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
-           <dl class="py method">
+           <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.timer_names">
              <span class="sig-name descname">
               <span class="pre">
                timer_names
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                list
-               </span>
               </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.timer_names" title="Permalink to this definition">
@@ -12872,21 +12031,6 @@ then the default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
-             <p>
-              The timer names held by the clock.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 list[str]
-                </em>
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -12924,29 +12068,6 @@ then the default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
-             <p>
-              Return the current UNIX time in seconds from the system clock.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 double
-                </em>
-               </p>
-              </dd>
-             </dl>
-             <p class="rubric">
-              References
-             </p>
-             <p>
-              <a class="reference external" href="https://en.wikipedia.org/wiki/Unix_time">
-               https://en.wikipedia.org/wiki/Unix_time
-              </a>
-             </p>
             </dd>
            </dl>
            <dl class="py method">
@@ -12984,29 +12105,6 @@ then the default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
-             <p>
-              Return the current UNIX time in milliseconds (ms).
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 uint64_t
-                </em>
-               </p>
-              </dd>
-             </dl>
-             <p class="rubric">
-              References
-             </p>
-             <p>
-              <a class="reference external" href="https://en.wikipedia.org/wiki/Unix_time">
-               https://en.wikipedia.org/wiki/Unix_time
-              </a>
-             </p>
             </dd>
            </dl>
            <dl class="py method">
@@ -13044,29 +12142,6 @@ then the default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
-             <p>
-              Return the current UNIX time in nanoseconds (ns) from the system clock.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 uint64_t
-                </em>
-               </p>
-              </dd>
-             </dl>
-             <p class="rubric">
-              References
-             </p>
-             <p>
-              <a class="reference external" href="https://en.wikipedia.org/wiki/Unix_time">
-               https://en.wikipedia.org/wiki/Unix_time
-              </a>
-             </p>
             </dd>
            </dl>
            <dl class="py method">
@@ -13104,22 +12179,6 @@ then the default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
-             <p>
-              Return the current time (UTC).
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 pd.Timestamp
-                </em>
-                – The current tz-aware UTC time of the clock.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
           </dd>
@@ -13205,7 +12264,7 @@ then the default handler (if registered) will receive the
              <p>
               Advance the clocks time to the given
               <cite>
-               datetime
+               to_time_ns
               </cite>
               .
              </p>
@@ -13231,7 +12290,7 @@ then the default handler (if registered) will receive the
               <dd class="field-even">
                <p>
                 <em>
-                 list[TimeEvent]
+                 list[TimeEventHandler]
                 </em>
                 – Sorted chronologically.
                </p>
@@ -13300,33 +12359,6 @@ then the default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
-             <p>
-              Cancel the timer corresponding to the given label.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 name
-                </strong>
-                (
-                <em>
-                 str
-                </em>
-                ) – The name for the timer to cancel.
-               </p>
-              </dd>
-             </dl>
-             <p class="rubric">
-              Notes
-             </p>
-             <p>
-              Logs a warning if a timer with the given name is not found (it may have
-already been canceled).
-             </p>
             </dd>
            </dl>
            <dl class="py method">
@@ -13364,71 +12396,6 @@ already been canceled).
              </a>
             </dt>
             <dd>
-             <p>
-              Cancel all timers.
-             </p>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.TestClock.is_default_handler_registered">
-             <span class="sig-name descname">
-              <span class="pre">
-               is_default_handler_registered
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.TestClock.is_default_handler_registered" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the clock has a default handler registered.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 bool
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.TestClock.is_test_clock">
-             <span class="sig-name descname">
-              <span class="pre">
-               is_test_clock
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.TestClock.is_test_clock" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the clock is a
-              <cite>
-               TestClock
-              </cite>
-              .
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 bool
-                </cite>
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -13517,91 +12484,52 @@ the target timezone).
              </dl>
             </dd>
            </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.TestClock.next_event_name">
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.common.clock.TestClock.next_time_ns">
              <span class="sig-name descname">
               <span class="pre">
-               next_event_name
+               next_time_ns
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.TestClock.next_event_name" title="Permalink to this definition">
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                unicode
+               </span>
+               <span class="pre">
+                name
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                uint64_t
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.common.clock.TestClock.next_time_ns" title="Permalink to this definition">
               ¶
              </a>
             </dt>
             <dd>
-             <p>
-              The name of the next time event.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 str
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.TestClock.next_event_time">
-             <span class="sig-name descname">
-              <span class="pre">
-               next_event_time
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.TestClock.next_event_time" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The timestamp of the next time event.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 datetime
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.TestClock.next_event_time_ns">
-             <span class="sig-name descname">
-              <span class="pre">
-               next_event_time_ns
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.TestClock.next_event_time_ns" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The UNIX timestamp (nanoseconds) of the next time event.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 uint64_t
-                </cite>
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -14083,166 +13011,6 @@ default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
-             <p>
-              Set a time alert for the given time.
-             </p>
-             <p>
-              When the time is reached the handler will be passed the
-              <cite>
-               TimeEvent
-              </cite>
-              containing the timers unique name. If no callback is passed then the
-default handler (if registered) will receive the
-              <cite>
-               TimeEvent
-              </cite>
-              .
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   name
-                  </strong>
-                  (
-                  <em>
-                   str
-                  </em>
-                  ) – The name for the alert (must be unique for this clock).
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   alert_time_ns
-                  </strong>
-                  (
-                  <em>
-                   uint64_t
-                  </em>
-                  ) – The UNIX time (nanoseconds) for the alert.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   callback
-                  </strong>
-                  (
-                  <em>
-                   Callable
-                  </em>
-                  <em>
-                   [
-                  </em>
-                  <em>
-                   [
-                  </em>
-                  <a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent">
-                   <em>
-                    TimeEvent
-                   </em>
-                  </a>
-                  <em>
-                   ]
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   None
-                  </em>
-                  <em>
-                   ]
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The callback to receive time events.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-              <dt class="field-even">
-               Raises
-              </dt>
-              <dd class="field-even">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   name
-                  </cite>
-                  is not unique for this clock.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   alert_time
-                  </cite>
-                  is not &gt;= the clocks current time.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   TypeError
-                  </strong>
-                  – If
-                  <cite>
-                   callback
-                  </cite>
-                  is not of type
-                  <cite>
-                   Callable
-                  </cite>
-                  or
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    None
-                   </span>
-                  </code>
-                  .
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   callback
-                  </cite>
-                  is
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    None
-                   </span>
-                  </code>
-                  and no default handler is registered.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -14640,338 +13408,6 @@ then the default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
-             <p>
-              Set a timer to run.
-             </p>
-             <p>
-              The timer will run from the start time until the stop time.
-When the intervals are reached the handlers will be passed the
-              <cite>
-               TimeEvent
-              </cite>
-              containing the timers unique name. If no handler is passed
-then the default handler (if registered) will receive the
-              <cite>
-               TimeEvent
-              </cite>
-              .
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   name
-                  </strong>
-                  (
-                  <em>
-                   str
-                  </em>
-                  ) – The name for the timer (must be unique for this clock).
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   interval_ns
-                  </strong>
-                  (
-                  <em>
-                   uint64_t
-                  </em>
-                  ) – The time interval (nanoseconds) for the timer.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   start_time_ns
-                  </strong>
-                  (
-                  <em>
-                   uint64_t
-                  </em>
-                  ) – The start UNIX time (nanoseconds) for the timer.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   stop_time_ns
-                  </strong>
-                  (
-                  <em>
-                   uint64_t
-                  </em>
-                  ) – The stop UNIX time (nanoseconds) for the timer.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   callback
-                  </strong>
-                  (
-                  <em>
-                   Callable
-                  </em>
-                  <em>
-                   [
-                  </em>
-                  <em>
-                   [
-                  </em>
-                  <a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent">
-                   <em>
-                    TimeEvent
-                   </em>
-                  </a>
-                  <em>
-                   ]
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   None
-                  </em>
-                  <em>
-                   ]
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The callback to receive time events.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-              <dt class="field-even">
-               Raises
-              </dt>
-              <dd class="field-even">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   name
-                  </cite>
-                  is not unique for this clock.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   interval
-                  </cite>
-                  is not positive (&gt; 0).
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   stop_time
-                  </cite>
-                  is not
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    None
-                   </span>
-                  </code>
-                  and
-                  <cite>
-                   stop_time
-                  </cite>
-                  &lt; time now.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   stop_time
-                  </cite>
-                  is not
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    None
-                   </span>
-                  </code>
-                  and
-                  <cite>
-                   start_time
-                  </cite>
-                  + interval &gt;
-                  <cite>
-                   stop_time
-                  </cite>
-                  .
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   TypeError
-                  </strong>
-                  – If
-                  <cite>
-                   callback
-                  </cite>
-                  is not of type
-                  <cite>
-                   Callable
-                  </cite>
-                  or
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    None
-                   </span>
-                  </code>
-                  .
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   callback
-                  </cite>
-                  is
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    None
-                   </span>
-                  </code>
-                  and no default handler is registered.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.TestClock.timer">
-             <span class="sig-name descname">
-              <span class="pre">
-               timer
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                unicode
-               </span>
-               <span class="pre">
-                name
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <a class="reference internal" href="#nautilus_trader.common.timer.Timer" title="nautilus_trader.common.timer.Timer">
-                <span class="pre">
-                 Timer
-                </span>
-               </a>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.TestClock.timer" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Find a particular timer.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 name
-                </strong>
-                (
-                <em>
-                 str
-                </em>
-                ) – The name of the timer.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                Timer or
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-                – The timer with the given name (if found).
-               </p>
-              </dd>
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 name
-                </cite>
-                is not a valid string.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py attribute">
@@ -14986,51 +13422,13 @@ then the default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
-             <p>
-              The number of timers active in the clock.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 int
-                </cite>
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
-           <dl class="py method">
+           <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.common.clock.TestClock.timer_names">
              <span class="sig-name descname">
               <span class="pre">
                timer_names
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                list
-               </span>
               </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.common.clock.TestClock.timer_names" title="Permalink to this definition">
@@ -15038,21 +13436,6 @@ then the default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
-             <p>
-              The timer names held by the clock.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 list[str]
-                </em>
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -15090,29 +13473,6 @@ then the default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
-             <p>
-              Return the current UNIX time in seconds.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 double
-                </em>
-               </p>
-              </dd>
-             </dl>
-             <p class="rubric">
-              References
-             </p>
-             <p>
-              <a class="reference external" href="https://en.wikipedia.org/wiki/Unix_time">
-               https://en.wikipedia.org/wiki/Unix_time
-              </a>
-             </p>
             </dd>
            </dl>
            <dl class="py method">
@@ -15150,29 +13510,6 @@ then the default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
-             <p>
-              Return the current UNIX time in milliseconds (ms).
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 uint64_t
-                </em>
-               </p>
-              </dd>
-             </dl>
-             <p class="rubric">
-              References
-             </p>
-             <p>
-              <a class="reference external" href="https://en.wikipedia.org/wiki/Unix_time">
-               https://en.wikipedia.org/wiki/Unix_time
-              </a>
-             </p>
             </dd>
            </dl>
            <dl class="py method">
@@ -15210,29 +13547,6 @@ then the default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
-             <p>
-              Return the current UNIX time in nanoseconds (ns).
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 uint64_t
-                </em>
-               </p>
-              </dd>
-             </dl>
-             <p class="rubric">
-              References
-             </p>
-             <p>
-              <a class="reference external" href="https://en.wikipedia.org/wiki/Unix_time">
-               https://en.wikipedia.org/wiki/Unix_time
-              </a>
-             </p>
             </dd>
            </dl>
            <dl class="py method">
@@ -15270,22 +13584,6 @@ then the default handler (if registered) will receive the
              </a>
             </dt>
             <dd>
-             <p>
-              Return the current time (UTC).
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 pd.Timestamp
-                </em>
-                – The current tz-aware UTC time of the clock.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
           </dd>
@@ -28661,13 +26959,11 @@ upstream.
           <dd>
            <p>
             Bases:
-            <a class="reference internal" href="#nautilus_trader.common.timer.Timer" title="nautilus_trader.common.timer.Timer">
-             <code class="xref py py-class docutils literal notranslate">
-              <span class="pre">
-               nautilus_trader.common.timer.Timer
-              </span>
-             </code>
-            </a>
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              object
+             </span>
+            </code>
            </p>
            <p>
             The abstract base class for all live timers.
@@ -30013,685 +28309,6 @@ upstream.
           </dd>
          </dl>
          <dl class="py class">
-          <dt class="sig sig-object py" id="nautilus_trader.common.timer.TestTimer">
-           <em class="property">
-            <span class="pre">
-             class
-            </span>
-            <span class="w">
-            </span>
-           </em>
-           <span class="sig-name descname">
-            <span class="pre">
-             TestTimer
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="pre">
-             unicode
-            </span>
-            <span class="pre">
-             name,
-            </span>
-            <span class="pre">
-             callback:
-            </span>
-            <span class="pre">
-             Callable[[TimeEvent],
-            </span>
-            <span class="pre">
-             None],
-            </span>
-            <span class="pre">
-             uint64_t
-            </span>
-            <span class="pre">
-             interval_ns,
-            </span>
-            <span class="pre">
-             uint64_t
-            </span>
-            <span class="pre">
-             start_time_ns,
-            </span>
-            <span class="pre">
-             uint64_t
-            </span>
-            <span class="pre">
-             stop_time_ns=0
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <a class="headerlink" href="#nautilus_trader.common.timer.TestTimer" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Bases:
-            <a class="reference internal" href="#nautilus_trader.common.timer.Timer" title="nautilus_trader.common.timer.Timer">
-             <code class="xref py py-class docutils literal notranslate">
-              <span class="pre">
-               nautilus_trader.common.timer.Timer
-              </span>
-             </code>
-            </a>
-           </p>
-           <p>
-            Provides a fake timer for backtesting and unit testing.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
-            </dt>
-            <dd class="field-odd">
-             <ul class="simple">
-              <li>
-               <p>
-                <strong>
-                 name
-                </strong>
-                (
-                <em>
-                 str
-                </em>
-                ) – The name for the timer.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 callback
-                </strong>
-                (
-                <em>
-                 Callable
-                </em>
-                <em>
-                 [
-                </em>
-                <em>
-                 [
-                </em>
-                <a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent">
-                 <em>
-                  TimeEvent
-                 </em>
-                </a>
-                <em>
-                 ]
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 None
-                </em>
-                <em>
-                 ]
-                </em>
-                ) – The delegate to call at the next time.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 interval_ns
-                </strong>
-                (
-                <em>
-                 uint64_t
-                </em>
-                ) – The time interval for the timer (not negative).
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 start_time_ns
-                </strong>
-                (
-                <em>
-                 uint64_t
-                </em>
-                ) – The UNIX time (nanoseconds) for timer start.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 stop_time_ns
-                </strong>
-                (
-                <em>
-                 uint64_t
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The UNIX time (nanoseconds) for timer stop (if 0 then timer is continuous).
-               </p>
-              </li>
-             </ul>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.TestTimer.advance">
-             <span class="sig-name descname">
-              <span class="pre">
-               advance
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                uint64_t
-               </span>
-               <span class="pre">
-                to_time_ns
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                list
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.TestTimer.advance" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Advance the test timer forward to the given time, generating a sequence
-of events. A
-              <code class="docutils literal notranslate">
-               <span class="pre">
-                TimeEvent
-               </span>
-              </code>
-              is appended for each time a next event is
-&lt;= the given to_time.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 to_time_ns
-                </strong>
-                (
-                <em>
-                 uint64_t
-                </em>
-                ) – The UNIX time (nanoseconds) to advance the timer to.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 list[TimeEvent]
-                </em>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.TestTimer.callback">
-             <span class="sig-name descname">
-              <span class="pre">
-               callback
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.TestTimer.callback" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The timers callback function.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 object
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.TestTimer.cancel">
-             <span class="sig-name descname">
-              <span class="pre">
-               cancel
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                void
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.TestTimer.cancel" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Cancels the timer (the timer will not generate an event).
-             </p>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.TestTimer.interval_ns">
-             <span class="sig-name descname">
-              <span class="pre">
-               interval_ns
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.TestTimer.interval_ns" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The timers set interval.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 uint64_t
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.TestTimer.is_expired">
-             <span class="sig-name descname">
-              <span class="pre">
-               is_expired
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.TestTimer.is_expired" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the timer is expired.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 bool
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.TestTimer.iterate_next_time">
-             <span class="sig-name descname">
-              <span class="pre">
-               iterate_next_time
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                uint64_t
-               </span>
-               <span class="pre">
-                now_ns
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                void
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.TestTimer.iterate_next_time" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Iterates the timers next time and checks if the timer is now expired.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 now_ns
-                </strong>
-                (
-                <em>
-                 uint64_t
-                </em>
-                ) – The UNIX time now (nanoseconds).
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.TestTimer.name">
-             <span class="sig-name descname">
-              <span class="pre">
-               name
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.TestTimer.name" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The timers name using for hashing.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 str
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.TestTimer.next_time_ns">
-             <span class="sig-name descname">
-              <span class="pre">
-               next_time_ns
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.TestTimer.next_time_ns" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The timers next alert timestamp.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 uint64_t
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.TestTimer.pop_event">
-             <span class="sig-name descname">
-              <span class="pre">
-               pop_event
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                UUID4
-               </span>
-               <span class="pre">
-                event_id
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                uint64_t
-               </span>
-               <span class="pre">
-                ts_init
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent">
-                <span class="pre">
-                 TimeEvent
-                </span>
-               </a>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.TestTimer.pop_event" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Return a generated time event with the given ID.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   event_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                   <em>
-                    UUID4
-                   </em>
-                  </a>
-                  ) – The ID for the time event.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ts_init
-                  </strong>
-                  (
-                  <em>
-                   uint64_t
-                  </em>
-                  ) – The UNIX timestamp (nanoseconds) when the object was initialized.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 TimeEvent
-                </em>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.TestTimer.start_time_ns">
-             <span class="sig-name descname">
-              <span class="pre">
-               start_time_ns
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.TestTimer.start_time_ns" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The timers set start time.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 uint64_t
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.TestTimer.stop_time_ns">
-             <span class="sig-name descname">
-              <span class="pre">
-               stop_time_ns
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.TestTimer.stop_time_ns" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The timers set stop time (if set).
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 uint64_t
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py class">
           <dt class="sig sig-object py" id="nautilus_trader.common.timer.ThreadTimer">
            <em class="property">
             <span class="pre">
@@ -31833,640 +29450,6 @@ of events. A
              <p>
               Python wrapper for testing.
              </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py class">
-          <dt class="sig sig-object py" id="nautilus_trader.common.timer.Timer">
-           <em class="property">
-            <span class="pre">
-             class
-            </span>
-            <span class="w">
-            </span>
-           </em>
-           <span class="sig-name descname">
-            <span class="pre">
-             Timer
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="pre">
-             unicode
-            </span>
-            <span class="pre">
-             name,
-            </span>
-            <span class="pre">
-             callback:
-            </span>
-            <span class="pre">
-             Callable[[TimeEvent],
-            </span>
-            <span class="pre">
-             None],
-            </span>
-            <span class="pre">
-             uint64_t
-            </span>
-            <span class="pre">
-             interval_ns,
-            </span>
-            <span class="pre">
-             uint64_t
-            </span>
-            <span class="pre">
-             start_time_ns,
-            </span>
-            <span class="pre">
-             uint64_t
-            </span>
-            <span class="pre">
-             stop_time_ns=0
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <a class="headerlink" href="#nautilus_trader.common.timer.Timer" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Bases:
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              object
-             </span>
-            </code>
-           </p>
-           <p>
-            The abstract base class for all timers.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
-            </dt>
-            <dd class="field-odd">
-             <ul class="simple">
-              <li>
-               <p>
-                <strong>
-                 name
-                </strong>
-                (
-                <em>
-                 str
-                </em>
-                ) – The name for the timer.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 callback
-                </strong>
-                (
-                <em>
-                 Callable
-                </em>
-                <em>
-                 [
-                </em>
-                <em>
-                 [
-                </em>
-                <a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent">
-                 <em>
-                  TimeEvent
-                 </em>
-                </a>
-                <em>
-                 ]
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 None
-                </em>
-                <em>
-                 ]
-                </em>
-                ) – The delegate to call at the next time.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 interval_ns
-                </strong>
-                (
-                <em>
-                 uint64_t
-                </em>
-                ) – The time interval for the timer (not negative).
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 start_time_ns
-                </strong>
-                (
-                <em>
-                 uint64_t
-                </em>
-                ) – The UNIX time (nanoseconds) for timer start.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 stop_time_ns
-                </strong>
-                (
-                <em>
-                 uint64_t
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The UNIX time (nanoseconds) for timer stop (if 0 then timer is continuous).
-               </p>
-              </li>
-             </ul>
-            </dd>
-            <dt class="field-even">
-             Raises
-            </dt>
-            <dd class="field-even">
-             <ul class="simple">
-              <li>
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 name
-                </cite>
-                is not a valid string.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 TypeError
-                </strong>
-                – If
-                <cite>
-                 callback
-                </cite>
-                is not of type
-                <cite>
-                 Callable
-                </cite>
-                .
-               </p>
-              </li>
-             </ul>
-            </dd>
-           </dl>
-           <div class="admonition warning">
-            <p class="admonition-title">
-             Warning
-            </p>
-            <p>
-             This class should not be used directly, but through a concrete subclass.
-            </p>
-           </div>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.Timer.callback">
-             <span class="sig-name descname">
-              <span class="pre">
-               callback
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.Timer.callback" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The timers callback function.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 object
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.Timer.cancel">
-             <span class="sig-name descname">
-              <span class="pre">
-               cancel
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                void
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.Timer.cancel" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Abstract method (implement in subclass).
-             </p>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.Timer.interval_ns">
-             <span class="sig-name descname">
-              <span class="pre">
-               interval_ns
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.Timer.interval_ns" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The timers set interval.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 uint64_t
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.Timer.is_expired">
-             <span class="sig-name descname">
-              <span class="pre">
-               is_expired
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.Timer.is_expired" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the timer is expired.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 bool
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.Timer.iterate_next_time">
-             <span class="sig-name descname">
-              <span class="pre">
-               iterate_next_time
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                uint64_t
-               </span>
-               <span class="pre">
-                now_ns
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                void
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.Timer.iterate_next_time" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Iterates the timers next time and checks if the timer is now expired.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 now_ns
-                </strong>
-                (
-                <em>
-                 uint64_t
-                </em>
-                ) – The UNIX time now (nanoseconds).
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.Timer.name">
-             <span class="sig-name descname">
-              <span class="pre">
-               name
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.Timer.name" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The timers name using for hashing.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 str
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.Timer.next_time_ns">
-             <span class="sig-name descname">
-              <span class="pre">
-               next_time_ns
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.Timer.next_time_ns" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The timers next alert timestamp.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 uint64_t
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.Timer.pop_event">
-             <span class="sig-name descname">
-              <span class="pre">
-               pop_event
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                UUID4
-               </span>
-               <span class="pre">
-                event_id
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                uint64_t
-               </span>
-               <span class="pre">
-                ts_init
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent">
-                <span class="pre">
-                 TimeEvent
-                </span>
-               </a>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.Timer.pop_event" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Return a generated time event with the given ID.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   event_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                   <em>
-                    UUID4
-                   </em>
-                  </a>
-                  ) – The ID for the time event.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ts_init
-                  </strong>
-                  (
-                  <em>
-                   uint64_t
-                  </em>
-                  ) – The UNIX timestamp (nanoseconds) when the object was initialized.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 TimeEvent
-                </em>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.Timer.start_time_ns">
-             <span class="sig-name descname">
-              <span class="pre">
-               start_time_ns
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.Timer.start_time_ns" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The timers set start time.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 uint64_t
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.common.timer.Timer.stop_time_ns">
-             <span class="sig-name descname">
-              <span class="pre">
-               stop_time_ns
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.timer.Timer.stop_time_ns" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The timers set stop time (if set).
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 uint64_t
-                </cite>
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
           </dd>
