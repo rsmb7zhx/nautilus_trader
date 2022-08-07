@@ -14256,50 +14256,13 @@ MarketOrder, we generate a MIN/MAX price based on the side
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                self
+                market_filter
                </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                filters
-               </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <span class="pre">
-                Optional
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
-               </span>
-               <span class="pre">
-                Dict
-               </span>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
-              <span class="w">
               </span>
               <span class="o">
                <span class="pre">
                 =
                </span>
-              </span>
-              <span class="w">
               </span>
               <span class="default_value">
                <span class="pre">
@@ -14309,16 +14272,6 @@ MarketOrder, we generate a MIN/MAX price based on the side
              </em>
              <span class="sig-paren">
               )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.providers.BetfairInstrumentProvider.load_all_async" title="Permalink to this definition">
               ¶
@@ -14518,19 +14471,22 @@ applying the given filters.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                Instrument
-               </span>
-               <span class="pre">
                 instrument
                </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../model/instruments.html#nautilus_trader.model.instruments.base.Instrument" title="nautilus_trader.model.instruments.base.Instrument">
+                <span class="pre">
+                 nautilus_trader.model.instruments.base.Instrument
+                </span>
+               </a>
               </span>
              </em>
              <span class="sig-paren">
@@ -14542,7 +14498,7 @@ applying the given filters.
               </span>
               <span class="sig-return-typehint">
                <span class="pre">
-                void
+                None
                </span>
               </span>
              </span>
@@ -14588,18 +14544,34 @@ applying the given filters.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                self
+                instruments
                </span>
               </span>
-             </em>
-             ,
-             <em class="sig-param">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
               <span class="n">
                <span class="pre">
-                list
+                List
                </span>
-               <span class="pre">
-                instruments
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="../model/instruments.html#nautilus_trader.model.instruments.base.Instrument" title="nautilus_trader.model.instruments.base.Instrument">
+                <span class="pre">
+                 nautilus_trader.model.instruments.base.Instrument
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
                </span>
               </span>
              </em>
@@ -14612,7 +14584,7 @@ applying the given filters.
               </span>
               <span class="sig-return-typehint">
                <span class="pre">
-                void
+                None
                </span>
               </span>
              </span>
@@ -14667,19 +14639,22 @@ applying the given filters.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                Currency
-               </span>
-               <span class="pre">
                 currency
                </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../model/currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency">
+                <span class="pre">
+                 nautilus_trader.model.currency.Currency
+                </span>
+               </a>
               </span>
              </em>
              <span class="sig-paren">
@@ -14691,7 +14666,7 @@ applying the given filters.
               </span>
               <span class="sig-return-typehint">
                <span class="pre">
-                void
+                None
                </span>
               </span>
              </span>
@@ -14724,20 +14699,39 @@ applying the given filters.
              </dl>
             </dd>
            </dl>
-           <dl class="py attribute">
+           <dl class="py property">
             <dt class="sig sig-object py" id="nautilus_trader.adapters.betfair.providers.BetfairInstrumentProvider.count">
+             <em class="property">
+              <span class="pre">
+               property
+              </span>
+              <span class="w">
+              </span>
+             </em>
              <span class="sig-name descname">
               <span class="pre">
                count
               </span>
              </span>
+             <em class="property">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="pre">
+               int
+              </span>
+             </em>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.providers.BetfairInstrumentProvider.count" title="Permalink to this definition">
               ¶
              </a>
             </dt>
             <dd>
              <p>
-              The count of instruments held by the provider.
+              Return the count of instruments held by the provider.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -14763,13 +14757,6 @@ applying the given filters.
              <span class="sig-paren">
               (
              </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
              <span class="sig-paren">
               )
              </span>
@@ -14779,7 +14766,32 @@ applying the given filters.
               </span>
               <span class="sig-return-typehint">
                <span class="pre">
-                dict
+                Dict
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                str
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
+               </span>
+               <span class="w">
+               </span>
+               <a class="reference internal" href="../model/currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency">
+                <span class="pre">
+                 nautilus_trader.model.currency.Currency
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
                </span>
               </span>
              </span>
@@ -14818,18 +14830,19 @@ applying the given filters.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                self
+                code
                </span>
               </span>
-             </em>
-             ,
-             <em class="sig-param">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
               <span class="n">
                <span class="pre">
-                unicode
-               </span>
-               <span class="pre">
-                code
+                str
                </span>
               </span>
              </em>
@@ -14841,11 +14854,24 @@ applying the given filters.
                →
               </span>
               <span class="sig-return-typehint">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
                <a class="reference internal" href="../model/currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency">
                 <span class="pre">
-                 Currency
+                 nautilus_trader.model.currency.Currency
                 </span>
                </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
               </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.providers.BetfairInstrumentProvider.currency" title="Permalink to this definition">
@@ -14885,6 +14911,21 @@ applying the given filters.
                 </code>
                </p>
               </dd>
+              <dt class="field-odd">
+               Raises
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 code
+                </cite>
+                is not a valid string.
+               </p>
+              </dd>
              </dl>
             </dd>
            </dl>
@@ -14901,19 +14942,22 @@ applying the given filters.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                InstrumentId
-               </span>
-               <span class="pre">
                 instrument_id
                </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.InstrumentId
+                </span>
+               </a>
               </span>
              </em>
              <span class="sig-paren">
@@ -14924,11 +14968,24 @@ applying the given filters.
                →
               </span>
               <span class="sig-return-typehint">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
                <a class="reference internal" href="../model/instruments.html#nautilus_trader.model.instruments.base.Instrument" title="nautilus_trader.model.instruments.base.Instrument">
                 <span class="pre">
-                 Instrument
+                 nautilus_trader.model.instruments.base.Instrument
                 </span>
                </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
               </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.providers.BetfairInstrumentProvider.find" title="Permalink to this definition">
@@ -14983,13 +15040,6 @@ applying the given filters.
              <span class="sig-paren">
               (
              </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
              <span class="sig-paren">
               )
              </span>
@@ -14999,7 +15049,34 @@ applying the given filters.
               </span>
               <span class="sig-return-typehint">
                <span class="pre">
-                dict
+                Dict
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.InstrumentId
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
+               </span>
+               <span class="w">
+               </span>
+               <a class="reference internal" href="../model/instruments.html#nautilus_trader.model.instruments.base.Instrument" title="nautilus_trader.model.instruments.base.Instrument">
+                <span class="pre">
+                 nautilus_trader.model.instruments.base.Instrument
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
                </span>
               </span>
              </span>
@@ -15030,6 +15107,13 @@ applying the given filters.
            </dl>
            <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.adapters.betfair.providers.BetfairInstrumentProvider.initialize">
+             <em class="property">
+              <span class="pre">
+               async
+              </span>
+              <span class="w">
+              </span>
+             </em>
              <span class="sig-name descname">
               <span class="pre">
                initialize
@@ -15038,13 +15122,6 @@ applying the given filters.
              <span class="sig-paren">
               (
              </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
              <span class="sig-paren">
               )
              </span>
@@ -15085,13 +15162,6 @@ applying the given filters.
              <span class="sig-paren">
               (
              </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
              <span class="sig-paren">
               )
              </span>
@@ -15101,7 +15171,22 @@ applying the given filters.
               </span>
               <span class="sig-return-typehint">
                <span class="pre">
-                list
+                List
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="../model/instruments.html#nautilus_trader.model.instruments.base.Instrument" title="nautilus_trader.model.instruments.base.Instrument">
+                <span class="pre">
+                 nautilus_trader.model.instruments.base.Instrument
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
                </span>
               </span>
              </span>
@@ -15140,36 +15225,66 @@ applying the given filters.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                self
+                instrument_id
                </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.InstrumentId
+                </span>
+               </a>
               </span>
              </em>
              ,
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                InstrumentId
-               </span>
-               <span class="pre">
-                instrument_id:
-               </span>
-               <span class="pre">
-                InstrumentId
+                filters
                </span>
               </span>
-             </em>
-             ,
-             <em class="sig-param">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
               <span class="n">
                <span class="pre">
-                filters:
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
                </span>
                <span class="pre">
-                Optional[Dict]
+                Dict
                </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
                <span class="pre">
                 =
                </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
                <span class="pre">
                 None
                </span>
@@ -15177,16 +15292,6 @@ applying the given filters.
              </em>
              <span class="sig-paren">
               )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.providers.BetfairInstrumentProvider.load" title="Permalink to this definition">
               ¶
@@ -15250,14 +15355,6 @@ applying the given filters.
              <span class="sig-paren">
               (
              </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
              <em class="sig-param">
               <span class="n">
                <span class="pre">
@@ -15353,6 +15450,13 @@ given filters.
            </dl>
            <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.adapters.betfair.providers.BetfairInstrumentProvider.load_async">
+             <em class="property">
+              <span class="pre">
+               async
+              </span>
+              <span class="w">
+              </span>
+             </em>
              <span class="sig-name descname">
               <span class="pre">
                load_async
@@ -15364,36 +15468,66 @@ given filters.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                self
+                instrument_id
                </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.InstrumentId
+                </span>
+               </a>
               </span>
              </em>
              ,
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                InstrumentId
-               </span>
-               <span class="pre">
-                instrument_id:
-               </span>
-               <span class="pre">
-                InstrumentId
+                filters
                </span>
               </span>
-             </em>
-             ,
-             <em class="sig-param">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
               <span class="n">
                <span class="pre">
-                filters:
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
                </span>
                <span class="pre">
-                Optional[Dict]
+                Dict
                </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
                <span class="pre">
                 =
                </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
                <span class="pre">
                 None
                </span>
@@ -15486,14 +15620,6 @@ applying the given filters.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
                 instrument_ids
                </span>
               </span>
@@ -15515,7 +15641,7 @@ applying the given filters.
                </span>
                <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
                 <span class="pre">
-                 InstrumentId
+                 nautilus_trader.model.identifiers.InstrumentId
                 </span>
                </a>
                <span class="p">
@@ -15574,16 +15700,6 @@ applying the given filters.
              </em>
              <span class="sig-paren">
               )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.providers.BetfairInstrumentProvider.load_ids" title="Permalink to this definition">
               ¶
@@ -15648,6 +15764,13 @@ applying the given filters.
            </dl>
            <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.adapters.betfair.providers.BetfairInstrumentProvider.load_ids_async">
+             <em class="property">
+              <span class="pre">
+               async
+              </span>
+              <span class="w">
+              </span>
+             </em>
              <span class="sig-name descname">
               <span class="pre">
                load_ids_async
@@ -15656,14 +15779,6 @@ applying the given filters.
              <span class="sig-paren">
               (
              </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
              <em class="sig-param">
               <span class="n">
                <span class="pre">
@@ -15688,7 +15803,7 @@ applying the given filters.
                </span>
                <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
                 <span class="pre">
-                 InstrumentId
+                 nautilus_trader.model.identifiers.InstrumentId
                 </span>
                </a>
                <span class="p">
@@ -15838,20 +15953,41 @@ applying the given filters.
              </dl>
             </dd>
            </dl>
-           <dl class="py attribute">
+           <dl class="py property">
             <dt class="sig sig-object py" id="nautilus_trader.adapters.betfair.providers.BetfairInstrumentProvider.venue">
+             <em class="property">
+              <span class="pre">
+               property
+              </span>
+              <span class="w">
+              </span>
+             </em>
              <span class="sig-name descname">
               <span class="pre">
                venue
               </span>
              </span>
+             <em class="property">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+               <span class="pre">
+                nautilus_trader.model.identifiers.Venue
+               </span>
+              </a>
+             </em>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.providers.BetfairInstrumentProvider.venue" title="Permalink to this definition">
               ¶
              </a>
             </dt>
             <dd>
              <p>
-              The providers venue.
+              Return the providers venue.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -15859,9 +15995,9 @@ applying the given filters.
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  Venue
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
