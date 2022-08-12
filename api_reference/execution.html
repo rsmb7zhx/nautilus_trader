@@ -753,112 +753,71 @@ trading operations.
             (
            </span>
            <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              ClientId
-             </span>
-             <span class="pre">
-              client_id
-             </span>
+            <span class="pre">
+             ClientId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Venue
-             </span>
-             <span class="pre">
-              venue
-             </span>
+            <span class="pre">
+             client_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              OMSType
-             </span>
-             <span class="pre">
-              oms_type
-             </span>
+            <span class="pre">
+             Venue
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              AccountType
-             </span>
-             <span class="pre">
-              account_type
-             </span>
+            <span class="pre">
+             venue:
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Currency
-             </span>
-             <span class="pre">
-              base_currency
-             </span>
+            <span class="pre">
+             Optional[Venue],
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              MessageBus
-             </span>
-             <span class="pre">
-              msgbus
-             </span>
+            <span class="pre">
+             OMSType
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Cache
-             </span>
-             <span class="pre">
-              cache
-             </span>
+            <span class="pre">
+             oms_type,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Clock
-             </span>
-             <span class="pre">
-              clock
-             </span>
+            <span class="pre">
+             AccountType
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Logger
-             </span>
-             <span class="pre">
-              logger
-             </span>
+            <span class="pre">
+             account_type,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              dict
-             </span>
-             <span class="pre">
-              config=None
-             </span>
+            <span class="pre">
+             Currency
+            </span>
+            <span class="pre">
+             base_currency:
+            </span>
+            <span class="pre">
+             Optional[Currency],
+            </span>
+            <span class="pre">
+             MessageBus
+            </span>
+            <span class="pre">
+             msgbus,
+            </span>
+            <span class="pre">
+             Cache
+            </span>
+            <span class="pre">
+             cache,
+            </span>
+            <span class="pre">
+             Clock
+            </span>
+            <span class="pre">
+             clock,
+            </span>
+            <span class="pre">
+             Logger
+            </span>
+            <span class="pre">
+             logger,
+            </span>
+            <span class="pre">
+             dict
+            </span>
+            <span class="pre">
+             config=None
             </span>
            </em>
            <span class="sig-paren">
@@ -2589,164 +2548,95 @@ then the component state will not change, and an error will be logged.
               (
              </span>
              <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
+              <span class="pre">
+               self,
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                StrategyId
-               </span>
-               <span class="pre">
-                strategy_id
-               </span>
+              <span class="pre">
+               StrategyId
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                InstrumentId
-               </span>
-               <span class="pre">
-                instrument_id
-               </span>
+              <span class="pre">
+               strategy_id,
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                ClientOrderId
-               </span>
-               <span class="pre">
-                client_order_id
-               </span>
+              <span class="pre">
+               InstrumentId
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                VenueOrderId
-               </span>
-               <span class="pre">
-                venue_order_id
-               </span>
+              <span class="pre">
+               instrument_id,
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                PositionId
-               </span>
-               <span class="pre">
-                venue_position_id
-               </span>
+              <span class="pre">
+               ClientOrderId
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                TradeId
-               </span>
-               <span class="pre">
-                trade_id
-               </span>
+              <span class="pre">
+               client_order_id,
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                OrderSide
-               </span>
-               <span class="pre">
-                order_side
-               </span>
+              <span class="pre">
+               VenueOrderId
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                OrderType
-               </span>
-               <span class="pre">
-                order_type
-               </span>
+              <span class="pre">
+               venue_order_id,
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                Quantity
-               </span>
-               <span class="pre">
-                last_qty
-               </span>
+              <span class="pre">
+               PositionId
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                Price
-               </span>
-               <span class="pre">
-                last_px
-               </span>
+              <span class="pre">
+               venue_position_id:
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                Currency
-               </span>
-               <span class="pre">
-                quote_currency
-               </span>
+              <span class="pre">
+               Optional[PositionId],
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                Money
-               </span>
-               <span class="pre">
-                commission
-               </span>
+              <span class="pre">
+               TradeId
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                LiquiditySide
-               </span>
-               <span class="pre">
-                liquidity_side
-               </span>
+              <span class="pre">
+               trade_id,
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                uint64_t
-               </span>
-               <span class="pre">
-                ts_event
-               </span>
+              <span class="pre">
+               OrderSide
+              </span>
+              <span class="pre">
+               order_side,
+              </span>
+              <span class="pre">
+               OrderType
+              </span>
+              <span class="pre">
+               order_type,
+              </span>
+              <span class="pre">
+               Quantity
+              </span>
+              <span class="pre">
+               last_qty,
+              </span>
+              <span class="pre">
+               Price
+              </span>
+              <span class="pre">
+               last_px,
+              </span>
+              <span class="pre">
+               Currency
+              </span>
+              <span class="pre">
+               quote_currency,
+              </span>
+              <span class="pre">
+               Money
+              </span>
+              <span class="pre">
+               commission,
+              </span>
+              <span class="pre">
+               LiquiditySide
+              </span>
+              <span class="pre">
+               liquidity_side,
+              </span>
+              <span class="pre">
+               uint64_t
+              </span>
+              <span class="pre">
+               ts_event
               </span>
              </em>
              <span class="sig-paren">
@@ -8252,90 +8142,56 @@ then the component state will not change, and an error will be logged.
             (
            </span>
            <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              TraderId
-             </span>
-             <span class="pre">
-              trader_id
-             </span>
+            <span class="pre">
+             TraderId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              StrategyId
-             </span>
-             <span class="pre">
-              strategy_id
-             </span>
+            <span class="pre">
+             trader_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              InstrumentId
-             </span>
-             <span class="pre">
-              instrument_id
-             </span>
+            <span class="pre">
+             StrategyId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              ClientOrderId
-             </span>
-             <span class="pre">
-              client_order_id
-             </span>
+            <span class="pre">
+             strategy_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              VenueOrderId
-             </span>
-             <span class="pre">
-              venue_order_id
-             </span>
+            <span class="pre">
+             InstrumentId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              UUID4
-             </span>
-             <span class="pre">
-              command_id
-             </span>
+            <span class="pre">
+             instrument_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              uint64_t
-             </span>
-             <span class="pre">
-              ts_init
-             </span>
+            <span class="pre">
+             ClientOrderId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              ClientId
-             </span>
-             <span class="pre">
-              client_id=None
-             </span>
+            <span class="pre">
+             client_order_id,
+            </span>
+            <span class="pre">
+             VenueOrderId
+            </span>
+            <span class="pre">
+             venue_order_id:
+            </span>
+            <span class="pre">
+             Optional[VenueOrderId],
+            </span>
+            <span class="pre">
+             UUID4
+            </span>
+            <span class="pre">
+             command_id,
+            </span>
+            <span class="pre">
+             uint64_t
+            </span>
+            <span class="pre">
+             ts_init,
+            </span>
+            <span class="pre">
+             ClientId
+            </span>
+            <span class="pre">
+             client_id=None
             </span>
            </em>
            <span class="sig-paren">
@@ -8937,123 +8793,83 @@ then the component state will not change, and an error will be logged.
             (
            </span>
            <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              TraderId
-             </span>
-             <span class="pre">
-              trader_id
-             </span>
+            <span class="pre">
+             TraderId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              StrategyId
-             </span>
-             <span class="pre">
-              strategy_id
-             </span>
+            <span class="pre">
+             trader_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              InstrumentId
-             </span>
-             <span class="pre">
-              instrument_id
-             </span>
+            <span class="pre">
+             StrategyId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              ClientOrderId
-             </span>
-             <span class="pre">
-              client_order_id
-             </span>
+            <span class="pre">
+             strategy_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              VenueOrderId
-             </span>
-             <span class="pre">
-              venue_order_id
-             </span>
+            <span class="pre">
+             InstrumentId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Quantity
-             </span>
-             <span class="pre">
-              quantity
-             </span>
+            <span class="pre">
+             instrument_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Price
-             </span>
-             <span class="pre">
-              price
-             </span>
+            <span class="pre">
+             ClientOrderId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Price
-             </span>
-             <span class="pre">
-              trigger_price
-             </span>
+            <span class="pre">
+             client_order_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              UUID4
-             </span>
-             <span class="pre">
-              command_id
-             </span>
+            <span class="pre">
+             VenueOrderId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              uint64_t
-             </span>
-             <span class="pre">
-              ts_init
-             </span>
+            <span class="pre">
+             venue_order_id:
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              ClientId
-             </span>
-             <span class="pre">
-              client_id=None
-             </span>
+            <span class="pre">
+             Optional[VenueOrderId],
+            </span>
+            <span class="pre">
+             Quantity
+            </span>
+            <span class="pre">
+             quantity:
+            </span>
+            <span class="pre">
+             Optional[Quantity],
+            </span>
+            <span class="pre">
+             Price
+            </span>
+            <span class="pre">
+             price:
+            </span>
+            <span class="pre">
+             Optional[Price],
+            </span>
+            <span class="pre">
+             Price
+            </span>
+            <span class="pre">
+             trigger_price:
+            </span>
+            <span class="pre">
+             Optional[Price],
+            </span>
+            <span class="pre">
+             UUID4
+            </span>
+            <span class="pre">
+             command_id,
+            </span>
+            <span class="pre">
+             uint64_t
+            </span>
+            <span class="pre">
+             ts_init,
+            </span>
+            <span class="pre">
+             ClientId
+            </span>
+            <span class="pre">
+             client_id=None
             </span>
            </em>
            <span class="sig-paren">
@@ -9820,90 +9636,56 @@ then the component state will not change, and an error will be logged.
             (
            </span>
            <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              TraderId
-             </span>
-             <span class="pre">
-              trader_id
-             </span>
+            <span class="pre">
+             TraderId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              StrategyId
-             </span>
-             <span class="pre">
-              strategy_id
-             </span>
+            <span class="pre">
+             trader_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              InstrumentId
-             </span>
-             <span class="pre">
-              instrument_id
-             </span>
+            <span class="pre">
+             StrategyId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              ClientOrderId
-             </span>
-             <span class="pre">
-              client_order_id
-             </span>
+            <span class="pre">
+             strategy_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              VenueOrderId
-             </span>
-             <span class="pre">
-              venue_order_id
-             </span>
+            <span class="pre">
+             InstrumentId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              UUID4
-             </span>
-             <span class="pre">
-              command_id
-             </span>
+            <span class="pre">
+             instrument_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              uint64_t
-             </span>
-             <span class="pre">
-              ts_init
-             </span>
+            <span class="pre">
+             ClientOrderId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              ClientId
-             </span>
-             <span class="pre">
-              client_id=None
-             </span>
+            <span class="pre">
+             client_order_id,
+            </span>
+            <span class="pre">
+             VenueOrderId
+            </span>
+            <span class="pre">
+             venue_order_id:
+            </span>
+            <span class="pre">
+             Optional[VenueOrderId],
+            </span>
+            <span class="pre">
+             UUID4
+            </span>
+            <span class="pre">
+             command_id,
+            </span>
+            <span class="pre">
+             uint64_t
+            </span>
+            <span class="pre">
+             ts_init,
+            </span>
+            <span class="pre">
+             ClientId
+            </span>
+            <span class="pre">
+             client_id=None
             </span>
            </em>
            <span class="sig-paren">
@@ -10497,90 +10279,56 @@ then the component state will not change, and an error will be logged.
             (
            </span>
            <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              TraderId
-             </span>
-             <span class="pre">
-              trader_id
-             </span>
+            <span class="pre">
+             TraderId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              StrategyId
-             </span>
-             <span class="pre">
-              strategy_id
-             </span>
+            <span class="pre">
+             trader_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              PositionId
-             </span>
-             <span class="pre">
-              position_id
-             </span>
+            <span class="pre">
+             StrategyId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              bool
-             </span>
-             <span class="pre">
-              check_position_exists
-             </span>
+            <span class="pre">
+             strategy_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Order
-             </span>
-             <span class="pre">
-              order
-             </span>
+            <span class="pre">
+             PositionId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              UUID4
-             </span>
-             <span class="pre">
-              command_id
-             </span>
+            <span class="pre">
+             position_id:
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              uint64_t
-             </span>
-             <span class="pre">
-              ts_init
-             </span>
+            <span class="pre">
+             Optional[PositionId],
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              ClientId
-             </span>
-             <span class="pre">
-              client_id=None
-             </span>
+            <span class="pre">
+             bool
+            </span>
+            <span class="pre">
+             check_position_exists,
+            </span>
+            <span class="pre">
+             Order
+            </span>
+            <span class="pre">
+             order,
+            </span>
+            <span class="pre">
+             UUID4
+            </span>
+            <span class="pre">
+             command_id,
+            </span>
+            <span class="pre">
+             uint64_t
+            </span>
+            <span class="pre">
+             ts_init,
+            </span>
+            <span class="pre">
+             ClientId
+            </span>
+            <span class="pre">
+             client_id=None
             </span>
            </em>
            <span class="sig-paren">
@@ -11818,68 +11566,44 @@ protocol.
             (
            </span>
            <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              ClientId
-             </span>
-             <span class="pre">
-              client_id
-             </span>
+            <span class="pre">
+             ClientId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              TraderId
-             </span>
-             <span class="pre">
-              trader_id
-             </span>
+            <span class="pre">
+             client_id:
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              StrategyId
-             </span>
-             <span class="pre">
-              strategy_id
-             </span>
+            <span class="pre">
+             Optional[ClientId],
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              InstrumentId
-             </span>
-             <span class="pre">
-              instrument_id
-             </span>
+            <span class="pre">
+             TraderId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              UUID4
-             </span>
-             <span class="pre">
-              command_id
-             </span>
+            <span class="pre">
+             trader_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              uint64_t
-             </span>
-             <span class="pre">
-              ts_init
-             </span>
+            <span class="pre">
+             StrategyId
+            </span>
+            <span class="pre">
+             strategy_id,
+            </span>
+            <span class="pre">
+             InstrumentId
+            </span>
+            <span class="pre">
+             instrument_id,
+            </span>
+            <span class="pre">
+             UUID4
+            </span>
+            <span class="pre">
+             command_id,
+            </span>
+            <span class="pre">
+             uint64_t
+            </span>
+            <span class="pre">
+             ts_init
             </span>
            </em>
            <span class="sig-paren">
@@ -13400,7 +13124,16 @@ including status of all orders, trades for those orders and open positions.
               ClientOrderId
              </span>
              <span class="pre">
-              client_order_id=None
+              client_order_id:
+             </span>
+             <span class="pre">
+              Optional[ClientOrderId]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
              </span>
             </span>
            </em>
@@ -13411,7 +13144,16 @@ including status of all orders, trades for those orders and open positions.
               OrderListId
              </span>
              <span class="pre">
-              order_list_id=None
+              order_list_id:
+             </span>
+             <span class="pre">
+              Optional[OrderListId]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
              </span>
             </span>
            </em>
@@ -13433,7 +13175,16 @@ including status of all orders, trades for those orders and open positions.
               datetime
              </span>
              <span class="pre">
-              expire_time=None
+              expire_time:
+             </span>
+             <span class="pre">
+              Optional[datetime]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
              </span>
             </span>
            </em>
@@ -13444,7 +13195,16 @@ including status of all orders, trades for those orders and open positions.
               Price
              </span>
              <span class="pre">
-              price=None
+              price:
+             </span>
+             <span class="pre">
+              Optional[Price]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
              </span>
             </span>
            </em>
@@ -13455,7 +13215,16 @@ including status of all orders, trades for those orders and open positions.
               Price
              </span>
              <span class="pre">
-              trigger_price=None
+              trigger_price:
+             </span>
+             <span class="pre">
+              Optional[Price]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
              </span>
             </span>
            </em>
@@ -13539,7 +13308,16 @@ including status of all orders, trades for those orders and open positions.
               Quantity
              </span>
              <span class="pre">
-              display_qty=None
+              display_qty:
+             </span>
+             <span class="pre">
+              Optional[Quantity]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
              </span>
             </span>
            </em>
@@ -13572,7 +13350,16 @@ including status of all orders, trades for those orders and open positions.
               unicode
              </span>
              <span class="pre">
-              cancel_reason=None
+              cancel_reason:
+             </span>
+             <span class="pre">
+              Optional[str]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
              </span>
             </span>
            </em>
@@ -15259,7 +15046,16 @@ including status of all orders, trades for those orders and open positions.
               PositionId
              </span>
              <span class="pre">
-              venue_position_id=None
+              venue_position_id:
+             </span>
+             <span class="pre">
+              Optional[PositionId]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
              </span>
             </span>
            </em>
@@ -15882,7 +15678,16 @@ position ID resolution.
               ClientOrderId
              </span>
              <span class="pre">
-              client_order_id=None
+              client_order_id:
+             </span>
+             <span class="pre">
+              Optional[ClientOrderId]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
              </span>
             </span>
            </em>
@@ -15893,7 +15698,16 @@ position ID resolution.
               PositionId
              </span>
              <span class="pre">
-              venue_position_id=None
+              venue_position_id:
+             </span>
+             <span class="pre">
+              Optional[PositionId]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
              </span>
             </span>
            </em>
@@ -15904,7 +15718,16 @@ position ID resolution.
               Money
              </span>
              <span class="pre">
-              commission=None
+              commission:
+             </span>
+             <span class="pre">
+              Optional[Money]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
              </span>
             </span>
            </em>

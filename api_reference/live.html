@@ -775,90 +775,56 @@ could also be possible to write clients for specialized data publishers.
             (
            </span>
            <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              loop:
-             </span>
-             <span class="pre">
-              asyncio.AbstractEventLoop
-             </span>
+            <span class="pre">
+             loop:
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              ClientId
-             </span>
-             <span class="pre">
-              client_id
-             </span>
+            <span class="pre">
+             asyncio.AbstractEventLoop,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Venue
-             </span>
-             <span class="pre">
-              venue
-             </span>
+            <span class="pre">
+             ClientId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              MessageBus
-             </span>
-             <span class="pre">
-              msgbus
-             </span>
+            <span class="pre">
+             client_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Cache
-             </span>
-             <span class="pre">
-              cache
-             </span>
+            <span class="pre">
+             Venue
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              LiveClock
-             </span>
-             <span class="pre">
-              clock
-             </span>
+            <span class="pre">
+             venue:
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Logger
-             </span>
-             <span class="pre">
-              logger
-             </span>
+            <span class="pre">
+             Optional[Venue],
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              dict
-             </span>
-             <span class="pre">
-              config=None
-             </span>
+            <span class="pre">
+             MessageBus
+            </span>
+            <span class="pre">
+             msgbus,
+            </span>
+            <span class="pre">
+             Cache
+            </span>
+            <span class="pre">
+             cache,
+            </span>
+            <span class="pre">
+             LiveClock
+            </span>
+            <span class="pre">
+             clock,
+            </span>
+            <span class="pre">
+             Logger
+            </span>
+            <span class="pre">
+             logger,
+            </span>
+            <span class="pre">
+             dict
+            </span>
+            <span class="pre">
+             config=None
             </span>
            </em>
            <span class="sig-paren">
@@ -2456,101 +2422,62 @@ then the component state will not change, and an error will be logged.
             (
            </span>
            <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              loop:
-             </span>
-             <span class="pre">
-              asyncio.AbstractEventLoop
-             </span>
+            <span class="pre">
+             loop:
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              ClientId
-             </span>
-             <span class="pre">
-              client_id
-             </span>
+            <span class="pre">
+             asyncio.AbstractEventLoop,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Venue
-             </span>
-             <span class="pre">
-              venue
-             </span>
+            <span class="pre">
+             ClientId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              instrument_provider:
-             </span>
-             <span class="pre">
-              InstrumentProvider
-             </span>
+            <span class="pre">
+             client_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              MessageBus
-             </span>
-             <span class="pre">
-              msgbus
-             </span>
+            <span class="pre">
+             Venue
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Cache
-             </span>
-             <span class="pre">
-              cache
-             </span>
+            <span class="pre">
+             venue:
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              LiveClock
-             </span>
-             <span class="pre">
-              clock
-             </span>
+            <span class="pre">
+             Optional[Venue],
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Logger
-             </span>
-             <span class="pre">
-              logger
-             </span>
+            <span class="pre">
+             instrument_provider:
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              dict
-             </span>
-             <span class="pre">
-              config=None
-             </span>
+            <span class="pre">
+             InstrumentProvider,
+            </span>
+            <span class="pre">
+             MessageBus
+            </span>
+            <span class="pre">
+             msgbus,
+            </span>
+            <span class="pre">
+             Cache
+            </span>
+            <span class="pre">
+             cache,
+            </span>
+            <span class="pre">
+             LiveClock
+            </span>
+            <span class="pre">
+             clock,
+            </span>
+            <span class="pre">
+             Logger
+            </span>
+            <span class="pre">
+             logger,
+            </span>
+            <span class="pre">
+             dict
+            </span>
+            <span class="pre">
+             config=None
             </span>
            </em>
            <span class="sig-paren">
@@ -9818,134 +9745,83 @@ API which may be presented directly by an exchange, or broker intermediary.
             (
            </span>
            <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              loop:
-             </span>
-             <span class="pre">
-              asyncio.AbstractEventLoop
-             </span>
+            <span class="pre">
+             loop:
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              ClientId
-             </span>
-             <span class="pre">
-              client_id
-             </span>
+            <span class="pre">
+             asyncio.AbstractEventLoop,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Venue
-             </span>
-             <span class="pre">
-              venue
-             </span>
+            <span class="pre">
+             ClientId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              OMSType
-             </span>
-             <span class="pre">
-              oms_type
-             </span>
+            <span class="pre">
+             client_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              AccountType
-             </span>
-             <span class="pre">
-              account_type
-             </span>
+            <span class="pre">
+             Venue
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Currency
-             </span>
-             <span class="pre">
-              base_currency
-             </span>
+            <span class="pre">
+             venue:
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              instrument_provider:
-             </span>
-             <span class="pre">
-              InstrumentProvider
-             </span>
+            <span class="pre">
+             Optional[Venue],
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              MessageBus
-             </span>
-             <span class="pre">
-              msgbus
-             </span>
+            <span class="pre">
+             OMSType
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Cache
-             </span>
-             <span class="pre">
-              cache
-             </span>
+            <span class="pre">
+             oms_type,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              LiveClock
-             </span>
-             <span class="pre">
-              clock
-             </span>
+            <span class="pre">
+             AccountType
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Logger
-             </span>
-             <span class="pre">
-              logger
-             </span>
+            <span class="pre">
+             account_type,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              dict
-             </span>
-             <span class="pre">
-              config=None
-             </span>
+            <span class="pre">
+             Currency
+            </span>
+            <span class="pre">
+             base_currency:
+            </span>
+            <span class="pre">
+             Optional[Currency],
+            </span>
+            <span class="pre">
+             instrument_provider:
+            </span>
+            <span class="pre">
+             InstrumentProvider,
+            </span>
+            <span class="pre">
+             MessageBus
+            </span>
+            <span class="pre">
+             msgbus,
+            </span>
+            <span class="pre">
+             Cache
+            </span>
+            <span class="pre">
+             cache,
+            </span>
+            <span class="pre">
+             LiveClock
+            </span>
+            <span class="pre">
+             clock,
+            </span>
+            <span class="pre">
+             Logger
+            </span>
+            <span class="pre">
+             logger,
+            </span>
+            <span class="pre">
+             dict
+            </span>
+            <span class="pre">
+             config=None
             </span>
            </em>
            <span class="sig-paren">
@@ -11846,164 +11722,95 @@ then the component state will not change, and an error will be logged.
               (
              </span>
              <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
+              <span class="pre">
+               self,
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                StrategyId
-               </span>
-               <span class="pre">
-                strategy_id
-               </span>
+              <span class="pre">
+               StrategyId
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                InstrumentId
-               </span>
-               <span class="pre">
-                instrument_id
-               </span>
+              <span class="pre">
+               strategy_id,
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                ClientOrderId
-               </span>
-               <span class="pre">
-                client_order_id
-               </span>
+              <span class="pre">
+               InstrumentId
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                VenueOrderId
-               </span>
-               <span class="pre">
-                venue_order_id
-               </span>
+              <span class="pre">
+               instrument_id,
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                PositionId
-               </span>
-               <span class="pre">
-                venue_position_id
-               </span>
+              <span class="pre">
+               ClientOrderId
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                TradeId
-               </span>
-               <span class="pre">
-                trade_id
-               </span>
+              <span class="pre">
+               client_order_id,
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                OrderSide
-               </span>
-               <span class="pre">
-                order_side
-               </span>
+              <span class="pre">
+               VenueOrderId
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                OrderType
-               </span>
-               <span class="pre">
-                order_type
-               </span>
+              <span class="pre">
+               venue_order_id,
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                Quantity
-               </span>
-               <span class="pre">
-                last_qty
-               </span>
+              <span class="pre">
+               PositionId
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                Price
-               </span>
-               <span class="pre">
-                last_px
-               </span>
+              <span class="pre">
+               venue_position_id:
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                Currency
-               </span>
-               <span class="pre">
-                quote_currency
-               </span>
+              <span class="pre">
+               Optional[PositionId],
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                Money
-               </span>
-               <span class="pre">
-                commission
-               </span>
+              <span class="pre">
+               TradeId
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                LiquiditySide
-               </span>
-               <span class="pre">
-                liquidity_side
-               </span>
+              <span class="pre">
+               trade_id,
               </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                uint64_t
-               </span>
-               <span class="pre">
-                ts_event
-               </span>
+              <span class="pre">
+               OrderSide
+              </span>
+              <span class="pre">
+               order_side,
+              </span>
+              <span class="pre">
+               OrderType
+              </span>
+              <span class="pre">
+               order_type,
+              </span>
+              <span class="pre">
+               Quantity
+              </span>
+              <span class="pre">
+               last_qty,
+              </span>
+              <span class="pre">
+               Price
+              </span>
+              <span class="pre">
+               last_px,
+              </span>
+              <span class="pre">
+               Currency
+              </span>
+              <span class="pre">
+               quote_currency,
+              </span>
+              <span class="pre">
+               Money
+              </span>
+              <span class="pre">
+               commission,
+              </span>
+              <span class="pre">
+               LiquiditySide
+              </span>
+              <span class="pre">
+               liquidity_side,
+              </span>
+              <span class="pre">
+               uint64_t
+              </span>
+              <span class="pre">
+               ts_event
               </span>
              </em>
              <span class="sig-paren">
