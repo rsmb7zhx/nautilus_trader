@@ -1050,16 +1050,6 @@
            <div class="highlight">
             <pre><span></span><span class="n">instrument</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">(</span><span class="n">as_nautilus</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="n">data_config</span><span class="o">=</span><span class="p">[</span>
-    <span class="n">BacktestDataConfig</span><span class="p">(</span>
-        <span class="n">catalog_path</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">ParquetDataCatalog</span><span class="o">.</span><span class="n">from_env</span><span class="p">()</span><span class="o">.</span><span class="n">path</span><span class="p">),</span>
-        <span class="n">data_cls</span><span class="o">=</span><span class="n">QuoteTick</span><span class="p">,</span>
-        <span class="n">instrument_id</span><span class="o">=</span><span class="n">instrument</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
-        <span class="n">start_time</span><span class="o">=</span><span class="mi">1580398089820000000</span><span class="p">,</span>
-        <span class="n">end_time</span><span class="o">=</span><span class="mi">1580504394501000000</span><span class="p">,</span>
-    <span class="p">)</span>
-<span class="p">]</span>
-
 <span class="n">venues_config</span><span class="o">=</span><span class="p">[</span>
     <span class="n">BacktestVenueConfig</span><span class="p">(</span>
         <span class="n">name</span><span class="o">=</span><span class="s2">"SIM"</span><span class="p">,</span>
@@ -1067,6 +1057,16 @@
         <span class="n">account_type</span><span class="o">=</span><span class="s2">"MARGIN"</span><span class="p">,</span>
         <span class="n">base_currency</span><span class="o">=</span><span class="s2">"USD"</span><span class="p">,</span>
         <span class="n">starting_balances</span><span class="o">=</span><span class="p">[</span><span class="s2">"1000000 USD"</span><span class="p">],</span>
+    <span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">data_config</span><span class="o">=</span><span class="p">[</span>
+    <span class="n">BacktestDataConfig</span><span class="p">(</span>
+        <span class="n">catalog_path</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">ParquetDataCatalog</span><span class="o">.</span><span class="n">from_env</span><span class="p">()</span><span class="o">.</span><span class="n">path</span><span class="p">),</span>
+        <span class="n">data_cls</span><span class="o">=</span><span class="n">QuoteTick</span><span class="p">,</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">instrument</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+        <span class="n">start_time</span><span class="o">=</span><span class="mi">1580398089820000000</span><span class="p">,</span>
+        <span class="n">end_time</span><span class="o">=</span><span class="mi">1580504394501000000</span><span class="p">,</span>
     <span class="p">)</span>
 <span class="p">]</span>
 

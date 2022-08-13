@@ -8188,6 +8188,17 @@ data types could result in incorrect backtest logic.
              <p>
               Add the instrument to the backtest engine.
              </p>
+             <p>
+              The instrument must be valid for its associated venue. For instance
+derivative instruments which would trade on margin cannot be added to
+a venue with a
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                CASH
+               </span>
+              </code>
+              account.
+             </p>
              <dl class="field-list simple">
               <dt class="field-odd">
                Parameters
@@ -8205,6 +8216,37 @@ data types could result in incorrect backtest logic.
                 </a>
                 ) – The instrument to add.
                </p>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   InvalidConfiguration
+                  </strong>
+                  – If the venue for the
+                  <cite>
+                   instrument
+                  </cite>
+                  has not been added to the engine.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   InvalidConfiguration
+                  </strong>
+                  – If
+                  <cite>
+                   instrument
+                  </cite>
+                  is not valid for its associated venue.
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>
@@ -8571,7 +8613,7 @@ data types could result in incorrect backtest logic.
                     Venue
                    </em>
                   </a>
-                  ) – The exchange venue ID.
+                  ) – The venue ID.
                  </p>
                 </li>
                 <li>
@@ -8826,7 +8868,7 @@ generate new position IDs.
                   <em>
                    bool
                   </em>
-                  ) – If stop orders are rejected on submission if in the market.
+                  ) – If stop orders are rejected on submission if trigger price is in the market.
                  </p>
                 </li>
                </ul>
@@ -8839,7 +8881,7 @@ generate new position IDs.
                 <strong>
                  ValueError
                 </strong>
-                – If an exchange of
+                – If
                 <cite>
                  venue
                 </cite>
@@ -9074,6 +9116,9 @@ generate new position IDs.
             <dd>
              <p>
               Clear the engines internal data stream.
+             </p>
+             <p>
+              Does not clear added instruments.
              </p>
             </dd>
            </dl>
@@ -10940,6 +10985,120 @@ to the end of the data.
                  AccountType
                 </cite>
                </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.add_instrument">
+             <span class="sig-name descname">
+              <span class="pre">
+               add_instrument
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Instrument
+               </span>
+               <span class="pre">
+                instrument
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.add_instrument" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Add the given instrument to the venue.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument
+                </strong>
+                (
+                <a class="reference internal" href="model/instruments.html#nautilus_trader.model.instruments.base.Instrument" title="nautilus_trader.model.instruments.base.Instrument">
+                 <em>
+                  Instrument
+                 </em>
+                </a>
+                ) – The instrument to add.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   instrument.id.venue
+                  </cite>
+                  is not equal to the venue ID.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   KeyError
+                  </strong>
+                  – If
+                  <cite>
+                   instrument
+                  </cite>
+                  is already contained within the venue.
+    This is to enforce correct internal identifier indexing.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   InvalidConfiguration
+                  </strong>
+                  – If
+                  <cite>
+                   instrument
+                  </cite>
+                  is invalid for this venue.
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>
