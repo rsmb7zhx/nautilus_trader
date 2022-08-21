@@ -1421,17 +1421,6 @@ then the component state will not change, and an error will be logged.
                </span>
               </span>
              </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                bool
-               </span>
-               <span class="pre">
-                is_historical=False
-               </span>
-              </span>
-             </em>
              <span class="sig-paren">
               )
              </span>
@@ -1454,16 +1443,16 @@ then the component state will not change, and an error will be logged.
               Handle the given bar data.
              </p>
              <p>
-              Calls
-              <cite>
-               on_bar
-              </cite>
-              if state is
+              If state is
               <code class="docutils literal notranslate">
                <span class="pre">
                 RUNNING
                </span>
               </code>
+              then passes to
+              <cite>
+               on_bar
+              </cite>
               .
              </p>
              <dl class="field-list simple">
@@ -1471,38 +1460,18 @@ then the component state will not change, and an error will be logged.
                Parameters
               </dt>
               <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   bar
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/data.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar">
-                   <em>
-                    Bar
-                   </em>
-                  </a>
-                  ) – The bar received.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   is_historical
-                  </strong>
-                  (
-                  <em>
-                   bool
-                  </em>
-                  ) – If bar is historical then it won’t be passed to
-                  <cite>
-                   on_bar
-                  </cite>
-                  .
-                 </p>
-                </li>
-               </ul>
+               <p>
+                <strong>
+                 bar
+                </strong>
+                (
+                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar">
+                 <em>
+                  Bar
+                 </em>
+                </a>
+                ) – The bar received.
+               </p>
               </dd>
              </dl>
              <div class="admonition warning">
@@ -1562,7 +1531,7 @@ then the component state will not change, and an error will be logged.
             </dt>
             <dd>
              <p>
-              Handle the given bar data by handling each bar individually.
+              Handle the given historical bar data by handling each bar individually.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -1652,16 +1621,16 @@ then the component state will not change, and an error will be logged.
               Handle the given data.
              </p>
              <p>
-              Calls
-              <cite>
-               on_data
-              </cite>
-              if state is
+              If state is
               <code class="docutils literal notranslate">
                <span class="pre">
                 RUNNING
                </span>
               </code>
+              then passes to
+              <cite>
+               on_data
+              </cite>
               .
              </p>
              <dl class="field-list simple">
@@ -1677,7 +1646,7 @@ then the component state will not change, and an error will be logged.
                 <em>
                  Data
                 </em>
-                ) – The received data.
+                ) – The data received.
                </p>
               </dd>
              </dl>
@@ -1741,16 +1710,16 @@ then the component state will not change, and an error will be logged.
               Handle the given event.
              </p>
              <p>
-              Calls
-              <cite>
-               on_event
-              </cite>
-              if state is
+              If state is
               <code class="docutils literal notranslate">
                <span class="pre">
                 RUNNING
                </span>
               </code>
+              then passes to
+              <cite>
+               on_event
+              </cite>
               .
              </p>
              <dl class="field-list simple">
@@ -1768,7 +1737,96 @@ then the component state will not change, and an error will be logged.
                   Event
                  </em>
                 </a>
-                ) – The received event.
+                ) – The event received.
+               </p>
+              </dd>
+             </dl>
+             <div class="admonition warning">
+              <p class="admonition-title">
+               Warning
+              </p>
+              <p>
+               System method (not intended to be called by user code).
+              </p>
+             </div>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_historical_data">
+             <span class="sig-name descname">
+              <span class="pre">
+               handle_historical_data
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Data
+               </span>
+               <span class="pre">
+                data
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_historical_data" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Handle the given historical data.
+             </p>
+             <p>
+              If state is
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                RUNNING
+               </span>
+              </code>
+              then passes to
+              <cite>
+               on_historical_data
+              </cite>
+              .
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 data
+                </strong>
+                (
+                <em>
+                 Data
+                </em>
+                ) – The historical data received.
                </p>
               </dd>
              </dl>
@@ -1832,7 +1890,7 @@ then the component state will not change, and an error will be logged.
               Handle the given instrument.
              </p>
              <p>
-              Calls
+              Passes to
               <cite>
                on_instrument
               </cite>
@@ -1859,7 +1917,7 @@ then the component state will not change, and an error will be logged.
                   Instrument
                  </em>
                 </a>
-                ) – The received instrument.
+                ) – The instrument received.
                </p>
               </dd>
              </dl>
@@ -1923,16 +1981,16 @@ then the component state will not change, and an error will be logged.
               Handle the given instrument close price update.
              </p>
              <p>
-              Calls
-              <cite>
-               on_instrument_close_price
-              </cite>
-              if .state is
+              If state is
               <code class="docutils literal notranslate">
                <span class="pre">
                 RUNNING
                </span>
               </code>
+              then passes to
+              <cite>
+               on_instrument_close_price
+              </cite>
               .
              </p>
              <dl class="field-list simple">
@@ -1950,7 +2008,7 @@ then the component state will not change, and an error will be logged.
                   InstrumentClosePrice
                  </em>
                 </a>
-                ) – The received update.
+                ) – The update received.
                </p>
               </dd>
              </dl>
@@ -2014,16 +2072,16 @@ then the component state will not change, and an error will be logged.
               Handle the given instrument status update.
              </p>
              <p>
-              Calls
-              <cite>
-               on_instrument_status_update
-              </cite>
-              if state is
+              If state is
               <code class="docutils literal notranslate">
                <span class="pre">
                 RUNNING
                </span>
               </code>
+              then passes to
+              <cite>
+               on_instrument_status_update
+              </cite>
               .
              </p>
              <dl class="field-list simple">
@@ -2041,7 +2099,7 @@ then the component state will not change, and an error will be logged.
                   InstrumentStatusUpdate
                  </em>
                 </a>
-                ) – The received update.
+                ) – The update received.
                </p>
               </dd>
              </dl>
@@ -2105,7 +2163,7 @@ then the component state will not change, and an error will be logged.
               Handle the given order book snapshot.
              </p>
              <p>
-              Calls
+              Passes to
               <cite>
                on_order_book
               </cite>
@@ -2132,7 +2190,7 @@ then the component state will not change, and an error will be logged.
                   OrderBook
                  </em>
                 </a>
-                ) – The received order book.
+                ) – The order book received.
                </p>
               </dd>
              </dl>
@@ -2196,7 +2254,7 @@ then the component state will not change, and an error will be logged.
               Handle the given order book data.
              </p>
              <p>
-              Calls
+              Passes to
               <cite>
                on_order_book_delta
               </cite>
@@ -2281,17 +2339,6 @@ then the component state will not change, and an error will be logged.
                </span>
               </span>
              </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                bool
-               </span>
-               <span class="pre">
-                is_historical=False
-               </span>
-              </span>
-             </em>
              <span class="sig-paren">
               )
              </span>
@@ -2311,19 +2358,19 @@ then the component state will not change, and an error will be logged.
             </dt>
             <dd>
              <p>
-              Handle the given tick.
+              Handle the given quote tick.
              </p>
              <p>
-              Calls
-              <cite>
-               on_quote_tick
-              </cite>
-              if state is
+              If state is
               <code class="docutils literal notranslate">
                <span class="pre">
                 RUNNING
                </span>
               </code>
+              then passes to
+              <cite>
+               on_quote_tick
+              </cite>
               .
              </p>
              <dl class="field-list simple">
@@ -2331,38 +2378,18 @@ then the component state will not change, and an error will be logged.
                Parameters
               </dt>
               <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   tick
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/data.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick">
-                   <em>
-                    QuoteTick
-                   </em>
-                  </a>
-                  ) – The received tick.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   is_historical
-                  </strong>
-                  (
-                  <em>
-                   bool
-                  </em>
-                  ) – If tick is historical then it won’t be passed to
-                  <cite>
-                   on_quote_tick
-                  </cite>
-                  .
-                 </p>
-                </li>
-               </ul>
+               <p>
+                <strong>
+                 tick
+                </strong>
+                (
+                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick">
+                 <em>
+                  QuoteTick
+                 </em>
+                </a>
+                ) – The tick received.
+               </p>
               </dd>
              </dl>
              <div class="admonition warning">
@@ -2422,7 +2449,7 @@ then the component state will not change, and an error will be logged.
             </dt>
             <dd>
              <p>
-              Handle the given tick data by handling each tick individually.
+              Handle the given historical quote tick data by handling each tick individually.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -2448,7 +2475,7 @@ then the component state will not change, and an error will be logged.
                 <em>
                  ]
                 </em>
-                ) – The received ticks.
+                ) – The ticks received.
                </p>
               </dd>
              </dl>
@@ -2490,17 +2517,6 @@ then the component state will not change, and an error will be logged.
                </span>
               </span>
              </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                bool
-               </span>
-               <span class="pre">
-                is_historical=False
-               </span>
-              </span>
-             </em>
              <span class="sig-paren">
               )
              </span>
@@ -2523,16 +2539,16 @@ then the component state will not change, and an error will be logged.
               Handle the given ticker.
              </p>
              <p>
-              Calls
-              <cite>
-               on_ticker
-              </cite>
-              if state is
+              If state is
               <code class="docutils literal notranslate">
                <span class="pre">
                 RUNNING
                </span>
               </code>
+              then passes to
+              <cite>
+               on_ticker
+              </cite>
               .
              </p>
              <dl class="field-list simple">
@@ -2540,38 +2556,18 @@ then the component state will not change, and an error will be logged.
                Parameters
               </dt>
               <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   ticker
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/data.html#nautilus_trader.model.data.ticker.Ticker" title="nautilus_trader.model.data.ticker.Ticker">
-                   <em>
-                    Ticker
-                   </em>
-                  </a>
-                  ) – The received ticker.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   is_historical
-                  </strong>
-                  (
-                  <em>
-                   bool
-                  </em>
-                  ) – If ticker is historical then it won’t be passed to
-                  <cite>
-                   on_ticker
-                  </cite>
-                  .
-                 </p>
-                </li>
-               </ul>
+               <p>
+                <strong>
+                 ticker
+                </strong>
+                (
+                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.ticker.Ticker" title="nautilus_trader.model.data.ticker.Ticker">
+                 <em>
+                  Ticker
+                 </em>
+                </a>
+                ) – The ticker received.
+               </p>
               </dd>
              </dl>
              <div class="admonition warning">
@@ -2612,17 +2608,6 @@ then the component state will not change, and an error will be logged.
                </span>
               </span>
              </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                bool
-               </span>
-               <span class="pre">
-                is_historical=False
-               </span>
-              </span>
-             </em>
              <span class="sig-paren">
               )
              </span>
@@ -2642,19 +2627,19 @@ then the component state will not change, and an error will be logged.
             </dt>
             <dd>
              <p>
-              Handle the given tick.
+              Handle the given trade tick.
              </p>
              <p>
-              Calls
-              <cite>
-               on_trade_tick
-              </cite>
-              if state is
+              If state is
               <code class="docutils literal notranslate">
                <span class="pre">
                 RUNNING
                </span>
               </code>
+              then passes to
+              <cite>
+               on_trade_tick
+              </cite>
               .
              </p>
              <dl class="field-list simple">
@@ -2662,38 +2647,18 @@ then the component state will not change, and an error will be logged.
                Parameters
               </dt>
               <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   tick
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/data.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick">
-                   <em>
-                    TradeTick
-                   </em>
-                  </a>
-                  ) – The received trade tick.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   is_historical
-                  </strong>
-                  (
-                  <em>
-                   bool
-                  </em>
-                  ) – If tick is historical then it won’t be passed to
-                  <cite>
-                   on_trade_tick
-                  </cite>
-                  .
-                 </p>
-                </li>
-               </ul>
+               <p>
+                <strong>
+                 tick
+                </strong>
+                (
+                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick">
+                 <em>
+                  TradeTick
+                 </em>
+                </a>
+                ) – The tick received.
+               </p>
               </dd>
              </dl>
              <div class="admonition warning">
@@ -2779,7 +2744,7 @@ then the component state will not change, and an error will be logged.
                 <em>
                  ]
                 </em>
-                ) – The received ticks.
+                ) – The ticks received.
                </p>
               </dd>
              </dl>
@@ -2843,16 +2808,16 @@ then the component state will not change, and an error will be logged.
               Handle the given venue status update.
              </p>
              <p>
-              Calls
-              <cite>
-               on_venue_status_update
-              </cite>
-              if state is
+              If state is
               <code class="docutils literal notranslate">
                <span class="pre">
                 RUNNING
                </span>
               </code>
+              then passes to
+              <cite>
+               on_venue_status_update
+              </cite>
               .
              </p>
              <dl class="field-list simple">
@@ -2870,7 +2835,7 @@ then the component state will not change, and an error will be logged.
                   VenueStatusUpdate
                  </em>
                 </a>
-                ) – The received update.
+                ) – The update received.
                </p>
               </dd>
              </dl>
@@ -3574,6 +3539,82 @@ then the component state will not change, and an error will be logged.
               </p>
               <p>
                Should be overridden in the actor implementation.
+              </p>
+             </div>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_historical_data">
+             <span class="sig-name descname">
+              <span class="pre">
+               on_historical_data
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Data
+               </span>
+               <span class="pre">
+                data
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_historical_data" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Actions to be performed when running and receives historical data.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 data
+                </strong>
+                (
+                <em>
+                 Data
+                </em>
+                ) – The historical data received.
+               </p>
+              </dd>
+             </dl>
+             <div class="admonition warning">
+              <p class="admonition-title">
+               Warning
+              </p>
+              <p>
+               System method (not intended to be called by user code).
               </p>
              </div>
             </dd>
