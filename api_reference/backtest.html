@@ -8469,17 +8469,6 @@ a venue with a
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                bool
-               </span>
-               <span class="pre">
-                is_frozen_account=False
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
                 list
                </span>
                <span class="pre">
@@ -8524,6 +8513,9 @@ a venue with a
              <em class="sig-param">
               <span class="n">
                <span class="pre">
+                bool
+               </span>
+               <span class="pre">
                 routing:
                </span>
                <span class="pre">
@@ -8541,6 +8533,20 @@ a venue with a
              <em class="sig-param">
               <span class="n">
                <span class="pre">
+                bool
+               </span>
+               <span class="pre">
+                frozen_account=False
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+               <span class="pre">
                 bar_execution:
                </span>
                <span class="pre">
@@ -8557,6 +8563,9 @@ a venue with a
              ,
              <em class="sig-param">
               <span class="n">
+               <span class="pre">
+                bool
+               </span>
                <span class="pre">
                 reject_stop_orders:
                </span>
@@ -8713,6 +8722,12 @@ generate new position IDs.
                   <em>
                    Decimal
                   </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
                   ) – The account default leverage (for margin accounts).
                  </p>
                 </li>
@@ -8743,18 +8758,6 @@ generate new position IDs.
                    ]
                   </em>
                   ) – The instrument specific leverage configuration (for margin accounts).
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   is_frozen_account
-                  </strong>
-                  (
-                  <em>
-                   bool
-                  </em>
-                  ) – If the account for this exchange is frozen (balances will not change).
                  </p>
                 </li>
                 <li>
@@ -8828,10 +8831,12 @@ generate new position IDs.
                   <strong>
                    book_type
                   </strong>
-                  (
-                  <em>
-                   BookType
-                  </em>
+                  (BookType, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    BookType.L1_TBBO
+                   </span>
+                  </code>
                   ) – The default order book type for fill modelling.
                  </p>
                 </li>
@@ -8844,7 +8849,31 @@ generate new position IDs.
                   <em>
                    bool
                   </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   default False
+                  </em>
                   ) – If multi-venue routing should be enabled for the execution client.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   frozen_account
+                  </strong>
+                  (
+                  <em>
+                   bool
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   default False
+                  </em>
+                  ) – If the account for this exchange is frozen (balances will not change).
                  </p>
                 </li>
                 <li>
@@ -8855,6 +8884,12 @@ generate new position IDs.
                   (
                   <em>
                    bool
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   default False
                   </em>
                   ) – If the exchange execution dynamics is based on bar data.
                  </p>
@@ -8867,6 +8902,12 @@ generate new position IDs.
                   (
                   <em>
                    bool
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   default True
                   </em>
                   ) – If stop orders are rejected on submission if trigger price is in the market.
                  </p>
@@ -10515,12 +10556,6 @@ to the end of the data.
              Decimal],
             </span>
             <span class="pre">
-             bool
-            </span>
-            <span class="pre">
-             is_frozen_account,
-            </span>
-            <span class="pre">
              list
             </span>
             <span class="pre">
@@ -10567,6 +10602,12 @@ to the end of the data.
             </span>
             <span class="pre">
              book_type=BookType.L1_TBBO,
+            </span>
+            <span class="pre">
+             bool
+            </span>
+            <span class="pre">
+             frozen_account=False,
             </span>
             <span class="pre">
              bool
@@ -10745,18 +10786,6 @@ to the end of the data.
               <li>
                <p>
                 <strong>
-                 is_frozen_account
-                </strong>
-                (
-                <em>
-                 bool
-                </em>
-                ) – If the account for this exchange is frozen (balances will not change).
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  cache
                 </strong>
                 (
@@ -10845,11 +10874,35 @@ to the end of the data.
               <li>
                <p>
                 <strong>
+                 frozen_account
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default False
+                </em>
+                ) – If the account for this exchange is frozen (balances will not change).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  bar_execution
                 </strong>
                 (
                 <em>
                  bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default False
                 </em>
                 ) – If the exchange execution dynamics is based on bar data.
                </p>
@@ -10862,6 +10915,12 @@ to the end of the data.
                 (
                 <em>
                  bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default True
                 </em>
                 ) – If stop orders are rejected on submission if in the market.
                </p>
@@ -13055,7 +13114,7 @@ to the end of the data.
               bool
              </span>
              <span class="pre">
-              is_frozen_account=False
+              frozen_account=False
              </span>
             </span>
            </em>
@@ -13175,7 +13234,7 @@ to the end of the data.
               <li>
                <p>
                 <strong>
-                 is_frozen_account
+                 frozen_account
                 </strong>
                 (
                 <em>
