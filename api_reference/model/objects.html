@@ -1660,6 +1660,64 @@
             </ul>
            </dd>
           </dl>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <ul class="simple">
+            <li>
+             <p>
+              Maximum
+              <cite>
+               value
+              </cite>
+              which can be expressed is 9_223_372_036.
+             </p>
+            </li>
+            <li>
+             <p>
+              Minimum
+              <cite>
+               value
+              </cite>
+              which can be expressed is -9_223_372_036.
+             </p>
+            </li>
+           </ul>
+          </div>
+          <dl class="field-list simple">
+           <dt class="field-odd">
+            Raises
+           </dt>
+           <dd class="field-odd">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                value
+               </cite>
+               is greater than 9_223_372_036.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                value
+               </cite>
+               is less than -9_223_372_036.
+              </p>
+             </li>
+            </ul>
+           </dd>
+          </dl>
           <dl class="py method">
            <dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.as_decimal">
             <span class="sig-name descname">
@@ -2107,11 +2165,62 @@ negative under certain conditions.
              </li>
             </ul>
            </dd>
-           <dt class="field-even">
+          </dl>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <ul class="simple">
+            <li>
+             <p>
+              Maximum
+              <cite>
+               value
+              </cite>
+              which can be expressed is 9_223_372_036.
+             </p>
+            </li>
+            <li>
+             <p>
+              Minimum
+              <cite>
+               value
+              </cite>
+              which can be expressed is -9_223_372_036.
+             </p>
+            </li>
+           </ul>
+          </div>
+          <dl class="field-list simple">
+           <dt class="field-odd">
             Raises
            </dt>
-           <dd class="field-even">
+           <dd class="field-odd">
             <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                value
+               </cite>
+               is greater than 9_223_372_036.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                value
+               </cite>
+               is less than -9_223_372_036.
+              </p>
+             </li>
              <li>
               <p>
                <strong>
@@ -2669,10 +2778,28 @@ denominated in fractional units).
              </li>
             </ul>
            </dd>
-           <dt class="field-even">
+          </dl>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <ul class="simple">
+            <li>
+             <p>
+              Maximum
+              <cite>
+               value
+              </cite>
+              which can be expressed is 18_446_744_073.
+             </p>
+            </li>
+           </ul>
+          </div>
+          <dl class="field-list simple">
+           <dt class="field-odd">
             Raises
            </dt>
-           <dd class="field-even">
+           <dd class="field-odd">
             <ul class="simple">
              <li>
               <p>
@@ -2684,6 +2811,18 @@ denominated in fractional units).
                 value
                </cite>
                is negative (&lt; 0).
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                value
+               </cite>
+               is greater than 18_446_744_073.
               </p>
              </li>
              <li>

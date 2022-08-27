@@ -13280,7 +13280,7 @@ including status of all orders, trades for those orders and open positions.
               TrailingOffsetType
              </span>
              <span class="pre">
-              offset_type=TrailingOffsetType.NONE
+              trailing_offset_type=TrailingOffsetType.NONE
              </span>
             </span>
            </em>
@@ -13786,7 +13786,7 @@ including status of all orders, trades for those orders and open positions.
               <li>
                <p>
                 <strong>
-                 offset_type
+                 trailing_offset_type
                 </strong>
                 (TrailingOffsetType, default
                 <code class="docutils literal notranslate">
@@ -13985,7 +13985,7 @@ including status of all orders, trades for those orders and open positions.
                   None
                  </span>
                 </code>
-                and offset_type is equal to
+                and trailing_offset_type is equal to
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   TrailingOffsetType.NONE
@@ -14405,35 +14405,6 @@ including status of all orders, trades for those orders and open positions.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.execution.reports.OrderStatusReport.offset_type">
-             <span class="sig-name descname">
-              <span class="pre">
-               offset_type
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.execution.reports.OrderStatusReport.offset_type" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The trailing offset type.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 Decimal
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.execution.reports.OrderStatusReport.order_list_id">
              <span class="sig-name descname">
               <span class="pre">
@@ -14729,6 +14700,35 @@ including status of all orders, trades for those orders and open positions.
                <p>
                 <cite>
                  Decimal
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.reports.OrderStatusReport.trailing_offset_type">
+             <span class="sig-name descname">
+              <span class="pre">
+               trailing_offset_type
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.execution.reports.OrderStatusReport.trailing_offset_type" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The trailing offset type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 TrailingOffsetType
                 </cite>
                </p>
               </dd>

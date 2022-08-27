@@ -1868,7 +1868,7 @@ Perpetual Futures Contracts activating at a trigger price of 5000 USD, then trai
         <span class="n">trigger_price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"5000"</span><span class="p">),</span>
         <span class="n">trigger_type</span><span class="o">=</span><span class="n">TriggerType</span><span class="o">.</span><span class="n">LAST</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default DEFAULT)</span>
         <span class="n">trailing_offset</span><span class="o">=</span><span class="n">Decimal</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
-        <span class="n">offset_type</span><span class="o">=</span><span class="n">TrailingOffsetType</span><span class="o">.</span><span class="n">BASIS_POINTS</span><span class="p">,</span>
+        <span class="n">trailing_offset_type</span><span class="o">=</span><span class="n">TrailingOffsetType</span><span class="o">.</span><span class="n">BASIS_POINTS</span><span class="p">,</span>
         <span class="n">time_in_force</span><span class="o">=</span><span class="n">TimeInForce</span><span class="o">.</span><span class="n">GTC</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default GTC)</span>
         <span class="n">expire_time</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None)</span>
         <span class="n">reduce_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default False)</span>
@@ -1923,7 +1923,7 @@ away from the current ask price, active until further notice:
         <span class="n">trigger_type</span><span class="o">=</span><span class="n">TriggerType</span><span class="o">.</span><span class="n">BID_ASK</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default DEFAULT)</span>
         <span class="n">limit_offset</span><span class="o">=</span><span class="n">Decimal</span><span class="p">(</span><span class="s2">"0.00050"</span><span class="p">),</span>
         <span class="n">trailing_offset</span><span class="o">=</span><span class="n">Decimal</span><span class="p">(</span><span class="s2">"0.00100"</span><span class="p">),</span>
-        <span class="n">offset_type</span><span class="o">=</span><span class="n">TrailingOffsetType</span><span class="o">.</span><span class="n">PRICE</span><span class="p">,</span>
+        <span class="n">trailing_offset_type</span><span class="o">=</span><span class="n">TrailingOffsetType</span><span class="o">.</span><span class="n">PRICE</span><span class="p">,</span>
         <span class="n">time_in_force</span><span class="o">=</span><span class="n">TimeInForce</span><span class="o">.</span><span class="n">GTC</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default GTC)</span>
         <span class="n">expire_time</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None)</span>
         <span class="n">reduce_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default False)</span>
