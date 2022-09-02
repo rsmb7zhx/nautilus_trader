@@ -25857,14 +25857,26 @@ applying the given filters.
 and an event loop.
            </p>
            <p>
-            If maxsize is less than or equal to zero, the queue size is infinite. If it
+            If
+            <cite>
+             maxsize
+            </cite>
+            is less than or equal to zero, the queue size is infinite. If it
 is an integer greater than 0, then “await put()” will block when the
 queue reaches maxsize, until an item is removed by get().
            </p>
            <p>
-            Unlike the standard library Queue, you can reliably know this Queue’s size
+            Unlike the standard library
+            <cite>
+             Queue
+            </cite>
+            , you can reliably know this Queue’s size
 with qsize(), since your single-threaded asyncio application won’t be
-interrupted between calling qsize() and doing an operation on the Queue.
+interrupted between calling qsize() and doing an operation on the
+            <cite>
+             Queue
+            </cite>
+            .
            </p>
            <dl class="field-list simple">
             <dt class="field-odd">
@@ -26278,7 +26290,11 @@ then full() is never True.
             </dt>
             <dd>
              <p>
-              Return the item at the given index without popping (if in range).
+              Return the item at the given
+              <cite>
+               index
+              </cite>
+              without popping (if in range).
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -26343,7 +26359,11 @@ then full() is never True.
             </dt>
             <dd>
              <p>
-              Put an item into the queue.
+              Put
+              <cite>
+               item
+              </cite>
+              onto the queue.
              </p>
              <p>
               If the queue is full, wait until a free slot is available before adding
@@ -26412,7 +26432,15 @@ item.
             </dt>
             <dd>
              <p>
-              Put an item into the queue without blocking.
+              Put
+              <cite>
+               item
+              </cite>
+              onto the queue
+              <em>
+               without
+              </em>
+              blocking.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
