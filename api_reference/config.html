@@ -5738,6 +5738,40 @@ the new model: you should trust this data
              </span>
             </span>
            </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              log_warnings
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              True
+             </span>
+            </span>
+           </em>
            <span class="sig-paren">
             )
            </span>
@@ -5836,6 +5870,24 @@ the new model: you should trust this data
                  optional
                 </em>
                 ) – The venue specific instrument loading filters to apply.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 log_warnings
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default True
+                </em>
+                ) – If parser warnings should be logged.
                </p>
               </li>
              </ul>
@@ -35794,7 +35846,10 @@ the new model: you should trust this data
               load_ids=None,
              </span>
              <span class="pre">
-              filters=None)
+              filters=None,
+             </span>
+             <span class="pre">
+              log_warnings=True)
              </span>
             </span>
            </em>
@@ -37416,7 +37471,10 @@ the new model: you should trust this data
               load_ids=None,
              </span>
              <span class="pre">
-              filters=None)
+              filters=None,
+             </span>
+             <span class="pre">
+              log_warnings=True)
              </span>
             </span>
            </em>
