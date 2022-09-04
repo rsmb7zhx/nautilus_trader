@@ -1234,6 +1234,40 @@ If None then will source from the
              </a>
             </span>
            </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              override_usd
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              False
+             </span>
+            </span>
+           </em>
            <span class="sig-paren">
             )
            </span>
@@ -1304,6 +1338,25 @@ If None then will source from the
                  </em>
                 </a>
                 ) – The configuration for the instrument provider.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 override_usd
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default False
+                </em>
+                ) – If the built-in USD currency should be overridden with the FTX version
+which uses a precision of 8.
                </p>
               </li>
              </ul>
@@ -2065,40 +2118,6 @@ If None then will source from the
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              override_usd
-             </span>
-            </span>
-            <span class="p">
-             <span class="pre">
-              :
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="n">
-             <span class="pre">
-              bool
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="o">
-             <span class="pre">
-              =
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="default_value">
-             <span class="pre">
-              False
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
               config
              </span>
             </span>
@@ -2141,6 +2160,40 @@ If None then will source from the
             <span class="default_value">
              <span class="pre">
               None
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              override_usd
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              False
              </span>
             </span>
            </em>
@@ -2206,25 +2259,6 @@ If None then will source from the
               <li>
                <p>
                 <strong>
-                 override_usd
-                </strong>
-                (
-                <em>
-                 bool
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 default False
-                </em>
-                ) – If the built-in USD currency should be overridden with the FTX version
-which uses a precision of 7.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  config
                 </strong>
                 (
@@ -2240,6 +2274,25 @@ which uses a precision of 7.
                  optional
                 </em>
                 ) – The configuration for the provider.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 override_usd
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default False
+                </em>
+                ) – If the built-in USD currency should be overridden with the FTX version
+which uses a precision of 8.
                </p>
               </li>
              </ul>
@@ -8586,6 +8639,40 @@ then the component state will not change, and an error will be logged.
            <em class="sig-param">
             <span class="n">
              <span class="pre">
+              trigger_polling_interval
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              float
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              1.0
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
               account_polling_interval
              </span>
             </span>
@@ -8805,6 +8892,24 @@ then the component state will not change, and an error will be logged.
                  default 60
                 </em>
                 ) – The interval length (seconds) between account reconciliations.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 trigger_polling_interval
+                </strong>
+                (
+                <em>
+                 float
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 1.0
+                </em>
+                ) – The interval length (seconds) between polling for open trigger order state.
                </p>
               </li>
               <li>
