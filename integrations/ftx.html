@@ -676,8 +676,13 @@
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#ftx-data-types">
-               FTX data types
+              <a class="md-nav__link" href="#data-types">
+               Data types
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#order-types">
+               Order types
               </a>
              </li>
              <li class="md-nav__item">
@@ -704,6 +709,11 @@
                 <li class="md-nav__item">
                  <a class="md-nav__link" href="#parser-warnings">
                   Parser warnings
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#usd-high-precision">
+                  USD high precision
                  </a>
                 </li>
                </ul>
@@ -833,10 +843,10 @@ and won’t need to necessarily work with these lower level components individua
           </p>
          </div>
         </section>
-        <section id="ftx-data-types">
-         <h2 id="ftx-data-types">
-          FTX data types
-          <a class="headerlink" href="#ftx-data-types" title="Permalink to this headline">
+        <section id="data-types">
+         <h2 id="data-types">
+          Data types
+          <a class="headerlink" href="#data-types" title="Permalink to this headline">
            ¶
           </a>
          </h2>
@@ -878,6 +888,109 @@ also includes
           </a>
           for full definitions.
          </p>
+        </section>
+        <section id="order-types">
+         <h2 id="order-types">
+          Order types
+          <a class="headerlink" href="#order-types" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          The FTX integration makes the following order types available:
+         </p>
+         <ul class="simple">
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              MARKET
+             </span>
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              LIMIT
+             </span>
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              STOP_MARKET
+             </span>
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              STOP_LIMIT
+             </span>
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              MARKET_IF_TOUCHED
+             </span>
+            </code>
+            (behaviour identical to
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              STOP_MARKET
+             </span>
+            </code>
+            )
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              LIMIT_IF_TOUCHED
+             </span>
+            </code>
+            (behaviour identical to
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              STOP_LIMIT
+             </span>
+            </code>
+            )
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              TRAILING_STOP
+             </span>
+            </code>
+            (does not take a
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              trigger_price
+             </span>
+            </code>
+            , just a
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              trailing_offset
+             </span>
+            </code>
+            )
+           </p>
+          </li>
+         </ul>
         </section>
         <section id="configuration">
          <h2 id="configuration">
@@ -1084,6 +1197,43 @@ example below:
 </pre>
            </div>
           </div>
+         </section>
+         <section id="usd-high-precision">
+          <h3 id="usd-high-precision">
+           USD high precision
+           <a class="headerlink" href="#usd-high-precision" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           While the base currency of FTX accounting is USD, they use a precision of 8 rather
+than the default 2. Its possibly to override the default USD currency with an
+FTX version with the higher precision by setting the
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             override_usd
+            </span>
+           </code>
+           flag to
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             True
+            </span>
+           </code>
+           for either the
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             FTXDataClientConfig
+            </span>
+           </code>
+           or
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             FTXExecClientConfig
+            </span>
+           </code>
+           .
+          </p>
          </section>
         </section>
        </section>

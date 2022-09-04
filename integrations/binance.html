@@ -676,13 +676,18 @@
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#binance-data-types">
-               Binance data types
+              <a class="md-nav__link" href="#data-types">
+               Data types
               </a>
              </li>
              <li class="md-nav__item">
               <a class="md-nav__link" href="#symbology">
                Symbology
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#order-types">
+               Order types
               </a>
              </li>
              <li class="md-nav__item">
@@ -864,10 +869,10 @@ and won’t need to necessarily work with these lower level components individua
           </p>
          </div>
         </section>
-        <section id="binance-data-types">
-         <h2 id="binance-data-types">
-          Binance data types
-          <a class="headerlink" href="#binance-data-types" title="Permalink to this headline">
+        <section id="data-types">
+         <h2 id="data-types">
+          Data types
+          <a class="headerlink" href="#data-types" title="Permalink to this headline">
            ¶
           </a>
          </h2>
@@ -959,6 +964,237 @@ E.g. for Binance Futures, the said instruments symbol is
           </code>
           within the Nautilus system boundary.
          </p>
+        </section>
+        <section id="order-types">
+         <h2 id="order-types">
+          Order types
+          <a class="headerlink" href="#order-types" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <table>
+          <thead>
+           <tr class="row-odd">
+            <th class="head">
+             <p>
+             </p>
+            </th>
+            <th class="head">
+             <p>
+              Spot
+             </p>
+            </th>
+            <th class="head">
+             <p>
+              Margin
+             </p>
+            </th>
+            <th class="head">
+             <p>
+              Futures
+             </p>
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr class="row-even">
+            <td>
+             <p>
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                MARKET
+               </span>
+              </code>
+             </p>
+            </td>
+            <td>
+             <p>
+              Yes
+             </p>
+            </td>
+            <td>
+             <p>
+              Yes
+             </p>
+            </td>
+            <td>
+             <p>
+              Yes
+             </p>
+            </td>
+           </tr>
+           <tr class="row-odd">
+            <td>
+             <p>
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                LIMIT
+               </span>
+              </code>
+             </p>
+            </td>
+            <td>
+             <p>
+              Yes
+             </p>
+            </td>
+            <td>
+             <p>
+              Yes
+             </p>
+            </td>
+            <td>
+             <p>
+              Yes
+             </p>
+            </td>
+           </tr>
+           <tr class="row-even">
+            <td>
+             <p>
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                STOP_MARKET
+               </span>
+              </code>
+             </p>
+            </td>
+            <td>
+             <p>
+              No
+             </p>
+            </td>
+            <td>
+             <p>
+              Yes
+             </p>
+            </td>
+            <td>
+             <p>
+              Yes
+             </p>
+            </td>
+           </tr>
+           <tr class="row-odd">
+            <td>
+             <p>
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                STOP_LIMIT
+               </span>
+              </code>
+             </p>
+            </td>
+            <td>
+             <p>
+              Yes (
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                post-only
+               </span>
+              </code>
+              not available)
+             </p>
+            </td>
+            <td>
+             <p>
+              Yes (
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                post-only
+               </span>
+              </code>
+              not available)
+             </p>
+            </td>
+            <td>
+             <p>
+              Yes
+             </p>
+            </td>
+           </tr>
+           <tr class="row-even">
+            <td>
+             <p>
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                MARKET_IF_TOUCHED
+               </span>
+              </code>
+             </p>
+            </td>
+            <td>
+             <p>
+              No
+             </p>
+            </td>
+            <td>
+             <p>
+              No
+             </p>
+            </td>
+            <td>
+             <p>
+              Yes
+             </p>
+            </td>
+           </tr>
+           <tr class="row-odd">
+            <td>
+             <p>
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                LIMIT_IF_TOUCHED
+               </span>
+              </code>
+             </p>
+            </td>
+            <td>
+             <p>
+              Yes
+             </p>
+            </td>
+            <td>
+             <p>
+              Yes
+             </p>
+            </td>
+            <td>
+             <p>
+              Yes
+             </p>
+            </td>
+           </tr>
+           <tr class="row-even">
+            <td>
+             <p>
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                TRAILING_STOP_MARKET
+               </span>
+              </code>
+             </p>
+            </td>
+            <td>
+             <p>
+              No
+             </p>
+            </td>
+            <td>
+             <p>
+              No
+             </p>
+            </td>
+            <td>
+             <p>
+              <em>
+               Not implemented
+              </em>
+             </p>
+            </td>
+           </tr>
+          </tbody>
+         </table>
          <div class="admonition note">
           <p class="admonition-title">
            Note
