@@ -775,56 +775,237 @@ could also be possible to write clients for specialized data publishers.
             (
            </span>
            <em class="sig-param">
-            <span class="pre">
-             loop:
+            <span class="n">
+             <span class="pre">
+              loop
+             </span>
             </span>
-            <span class="pre">
-             asyncio.AbstractEventLoop,
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
             </span>
-            <span class="pre">
-             ClientId
+            <span class="w">
             </span>
-            <span class="pre">
-             client_id,
+            <span class="n">
+             <span class="pre">
+              asyncio.events.AbstractEventLoop
+             </span>
             </span>
-            <span class="pre">
-             Venue
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              client_id
+             </span>
             </span>
-            <span class="pre">
-             venue:
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
             </span>
-            <span class="pre">
-             Optional[Venue],
+            <span class="w">
             </span>
-            <span class="pre">
-             MessageBus
+            <span class="n">
+             <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+              <span class="pre">
+               nautilus_trader.model.identifiers.ClientId
+              </span>
+             </a>
             </span>
-            <span class="pre">
-             msgbus,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              venue
+             </span>
             </span>
-            <span class="pre">
-             Cache
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
             </span>
-            <span class="pre">
-             cache,
+            <span class="w">
             </span>
-            <span class="pre">
-             LiveClock
+            <span class="n">
+             <span class="pre">
+              Optional
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+              <span class="pre">
+               nautilus_trader.model.identifiers.Venue
+              </span>
+             </a>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
             </span>
-            <span class="pre">
-             clock,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              msgbus
+             </span>
             </span>
-            <span class="pre">
-             Logger
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
             </span>
-            <span class="pre">
-             logger,
+            <span class="w">
             </span>
-            <span class="pre">
-             dict
+            <span class="n">
+             <a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus">
+              <span class="pre">
+               nautilus_trader.msgbus.bus.MessageBus
+              </span>
+             </a>
             </span>
-            <span class="pre">
-             config=None
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              cache
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache">
+              <span class="pre">
+               nautilus_trader.cache.cache.Cache
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              clock
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="common.html#nautilus_trader.common.clock.LiveClock" title="nautilus_trader.common.clock.LiveClock">
+              <span class="pre">
+               nautilus_trader.common.clock.LiveClock
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              logger
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger">
+              <span class="pre">
+               nautilus_trader.common.logging.Logger
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              config
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              Optional
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <span class="pre">
+              Dict
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <span class="pre">
+              str
+             </span>
+             <span class="p">
+              <span class="pre">
+               ,
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="pre">
+              Any
+             </span>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              None
+             </span>
             </span>
            </em>
            <span class="sig-paren">
@@ -1010,13 +1191,6 @@ could also be possible to write clients for specialized data publishers.
              <span class="sig-paren">
               (
              </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
              <span class="sig-paren">
               )
              </span>
@@ -1037,6 +1211,39 @@ could also be possible to write clients for specialized data publishers.
             <dd>
              <p>
               Connect the client.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClient.disconnect">
+             <span class="sig-name descname">
+              <span class="pre">
+               disconnect
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClient.disconnect" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Disconnect the client.
              </p>
             </dd>
            </dl>
@@ -1104,46 +1311,6 @@ The component will remain in a
 then the component state will not change, and an error will be logged.
               </p>
              </div>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClient.disconnect">
-             <span class="sig-name descname">
-              <span class="pre">
-               disconnect
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClient.disconnect" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Disconnect the client.
-             </p>
             </dd>
            </dl>
            <dl class="py method">
@@ -1855,102 +2022,6 @@ then the component state will not change, and an error will be logged.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClient.run_after_delay">
-             <span class="sig-name descname">
-              <span class="pre">
-               run_after_delay
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                double
-               </span>
-               <span class="pre">
-                delay:
-               </span>
-               <span class="pre">
-                float
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                coro
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClient.run_after_delay" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClient.sleep0">
-             <span class="sig-name descname">
-              <span class="pre">
-               sleep0
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClient.sleep0" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-            </dd>
-           </dl>
-           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClient.start">
              <span class="sig-name descname">
               <span class="pre">
@@ -2416,62 +2487,259 @@ then the component state will not change, and an error will be logged.
             (
            </span>
            <em class="sig-param">
-            <span class="pre">
-             loop:
+            <span class="n">
+             <span class="pre">
+              loop
+             </span>
             </span>
-            <span class="pre">
-             asyncio.AbstractEventLoop,
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
             </span>
-            <span class="pre">
-             ClientId
+            <span class="w">
             </span>
-            <span class="pre">
-             client_id,
+            <span class="n">
+             <span class="pre">
+              asyncio.events.AbstractEventLoop
+             </span>
             </span>
-            <span class="pre">
-             Venue
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              client_id
+             </span>
             </span>
-            <span class="pre">
-             venue:
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
             </span>
-            <span class="pre">
-             Optional[Venue],
+            <span class="w">
             </span>
-            <span class="pre">
-             instrument_provider:
+            <span class="n">
+             <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+              <span class="pre">
+               nautilus_trader.model.identifiers.ClientId
+              </span>
+             </a>
             </span>
-            <span class="pre">
-             InstrumentProvider,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              venue
+             </span>
             </span>
-            <span class="pre">
-             MessageBus
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
             </span>
-            <span class="pre">
-             msgbus,
+            <span class="w">
             </span>
-            <span class="pre">
-             Cache
+            <span class="n">
+             <span class="pre">
+              Optional
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+              <span class="pre">
+               nautilus_trader.model.identifiers.Venue
+              </span>
+             </a>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
             </span>
-            <span class="pre">
-             cache,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              instrument_provider
+             </span>
             </span>
-            <span class="pre">
-             LiveClock
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
             </span>
-            <span class="pre">
-             clock,
+            <span class="w">
             </span>
-            <span class="pre">
-             Logger
+            <span class="n">
+             <a class="reference internal" href="common.html#nautilus_trader.common.providers.InstrumentProvider" title="nautilus_trader.common.providers.InstrumentProvider">
+              <span class="pre">
+               nautilus_trader.common.providers.InstrumentProvider
+              </span>
+             </a>
             </span>
-            <span class="pre">
-             logger,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              msgbus
+             </span>
             </span>
-            <span class="pre">
-             dict
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
             </span>
-            <span class="pre">
-             config=None
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus">
+              <span class="pre">
+               nautilus_trader.msgbus.bus.MessageBus
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              cache
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache">
+              <span class="pre">
+               nautilus_trader.cache.cache.Cache
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              clock
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="common.html#nautilus_trader.common.clock.LiveClock" title="nautilus_trader.common.clock.LiveClock">
+              <span class="pre">
+               nautilus_trader.common.clock.LiveClock
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              logger
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger">
+              <span class="pre">
+               nautilus_trader.common.logging.Logger
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              config
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              Optional
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <span class="pre">
+              Dict
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <span class="pre">
+              str
+             </span>
+             <span class="p">
+              <span class="pre">
+               ,
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="pre">
+              Any
+             </span>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              None
+             </span>
             </span>
            </em>
            <span class="sig-paren">
@@ -2671,13 +2939,6 @@ then the component state will not change, and an error will be logged.
              <span class="sig-paren">
               (
              </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
              <span class="sig-paren">
               )
              </span>
@@ -2698,6 +2959,39 @@ then the component state will not change, and an error will be logged.
             <dd>
              <p>
               Connect the client.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.disconnect">
+             <span class="sig-name descname">
+              <span class="pre">
+               disconnect
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.disconnect" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Disconnect the client.
              </p>
             </dd>
            </dl>
@@ -2765,46 +3059,6 @@ The component will remain in a
 then the component state will not change, and an error will be logged.
               </p>
              </div>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.disconnect">
-             <span class="sig-name descname">
-              <span class="pre">
-               disconnect
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.disconnect" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Disconnect the client.
-             </p>
             </dd>
            </dl>
            <dl class="py method">
@@ -4189,96 +4443,6 @@ The component will remain in a
 then the component state will not change, and an error will be logged.
               </p>
              </div>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.run_after_delay">
-             <span class="sig-name descname">
-              <span class="pre">
-               run_after_delay
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                delay
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                coro
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.run_after_delay" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.sleep0">
-             <span class="sig-name descname">
-              <span class="pre">
-               sleep0
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.sleep0" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
             </dd>
            </dl>
            <dl class="py method">
@@ -9733,83 +9897,334 @@ API which may be presented directly by an exchange, or broker intermediary.
             (
            </span>
            <em class="sig-param">
-            <span class="pre">
-             loop:
+            <span class="n">
+             <span class="pre">
+              loop
+             </span>
             </span>
-            <span class="pre">
-             asyncio.AbstractEventLoop,
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
             </span>
-            <span class="pre">
-             ClientId
+            <span class="w">
             </span>
-            <span class="pre">
-             client_id,
+            <span class="n">
+             <span class="pre">
+              asyncio.events.AbstractEventLoop
+             </span>
             </span>
-            <span class="pre">
-             Venue
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              client_id
+             </span>
             </span>
-            <span class="pre">
-             venue:
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
             </span>
-            <span class="pre">
-             Optional[Venue],
+            <span class="w">
             </span>
-            <span class="pre">
-             OMSType
+            <span class="n">
+             <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+              <span class="pre">
+               nautilus_trader.model.identifiers.ClientId
+              </span>
+             </a>
             </span>
-            <span class="pre">
-             oms_type,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              venue
+             </span>
             </span>
-            <span class="pre">
-             AccountType
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
             </span>
-            <span class="pre">
-             account_type,
+            <span class="w">
             </span>
-            <span class="pre">
-             Currency
+            <span class="n">
+             <span class="pre">
+              Optional
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+              <span class="pre">
+               nautilus_trader.model.identifiers.Venue
+              </span>
+             </a>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
             </span>
-            <span class="pre">
-             base_currency:
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              oms_type
+             </span>
             </span>
-            <span class="pre">
-             Optional[Currency],
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
             </span>
-            <span class="pre">
-             instrument_provider:
+            <span class="w">
             </span>
-            <span class="pre">
-             InstrumentProvider,
+            <span class="n">
+             <span class="pre">
+              importlib._bootstrap.OMSType
+             </span>
             </span>
-            <span class="pre">
-             MessageBus
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              account_type
+             </span>
             </span>
-            <span class="pre">
-             msgbus,
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
             </span>
-            <span class="pre">
-             Cache
+            <span class="w">
             </span>
-            <span class="pre">
-             cache,
+            <span class="n">
+             <span class="pre">
+              importlib._bootstrap.AccountType
+             </span>
             </span>
-            <span class="pre">
-             LiveClock
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              base_currency
+             </span>
             </span>
-            <span class="pre">
-             clock,
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
             </span>
-            <span class="pre">
-             Logger
+            <span class="w">
             </span>
-            <span class="pre">
-             logger,
+            <span class="n">
+             <span class="pre">
+              Optional
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <a class="reference internal" href="model/currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency">
+              <span class="pre">
+               nautilus_trader.model.currency.Currency
+              </span>
+             </a>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
             </span>
-            <span class="pre">
-             dict
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              instrument_provider
+             </span>
             </span>
-            <span class="pre">
-             config=None
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="common.html#nautilus_trader.common.providers.InstrumentProvider" title="nautilus_trader.common.providers.InstrumentProvider">
+              <span class="pre">
+               nautilus_trader.common.providers.InstrumentProvider
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              msgbus
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus">
+              <span class="pre">
+               nautilus_trader.msgbus.bus.MessageBus
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              cache
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache">
+              <span class="pre">
+               nautilus_trader.cache.cache.Cache
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              clock
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="common.html#nautilus_trader.common.clock.LiveClock" title="nautilus_trader.common.clock.LiveClock">
+              <span class="pre">
+               nautilus_trader.common.clock.LiveClock
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              logger
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger">
+              <span class="pre">
+               nautilus_trader.common.logging.Logger
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              config
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              Optional
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <span class="pre">
+              Dict
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <span class="pre">
+              str
+             </span>
+             <span class="p">
+              <span class="pre">
+               ,
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="pre">
+              Any
+             </span>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              None
+             </span>
             </span>
            </em>
            <span class="sig-paren">
@@ -10058,6 +10473,1398 @@ API which may be presented directly by an exchange, or broker intermediary.
              This class should not be used directly, but through a concrete subclass.
             </p>
            </div>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.connect">
+             <span class="sig-name descname">
+              <span class="pre">
+               connect
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.connect" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Abstract method (implement in subclass).
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.disconnect">
+             <span class="sig-name descname">
+              <span class="pre">
+               disconnect
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.disconnect" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Abstract method (implement in subclass).
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_status_report">
+             <em class="property">
+              <span class="pre">
+               async
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               generate_order_status_report
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                instrument_id
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.InstrumentId
+                </span>
+               </a>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                client_order_id
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.ClientOrderId
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                venue_order_id
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.VenueOrderId
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <a class="reference internal" href="execution.html#nautilus_trader.execution.reports.OrderStatusReport" title="nautilus_trader.execution.reports.OrderStatusReport">
+                <span class="pre">
+                 nautilus_trader.execution.reports.OrderStatusReport
+                </span>
+               </a>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_status_report" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Generate an order status report for the given order identifier parameter(s).
+             </p>
+             <p>
+              If the order is not found, or an error occurs, then logs and returns
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                None
+               </span>
+              </code>
+              .
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The instrument ID for the report.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_order_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
+                   <em>
+                    ClientOrderId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The client order ID for the report.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   venue_order_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
+                   <em>
+                    VenueOrderId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The venue order ID for the report.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                OrderStatusReport or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+              <dt class="field-odd">
+               Raises
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If both the
+                <cite>
+                 client_order_id
+                </cite>
+                and
+                <cite>
+                 venue_order_id
+                </cite>
+                are
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                .
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_status_reports">
+             <em class="property">
+              <span class="pre">
+               async
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               generate_order_status_reports
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                instrument_id
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.InstrumentId
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                start
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                pandas._libs.tslibs.timestamps.Timestamp
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                end
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                pandas._libs.tslibs.timestamps.Timestamp
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                open_only
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                False
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                List
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="execution.html#nautilus_trader.execution.reports.OrderStatusReport" title="nautilus_trader.execution.reports.OrderStatusReport">
+                <span class="pre">
+                 nautilus_trader.execution.reports.OrderStatusReport
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_status_reports" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Generate a list of order status reports with optional query filters.
+             </p>
+             <p>
+              The returned list may be empty if no orders match the given parameters.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The instrument ID query filter.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   start
+                  </strong>
+                  (
+                  <em>
+                   pd.Timestamp
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The start datetime query filter.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   end
+                  </strong>
+                  (
+                  <em>
+                   pd.Timestamp
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The end datetime query filter.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   open_only
+                  </strong>
+                  (
+                  <em>
+                   bool
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   default False
+                  </em>
+                  ) – If the query is for open orders only.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 list[OrderStatusReport]
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.generate_trade_reports">
+             <em class="property">
+              <span class="pre">
+               async
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               generate_trade_reports
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                instrument_id
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.InstrumentId
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                venue_order_id
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.VenueOrderId
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                start
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                pandas._libs.tslibs.timestamps.Timestamp
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                end
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                pandas._libs.tslibs.timestamps.Timestamp
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                List
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="execution.html#nautilus_trader.execution.reports.TradeReport" title="nautilus_trader.execution.reports.TradeReport">
+                <span class="pre">
+                 nautilus_trader.execution.reports.TradeReport
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.generate_trade_reports" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Generate a list of trade reports with optional query filters.
+             </p>
+             <p>
+              The returned list may be empty if no trades match the given parameters.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The instrument ID query filter.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   venue_order_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
+                   <em>
+                    VenueOrderId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The venue order ID (assigned by the venue) query filter.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   start
+                  </strong>
+                  (
+                  <em>
+                   pd.Timestamp
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The start datetime query filter.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   end
+                  </strong>
+                  (
+                  <em>
+                   pd.Timestamp
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The end datetime query filter.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 list[TradeReport]
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.generate_position_status_reports">
+             <em class="property">
+              <span class="pre">
+               async
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               generate_position_status_reports
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                instrument_id
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.InstrumentId
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                start
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                pandas._libs.tslibs.timestamps.Timestamp
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                end
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                pandas._libs.tslibs.timestamps.Timestamp
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                List
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="execution.html#nautilus_trader.execution.reports.PositionStatusReport" title="nautilus_trader.execution.reports.PositionStatusReport">
+                <span class="pre">
+                 nautilus_trader.execution.reports.PositionStatusReport
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.generate_position_status_reports" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Generate a list of position status reports with optional query filters.
+             </p>
+             <p>
+              The returned list may be empty if no positions match the given parameters.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The instrument ID query filter.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   start
+                  </strong>
+                  (
+                  <em>
+                   pd.Timestamp
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The start datetime query filter.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   end
+                  </strong>
+                  (
+                  <em>
+                   pd.Timestamp
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The end datetime query filter.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 list[PositionStatusReport]
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.generate_mass_status">
+             <em class="property">
+              <span class="pre">
+               async
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               generate_mass_status
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                lookback_mins
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                int
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.generate_mass_status" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Generate an execution mass status report.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 lookback_mins
+                </strong>
+                (
+                <em>
+                 int
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The maximum lookback for querying closed orders, trades and positions.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 ExecutionMassStatus
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
            <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.account_id">
              <span class="sig-name descname">
@@ -10298,46 +12105,6 @@ API which may be presented directly by an exchange, or broker intermediary.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.connect">
-             <span class="sig-name descname">
-              <span class="pre">
-               connect
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.connect" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Abstract method (implement in subclass).
-             </p>
-            </dd>
-           </dl>
-           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.degrade">
              <span class="sig-name descname">
               <span class="pre">
@@ -10401,46 +12168,6 @@ The component will remain in a
 then the component state will not change, and an error will be logged.
               </p>
              </div>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.disconnect">
-             <span class="sig-name descname">
-              <span class="pre">
-               disconnect
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.disconnect" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Abstract method (implement in subclass).
-             </p>
             </dd>
            </dl>
            <dl class="py method">
@@ -10850,116 +12577,6 @@ then the component state will not change, and an error will be logged.
                  </p>
                 </li>
                </ul>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.generate_mass_status">
-             <span class="sig-name descname">
-              <span class="pre">
-               generate_mass_status
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                lookback_mins
-               </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <span class="pre">
-                Optional
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
-               </span>
-               <span class="pre">
-                int
-               </span>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="o">
-               <span class="pre">
-                =
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="default_value">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.generate_mass_status" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Generate an execution mass status report.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 lookback_mins
-                </strong>
-                (
-                <em>
-                 int
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The maximum lookback for querying closed orders, trades and positions.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 ExecutionMassStatus
-                </em>
-               </p>
               </dd>
              </dl>
             </dd>
@@ -12810,364 +14427,6 @@ position ID resolution.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_status_report">
-             <span class="sig-name descname">
-              <span class="pre">
-               generate_order_status_report
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                InstrumentId
-               </span>
-               <span class="pre">
-                instrument_id:
-               </span>
-               <span class="pre">
-                InstrumentId
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                client_order_id:
-               </span>
-               <span class="pre">
-                Optional[ClientOrderId]
-               </span>
-               <span class="pre">
-                =
-               </span>
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                venue_order_id:
-               </span>
-               <span class="pre">
-                Optional[VenueOrderId]
-               </span>
-               <span class="pre">
-                =
-               </span>
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_status_report" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Generate an order status report for the given order identifier parameter(s).
-             </p>
-             <p>
-              If the order is not found, or an error occurs, then logs and returns
-              <code class="docutils literal notranslate">
-               <span class="pre">
-                None
-               </span>
-              </code>
-              .
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   instrument_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                   <em>
-                    InstrumentId
-                   </em>
-                  </a>
-                  ) – The instrument ID for the report.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   client_order_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
-                   <em>
-                    ClientOrderId
-                   </em>
-                  </a>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The client order ID for the report.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   venue_order_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
-                   <em>
-                    VenueOrderId
-                   </em>
-                  </a>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The venue order ID for the report.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                OrderStatusReport or
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-               </p>
-              </dd>
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If both the
-                <cite>
-                 client_order_id
-                </cite>
-                and
-                <cite>
-                 venue_order_id
-                </cite>
-                are
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-                .
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_status_reports">
-             <span class="sig-name descname">
-              <span class="pre">
-               generate_order_status_reports
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                InstrumentId
-               </span>
-               <span class="pre">
-                instrument_id=None
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                start=None
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                end=None
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                bool
-               </span>
-               <span class="pre">
-                open_only=False
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_status_reports" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Generate a list of order status reports with optional query filters.
-             </p>
-             <p>
-              The returned list may be empty if no orders match the given parameters.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   instrument_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                   <em>
-                    InstrumentId
-                   </em>
-                  </a>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The instrument ID query filter.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   start
-                  </strong>
-                  (
-                  <em>
-                   datetime
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The start datetime query filter.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   end
-                  </strong>
-                  (
-                  <em>
-                   datetime
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The end datetime query filter.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   open_only
-                  </strong>
-                  (
-                  <em>
-                   bool
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   default False
-                  </em>
-                  ) – If the query is for open orders only.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 list[OrderStatusReport]
-                </em>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_submitted">
              <span class="sig-name descname">
               <span class="pre">
@@ -13781,319 +15040,6 @@ position ID resolution.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.generate_position_status_reports">
-             <span class="sig-name descname">
-              <span class="pre">
-               generate_position_status_reports
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                InstrumentId
-               </span>
-               <span class="pre">
-                instrument_id=None
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                start=None
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                end=None
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.generate_position_status_reports" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Generate a list of position status reports with optional query filters.
-             </p>
-             <p>
-              The returned list may be empty if no positions match the given parameters.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   instrument_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                   <em>
-                    InstrumentId
-                   </em>
-                  </a>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The instrument ID query filter.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   start
-                  </strong>
-                  (
-                  <em>
-                   datetime
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The start datetime query filter.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   end
-                  </strong>
-                  (
-                  <em>
-                   datetime
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The end datetime query filter.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 list[PositionStatusReport]
-                </em>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.generate_trade_reports">
-             <span class="sig-name descname">
-              <span class="pre">
-               generate_trade_reports
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                InstrumentId
-               </span>
-               <span class="pre">
-                instrument_id=None
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                VenueOrderId
-               </span>
-               <span class="pre">
-                venue_order_id=None
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                start=None
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                end=None
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.generate_trade_reports" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Generate a list of trade reports with optional query filters.
-             </p>
-             <p>
-              The returned list may be empty if no trades match the given parameters.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   instrument_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                   <em>
-                    InstrumentId
-                   </em>
-                  </a>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The instrument ID query filter.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   venue_order_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
-                   <em>
-                    VenueOrderId
-                   </em>
-                  </a>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The venue order ID (assigned by the venue) query filter.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   start
-                  </strong>
-                  (
-                  <em>
-                   datetime
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The start datetime query filter.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   end
-                  </strong>
-                  (
-                  <em>
-                   datetime
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The end datetime query filter.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 list[TradeReport]
-                </em>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.get_account">
              <span class="sig-name descname">
               <span class="pre">
@@ -14648,102 +15594,6 @@ The component will remain in a
 then the component state will not change, and an error will be logged.
               </p>
              </div>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.run_after_delay">
-             <span class="sig-name descname">
-              <span class="pre">
-               run_after_delay
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                double
-               </span>
-               <span class="pre">
-                delay:
-               </span>
-               <span class="pre">
-                float
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                coro
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.run_after_delay" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.sleep0">
-             <span class="sig-name descname">
-              <span class="pre">
-               sleep0
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.sleep0" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
             </dd>
            </dl>
            <dl class="py method">

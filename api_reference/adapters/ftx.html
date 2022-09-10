@@ -4294,13 +4294,6 @@ applying the given filters.
              <span class="sig-paren">
               (
              </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
              <span class="sig-paren">
               )
              </span>
@@ -4334,13 +4327,6 @@ applying the given filters.
              <span class="sig-paren">
               (
              </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
              <span class="sig-paren">
               )
              </span>
@@ -7420,96 +7406,6 @@ then the component state will not change, and an error will be logged.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.adapters.ftx.data.FTXDataClient.run_after_delay">
-             <span class="sig-name descname">
-              <span class="pre">
-               run_after_delay
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                delay
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                coro
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.adapters.ftx.data.FTXDataClient.run_after_delay" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.adapters.ftx.data.FTXDataClient.sleep0">
-             <span class="sig-name descname">
-              <span class="pre">
-               sleep0
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.adapters.ftx.data.FTXDataClient.sleep0" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-            </dd>
-           </dl>
-           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.adapters.ftx.data.FTXDataClient.start">
              <span class="sig-name descname">
               <span class="pre">
@@ -8943,13 +8839,6 @@ then the component state will not change, and an error will be logged.
              <span class="sig-paren">
               (
              </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
              <span class="sig-paren">
               )
              </span>
@@ -8983,13 +8872,6 @@ then the component state will not change, and an error will be logged.
              <span class="sig-paren">
               (
              </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
              <span class="sig-paren">
               )
              </span>
@@ -9033,36 +8915,68 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                self
+                instrument_id
                </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.InstrumentId
+                </span>
+               </a>
               </span>
              </em>
              ,
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                InstrumentId
-               </span>
-               <span class="pre">
-                instrument_id:
-               </span>
-               <span class="pre">
-                InstrumentId
+                client_order_id
                </span>
               </span>
-             </em>
-             ,
-             <em class="sig-param">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
               <span class="n">
                <span class="pre">
-                client_order_id:
+                Optional
                </span>
-               <span class="pre">
-                Optional[ClientOrderId]
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
                </span>
+               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.ClientOrderId
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
                <span class="pre">
                 =
                </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
                <span class="pre">
                 None
                </span>
@@ -9072,14 +8986,46 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                venue_order_id:
+                venue_order_id
                </span>
+              </span>
+              <span class="p">
                <span class="pre">
-                Optional[VenueOrderId]
+                :
                </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.VenueOrderId
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
                <span class="pre">
                 =
                </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
                <span class="pre">
                 None
                </span>
@@ -9087,6 +9033,31 @@ then the component state will not change, and an error will be logged.
              </em>
              <span class="sig-paren">
               )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="../execution.html#nautilus_trader.execution.reports.OrderStatusReport" title="nautilus_trader.execution.reports.OrderStatusReport">
+                <span class="pre">
+                 nautilus_trader.execution.reports.OrderStatusReport
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_order_status_report" title="Permalink to this definition">
               ¶
@@ -9228,7 +9199,48 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                self
+                instrument_id
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.InstrumentId
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
                </span>
               </span>
              </em>
@@ -9236,10 +9248,46 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                InstrumentId
+                start
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
                </span>
                <span class="pre">
-                instrument_id=None
+                datetime.datetime
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
                </span>
               </span>
              </em>
@@ -9247,10 +9295,46 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                datetime
+                end
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
                </span>
                <span class="pre">
-                start=None
+                datetime.datetime
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
                </span>
               </span>
              </em>
@@ -9258,26 +9342,63 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                end=None
+                open_only
                </span>
               </span>
-             </em>
-             ,
-             <em class="sig-param">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
               <span class="n">
                <span class="pre">
                 bool
                </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
                <span class="pre">
-                open_only=False
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                False
                </span>
               </span>
              </em>
              <span class="sig-paren">
               )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                List
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="../execution.html#nautilus_trader.execution.reports.OrderStatusReport" title="nautilus_trader.execution.reports.OrderStatusReport">
+                <span class="pre">
+                 nautilus_trader.execution.reports.OrderStatusReport
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_order_status_reports" title="Permalink to this definition">
               ¶
@@ -9323,7 +9444,7 @@ then the component state will not change, and an error will be logged.
                   </strong>
                   (
                   <em>
-                   datetime
+                   pd.Timestamp
                   </em>
                   <em>
                    ,
@@ -9341,7 +9462,7 @@ then the component state will not change, and an error will be logged.
                   </strong>
                   (
                   <em>
-                   datetime
+                   pd.Timestamp
                   </em>
                   <em>
                    ,
@@ -9405,7 +9526,48 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                self
+                instrument_id
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.InstrumentId
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
                </span>
               </span>
              </em>
@@ -9413,10 +9575,48 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                InstrumentId
+                venue_order_id
                </span>
+              </span>
+              <span class="p">
                <span class="pre">
-                instrument_id=None
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.VenueOrderId
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
                </span>
               </span>
              </em>
@@ -9424,10 +9624,46 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                VenueOrderId
+                start
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
                </span>
                <span class="pre">
-                venue_order_id=None
+                datetime.datetime
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
                </span>
               </span>
              </em>
@@ -9435,26 +9671,76 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                start=None
+                end
                </span>
               </span>
-             </em>
-             ,
-             <em class="sig-param">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
               <span class="n">
                <span class="pre">
-                datetime
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
                </span>
                <span class="pre">
-                end=None
+                datetime.datetime
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
                </span>
               </span>
              </em>
              <span class="sig-paren">
               )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                List
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="../execution.html#nautilus_trader.execution.reports.TradeReport" title="nautilus_trader.execution.reports.TradeReport">
+                <span class="pre">
+                 nautilus_trader.execution.reports.TradeReport
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_trade_reports" title="Permalink to this definition">
               ¶
@@ -9520,7 +9806,7 @@ then the component state will not change, and an error will be logged.
                   </strong>
                   (
                   <em>
-                   datetime
+                   pd.Timestamp
                   </em>
                   <em>
                    ,
@@ -9538,7 +9824,7 @@ then the component state will not change, and an error will be logged.
                   </strong>
                   (
                   <em>
-                   datetime
+                   pd.Timestamp
                   </em>
                   <em>
                    ,
@@ -9584,7 +9870,48 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                self
+                instrument_id
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.InstrumentId
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
                </span>
               </span>
              </em>
@@ -9592,10 +9919,46 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                InstrumentId
+                start
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
                </span>
                <span class="pre">
-                instrument_id=None
+                datetime.datetime
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
                </span>
               </span>
              </em>
@@ -9603,26 +9966,76 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                start=None
+                end
                </span>
               </span>
-             </em>
-             ,
-             <em class="sig-param">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
               <span class="n">
                <span class="pre">
-                datetime
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
                </span>
                <span class="pre">
-                end=None
+                datetime.datetime
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
                </span>
               </span>
              </em>
              <span class="sig-paren">
               )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                List
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <a class="reference internal" href="../execution.html#nautilus_trader.execution.reports.PositionStatusReport" title="nautilus_trader.execution.reports.PositionStatusReport">
+                <span class="pre">
+                 nautilus_trader.execution.reports.PositionStatusReport
+                </span>
+               </a>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_position_status_reports" title="Permalink to this definition">
               ¶
@@ -9668,7 +10081,7 @@ then the component state will not change, and an error will be logged.
                   </strong>
                   (
                   <em>
-                   datetime
+                   pd.Timestamp
                   </em>
                   <em>
                    ,
@@ -9686,7 +10099,7 @@ then the component state will not change, and an error will be logged.
                   </strong>
                   (
                   <em>
-                   datetime
+                   pd.Timestamp
                   </em>
                   <em>
                    ,
@@ -10640,6 +11053,13 @@ then the component state will not change, and an error will be logged.
            </dl>
            <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_mass_status">
+             <em class="property">
+              <span class="pre">
+               async
+              </span>
+              <span class="w">
+              </span>
+             </em>
              <span class="sig-name descname">
               <span class="pre">
                generate_mass_status
@@ -10648,14 +11068,6 @@ then the component state will not change, and an error will be logged.
              <span class="sig-paren">
               (
              </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
              <em class="sig-param">
               <span class="n">
                <span class="pre">
@@ -13691,102 +14103,6 @@ The component will remain in a
 then the component state will not change, and an error will be logged.
               </p>
              </div>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.adapters.ftx.execution.FTXExecutionClient.run_after_delay">
-             <span class="sig-name descname">
-              <span class="pre">
-               run_after_delay
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                double
-               </span>
-               <span class="pre">
-                delay:
-               </span>
-               <span class="pre">
-                float
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                coro
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.run_after_delay" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.adapters.ftx.execution.FTXExecutionClient.sleep0">
-             <span class="sig-name descname">
-              <span class="pre">
-               sleep0
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.sleep0" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
             </dd>
            </dl>
            <dl class="py method">
