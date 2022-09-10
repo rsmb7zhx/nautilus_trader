@@ -2985,161 +2985,309 @@ precision.
             (
            </span>
            <em class="sig-param">
-            <span class="pre">
-             InstrumentId
+            <span class="n">
+             <span class="pre">
+              InstrumentId
+             </span>
+             <span class="pre">
+              instrument_id
+             </span>
             </span>
-            <span class="pre">
-             instrument_id,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Symbol
+             </span>
+             <span class="pre">
+              native_symbol
+             </span>
             </span>
-            <span class="pre">
-             Symbol
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Currency
+             </span>
+             <span class="pre">
+              base_currency
+             </span>
             </span>
-            <span class="pre">
-             native_symbol,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Currency
+             </span>
+             <span class="pre">
+              quote_currency
+             </span>
             </span>
-            <span class="pre">
-             Currency
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Currency
+             </span>
+             <span class="pre">
+              settlement_currency
+             </span>
             </span>
-            <span class="pre">
-             base_currency,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+             <span class="pre">
+              is_inverse
+             </span>
             </span>
-            <span class="pre">
-             Currency
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int
+             </span>
+             <span class="pre">
+              price_precision
+             </span>
             </span>
-            <span class="pre">
-             quote_currency,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int
+             </span>
+             <span class="pre">
+              size_precision
+             </span>
             </span>
-            <span class="pre">
-             Currency
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Price
+             </span>
+             <span class="pre">
+              price_increment
+             </span>
             </span>
-            <span class="pre">
-             settlement_currency,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Quantity
+             </span>
+             <span class="pre">
+              size_increment
+             </span>
             </span>
-            <span class="pre">
-             bool
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              margin_init:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
             </span>
-            <span class="pre">
-             is_inverse,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              margin_maint:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
             </span>
-            <span class="pre">
-             int
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              maker_fee:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
             </span>
-            <span class="pre">
-             price_precision,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              taker_fee:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
             </span>
-            <span class="pre">
-             int
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              ts_event
+             </span>
             </span>
-            <span class="pre">
-             size_precision,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              ts_init
+             </span>
             </span>
-            <span class="pre">
-             Price
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Quantity
+             </span>
+             <span class="pre">
+              max_quantity:
+             </span>
+             <span class="pre">
+              Optional[Quantity]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             price_increment,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Quantity
+             </span>
+             <span class="pre">
+              min_quantity:
+             </span>
+             <span class="pre">
+              Optional[Quantity]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             Quantity
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Money
+             </span>
+             <span class="pre">
+              max_notional:
+             </span>
+             <span class="pre">
+              Optional[Money]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             size_increment,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Money
+             </span>
+             <span class="pre">
+              min_notional:
+             </span>
+             <span class="pre">
+              Optional[Money]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             Quantity
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Price
+             </span>
+             <span class="pre">
+              max_price:
+             </span>
+             <span class="pre">
+              Optional[Price]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             max_quantity:
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Price
+             </span>
+             <span class="pre">
+              min_price:
+             </span>
+             <span class="pre">
+              Optional[Price]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             Optional[Quantity],
-            </span>
-            <span class="pre">
-             Quantity
-            </span>
-            <span class="pre">
-             min_quantity:
-            </span>
-            <span class="pre">
-             Optional[Quantity],
-            </span>
-            <span class="pre">
-             Money
-            </span>
-            <span class="pre">
-             max_notional:
-            </span>
-            <span class="pre">
-             Optional[Money],
-            </span>
-            <span class="pre">
-             Money
-            </span>
-            <span class="pre">
-             min_notional:
-            </span>
-            <span class="pre">
-             Optional[Money],
-            </span>
-            <span class="pre">
-             Price
-            </span>
-            <span class="pre">
-             max_price:
-            </span>
-            <span class="pre">
-             Optional[Price],
-            </span>
-            <span class="pre">
-             Price
-            </span>
-            <span class="pre">
-             min_price:
-            </span>
-            <span class="pre">
-             Optional[Price],
-            </span>
-            <span class="pre">
-             margin_init:
-            </span>
-            <span class="pre">
-             Decimal,
-            </span>
-            <span class="pre">
-             margin_maint:
-            </span>
-            <span class="pre">
-             Decimal,
-            </span>
-            <span class="pre">
-             maker_fee:
-            </span>
-            <span class="pre">
-             Decimal,
-            </span>
-            <span class="pre">
-             taker_fee:
-            </span>
-            <span class="pre">
-             Decimal,
-            </span>
-            <span class="pre">
-             uint64_t
-            </span>
-            <span class="pre">
-             ts_event,
-            </span>
-            <span class="pre">
-             uint64_t
-            </span>
-            <span class="pre">
-             ts_init,
-            </span>
-            <span class="pre">
-             dict
-            </span>
-            <span class="pre">
-             info=None
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              dict
+             </span>
+             <span class="pre">
+              info=None
+             </span>
             </span>
            </em>
            <span class="sig-paren">
@@ -3323,6 +3471,78 @@ Swap
               <li>
                <p>
                 <strong>
+                 margin_init
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The initial (order) margin requirement in percentage of order value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 margin_maint
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The maintenance (position) margin in percentage of position value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 maker_fee
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The fee rate for liquidity makers as a percentage of order value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 taker_fee
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The fee rate for liquidity takers as a percentage of order value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_event
+                </strong>
+                (
+                <em>
+                 uint64_t
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the data event occurred.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 uint64_t
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the data object was initialized.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  max_quantity
                 </strong>
                 (
@@ -3438,78 +3658,6 @@ Swap
                  optional
                 </em>
                 ) – The minimum allowable quoted price.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 margin_init
-                </strong>
-                (
-                <em>
-                 Decimal
-                </em>
-                ) – The initial (order) margin requirement in percentage of order value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 margin_maint
-                </strong>
-                (
-                <em>
-                 Decimal
-                </em>
-                ) – The maintenance (position) margin in percentage of position value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 maker_fee
-                </strong>
-                (
-                <em>
-                 Decimal
-                </em>
-                ) – The fee rate for liquidity makers as a percentage of order value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 taker_fee
-                </strong>
-                (
-                <em>
-                 Decimal
-                </em>
-                ) – The fee rate for liquidity takers as a percentage of order value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ts_event
-                </strong>
-                (
-                <em>
-                 uint64_t
-                </em>
-                ) – The UNIX timestamp (nanoseconds) when the data event occurred.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ts_init
-                </strong>
-                (
-                <em>
-                 uint64_t
-                </em>
-                ) – The UNIX timestamp (nanoseconds) when the data object was initialized.
                </p>
               </li>
               <li>
@@ -5771,161 +5919,309 @@ currency for inverse instruments.
             (
            </span>
            <em class="sig-param">
-            <span class="pre">
-             InstrumentId
+            <span class="n">
+             <span class="pre">
+              InstrumentId
+             </span>
+             <span class="pre">
+              instrument_id
+             </span>
             </span>
-            <span class="pre">
-             instrument_id,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Symbol
+             </span>
+             <span class="pre">
+              native_symbol
+             </span>
             </span>
-            <span class="pre">
-             Symbol
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Currency
+             </span>
+             <span class="pre">
+              underlying
+             </span>
             </span>
-            <span class="pre">
-             native_symbol,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Currency
+             </span>
+             <span class="pre">
+              quote_currency
+             </span>
             </span>
-            <span class="pre">
-             Currency
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Currency
+             </span>
+             <span class="pre">
+              settlement_currency
+             </span>
             </span>
-            <span class="pre">
-             underlying,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              date
+             </span>
+             <span class="pre">
+              expiry_date
+             </span>
             </span>
-            <span class="pre">
-             Currency
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int
+             </span>
+             <span class="pre">
+              price_precision
+             </span>
             </span>
-            <span class="pre">
-             quote_currency,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int
+             </span>
+             <span class="pre">
+              size_precision
+             </span>
             </span>
-            <span class="pre">
-             Currency
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Price
+             </span>
+             <span class="pre">
+              price_increment
+             </span>
             </span>
-            <span class="pre">
-             settlement_currency,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Quantity
+             </span>
+             <span class="pre">
+              size_increment
+             </span>
             </span>
-            <span class="pre">
-             date
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              margin_init:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
             </span>
-            <span class="pre">
-             expiry_date,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              margin_maint:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
             </span>
-            <span class="pre">
-             int
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              maker_fee:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
             </span>
-            <span class="pre">
-             price_precision,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              taker_fee:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
             </span>
-            <span class="pre">
-             int
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              ts_event
+             </span>
             </span>
-            <span class="pre">
-             size_precision,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              ts_init
+             </span>
             </span>
-            <span class="pre">
-             Price
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Quantity
+             </span>
+             <span class="pre">
+              max_quantity:
+             </span>
+             <span class="pre">
+              Optional[Quantity]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             price_increment,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Quantity
+             </span>
+             <span class="pre">
+              min_quantity:
+             </span>
+             <span class="pre">
+              Optional[Quantity]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             Quantity
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Money
+             </span>
+             <span class="pre">
+              max_notional:
+             </span>
+             <span class="pre">
+              Optional[Money]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             size_increment,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Money
+             </span>
+             <span class="pre">
+              min_notional:
+             </span>
+             <span class="pre">
+              Optional[Money]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             Quantity
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Price
+             </span>
+             <span class="pre">
+              max_price:
+             </span>
+             <span class="pre">
+              Optional[Price]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             max_quantity:
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Price
+             </span>
+             <span class="pre">
+              min_price:
+             </span>
+             <span class="pre">
+              Optional[Price]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             Optional[Quantity],
-            </span>
-            <span class="pre">
-             Quantity
-            </span>
-            <span class="pre">
-             min_quantity:
-            </span>
-            <span class="pre">
-             Optional[Quantity],
-            </span>
-            <span class="pre">
-             Money
-            </span>
-            <span class="pre">
-             max_notional:
-            </span>
-            <span class="pre">
-             Optional[Money],
-            </span>
-            <span class="pre">
-             Money
-            </span>
-            <span class="pre">
-             min_notional:
-            </span>
-            <span class="pre">
-             Optional[Money],
-            </span>
-            <span class="pre">
-             Price
-            </span>
-            <span class="pre">
-             max_price:
-            </span>
-            <span class="pre">
-             Optional[Price],
-            </span>
-            <span class="pre">
-             Price
-            </span>
-            <span class="pre">
-             min_price:
-            </span>
-            <span class="pre">
-             Optional[Price],
-            </span>
-            <span class="pre">
-             margin_init:
-            </span>
-            <span class="pre">
-             Decimal,
-            </span>
-            <span class="pre">
-             margin_maint:
-            </span>
-            <span class="pre">
-             Decimal,
-            </span>
-            <span class="pre">
-             maker_fee:
-            </span>
-            <span class="pre">
-             Decimal,
-            </span>
-            <span class="pre">
-             taker_fee:
-            </span>
-            <span class="pre">
-             Decimal,
-            </span>
-            <span class="pre">
-             uint64_t
-            </span>
-            <span class="pre">
-             ts_event,
-            </span>
-            <span class="pre">
-             uint64_t
-            </span>
-            <span class="pre">
-             ts_init,
-            </span>
-            <span class="pre">
-             dict
-            </span>
-            <span class="pre">
-             info=None
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              dict
+             </span>
+             <span class="pre">
+              info=None
+             </span>
             </span>
            </em>
            <span class="sig-paren">
@@ -5999,12 +6295,6 @@ as underlying and for settlement.
                   Currency
                  </em>
                 </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
                 ) – The underlying asset.
                </p>
               </li>
@@ -6084,6 +6374,78 @@ as underlying and for settlement.
                  </em>
                 </a>
                 ) – The minimum size increment.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 margin_init
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The initial (order) margin requirement in percentage of order value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 margin_maint
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The maintenance (position) margin in percentage of position value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 maker_fee
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The fee rate for liquidity makers as a percentage of order value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 taker_fee
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The fee rate for liquidity takers as a percentage of order value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_event
+                </strong>
+                (
+                <em>
+                 uint64_t
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the data event occurred.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 uint64_t
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the data object was initialized.
                </p>
               </li>
               <li>
@@ -6204,78 +6566,6 @@ as underlying and for settlement.
                  optional
                 </em>
                 ) – The minimum allowable quoted price.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 margin_init
-                </strong>
-                (
-                <em>
-                 Decimal
-                </em>
-                ) – The initial (order) margin requirement in percentage of order value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 margin_maint
-                </strong>
-                (
-                <em>
-                 Decimal
-                </em>
-                ) – The maintenance (position) margin in percentage of position value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 maker_fee
-                </strong>
-                (
-                <em>
-                 Decimal
-                </em>
-                ) – The fee rate for liquidity makers as a percentage of order value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 taker_fee
-                </strong>
-                (
-                <em>
-                 Decimal
-                </em>
-                ) – The fee rate for liquidity takers as a percentage of order value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ts_event
-                </strong>
-                (
-                <em>
-                 uint64_t
-                </em>
-                ) – The UNIX timestamp (nanoseconds) when the data event occurred.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ts_init
-                </strong>
-                (
-                <em>
-                 uint64_t
-                </em>
-                ) – The UNIX timestamp (nanoseconds) when the data object was initialized.
                </p>
               </li>
               <li>
@@ -8537,164 +8827,318 @@ currency for inverse instruments.
             (
            </span>
            <em class="sig-param">
-            <span class="pre">
-             InstrumentId
+            <span class="n">
+             <span class="pre">
+              InstrumentId
+             </span>
+             <span class="pre">
+              instrument_id
+             </span>
             </span>
-            <span class="pre">
-             instrument_id,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Symbol
+             </span>
+             <span class="pre">
+              native_symbol
+             </span>
             </span>
-            <span class="pre">
-             Symbol
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Currency
+             </span>
+             <span class="pre">
+              base_currency
+             </span>
             </span>
-            <span class="pre">
-             native_symbol,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Currency
+             </span>
+             <span class="pre">
+              quote_currency
+             </span>
             </span>
-            <span class="pre">
-             Currency
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int
+             </span>
+             <span class="pre">
+              price_precision
+             </span>
             </span>
-            <span class="pre">
-             base_currency,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int
+             </span>
+             <span class="pre">
+              size_precision
+             </span>
             </span>
-            <span class="pre">
-             Currency
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Price
+             </span>
+             <span class="pre">
+              price_increment
+             </span>
             </span>
-            <span class="pre">
-             quote_currency,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Quantity
+             </span>
+             <span class="pre">
+              size_increment
+             </span>
             </span>
-            <span class="pre">
-             int
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              margin_init:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
             </span>
-            <span class="pre">
-             price_precision,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              margin_maint:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
             </span>
-            <span class="pre">
-             int
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              maker_fee:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
             </span>
-            <span class="pre">
-             size_precision,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              taker_fee:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
             </span>
-            <span class="pre">
-             Price
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              ts_event
+             </span>
             </span>
-            <span class="pre">
-             price_increment,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              ts_init
+             </span>
             </span>
-            <span class="pre">
-             Quantity
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Quantity
+             </span>
+             <span class="pre">
+              lot_size:
+             </span>
+             <span class="pre">
+              Optional[Quantity]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             size_increment,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Quantity
+             </span>
+             <span class="pre">
+              max_quantity:
+             </span>
+             <span class="pre">
+              Optional[Quantity]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             Quantity
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Quantity
+             </span>
+             <span class="pre">
+              min_quantity:
+             </span>
+             <span class="pre">
+              Optional[Quantity]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             lot_size:
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Money
+             </span>
+             <span class="pre">
+              max_notional:
+             </span>
+             <span class="pre">
+              Optional[Money]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             Optional[Quantity],
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Money
+             </span>
+             <span class="pre">
+              min_notional:
+             </span>
+             <span class="pre">
+              Optional[Money]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             Quantity
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Price
+             </span>
+             <span class="pre">
+              max_price:
+             </span>
+             <span class="pre">
+              Optional[Price]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             max_quantity:
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Price
+             </span>
+             <span class="pre">
+              min_price:
+             </span>
+             <span class="pre">
+              Optional[Price]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             Optional[Quantity],
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              unicode
+             </span>
+             <span class="pre">
+              tick_scheme_name=None
+             </span>
             </span>
-            <span class="pre">
-             Quantity
-            </span>
-            <span class="pre">
-             min_quantity:
-            </span>
-            <span class="pre">
-             Optional[Quantity],
-            </span>
-            <span class="pre">
-             Money
-            </span>
-            <span class="pre">
-             max_notional:
-            </span>
-            <span class="pre">
-             Optional[Money],
-            </span>
-            <span class="pre">
-             Money
-            </span>
-            <span class="pre">
-             min_notional:
-            </span>
-            <span class="pre">
-             Optional[Money],
-            </span>
-            <span class="pre">
-             Price
-            </span>
-            <span class="pre">
-             max_price:
-            </span>
-            <span class="pre">
-             Optional[Price],
-            </span>
-            <span class="pre">
-             Price
-            </span>
-            <span class="pre">
-             min_price:
-            </span>
-            <span class="pre">
-             Optional[Price],
-            </span>
-            <span class="pre">
-             margin_init:
-            </span>
-            <span class="pre">
-             Decimal,
-            </span>
-            <span class="pre">
-             margin_maint:
-            </span>
-            <span class="pre">
-             Decimal,
-            </span>
-            <span class="pre">
-             maker_fee:
-            </span>
-            <span class="pre">
-             Decimal,
-            </span>
-            <span class="pre">
-             taker_fee:
-            </span>
-            <span class="pre">
-             Decimal,
-            </span>
-            <span class="pre">
-             uint64_t
-            </span>
-            <span class="pre">
-             ts_event,
-            </span>
-            <span class="pre">
-             uint64_t
-            </span>
-            <span class="pre">
-             ts_init,
-            </span>
-            <span class="pre">
-             unicode
-            </span>
-            <span class="pre">
-             tick_scheme_name=None,
-            </span>
-            <span class="pre">
-             dict
-            </span>
-            <span class="pre">
-             info=None
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              dict
+             </span>
+             <span class="pre">
+              info=None
+             </span>
             </span>
            </em>
            <span class="sig-paren">
@@ -8838,6 +9282,78 @@ currency for inverse instruments.
               <li>
                <p>
                 <strong>
+                 margin_init
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The initial (order) margin requirement in percentage of order value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 margin_maint
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The maintenance (position) margin in percentage of position value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 maker_fee
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The fee rate for liquidity makers as a percentage of order value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 taker_fee
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The fee rate for liquidity takers as a percentage of order value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_event
+                </strong>
+                (
+                <em>
+                 uint64_t
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the data event occurred.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 uint64_t
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the data object was initialized.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  lot_size
                 </strong>
                 (
@@ -8973,78 +9489,6 @@ currency for inverse instruments.
                  optional
                 </em>
                 ) – The minimum allowable quoted price.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 margin_init
-                </strong>
-                (
-                <em>
-                 Decimal
-                </em>
-                ) – The initial (order) margin requirement in percentage of order value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 margin_maint
-                </strong>
-                (
-                <em>
-                 Decimal
-                </em>
-                ) – The maintenance (position) margin in percentage of position value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 maker_fee
-                </strong>
-                (
-                <em>
-                 Decimal
-                </em>
-                ) – The fee rate for liquidity makers as a percentage of order value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 taker_fee
-                </strong>
-                (
-                <em>
-                 Decimal
-                </em>
-                ) – The fee rate for liquidity takers as a percentage of order value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ts_event
-                </strong>
-                (
-                <em>
-                 uint64_t
-                </em>
-                ) – The UNIX timestamp (nanoseconds) when the data event occurred.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ts_init
-                </strong>
-                (
-                <em>
-                 uint64_t
-                </em>
-                ) – The UNIX timestamp (nanoseconds) when the data object was initialized.
                </p>
               </li>
               <li>
@@ -11278,116 +11722,189 @@ currency for inverse instruments.
             (
            </span>
            <em class="sig-param">
-            <span class="pre">
-             InstrumentId
+            <span class="n">
+             <span class="pre">
+              InstrumentId
+             </span>
+             <span class="pre">
+              instrument_id
+             </span>
             </span>
-            <span class="pre">
-             instrument_id,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Symbol
+             </span>
+             <span class="pre">
+              native_symbol
+             </span>
             </span>
-            <span class="pre">
-             Symbol
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Currency
+             </span>
+             <span class="pre">
+              currency
+             </span>
             </span>
-            <span class="pre">
-             native_symbol,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int
+             </span>
+             <span class="pre">
+              price_precision
+             </span>
             </span>
-            <span class="pre">
-             Currency
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Price
+             </span>
+             <span class="pre">
+              price_increment
+             </span>
             </span>
-            <span class="pre">
-             currency,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Quantity
+             </span>
+             <span class="pre">
+              multiplier
+             </span>
             </span>
-            <span class="pre">
-             int
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Quantity
+             </span>
+             <span class="pre">
+              lot_size
+             </span>
             </span>
-            <span class="pre">
-             price_precision,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              ts_event
+             </span>
             </span>
-            <span class="pre">
-             Price
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              ts_init
+             </span>
             </span>
-            <span class="pre">
-             price_increment,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              unicode
+             </span>
+             <span class="pre">
+              isin:
+             </span>
+             <span class="pre">
+              Optional[str]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             Quantity
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              margin_init:
+             </span>
+             <span class="pre">
+              Optional[Decimal]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             multiplier,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              margin_maint:
+             </span>
+             <span class="pre">
+              Optional[Decimal]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             Quantity
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              maker_fee:
+             </span>
+             <span class="pre">
+              Optional[Decimal]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             lot_size,
-            </span>
-            <span class="pre">
-             unicode
-            </span>
-            <span class="pre">
-             isin:
-            </span>
-            <span class="pre">
-             Optional[str],
-            </span>
-            <span class="pre">
-             uint64_t
-            </span>
-            <span class="pre">
-             ts_event,
-            </span>
-            <span class="pre">
-             uint64_t
-            </span>
-            <span class="pre">
-             ts_init,
-            </span>
-            <span class="pre">
-             margin_init:
-            </span>
-            <span class="pre">
-             Optional[Decimal]
-            </span>
-            <span class="pre">
-             =
-            </span>
-            <span class="pre">
-             None,
-            </span>
-            <span class="pre">
-             margin_maint:
-            </span>
-            <span class="pre">
-             Optional[Decimal]
-            </span>
-            <span class="pre">
-             =
-            </span>
-            <span class="pre">
-             None,
-            </span>
-            <span class="pre">
-             maker_fee:
-            </span>
-            <span class="pre">
-             Optional[Decimal]
-            </span>
-            <span class="pre">
-             =
-            </span>
-            <span class="pre">
-             None,
-            </span>
-            <span class="pre">
-             taker_fee:
-            </span>
-            <span class="pre">
-             Optional[Decimal]
-            </span>
-            <span class="pre">
-             =
-            </span>
-            <span class="pre">
-             None
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              taker_fee:
+             </span>
+             <span class="pre">
+              Optional[Decimal]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
            </em>
            <span class="sig-paren">
@@ -11517,6 +12034,12 @@ currency for inverse instruments.
                 (
                 <em>
                  str
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
                 </em>
                 ) – The International Securities Identification Number (ISIN).
                </p>
@@ -18437,185 +18960,360 @@ currency for inverse instruments.
             (
            </span>
            <em class="sig-param">
-            <span class="pre">
-             InstrumentId
+            <span class="n">
+             <span class="pre">
+              InstrumentId
+             </span>
+             <span class="pre">
+              instrument_id
+             </span>
             </span>
-            <span class="pre">
-             instrument_id,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Symbol
+             </span>
+             <span class="pre">
+              native_symbol
+             </span>
             </span>
-            <span class="pre">
-             Symbol
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              AssetClass
+             </span>
+             <span class="pre">
+              asset_class
+             </span>
             </span>
-            <span class="pre">
-             native_symbol,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              AssetType
+             </span>
+             <span class="pre">
+              asset_type
+             </span>
             </span>
-            <span class="pre">
-             AssetClass
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Currency
+             </span>
+             <span class="pre">
+              quote_currency
+             </span>
             </span>
-            <span class="pre">
-             asset_class,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+             <span class="pre">
+              is_inverse
+             </span>
             </span>
-            <span class="pre">
-             AssetType
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int
+             </span>
+             <span class="pre">
+              price_precision
+             </span>
             </span>
-            <span class="pre">
-             asset_type,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int
+             </span>
+             <span class="pre">
+              size_precision
+             </span>
             </span>
-            <span class="pre">
-             Currency
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Quantity
+             </span>
+             <span class="pre">
+              size_increment
+             </span>
             </span>
-            <span class="pre">
-             quote_currency,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Quantity
+             </span>
+             <span class="pre">
+              multiplier
+             </span>
             </span>
-            <span class="pre">
-             bool
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              margin_init:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
             </span>
-            <span class="pre">
-             is_inverse,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              margin_maint:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
             </span>
-            <span class="pre">
-             int
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              maker_fee:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
             </span>
-            <span class="pre">
-             price_precision,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              taker_fee:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
             </span>
-            <span class="pre">
-             int
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              ts_event
+             </span>
             </span>
-            <span class="pre">
-             size_precision,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              uint64_t
+             </span>
+             <span class="pre">
+              ts_init
+             </span>
             </span>
-            <span class="pre">
-             Price
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Price
+             </span>
+             <span class="pre">
+              price_increment:
+             </span>
+             <span class="pre">
+              Optional[Price]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             price_increment:
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Quantity
+             </span>
+             <span class="pre">
+              lot_size:
+             </span>
+             <span class="pre">
+              Optional[Quantity]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             Optional[Price],
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Quantity
+             </span>
+             <span class="pre">
+              max_quantity:
+             </span>
+             <span class="pre">
+              Optional[Quantity]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             Quantity
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Quantity
+             </span>
+             <span class="pre">
+              min_quantity:
+             </span>
+             <span class="pre">
+              Optional[Quantity]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             size_increment,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Money
+             </span>
+             <span class="pre">
+              max_notional:
+             </span>
+             <span class="pre">
+              Optional[Money]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             Quantity
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Money
+             </span>
+             <span class="pre">
+              min_notional:
+             </span>
+             <span class="pre">
+              Optional[Money]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             multiplier,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Price
+             </span>
+             <span class="pre">
+              max_price:
+             </span>
+             <span class="pre">
+              Optional[Price]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             Quantity
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Price
+             </span>
+             <span class="pre">
+              min_price:
+             </span>
+             <span class="pre">
+              Optional[Price]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             lot_size:
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              unicode
+             </span>
+             <span class="pre">
+              tick_scheme_name=None
+             </span>
             </span>
-            <span class="pre">
-             Optional[Quantity],
-            </span>
-            <span class="pre">
-             Quantity
-            </span>
-            <span class="pre">
-             max_quantity:
-            </span>
-            <span class="pre">
-             Optional[Quantity],
-            </span>
-            <span class="pre">
-             Quantity
-            </span>
-            <span class="pre">
-             min_quantity:
-            </span>
-            <span class="pre">
-             Optional[Quantity],
-            </span>
-            <span class="pre">
-             Money
-            </span>
-            <span class="pre">
-             max_notional:
-            </span>
-            <span class="pre">
-             Optional[Money],
-            </span>
-            <span class="pre">
-             Money
-            </span>
-            <span class="pre">
-             min_notional:
-            </span>
-            <span class="pre">
-             Optional[Money],
-            </span>
-            <span class="pre">
-             Price
-            </span>
-            <span class="pre">
-             max_price:
-            </span>
-            <span class="pre">
-             Optional[Price],
-            </span>
-            <span class="pre">
-             Price
-            </span>
-            <span class="pre">
-             min_price:
-            </span>
-            <span class="pre">
-             Optional[Price],
-            </span>
-            <span class="pre">
-             margin_init:
-            </span>
-            <span class="pre">
-             Decimal,
-            </span>
-            <span class="pre">
-             margin_maint:
-            </span>
-            <span class="pre">
-             Decimal,
-            </span>
-            <span class="pre">
-             maker_fee:
-            </span>
-            <span class="pre">
-             Decimal,
-            </span>
-            <span class="pre">
-             taker_fee:
-            </span>
-            <span class="pre">
-             Decimal,
-            </span>
-            <span class="pre">
-             uint64_t
-            </span>
-            <span class="pre">
-             ts_event,
-            </span>
-            <span class="pre">
-             uint64_t
-            </span>
-            <span class="pre">
-             ts_init,
-            </span>
-            <span class="pre">
-             unicode
-            </span>
-            <span class="pre">
-             tick_scheme_name=None,
-            </span>
-            <span class="pre">
-             dict
-            </span>
-            <span class="pre">
-             info=None
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              dict
+             </span>
+             <span class="pre">
+              info=None
+             </span>
             </span>
            </em>
            <span class="sig-paren">
@@ -18754,26 +19452,6 @@ define an instrument, or act as a parent class for more specific instruments.
               <li>
                <p>
                 <strong>
-                 price_increment
-                </strong>
-                (
-                <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
-                 <em>
-                  Price
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The minimum price increment (tick size).
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  size_increment
                 </strong>
                 (
@@ -18815,6 +19493,98 @@ define an instrument, or act as a parent class for more specific instruments.
                  optional
                 </em>
                 ) – The rounded lot unit size (standard/board).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 margin_init
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The initial (order) margin requirement in percentage of order value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 margin_maint
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The maintenance (position) margin in percentage of position value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 maker_fee
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The fee rate for liquidity makers as a percentage of order value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 taker_fee
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The fee rate for liquidity takers as a percentage of order value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_event
+                </strong>
+                (
+                <em>
+                 uint64_t
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the data event occurred.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 uint64_t
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the data object was initialized.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 price_increment
+                </strong>
+                (
+                <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+                 <em>
+                  Price
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The minimum price increment (tick size).
                </p>
               </li>
               <li>
@@ -18935,78 +19705,6 @@ define an instrument, or act as a parent class for more specific instruments.
                  optional
                 </em>
                 ) – The minimum allowable quoted price.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 margin_init
-                </strong>
-                (
-                <em>
-                 Decimal
-                </em>
-                ) – The initial (order) margin requirement in percentage of order value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 margin_maint
-                </strong>
-                (
-                <em>
-                 Decimal
-                </em>
-                ) – The maintenance (position) margin in percentage of position value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 maker_fee
-                </strong>
-                (
-                <em>
-                 Decimal
-                </em>
-                ) – The fee rate for liquidity makers as a percentage of order value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 taker_fee
-                </strong>
-                (
-                <em>
-                 Decimal
-                </em>
-                ) – The fee rate for liquidity takers as a percentage of order value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ts_event
-                </strong>
-                (
-                <em>
-                 uint64_t
-                </em>
-                ) – The UNIX timestamp (nanoseconds) when the data event occurred.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ts_init
-                </strong>
-                (
-                <em>
-                 uint64_t
-                </em>
-                ) – The UNIX timestamp (nanoseconds) when the data object was initialized.
                </p>
               </li>
               <li>

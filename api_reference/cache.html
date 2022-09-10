@@ -742,32 +742,50 @@ accessed by many components.
             (
            </span>
            <em class="sig-param">
-            <span class="pre">
-             CacheDatabase
+            <span class="n">
+             <span class="pre">
+              Logger
+             </span>
+             <span class="pre">
+              logger
+             </span>
             </span>
-            <span class="pre">
-             database:
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              CacheDatabase
+             </span>
+             <span class="pre">
+              database:
+             </span>
+             <span class="pre">
+              Optional[CacheDatabase]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             Optional[CacheDatabase],
-            </span>
-            <span class="pre">
-             Logger
-            </span>
-            <span class="pre">
-             logger,
-            </span>
-            <span class="pre">
-             config:
-            </span>
-            <span class="pre">
-             Optional[CacheConfig]
-            </span>
-            <span class="pre">
-             =
-            </span>
-            <span class="pre">
-             None
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              config:
+             </span>
+             <span class="pre">
+              Optional[CacheConfig]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
            </em>
            <span class="sig-paren">
@@ -800,6 +818,20 @@ accessed by many components.
               <li>
                <p>
                 <strong>
+                 logger
+                </strong>
+                (
+                <a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger">
+                 <em>
+                  Logger
+                 </em>
+                </a>
+                ) – The logger for the cache.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  database
                 </strong>
                 (
@@ -821,20 +853,6 @@ accessed by many components.
                  </span>
                 </code>
                 then will bypass persistence.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 logger
-                </strong>
-                (
-                <a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger">
-                 <em>
-                  Logger
-                 </em>
-                </a>
-                ) – The logger for the cache.
                </p>
               </li>
               <li>

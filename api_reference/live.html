@@ -885,19 +885,13 @@ could also be possible to write clients for specialized data publishers.
                 <strong>
                  venue
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
-                 <em>
-                  Venue
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The client venue. If multi-venue then can be
+                (Venue, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The client venue. If multi-venue then can be
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
@@ -2538,19 +2532,13 @@ then the component state will not change, and an error will be logged.
                 <strong>
                  venue
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
-                 <em>
-                  Venue
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The client venue. If multi-venue then can be
+                (Venue, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The client venue. If multi-venue then can be
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
@@ -3424,28 +3412,6 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                from_datetime
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                to_datetime
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
                 int
                </span>
                <span class="pre">
@@ -3461,6 +3427,28 @@ then the component state will not change, and an error will be logged.
                </span>
                <span class="pre">
                 correlation_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                from_datetime=None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                to_datetime=None
                </span>
               </span>
              </em>
@@ -3512,6 +3500,32 @@ then the component state will not change, and an error will be logged.
                 <li>
                  <p>
                   <strong>
+                   limit
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  ) – The limit for the number of returned bars.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the request.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
                    from_datetime
                   </strong>
                   (
@@ -3550,32 +3564,6 @@ then the component state will not change, and an error will be logged.
                   </code>
                   then will default
 to the current datetime.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   limit
-                  </strong>
-                  (
-                  <em>
-                   int
-                  </em>
-                  ) – The limit for the number of returned bars.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   correlation_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                   <em>
-                    UUID4
-                   </em>
-                  </a>
-                  ) – The correlation ID for the request.
                  </p>
                 </li>
                </ul>
@@ -3718,28 +3706,6 @@ to the current datetime.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                from_datetime
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                to_datetime
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
                 int
                </span>
                <span class="pre">
@@ -3755,6 +3721,28 @@ to the current datetime.
                </span>
                <span class="pre">
                 correlation_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                from_datetime=None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                to_datetime=None
                </span>
               </span>
              </em>
@@ -3806,6 +3794,32 @@ to the current datetime.
                 <li>
                  <p>
                   <strong>
+                   limit
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  ) – The limit for the number of returned ticks.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the request.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
                    from_datetime
                   </strong>
                   (
@@ -3846,32 +3860,6 @@ to the current datetime.
 to the current datetime.
                  </p>
                 </li>
-                <li>
-                 <p>
-                  <strong>
-                   limit
-                  </strong>
-                  (
-                  <em>
-                   int
-                  </em>
-                  ) – The limit for the number of returned ticks.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   correlation_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                   <em>
-                    UUID4
-                   </em>
-                  </a>
-                  ) – The correlation ID for the request.
-                 </p>
-                </li>
                </ul>
               </dd>
              </dl>
@@ -3909,28 +3897,6 @@ to the current datetime.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                from_datetime
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                to_datetime
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
                 int
                </span>
                <span class="pre">
@@ -3946,6 +3912,28 @@ to the current datetime.
                </span>
                <span class="pre">
                 correlation_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                from_datetime=None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                to_datetime=None
                </span>
               </span>
              </em>
@@ -3997,6 +3985,32 @@ to the current datetime.
                 <li>
                  <p>
                   <strong>
+                   limit
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  ) – The limit for the number of returned ticks.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the request.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
                    from_datetime
                   </strong>
                   (
@@ -4035,32 +4049,6 @@ to the current datetime.
                   </code>
                   then will default
 to the current datetime.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   limit
-                  </strong>
-                  (
-                  <em>
-                   int
-                  </em>
-                  ) – The limit for the number of returned ticks.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   correlation_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                   <em>
-                    UUID4
-                   </em>
-                  </a>
-                  ) – The correlation ID for the request.
                  </p>
                 </li>
                </ul>
@@ -9882,19 +9870,13 @@ API which may be presented directly by an exchange, or broker intermediary.
                 <strong>
                  venue
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
-                 <em>
-                  Venue
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The client venue. If multi-venue then can be
+                (Venue, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The client venue. If multi-venue then can be
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
@@ -10921,6 +10903,20 @@ then the component state will not change, and an error will be logged.
                 </span>
                </span>
               </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
              </em>
              <span class="sig-paren">
               )
@@ -11923,19 +11919,13 @@ then the component state will not change, and an error will be logged.
                   <strong>
                    venue_position_id
                   </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId">
-                   <em>
-                    PositionId
-                   </em>
-                  </a>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The venue position ID associated with the order. If the trading
+                  (PositionId, optional (no default,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  must be passed explicitly)) – The venue position ID associated with the order. If the trading
 venue has assigned a position ID / ticket then pass that here,
 otherwise pass
                   <code class="docutils literal notranslate">
@@ -13752,19 +13742,13 @@ position ID resolution.
                   <strong>
                    trigger_price
                   </strong>
-                  (
-                  <a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
-                   <em>
-                    Price
-                   </em>
-                  </a>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The orders current trigger price.
+                  (Price, optional (no default,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  must be passed explicitly)) – The orders current trigger price.
                  </p>
                 </li>
                 <li>

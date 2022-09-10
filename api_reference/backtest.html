@@ -2826,7 +2826,16 @@ the data source and the Nautilus system. Cannot be negative.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                random_seed=None
+                random_seed:
+               </span>
+               <span class="pre">
+                Optional[int]
+               </span>
+               <span class="pre">
+                =
+               </span>
+               <span class="pre">
+                None
                </span>
               </span>
              </em>
@@ -2837,7 +2846,16 @@ the data source and the Nautilus system. Cannot be negative.
                 bool
                </span>
                <span class="pre">
-                is_raw=False
+                is_raw:
+               </span>
+               <span class="pre">
+                bool
+               </span>
+               <span class="pre">
+                =
+               </span>
+               <span class="pre">
+                False
                </span>
               </span>
              </em>
@@ -5383,44 +5401,83 @@ then the component state will not change, and an error will be logged.
               (
              </span>
              <em class="sig-param">
-              <span class="pre">
-               self,
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
               </span>
-              <span class="pre">
-               BarType
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                BarType
+               </span>
+               <span class="pre">
+                bar_type
+               </span>
               </span>
-              <span class="pre">
-               bar_type,
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                int
+               </span>
+               <span class="pre">
+                limit
+               </span>
               </span>
-              <span class="pre">
-               datetime
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                UUID4
+               </span>
+               <span class="pre">
+                correlation_id
+               </span>
               </span>
-              <span class="pre">
-               from_datetime:
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                from_datetime:
+               </span>
+               <span class="pre">
+                Optional[datetime]
+               </span>
+               <span class="pre">
+                =
+               </span>
+               <span class="pre">
+                None
+               </span>
               </span>
-              <span class="pre">
-               Optional[datetime],
-              </span>
-              <span class="pre">
-               datetime
-              </span>
-              <span class="pre">
-               to_datetime:
-              </span>
-              <span class="pre">
-               Optional[datetime],
-              </span>
-              <span class="pre">
-               int
-              </span>
-              <span class="pre">
-               limit,
-              </span>
-              <span class="pre">
-               UUID4
-              </span>
-              <span class="pre">
-               correlation_id
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                to_datetime:
+               </span>
+               <span class="pre">
+                Optional[datetime]
+               </span>
+               <span class="pre">
+                =
+               </span>
+               <span class="pre">
+                None
+               </span>
               </span>
              </em>
              <span class="sig-paren">
@@ -5513,44 +5570,83 @@ then the component state will not change, and an error will be logged.
               (
              </span>
              <em class="sig-param">
-              <span class="pre">
-               self,
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
               </span>
-              <span class="pre">
-               InstrumentId
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                InstrumentId
+               </span>
+               <span class="pre">
+                instrument_id
+               </span>
               </span>
-              <span class="pre">
-               instrument_id,
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                int
+               </span>
+               <span class="pre">
+                limit
+               </span>
               </span>
-              <span class="pre">
-               datetime
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                UUID4
+               </span>
+               <span class="pre">
+                correlation_id
+               </span>
               </span>
-              <span class="pre">
-               from_datetime:
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                from_datetime:
+               </span>
+               <span class="pre">
+                Optional[datetime]
+               </span>
+               <span class="pre">
+                =
+               </span>
+               <span class="pre">
+                None
+               </span>
               </span>
-              <span class="pre">
-               Optional[datetime],
-              </span>
-              <span class="pre">
-               datetime
-              </span>
-              <span class="pre">
-               to_datetime:
-              </span>
-              <span class="pre">
-               Optional[datetime],
-              </span>
-              <span class="pre">
-               int
-              </span>
-              <span class="pre">
-               limit,
-              </span>
-              <span class="pre">
-               UUID4
-              </span>
-              <span class="pre">
-               correlation_id
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                to_datetime:
+               </span>
+               <span class="pre">
+                Optional[datetime]
+               </span>
+               <span class="pre">
+                =
+               </span>
+               <span class="pre">
+                None
+               </span>
               </span>
              </em>
              <span class="sig-paren">
@@ -5584,44 +5680,83 @@ then the component state will not change, and an error will be logged.
               (
              </span>
              <em class="sig-param">
-              <span class="pre">
-               self,
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
               </span>
-              <span class="pre">
-               InstrumentId
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                InstrumentId
+               </span>
+               <span class="pre">
+                instrument_id
+               </span>
               </span>
-              <span class="pre">
-               instrument_id,
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                int
+               </span>
+               <span class="pre">
+                limit
+               </span>
               </span>
-              <span class="pre">
-               datetime
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                UUID4
+               </span>
+               <span class="pre">
+                correlation_id
+               </span>
               </span>
-              <span class="pre">
-               from_datetime:
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                from_datetime:
+               </span>
+               <span class="pre">
+                Optional[datetime]
+               </span>
+               <span class="pre">
+                =
+               </span>
+               <span class="pre">
+                None
+               </span>
               </span>
-              <span class="pre">
-               Optional[datetime],
-              </span>
-              <span class="pre">
-               datetime
-              </span>
-              <span class="pre">
-               to_datetime:
-              </span>
-              <span class="pre">
-               Optional[datetime],
-              </span>
-              <span class="pre">
-               int
-              </span>
-              <span class="pre">
-               limit,
-              </span>
-              <span class="pre">
-               UUID4
-              </span>
-              <span class="pre">
-               correlation_id
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                to_datetime:
+               </span>
+               <span class="pre">
+                Optional[datetime]
+               </span>
+               <span class="pre">
+                =
+               </span>
+               <span class="pre">
+                None
+               </span>
               </span>
              </em>
              <span class="sig-paren">
@@ -9686,30 +9821,77 @@ through a call to
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                start:
-               </span>
-               <span class="pre">
-                Union[datetime
+                start
                </span>
               </span>
-             </em>
-             ,
-             <em class="sig-param">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
               <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                Union
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                datetime
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
+               </span>
+               <span class="w">
+               </span>
                <span class="pre">
                 str
                </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                int]
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
                </span>
+               <span class="w">
+               </span>
+               <span class="pre">
+                int
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
                <span class="pre">
                 =
                </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
                <span class="pre">
                 None
                </span>
@@ -9719,30 +9901,77 @@ through a call to
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                end:
-               </span>
-               <span class="pre">
-                Union[datetime
+                end
                </span>
               </span>
-             </em>
-             ,
-             <em class="sig-param">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
               <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                Union
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                datetime
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
+               </span>
+               <span class="w">
+               </span>
                <span class="pre">
                 str
                </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                int]
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
                </span>
+               <span class="w">
+               </span>
+               <span class="pre">
+                int
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
                <span class="pre">
                 =
                </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
                <span class="pre">
                 None
                </span>
@@ -9752,17 +9981,44 @@ through a call to
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                unicode
+                run_config_id
                </span>
+              </span>
+              <span class="p">
                <span class="pre">
-                run_config_id:
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
                </span>
                <span class="pre">
                 str
                </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
                <span class="pre">
                 =
                </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
                <span class="pre">
                 None
                </span>
@@ -10110,30 +10366,77 @@ to the end of the data.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                start:
-               </span>
-               <span class="pre">
-                Union[datetime
+                start
                </span>
               </span>
-             </em>
-             ,
-             <em class="sig-param">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
               <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                Union
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                datetime
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
+               </span>
+               <span class="w">
+               </span>
                <span class="pre">
                 str
                </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                int]
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
                </span>
+               <span class="w">
+               </span>
+               <span class="pre">
+                int
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
                <span class="pre">
                 =
                </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
                <span class="pre">
                 None
                </span>
@@ -10143,30 +10446,77 @@ to the end of the data.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                end:
-               </span>
-               <span class="pre">
-                Union[datetime
+                end
                </span>
               </span>
-             </em>
-             ,
-             <em class="sig-param">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
               <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                Union
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                datetime
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
+               </span>
+               <span class="w">
+               </span>
                <span class="pre">
                 str
                </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                int]
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
                </span>
+               <span class="w">
+               </span>
+               <span class="pre">
+                int
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
                <span class="pre">
                 =
                </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
                <span class="pre">
                 None
                </span>
@@ -10176,17 +10526,44 @@ to the end of the data.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                unicode
+                run_config_id
                </span>
+              </span>
+              <span class="p">
                <span class="pre">
-                run_config_id:
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
                </span>
                <span class="pre">
                 str
                </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
                <span class="pre">
                 =
                </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
                <span class="pre">
                 None
                </span>
@@ -14811,19 +15188,13 @@ then the component state will not change, and an error will be logged.
                   <strong>
                    venue_position_id
                   </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId">
-                   <em>
-                    PositionId
-                   </em>
-                  </a>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The venue position ID associated with the order. If the trading
+                  (PositionId, optional (no default,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  must be passed explicitly)) – The venue position ID associated with the order. If the trading
 venue has assigned a position ID / ticket then pass that here,
 otherwise pass
                   <code class="docutils literal notranslate">
@@ -16282,19 +16653,13 @@ position ID resolution.
                   <strong>
                    trigger_price
                   </strong>
-                  (
-                  <a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
-                   <em>
-                    Price
-                   </em>
-                  </a>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The orders current trigger price.
+                  (Price, optional (no default,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  must be passed explicitly)) – The orders current trigger price.
                  </p>
                 </li>
                 <li>
@@ -17330,7 +17695,16 @@ then the component state will not change, and an error will be logged.
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              random_seed=None
+              random_seed:
+             </span>
+             <span class="pre">
+              Optional[int]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
              </span>
             </span>
            </em>

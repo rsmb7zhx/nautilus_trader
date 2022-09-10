@@ -3437,50 +3437,88 @@ specification, then a bar is created and sent to the handler.
             (
            </span>
            <em class="sig-param">
-            <span class="pre">
-             ClientId
+            <span class="n">
+             <span class="pre">
+              ClientId
+             </span>
+             <span class="pre">
+              client_id
+             </span>
             </span>
-            <span class="pre">
-             client_id,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              MessageBus
+             </span>
+             <span class="pre">
+              msgbus
+             </span>
             </span>
-            <span class="pre">
-             Venue
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Cache
+             </span>
+             <span class="pre">
+              cache
+             </span>
             </span>
-            <span class="pre">
-             venue:
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Clock
+             </span>
+             <span class="pre">
+              clock
+             </span>
             </span>
-            <span class="pre">
-             Optional[Venue],
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Logger
+             </span>
+             <span class="pre">
+              logger
+             </span>
             </span>
-            <span class="pre">
-             MessageBus
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Venue
+             </span>
+             <span class="pre">
+              venue:
+             </span>
+             <span class="pre">
+              Optional[Venue]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             msgbus,
-            </span>
-            <span class="pre">
-             Cache
-            </span>
-            <span class="pre">
-             cache,
-            </span>
-            <span class="pre">
-             Clock
-            </span>
-            <span class="pre">
-             clock,
-            </span>
-            <span class="pre">
-             Logger
-            </span>
-            <span class="pre">
-             logger,
-            </span>
-            <span class="pre">
-             dict
-            </span>
-            <span class="pre">
-             config=None
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              dict
+             </span>
+             <span class="pre">
+              config=None
+             </span>
             </span>
            </em>
            <span class="sig-paren">
@@ -3527,32 +3565,6 @@ specification, then a bar is created and sent to the handler.
               <li>
                <p>
                 <strong>
-                 venue
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
-                 <em>
-                  Venue
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The client venue. If multi-venue then can be
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-                .
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  msgbus
                 </strong>
                 (
@@ -3590,6 +3602,32 @@ specification, then a bar is created and sent to the handler.
                  </em>
                 </a>
                 ) – The logger for the client.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 venue
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+                 <em>
+                  Venue
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The client venue. If multi-venue then can be
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                .
                </p>
               </li>
               <li>
@@ -4876,50 +4914,88 @@ then the component state will not change, and an error will be logged.
             (
            </span>
            <em class="sig-param">
-            <span class="pre">
-             ClientId
+            <span class="n">
+             <span class="pre">
+              ClientId
+             </span>
+             <span class="pre">
+              client_id
+             </span>
             </span>
-            <span class="pre">
-             client_id,
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              MessageBus
+             </span>
+             <span class="pre">
+              msgbus
+             </span>
             </span>
-            <span class="pre">
-             Venue
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Cache
+             </span>
+             <span class="pre">
+              cache
+             </span>
             </span>
-            <span class="pre">
-             venue:
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Clock
+             </span>
+             <span class="pre">
+              clock
+             </span>
             </span>
-            <span class="pre">
-             Optional[Venue],
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Logger
+             </span>
+             <span class="pre">
+              logger
+             </span>
             </span>
-            <span class="pre">
-             MessageBus
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Venue
+             </span>
+             <span class="pre">
+              venue:
+             </span>
+             <span class="pre">
+              Optional[Venue]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
             </span>
-            <span class="pre">
-             msgbus,
-            </span>
-            <span class="pre">
-             Cache
-            </span>
-            <span class="pre">
-             cache,
-            </span>
-            <span class="pre">
-             Clock
-            </span>
-            <span class="pre">
-             clock,
-            </span>
-            <span class="pre">
-             Logger
-            </span>
-            <span class="pre">
-             logger,
-            </span>
-            <span class="pre">
-             dict
-            </span>
-            <span class="pre">
-             config=None
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              dict
+             </span>
+             <span class="pre">
+              config=None
+             </span>
             </span>
            </em>
            <span class="sig-paren">
@@ -4961,32 +5037,6 @@ then the component state will not change, and an error will be logged.
                  </em>
                 </a>
                 ) – The data client ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 venue
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
-                 <em>
-                  Venue
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The client venue. If multi-venue then can be
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-                .
                </p>
               </li>
               <li>
@@ -5043,6 +5093,32 @@ then the component state will not change, and an error will be logged.
                  </em>
                 </a>
                 ) – The logger for the client.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 venue
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+                 <em>
+                  Venue
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The client venue. If multi-venue then can be
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                .
                </p>
               </li>
               <li>
@@ -5760,28 +5836,6 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                from_datetime
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                to_datetime
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
                 int
                </span>
                <span class="pre">
@@ -5797,6 +5851,28 @@ then the component state will not change, and an error will be logged.
                </span>
                <span class="pre">
                 correlation_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                from_datetime=None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                to_datetime=None
                </span>
               </span>
              </em>
@@ -5848,6 +5924,32 @@ then the component state will not change, and an error will be logged.
                 <li>
                  <p>
                   <strong>
+                   limit
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  ) – The limit for the number of returned bars.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the request.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
                    from_datetime
                   </strong>
                   (
@@ -5886,32 +5988,6 @@ then the component state will not change, and an error will be logged.
                   </code>
                   then will default
 to the current datetime.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   limit
-                  </strong>
-                  (
-                  <em>
-                   int
-                  </em>
-                  ) – The limit for the number of returned bars.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   correlation_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                   <em>
-                    UUID4
-                   </em>
-                  </a>
-                  ) – The correlation ID for the request.
                  </p>
                 </li>
                </ul>
@@ -6054,28 +6130,6 @@ to the current datetime.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                from_datetime
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                to_datetime
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
                 int
                </span>
                <span class="pre">
@@ -6091,6 +6145,28 @@ to the current datetime.
                </span>
                <span class="pre">
                 correlation_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                from_datetime=None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                to_datetime=None
                </span>
               </span>
              </em>
@@ -6142,6 +6218,32 @@ to the current datetime.
                 <li>
                  <p>
                   <strong>
+                   limit
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  ) – The limit for the number of returned ticks.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the request.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
                    from_datetime
                   </strong>
                   (
@@ -6182,32 +6284,6 @@ to the current datetime.
 to the current datetime.
                  </p>
                 </li>
-                <li>
-                 <p>
-                  <strong>
-                   limit
-                  </strong>
-                  (
-                  <em>
-                   int
-                  </em>
-                  ) – The limit for the number of returned ticks.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   correlation_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                   <em>
-                    UUID4
-                   </em>
-                  </a>
-                  ) – The correlation ID for the request.
-                 </p>
-                </li>
                </ul>
               </dd>
              </dl>
@@ -6245,28 +6321,6 @@ to the current datetime.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                from_datetime
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                to_datetime
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
                 int
                </span>
                <span class="pre">
@@ -6282,6 +6336,28 @@ to the current datetime.
                </span>
                <span class="pre">
                 correlation_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                from_datetime=None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                to_datetime=None
                </span>
               </span>
              </em>
@@ -6333,6 +6409,32 @@ to the current datetime.
                 <li>
                  <p>
                   <strong>
+                   limit
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  ) – The limit for the number of returned ticks.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the request.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
                    from_datetime
                   </strong>
                   (
@@ -6371,32 +6473,6 @@ to the current datetime.
                   </code>
                   then will default
 to the current datetime.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   limit
-                  </strong>
-                  (
-                  <em>
-                   int
-                  </em>
-                  ) – The limit for the number of returned ticks.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   correlation_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                   <em>
-                    UUID4
-                   </em>
-                  </a>
-                  ) – The correlation ID for the request.
                  </p>
                 </li>
                </ul>
@@ -11709,19 +11785,13 @@ then the component state will not change, and an error will be logged.
                 <strong>
                  client_id
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
-                 <em>
-                  ClientId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The data client ID for the command.
+                (ClientId, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The data client ID for the command.
                </p>
               </li>
               <li>
@@ -11729,19 +11799,13 @@ then the component state will not change, and an error will be logged.
                 <strong>
                  venue
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
-                 <em>
-                  Venue
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The venue for the command.
+                (Venue, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The venue for the command.
                </p>
               </li>
               <li>
@@ -12102,19 +12166,13 @@ then the component state will not change, and an error will be logged.
                 <strong>
                  client_id
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
-                 <em>
-                  ClientId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The data client ID for the request.
+                (ClientId, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The data client ID for the request.
                </p>
               </li>
               <li>
@@ -12122,19 +12180,13 @@ then the component state will not change, and an error will be logged.
                 <strong>
                  venue
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
-                 <em>
-                  Venue
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The venue for the request.
+                (Venue, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The venue for the request.
                </p>
               </li>
               <li>
@@ -12549,19 +12601,13 @@ then the component state will not change, and an error will be logged.
                 <strong>
                  client_id
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
-                 <em>
-                  ClientId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The data client ID of the response.
+                (ClientId, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The data client ID of the response.
                </p>
               </li>
               <li>
@@ -12569,19 +12615,13 @@ then the component state will not change, and an error will be logged.
                 <strong>
                  venue
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
-                 <em>
-                  Venue
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The venue for the response.
+                (Venue, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The venue for the response.
                </p>
               </li>
               <li>
@@ -13009,19 +13049,13 @@ then the component state will not change, and an error will be logged.
                 <strong>
                  client_id
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
-                 <em>
-                  ClientId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The data client ID for the command.
+                (ClientId, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The data client ID for the command.
                </p>
               </li>
               <li>
@@ -13029,19 +13063,13 @@ then the component state will not change, and an error will be logged.
                 <strong>
                  venue
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
-                 <em>
-                  Venue
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The venue for the command.
+                (Venue, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The venue for the command.
                </p>
               </li>
               <li>
@@ -13385,19 +13413,13 @@ then the component state will not change, and an error will be logged.
                 <strong>
                  client_id
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
-                 <em>
-                  ClientId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The data client ID for the command.
+                (ClientId, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The data client ID for the command.
                </p>
               </li>
               <li>
@@ -13405,19 +13427,13 @@ then the component state will not change, and an error will be logged.
                 <strong>
                  venue
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
-                 <em>
-                  Venue
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The venue for the command.
+                (Venue, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The venue for the command.
                </p>
               </li>
               <li>

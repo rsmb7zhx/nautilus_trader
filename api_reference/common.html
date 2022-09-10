@@ -10076,10 +10076,10 @@ default handler (if registered) will receive the
                callback:
               </span>
               <span class="pre">
-               Callable[[TimeEvent],
+               Optional[Callable[[TimeEvent],
               </span>
               <span class="pre">
-               None]
+               None]]
               </span>
               <span class="pre">
                =
@@ -10399,10 +10399,10 @@ then the default handler (if registered) will receive the
                callback:
               </span>
               <span class="pre">
-               Callable[[TimeEvent],
+               Optional[Callable[[TimeEvent],
               </span>
               <span class="pre">
-               None]
+               None]]
               </span>
               <span class="pre">
                =
@@ -10988,10 +10988,39 @@ then the default handler (if registered) will receive the
               loop
              </span>
             </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              Optional
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <span class="pre">
+              asyncio.AbstractEventLoop
+             </span>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
+            </span>
+            <span class="w">
+            </span>
             <span class="o">
              <span class="pre">
               =
              </span>
+            </span>
+            <span class="w">
             </span>
             <span class="default_value">
              <span class="pre">
@@ -11637,10 +11666,10 @@ default handler (if registered) will receive the
                callback:
               </span>
               <span class="pre">
-               Callable[[TimeEvent],
+               Optional[Callable[[TimeEvent],
               </span>
               <span class="pre">
-               None]
+               None]]
               </span>
               <span class="pre">
                =
@@ -11711,10 +11740,10 @@ default handler (if registered) will receive the
                callback:
               </span>
               <span class="pre">
-               Callable[[TimeEvent],
+               Optional[Callable[[TimeEvent],
               </span>
               <span class="pre">
-               None]
+               None]]
               </span>
               <span class="pre">
                =
@@ -12034,10 +12063,10 @@ then the default handler (if registered) will receive the
                callback:
               </span>
               <span class="pre">
-               Callable[[TimeEvent],
+               Optional[Callable[[TimeEvent],
               </span>
               <span class="pre">
-               None]
+               None]]
               </span>
               <span class="pre">
                =
@@ -13058,10 +13087,10 @@ default handler (if registered) will receive the
                callback:
               </span>
               <span class="pre">
-               Callable[[TimeEvent],
+               Optional[Callable[[TimeEvent],
               </span>
               <span class="pre">
-               None]
+               None]]
               </span>
               <span class="pre">
                =
@@ -13132,10 +13161,10 @@ default handler (if registered) will receive the
                callback:
               </span>
               <span class="pre">
-               Callable[[TimeEvent],
+               Optional[Callable[[TimeEvent],
               </span>
               <span class="pre">
-               None]
+               None]]
               </span>
               <span class="pre">
                =
@@ -13455,10 +13484,10 @@ then the default handler (if registered) will receive the
                callback:
               </span>
               <span class="pre">
-               Callable[[TimeEvent],
+               Optional[Callable[[TimeEvent],
               </span>
               <span class="pre">
-               None]
+               None]]
               </span>
               <span class="pre">
                =
@@ -26610,6 +26639,18 @@ item.
              interval,
             </span>
             <span class="pre">
+             Clock
+            </span>
+            <span class="pre">
+             clock,
+            </span>
+            <span class="pre">
+             Logger
+            </span>
+            <span class="pre">
+             logger,
+            </span>
+            <span class="pre">
              output_send:
             </span>
             <span class="pre">
@@ -26625,19 +26666,13 @@ item.
              Optional[Callable[[Any],
             </span>
             <span class="pre">
-             None]],
+             None]]
             </span>
             <span class="pre">
-             Clock
+             =
             </span>
             <span class="pre">
-             clock,
-            </span>
-            <span class="pre">
-             Logger
-            </span>
-            <span class="pre">
-             logger
+             None
             </span>
            </em>
            <span class="sig-paren">
@@ -26709,6 +26744,34 @@ the rate limit, then send.
                  timedelta
                 </em>
                 ) – The interval setting for the throttling.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 clock
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock">
+                 <em>
+                  Clock
+                 </em>
+                </a>
+                ) – The clock for the throttler.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 logger
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger">
+                 <em>
+                  Logger
+                 </em>
+                </a>
+                ) – The logger for the throttler.
                </p>
               </li>
               <li>
@@ -26788,34 +26851,6 @@ If
                  </span>
                 </code>
                 then messages will be buffered.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 clock
-                </strong>
-                (
-                <a class="reference internal" href="#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock">
-                 <em>
-                  Clock
-                 </em>
-                </a>
-                ) – The clock for the throttler.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 logger
-                </strong>
-                (
-                <a class="reference internal" href="#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger">
-                 <em>
-                  Logger
-                 </em>
-                </a>
-                ) – The logger for the throttler.
                </p>
               </li>
              </ul>

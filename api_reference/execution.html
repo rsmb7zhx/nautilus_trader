@@ -866,19 +866,13 @@ trading operations.
                 <strong>
                  venue
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
-                 <em>
-                  Venue
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The client venue. If multi-venue then can be
+                (Venue, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The client venue. If multi-venue then can be
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
@@ -916,19 +910,13 @@ trading operations.
                 <strong>
                  base_currency
                 </strong>
-                (
-                <a class="reference internal" href="model/currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency">
-                 <em>
-                  Currency
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The account base currency. Use
+                (Currency, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The account base currency. Use
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
@@ -2749,19 +2737,13 @@ then the component state will not change, and an error will be logged.
                   <strong>
                    venue_position_id
                   </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId">
-                   <em>
-                    PositionId
-                   </em>
-                  </a>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The venue position ID associated with the order. If the trading
+                  (PositionId, optional (no default,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  must be passed explicitly)) – The venue position ID associated with the order. If the trading
 venue has assigned a position ID / ticket then pass that here,
 otherwise pass
                   <code class="docutils literal notranslate">
@@ -4220,19 +4202,13 @@ position ID resolution.
                   <strong>
                    trigger_price
                   </strong>
-                  (
-                  <a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
-                   <em>
-                    Price
-                   </em>
-                  </a>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The orders current trigger price.
+                  (Price, optional (no default,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  must be passed explicitly)) – The orders current trigger price.
                  </p>
                 </li>
                 <li>
@@ -8282,19 +8258,13 @@ then the component state will not change, and an error will be logged.
                 <strong>
                  venue_order_id
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
-                 <em>
-                  VenueOrderId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The venue order ID (assigned by the venue) to cancel.
+                (VenueOrderId, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The venue order ID (assigned by the venue) to cancel.
                </p>
               </li>
               <li>
@@ -8960,19 +8930,13 @@ then the component state will not change, and an error will be logged.
                 <strong>
                  venue_order_id
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
-                 <em>
-                  VenueOrderId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The venue order ID (assigned by the venue) to update.
+                (VenueOrderId, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The venue order ID (assigned by the venue) to update.
                </p>
               </li>
               <li>
@@ -8980,19 +8944,13 @@ then the component state will not change, and an error will be logged.
                 <strong>
                  quantity
                 </strong>
-                (
-                <a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
-                 <em>
-                  Quantity
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The quantity for the order update.
+                (Quantity, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The quantity for the order update.
                </p>
               </li>
               <li>
@@ -9000,19 +8958,13 @@ then the component state will not change, and an error will be logged.
                 <strong>
                  price
                 </strong>
-                (
-                <a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
-                 <em>
-                  Price
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The price for the order update.
+                (Price, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The price for the order update.
                </p>
               </li>
               <li>
@@ -9020,19 +8972,13 @@ then the component state will not change, and an error will be logged.
                 <strong>
                  trigger_price
                 </strong>
-                (
-                <a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
-                 <em>
-                  Price
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The trigger price for the order update.
+                (Price, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The trigger price for the order update.
                </p>
               </li>
               <li>
@@ -9776,19 +9722,13 @@ then the component state will not change, and an error will be logged.
                 <strong>
                  venue_order_id
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
-                 <em>
-                  VenueOrderId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The venue order ID (assigned by the venue) to cancel.
+                (VenueOrderId, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The venue order ID (assigned by the venue) to cancel.
                </p>
               </li>
               <li>
@@ -10391,19 +10331,13 @@ then the component state will not change, and an error will be logged.
                 <strong>
                  position_id
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId">
-                 <em>
-                  PositionId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The position ID for the command.
+                (PositionId, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The position ID for the command.
                </p>
               </li>
               <li>
@@ -11638,19 +11572,13 @@ protocol.
                 <strong>
                  client_id
                 </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
-                 <em>
-                  ClientId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The execution client ID for the command.
+                (ClientId, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The execution client ID for the command.
                </p>
               </li>
               <li>
@@ -15789,26 +15717,6 @@ position ID resolution.
               <li>
                <p>
                 <strong>
-                 client_order_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
-                 <em>
-                  ClientOrderId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The reported client order ID for the trade.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  venue_order_id
                 </strong>
                 (
@@ -15818,35 +15726,6 @@ position ID resolution.
                  </em>
                 </a>
                 ) – The reported venue order ID (assigned by the venue) for the trade.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 venue_position_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId">
-                 <em>
-                  PositionId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The reported venue position ID for the trade. If the trading venue has
-assigned a position ID / ticket for the trade then pass that here,
-otherwise pass
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-                and the execution engine OMS will handle
-position ID resolution.
                </p>
               </li>
               <li>
@@ -15914,32 +15793,6 @@ position ID resolution.
               <li>
                <p>
                 <strong>
-                 commission
-                </strong>
-                (
-                <a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money">
-                 <em>
-                  Money
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The reported commission for the trade (can be
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-                ).
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  liquidity_side
                 </strong>
                 (LiquiditySide {
@@ -15999,6 +15852,81 @@ position ID resolution.
                  uint64_t
                 </em>
                 ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 client_order_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
+                 <em>
+                  ClientOrderId
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The reported client order ID for the trade.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 venue_position_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId">
+                 <em>
+                  PositionId
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The reported venue position ID for the trade. If the trading venue has
+assigned a position ID / ticket for the trade then pass that here,
+otherwise pass
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                and the execution engine OMS will handle
+position ID resolution.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 commission
+                </strong>
+                (
+                <a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money">
+                 <em>
+                  Money
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The reported commission for the trade (can be
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                ).
                </p>
               </li>
              </ul>

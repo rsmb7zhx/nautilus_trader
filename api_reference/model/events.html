@@ -4799,19 +4799,13 @@ any other reason that an otherwise valid order is not able to be submitted.
                 <strong>
                  account_id
                 </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
-                 <em>
-                  AccountId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The account ID.
+                (AccountId, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The account ID.
                </p>
               </li>
               <li>
@@ -4847,19 +4841,13 @@ any other reason that an otherwise valid order is not able to be submitted.
                 <strong>
                  venue_order_id
                 </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
-                 <em>
-                  VenueOrderId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The venue order ID (assigned by the venue).
+                (VenueOrderId, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The venue order ID (assigned by the venue).
                </p>
               </li>
               <li>
@@ -6303,19 +6291,13 @@ any other reason that an otherwise valid order is not able to be submitted.
                 <strong>
                  position_id
                 </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId">
-                 <em>
-                  PositionId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The position ID associated with the order fill (assigned by the venue).
+                (PositionId, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The position ID associated with the order fill (assigned by the venue).
                </p>
               </li>
               <li>
@@ -7771,19 +7753,13 @@ order parameters.
                 <strong>
                  order_list_id
                 </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.OrderListId" title="nautilus_trader.model.identifiers.OrderListId">
-                 <em>
-                  OrderListId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The order list ID associated with the order.
+                (OrderListId, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The order list ID associated with the order.
                </p>
               </li>
               <li>
@@ -7803,28 +7779,13 @@ order parameters.
                 <strong>
                  linked_order_ids
                 </strong>
-                (
-                <em>
-                 list
-                </em>
-                <em>
-                 [
-                </em>
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
-                 <em>
-                  ClientOrderId
-                 </em>
-                </a>
-                <em>
-                 ]
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The order linked client order ID(s).
+                (list[ClientOrderId], optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The order linked client order ID(s).
                </p>
               </li>
               <li>
@@ -7832,19 +7793,13 @@ order parameters.
                 <strong>
                  parent_order_id
                 </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
-                 <em>
-                  ClientOrderId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The orders parent client order ID.
+                (ClientOrderId, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The orders parent client order ID.
                </p>
               </li>
               <li>
@@ -7852,17 +7807,13 @@ order parameters.
                 <strong>
                  tags
                 </strong>
-                (
-                <em>
-                 str
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The custom user tags for the order. These are optional and can
+                (str, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The custom user tags for the order. These are optional and can
 contain any arbitrary delimiter if required.
                </p>
               </li>
@@ -8959,19 +8910,13 @@ trading venue.
                 <strong>
                  venue_order_id
                 </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
-                 <em>
-                  VenueOrderId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The venue order ID (assigned by the venue).
+                (VenueOrderId, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The venue order ID (assigned by the venue).
                </p>
               </li>
               <li>
@@ -9757,19 +9702,13 @@ trading venue.
                 <strong>
                  venue_order_id
                 </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
-                 <em>
-                  VenueOrderId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The venue order ID (assigned by the venue).
+                (VenueOrderId, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The venue order ID (assigned by the venue).
                </p>
               </li>
               <li>
@@ -10499,19 +10438,13 @@ trading venue.
                 <strong>
                  venue_order_id
                 </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
-                 <em>
-                  VenueOrderId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The venue order ID (assigned by the venue).
+                (VenueOrderId, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The venue order ID (assigned by the venue).
                </p>
               </li>
               <li>
@@ -13608,19 +13541,13 @@ trading venue.
                 <strong>
                  price
                 </strong>
-                (
-                <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
-                 <em>
-                  Price
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The orders current price.
+                (Price, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The orders current price.
                </p>
               </li>
               <li>
@@ -13628,19 +13555,13 @@ trading venue.
                 <strong>
                  trigger_price
                 </strong>
-                (
-                <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
-                 <em>
-                  Price
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The orders current trigger.
+                (Price, optional (no default,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly)) – The orders current trigger.
                </p>
               </li>
               <li>
