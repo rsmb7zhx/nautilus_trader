@@ -754,29 +754,27 @@ separated by a hyphen.
              ) – The account ID value.
             </p>
            </dd>
-           <dt class="field-even">
-            Raises
-           </dt>
-           <dd class="field-even">
-            <p>
-             <strong>
-              ValueError
-             </strong>
-             – If
-             <cite>
-              value
-             </cite>
-             is not a valid string.
-            </p>
-           </dd>
           </dl>
           <div class="admonition warning">
            <p class="admonition-title">
             Warning
            </p>
-           <p>
-            The issuer and number ID combination must be unique at the firm level.
-           </p>
+           <ul class="simple">
+            <li>
+             <p>
+              The issuer and number ID combination must be unique at the firm level.
+             </p>
+            </li>
+            <li>
+             <p>
+              Will panic at runtime if
+              <cite>
+               value
+              </cite>
+              is not a valid string.
+             </p>
+            </li>
+           </ul>
           </div>
           <dl class="py method">
            <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.AccountId.get_issuer">
@@ -945,9 +943,22 @@ separated by a hyphen.
            <p class="admonition-title">
             Warning
            </p>
-           <p>
-            The ID value must be unique at the trader level.
-           </p>
+           <ul class="simple">
+            <li>
+             <p>
+              The ID value must be unique at the trader level.
+             </p>
+            </li>
+            <li>
+             <p>
+              Will panic at runtime if
+              <cite>
+               value
+              </cite>
+              is not a valid string.
+             </p>
+            </li>
+           </ul>
           </div>
           <dl class="py attribute">
            <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.ClientId.value">
@@ -1044,29 +1055,27 @@ separated by a hyphen.
              ) – The client order ID value.
             </p>
            </dd>
-           <dt class="field-even">
-            Raises
-           </dt>
-           <dd class="field-even">
-            <p>
-             <strong>
-              ValueError
-             </strong>
-             – If
-             <cite>
-              value
-             </cite>
-             is not a valid string.
-            </p>
-           </dd>
           </dl>
           <div class="admonition warning">
            <p class="admonition-title">
             Warning
            </p>
-           <p>
-            The ID value must be unique at the firm level.
-           </p>
+           <ul class="simple">
+            <li>
+             <p>
+              The ID value must be unique at the firm level.
+             </p>
+            </li>
+            <li>
+             <p>
+              Will panic at runtime if
+              <cite>
+               value
+              </cite>
+              is not a valid string.
+             </p>
+            </li>
+           </ul>
           </div>
           <dl class="py attribute">
            <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.ClientOrderId.value">
@@ -1183,9 +1192,22 @@ separated by a hyphen.
            <p class="admonition-title">
             Warning
            </p>
-           <p>
-            The ID value must be unique at the trader level.
-           </p>
+           <ul class="simple">
+            <li>
+             <p>
+              The ID value must be unique at the trader level.
+             </p>
+            </li>
+            <li>
+             <p>
+              Will panic at runtime if
+              <cite>
+               value
+              </cite>
+              is not a valid string.
+             </p>
+            </li>
+           </ul>
           </div>
           <dl class="py attribute">
            <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.ComponentId.value">
@@ -1618,22 +1640,23 @@ period.
              ) – The order list ID value.
             </p>
            </dd>
-           <dt class="field-even">
-            Raises
-           </dt>
-           <dd class="field-even">
-            <p>
-             <strong>
-              ValueError
-             </strong>
-             – If
-             <cite>
-              value
-             </cite>
-             is not a valid string.
-            </p>
-           </dd>
           </dl>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <ul class="simple">
+            <li>
+             <p>
+              Will panic at runtime if
+              <cite>
+               value
+              </cite>
+              is not a valid string.
+             </p>
+            </li>
+           </ul>
+          </div>
           <dl class="py attribute">
            <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.OrderListId.value">
             <span class="sig-name descname">
@@ -1729,22 +1752,23 @@ period.
              ) – The position ID value.
             </p>
            </dd>
-           <dt class="field-even">
-            Raises
-           </dt>
-           <dd class="field-even">
-            <p>
-             <strong>
-              ValueError
-             </strong>
-             – If
-             <cite>
-              value
-             </cite>
-             is not a valid string.
-            </p>
-           </dd>
           </dl>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <ul class="simple">
+            <li>
+             <p>
+              Will panic at runtime if
+              <cite>
+               value
+              </cite>
+              is not a valid string.
+             </p>
+            </li>
+           </ul>
+          </div>
           <dl class="py attribute">
            <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.PositionId.value">
             <span class="sig-name descname">
@@ -1848,29 +1872,27 @@ with an order ID tag number separated by a hyphen.
              ) – The strategy ID value.
             </p>
            </dd>
-           <dt class="field-even">
-            Raises
-           </dt>
-           <dd class="field-even">
-            <p>
-             <strong>
-              ValueError
-             </strong>
-             – If
-             <cite>
-              value
-             </cite>
-             is not a valid string containing a hyphen.
-            </p>
-           </dd>
           </dl>
           <div class="admonition warning">
            <p class="admonition-title">
             Warning
            </p>
-           <p>
-            The name and tag combination must be unique at the trader level.
-           </p>
+           <ul class="simple">
+            <li>
+             <p>
+              The name and tag combination must be unique at the trader level.
+             </p>
+            </li>
+            <li>
+             <p>
+              Will panic at runtime if
+              <cite>
+               value
+              </cite>
+              is not a valid string containing a ‘-’ (hyphen).
+             </p>
+            </li>
+           </ul>
           </div>
           <dl class="py method">
            <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.StrategyId.get_tag">
@@ -2074,29 +2096,27 @@ instrument.
              ) – The ticker symbol ID value.
             </p>
            </dd>
-           <dt class="field-even">
-            Raises
-           </dt>
-           <dd class="field-even">
-            <p>
-             <strong>
-              ValueError
-             </strong>
-             – If
-             <cite>
-              value
-             </cite>
-             is not a valid string.
-            </p>
-           </dd>
           </dl>
           <div class="admonition warning">
            <p class="admonition-title">
             Warning
            </p>
-           <p>
-            The ID value must be unique for a trading venue.
-           </p>
+           <ul class="simple">
+            <li>
+             <p>
+              The ID value must be unique for a trading venue.
+             </p>
+            </li>
+            <li>
+             <p>
+              Will panic at runtime if
+              <cite>
+               value
+              </cite>
+              is not a valid string.
+             </p>
+            </li>
+           </ul>
           </div>
           <p class="rubric">
            References
@@ -2212,22 +2232,23 @@ the exchange or central counterparty.
              ) – The trade match ID value.
             </p>
            </dd>
-           <dt class="field-even">
-            Raises
-           </dt>
-           <dd class="field-even">
-            <p>
-             <strong>
-              ValueError
-             </strong>
-             – If
-             <cite>
-              value
-             </cite>
-             is not a valid string.
-            </p>
-           </dd>
           </dl>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <ul class="simple">
+            <li>
+             <p>
+              Will panic at runtime if
+              <cite>
+               value
+              </cite>
+              is not a valid string.
+             </p>
+            </li>
+           </ul>
+          </div>
           <p class="rubric">
            References
           </p>
@@ -2339,29 +2360,27 @@ with an order ID tag number separated by a hyphen.
              ) – The trader ID value.
             </p>
            </dd>
-           <dt class="field-even">
-            Raises
-           </dt>
-           <dd class="field-even">
-            <p>
-             <strong>
-              ValueError
-             </strong>
-             – If
-             <cite>
-              value
-             </cite>
-             is not a valid string containing a hyphen.
-            </p>
-           </dd>
           </dl>
           <div class="admonition warning">
            <p class="admonition-title">
             Warning
            </p>
-           <p>
-            The name and tag combination ID value must be unique at the firm level.
-           </p>
+           <ul class="simple">
+            <li>
+             <p>
+              The name and tag combination ID value must be unique at the firm level.
+             </p>
+            </li>
+            <li>
+             <p>
+              Will panic at runtime if
+              <cite>
+               value
+              </cite>
+              is not a valid string containing a hyphen.
+             </p>
+            </li>
+           </ul>
           </div>
           <dl class="py method">
            <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.TraderId.get_tag">
@@ -2510,22 +2529,23 @@ with an order ID tag number separated by a hyphen.
              ) – The venue ID value.
             </p>
            </dd>
-           <dt class="field-even">
-            Raises
-           </dt>
-           <dd class="field-even">
-            <p>
-             <strong>
-              ValueError
-             </strong>
-             – If
-             <cite>
-              name
-             </cite>
-             is not a valid string.
-            </p>
-           </dd>
           </dl>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <ul class="simple">
+            <li>
+             <p>
+              Will panic at runtime if
+              <cite>
+               value
+              </cite>
+              is not a valid string.
+             </p>
+            </li>
+           </ul>
+          </div>
           <dl class="py attribute">
            <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.Venue.value">
             <span class="sig-name descname">
@@ -2621,22 +2641,23 @@ with an order ID tag number separated by a hyphen.
              ) – The venue assigned order ID value.
             </p>
            </dd>
-           <dt class="field-even">
-            Raises
-           </dt>
-           <dd class="field-even">
-            <p>
-             <strong>
-              ValueError
-             </strong>
-             – If
-             <cite>
-              value
-             </cite>
-             is not a valid string.
-            </p>
-           </dd>
           </dl>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <ul class="simple">
+            <li>
+             <p>
+              Will panic at runtime if
+              <cite>
+               value
+              </cite>
+              is not a valid string.
+             </p>
+            </li>
+           </ul>
+          </div>
           <dl class="py attribute">
            <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.VenueOrderId.value">
             <span class="sig-name descname">
