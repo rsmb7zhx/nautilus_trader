@@ -1667,57 +1667,15 @@
            <ul class="simple">
             <li>
              <p>
-              Maximum
+              Panics at run-time if
               <cite>
                value
               </cite>
-              which can be expressed is 9_223_372_036.
-             </p>
-            </li>
-            <li>
-             <p>
-              Minimum
-              <cite>
-               value
-              </cite>
-              which can be expressed is -9_223_372_036.
+              is not in range [-9_223_372_036, 9_223_372_036].
              </p>
             </li>
            </ul>
           </div>
-          <dl class="field-list simple">
-           <dt class="field-odd">
-            Raises
-           </dt>
-           <dd class="field-odd">
-            <ul class="simple">
-             <li>
-              <p>
-               <strong>
-                ValueError
-               </strong>
-               – If
-               <cite>
-                value
-               </cite>
-               is greater than 9_223_372_036.
-              </p>
-             </li>
-             <li>
-              <p>
-               <strong>
-                ValueError
-               </strong>
-               – If
-               <cite>
-                value
-               </cite>
-               is less than -9_223_372_036.
-              </p>
-             </li>
-            </ul>
-           </dd>
-          </dl>
           <dl class="py method">
            <dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.as_decimal">
             <span class="sig-name descname">
@@ -2173,81 +2131,24 @@ negative under certain conditions.
            <ul class="simple">
             <li>
              <p>
-              Maximum
+              Panics at run-time if
               <cite>
                value
               </cite>
-              which can be expressed is 9_223_372_036.
+              is not in range [-9_223_372_036, 9_223_372_036].
              </p>
             </li>
             <li>
              <p>
-              Minimum
+              Panics at run-time if
               <cite>
-               value
+               precision
               </cite>
-              which can be expressed is -9_223_372_036.
+              is not in range [0, 9].
              </p>
             </li>
            </ul>
           </div>
-          <dl class="field-list simple">
-           <dt class="field-odd">
-            Raises
-           </dt>
-           <dd class="field-odd">
-            <ul class="simple">
-             <li>
-              <p>
-               <strong>
-                ValueError
-               </strong>
-               – If
-               <cite>
-                value
-               </cite>
-               is greater than 9_223_372_036.
-              </p>
-             </li>
-             <li>
-              <p>
-               <strong>
-                ValueError
-               </strong>
-               – If
-               <cite>
-                value
-               </cite>
-               is less than -9_223_372_036.
-              </p>
-             </li>
-             <li>
-              <p>
-               <strong>
-                ValueError
-               </strong>
-               – If
-               <cite>
-                precision
-               </cite>
-               greater than 9.
-              </p>
-             </li>
-             <li>
-              <p>
-               <strong>
-                OverflowError
-               </strong>
-               – If
-               <cite>
-                precision
-               </cite>
-               is negative (&lt; 0).
-              </p>
-             </li>
-            </ul>
-           </dd>
-          </dl>
           <p class="rubric">
            References
           </p>
@@ -2786,72 +2687,24 @@ denominated in fractional units).
            <ul class="simple">
             <li>
              <p>
-              Maximum
+              Panics at run-time if
               <cite>
                value
               </cite>
-              which can be expressed is 18_446_744_073.
+              is not in range [0, 18_446_744_073].
+             </p>
+            </li>
+            <li>
+             <p>
+              Panics at run-time if
+              <cite>
+               precision
+              </cite>
+              is not in range [0, 9].
              </p>
             </li>
            </ul>
           </div>
-          <dl class="field-list simple">
-           <dt class="field-odd">
-            Raises
-           </dt>
-           <dd class="field-odd">
-            <ul class="simple">
-             <li>
-              <p>
-               <strong>
-                ValueError
-               </strong>
-               – If
-               <cite>
-                value
-               </cite>
-               is negative (&lt; 0).
-              </p>
-             </li>
-             <li>
-              <p>
-               <strong>
-                ValueError
-               </strong>
-               – If
-               <cite>
-                value
-               </cite>
-               is greater than 18_446_744_073.
-              </p>
-             </li>
-             <li>
-              <p>
-               <strong>
-                ValueError
-               </strong>
-               – If
-               <cite>
-                precision
-               </cite>
-               greater than 9.
-              </p>
-             </li>
-             <li>
-              <p>
-               <strong>
-                OverflowError
-               </strong>
-               – If
-               <cite>
-                precision
-               </cite>
-               is negative (&lt; 0).
-              </p>
-             </li>
-            </ul>
-           </dd>
-          </dl>
           <p class="rubric">
            References
           </p>
