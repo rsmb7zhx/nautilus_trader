@@ -1588,6 +1588,17 @@
             </span>
            </span>
           </em>
+          ,
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             bool
+            </span>
+            <span class="pre">
+             check=True
+            </span>
+           </span>
+          </em>
           <span class="sig-paren">
            )
           </span>
@@ -1640,7 +1651,8 @@
                <em>
                 Decimal
                </em>
-               ) – The amount of money in the currency denomination.
+               ) – The amount of money in the currency denomination. Must be in range
+[-9_223_372_036, 9_223_372_036].
               </p>
              </li>
              <li>
@@ -1657,6 +1669,64 @@
                ) – The currency of the money.
               </p>
              </li>
+             <li>
+              <p>
+               <strong>
+                check
+               </strong>
+               (
+               <em>
+                bool
+               </em>
+               <em>
+                ,
+               </em>
+               <em>
+                default True
+               </em>
+               ) – If precondition validation checks occur at the Python level, where any
+failures will raise a Python exception as documented.
+              </p>
+             </li>
+            </ul>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                check
+               </cite>
+               is True and
+               <cite>
+                value
+               </cite>
+               is less than -9_223_372_036.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                check
+               </cite>
+               is True and
+               <cite>
+                value
+               </cite>
+               is greater than 9_223_372_036.
+              </p>
+             </li>
             </ul>
            </dd>
           </dl>
@@ -1664,17 +1734,14 @@
            <p class="admonition-title">
             Warning
            </p>
-           <ul class="simple">
-            <li>
-             <p>
-              Panics at runtime if
-              <cite>
-               value
-              </cite>
-              is not in range [-9_223_372_036, 9_223_372_036].
-             </p>
-            </li>
-           </ul>
+           <p>
+            If
+            <cite>
+             check
+            </cite>
+            is false and a validation check fails at runtime, then will cause
+a Rust panic.
+           </p>
           </div>
           <dl class="py method">
            <dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.as_decimal">
@@ -1942,16 +2009,24 @@ whitespace delimiter.
               Raises
              </dt>
              <dd class="field-odd">
-              <p>
-               <strong>
-                ValueError
-               </strong>
-               – If
-               <cite>
-                value
-               </cite>
-               is malformed.
-              </p>
+              <ul class="simple">
+               <li>
+                <p>
+                 <strong>
+                  ValueError
+                 </strong>
+                 – If inferred currency precision is greater than 9.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  OverflowError
+                 </strong>
+                 – If inferred currency precision is negative (&lt; 0).
+                </p>
+               </li>
+              </ul>
              </dd>
             </dl>
            </dd>
@@ -2048,6 +2123,17 @@ whitespace delimiter.
             </span>
            </span>
           </em>
+          ,
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             bool
+            </span>
+            <span class="pre">
+             check=True
+            </span>
+           </span>
+          </em>
           <span class="sig-paren">
            )
           </span>
@@ -2105,7 +2191,7 @@ negative under certain conditions.
                <em>
                 Decimal
                </em>
-               ) – The value of the price.
+               ) – The value of the price. Must be in range [-9_223_372_036, 9_223_372_036].
               </p>
              </li>
              <li>
@@ -2118,7 +2204,93 @@ negative under certain conditions.
                 uint8
                </em>
                ) – The precision for the price. Use a precision of 0 for whole numbers
-(no fractional units).
+(no fractional units). Must be in range [0, 9].
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                check
+               </strong>
+               (
+               <em>
+                bool
+               </em>
+               <em>
+                ,
+               </em>
+               <em>
+                default True
+               </em>
+               ) – If precondition validation checks occur at the Python level, where any
+failures will raise a Python exception as documented.
+              </p>
+             </li>
+            </ul>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                check
+               </cite>
+               is True and
+               <cite>
+                value
+               </cite>
+               is less than -9_223_372_036.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                check
+               </cite>
+               is True and
+               <cite>
+                value
+               </cite>
+               is greater than 9_223_372_036.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                check
+               </cite>
+               is True and
+               <cite>
+                precision
+               </cite>
+               greater than 9.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                OverflowError
+               </strong>
+               – If
+               <cite>
+                precision
+               </cite>
+               is negative (&lt; 0).
               </p>
              </li>
             </ul>
@@ -2128,26 +2300,14 @@ negative under certain conditions.
            <p class="admonition-title">
             Warning
            </p>
-           <ul class="simple">
-            <li>
-             <p>
-              Panics at runtime if
-              <cite>
-               value
-              </cite>
-              is not in range [-9_223_372_036, 9_223_372_036].
-             </p>
-            </li>
-            <li>
-             <p>
-              Panics at runtime if
-              <cite>
-               precision
-              </cite>
-              is not in range [0, 9].
-             </p>
-            </li>
-           </ul>
+           <p>
+            If
+            <cite>
+             check
+            </cite>
+            is false and a validation check fails at runtime, then will cause
+a Rust panic.
+           </p>
           </div>
           <p class="rubric">
            References
@@ -2480,12 +2640,24 @@ following the ‘.’ point (if no point then precision zero).
               Raises
              </dt>
              <dd class="field-odd">
-              <p>
-               <strong>
-                ValueError
-               </strong>
-               – If inferred precision greater than 9.
-              </p>
+              <ul class="simple">
+               <li>
+                <p>
+                 <strong>
+                  ValueError
+                 </strong>
+                 – If inferred precision is greater than 9.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  OverflowError
+                 </strong>
+                 – If inferred precision is negative (&lt; 0).
+                </p>
+               </li>
+              </ul>
              </dd>
             </dl>
            </dd>
@@ -2603,6 +2775,17 @@ following the ‘.’ point (if no point then precision zero).
             </span>
            </span>
           </em>
+          ,
+          <em class="sig-param">
+           <span class="n">
+            <span class="pre">
+             bool
+            </span>
+            <span class="pre">
+             check=True
+            </span>
+           </span>
+          </em>
           <span class="sig-paren">
            )
           </span>
@@ -2661,7 +2844,7 @@ denominated in fractional units).
                <em>
                 Decimal
                </em>
-               ) – The value of the quantity.
+               ) – The value of the quantity. Must be in range [0, 18_446_744_073].
               </p>
              </li>
              <li>
@@ -2674,7 +2857,93 @@ denominated in fractional units).
                 uint8
                </em>
                ) – The precision for the quantity. Use a precision of 0 for whole numbers
-(no fractional units).
+(no fractional units). Must be in range [0, 9].
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                check
+               </strong>
+               (
+               <em>
+                bool
+               </em>
+               <em>
+                ,
+               </em>
+               <em>
+                default True
+               </em>
+               ) – If precondition validation checks occur at the Python level, where any
+failures will raise a Python exception as documented.
+              </p>
+             </li>
+            </ul>
+           </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                check
+               </cite>
+               is True and
+               <cite>
+                value
+               </cite>
+               is negative (&lt; 0).
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                check
+               </cite>
+               is True and
+               <cite>
+                value
+               </cite>
+               is greater than 18_446_744_073.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                check
+               </cite>
+               is True and
+               <cite>
+                precision
+               </cite>
+               greater than 9.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                OverflowError
+               </strong>
+               – If
+               <cite>
+                precision
+               </cite>
+               is negative (&lt; 0).
               </p>
              </li>
             </ul>
@@ -2684,26 +2953,14 @@ denominated in fractional units).
            <p class="admonition-title">
             Warning
            </p>
-           <ul class="simple">
-            <li>
-             <p>
-              Panics at runtime if
-              <cite>
-               value
-              </cite>
-              is not in range [0, 18_446_744_073].
-             </p>
-            </li>
-            <li>
-             <p>
-              Panics at runtime if
-              <cite>
-               precision
-              </cite>
-              is not in range [0, 9].
-             </p>
-            </li>
-           </ul>
+           <p>
+            If
+            <cite>
+             check
+            </cite>
+            is false and a validation check fails at runtime, then will cause
+a Rust panic.
+           </p>
           </div>
           <p class="rubric">
            References
@@ -3036,12 +3293,24 @@ following the ‘.’ point (if no point then precision zero).
               Raises
              </dt>
              <dd class="field-odd">
-              <p>
-               <strong>
-                ValueError
-               </strong>
-               – If inferred precision greater than 9.
-              </p>
+              <ul class="simple">
+               <li>
+                <p>
+                 <strong>
+                  ValueError
+                 </strong>
+                 – If inferred precision is greater than 9.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  OverflowError
+                 </strong>
+                 – If inferred precision is negative (&lt; 0).
+                </p>
+               </li>
+              </ul>
              </dd>
             </dl>
            </dd>
@@ -3249,16 +3518,32 @@ following the ‘.’ point (if no point then precision zero).
               Raises
              </dt>
              <dd class="field-even">
-              <p>
-               <strong>
-                OverflowError
-               </strong>
-               – If
-               <cite>
-                precision
-               </cite>
-               is negative (&lt; 0).
-              </p>
+              <ul class="simple">
+               <li>
+                <p>
+                 <strong>
+                  ValueError
+                 </strong>
+                 – If
+                 <cite>
+                  precision
+                 </cite>
+                 is greater than 9.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  OverflowError
+                 </strong>
+                 – If
+                 <cite>
+                  precision
+                 </cite>
+                 is negative (&lt; 0).
+                </p>
+               </li>
+              </ul>
              </dd>
             </dl>
             <div class="admonition warning">

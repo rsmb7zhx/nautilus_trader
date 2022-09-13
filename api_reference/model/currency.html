@@ -841,41 +841,62 @@ decimal precision.
              </li>
             </ul>
            </dd>
+           <dt class="field-even">
+            Raises
+           </dt>
+           <dd class="field-even">
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                code
+               </cite>
+               is not a valid string.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                OverflowError
+               </strong>
+               – If
+               <cite>
+                precision
+               </cite>
+               is negative (&lt; 0).
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                precision
+               </cite>
+               greater than 9.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                name
+               </cite>
+               is not a valid string.
+              </p>
+             </li>
+            </ul>
+           </dd>
           </dl>
-          <div class="admonition warning">
-           <p class="admonition-title">
-            Warning
-           </p>
-           <ul class="simple">
-            <li>
-             <p>
-              Panics at runtime if
-              <cite>
-               code
-              </cite>
-              is not a valid string.
-             </p>
-            </li>
-            <li>
-             <p>
-              Panics at runtime if
-              <cite>
-               name
-              </cite>
-              is not a valid string.
-             </p>
-            </li>
-            <li>
-             <p>
-              Panics at runtime if
-              <cite>
-               precision
-              </cite>
-              is not in range [0, 9].
-             </p>
-            </li>
-           </ul>
-          </div>
           <dl class="py attribute">
            <dt class="sig sig-object py" id="nautilus_trader.model.currency.Currency.code">
             <span class="sig-name descname">
