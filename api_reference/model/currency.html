@@ -800,7 +800,7 @@ decimal precision.
                <em>
                 uint8
                </em>
-               ) – The currency decimal precision.
+               ) – The currency decimal precision. Must be in range [0, 9].
               </p>
              </li>
              <li>
@@ -1037,9 +1037,17 @@ decimal precision.
                  <em>
                   default False
                  </em>
-                 ) – If strict mode is enabled. If not strict mode then it’s very likely
-the currency is a crypto, so for robustness will then return a new
-cryptocurrency using the code and a default precision of 8.
+                 ) – If strict mode is enabled. If not
+                 <cite>
+                  strict
+                 </cite>
+                 mode then it’s very likely
+a Cryptocurrency, so for robustness will then return a new
+Cryptocurrency using the code and a default
+                 <cite>
+                  precision
+                 </cite>
+                 of 8.
                 </p>
                </li>
               </ul>
