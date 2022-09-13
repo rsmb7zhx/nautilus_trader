@@ -1588,17 +1588,6 @@
             </span>
            </span>
           </em>
-          ,
-          <em class="sig-param">
-           <span class="n">
-            <span class="pre">
-             bool
-            </span>
-            <span class="pre">
-             check=True
-            </span>
-           </span>
-          </em>
           <span class="sig-paren">
            )
           </span>
@@ -1618,6 +1607,28 @@
           <p>
            Represents an amount of money in a specified currency denomination.
           </p>
+          <ul class="simple">
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               MONEY_MAX
+              </span>
+             </code>
+             = 9_223_372_036
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               MONEY_MIN
+              </span>
+             </code>
+             = -9_223_372_036
+            </p>
+           </li>
+          </ul>
           <dl class="field-list simple">
            <dt class="field-odd">
             Parameters
@@ -1652,7 +1663,6 @@
                 Decimal
                </em>
                ) – The amount of money in the currency denomination.
-Must be in range [-9_223_372_036, 9_223_372_036].
               </p>
              </li>
              <li>
@@ -1669,29 +1679,6 @@ Must be in range [-9_223_372_036, 9_223_372_036].
                ) – The currency of the money.
               </p>
              </li>
-             <li>
-              <p>
-               <strong>
-                check
-               </strong>
-               (
-               <em>
-                bool
-               </em>
-               <em>
-                ,
-               </em>
-               <em>
-                default True
-               </em>
-               ) – If precondition validation checks occur at the Python level, where any
-failures will raise a Python
-               <cite>
-                Exception
-               </cite>
-               as documented.
-              </p>
-             </li>
             </ul>
            </dd>
            <dt class="field-even">
@@ -1706,10 +1693,6 @@ failures will raise a Python
                </strong>
                – If
                <cite>
-                check
-               </cite>
-               is True and
-               <cite>
                 value
                </cite>
                is less than -9_223_372_036.
@@ -1722,10 +1705,6 @@ failures will raise a Python
                </strong>
                – If
                <cite>
-                check
-               </cite>
-               is True and
-               <cite>
                 value
                </cite>
                is greater than 9_223_372_036.
@@ -1734,19 +1713,6 @@ failures will raise a Python
             </ul>
            </dd>
           </dl>
-          <div class="admonition warning">
-           <p class="admonition-title">
-            Warning
-           </p>
-           <p>
-            If
-            <cite>
-             check
-            </cite>
-            is false and a validation check fails at runtime, will then cause
-a Rust panic.
-           </p>
-          </div>
           <dl class="py method">
            <dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.as_decimal">
             <span class="sig-name descname">
@@ -2127,17 +2093,6 @@ whitespace delimiter.
             </span>
            </span>
           </em>
-          ,
-          <em class="sig-param">
-           <span class="n">
-            <span class="pre">
-             bool
-            </span>
-            <span class="pre">
-             check=True
-            </span>
-           </span>
-          </em>
           <span class="sig-paren">
            )
           </span>
@@ -2162,6 +2117,28 @@ whitespace delimiter.
 have negative values. For example, prices for options instruments can be
 negative under certain conditions.
           </p>
+          <ul class="simple">
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               PRICE_MAX
+              </span>
+             </code>
+             = 9_223_372_036
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               PRICE_MIN
+              </span>
+             </code>
+             = -9_223_372_036
+            </p>
+           </li>
+          </ul>
           <dl class="field-list simple">
            <dt class="field-odd">
             Parameters
@@ -2196,7 +2173,6 @@ negative under certain conditions.
                 Decimal
                </em>
                ) – The value of the price.
-Must be in range [-9_223_372_036, 9_223_372_036].
               </p>
              </li>
              <li>
@@ -2209,31 +2185,7 @@ Must be in range [-9_223_372_036, 9_223_372_036].
                 uint8
                </em>
                ) – The precision for the price. Use a precision of 0 for whole numbers
-(no fractional units).
-Must be in range [0, 9].
-              </p>
-             </li>
-             <li>
-              <p>
-               <strong>
-                check
-               </strong>
-               (
-               <em>
-                bool
-               </em>
-               <em>
-                ,
-               </em>
-               <em>
-                default True
-               </em>
-               ) – If precondition validation checks occur at the Python level, where any
-failures will raise a Python
-               <cite>
-                Exception
-               </cite>
-               as documented.
+(no fractional units). Must be in range [0, 9].
               </p>
              </li>
             </ul>
@@ -2250,10 +2202,6 @@ failures will raise a Python
                </strong>
                – If
                <cite>
-                check
-               </cite>
-               is True and
-               <cite>
                 value
                </cite>
                is less than -9_223_372_036.
@@ -2265,10 +2213,6 @@ failures will raise a Python
                 ValueError
                </strong>
                – If
-               <cite>
-                check
-               </cite>
-               is True and
                <cite>
                 value
                </cite>
@@ -2282,13 +2226,9 @@ failures will raise a Python
                </strong>
                – If
                <cite>
-                check
-               </cite>
-               is True and
-               <cite>
                 precision
                </cite>
-               greater than 9.
+               is greater than 9.
               </p>
              </li>
              <li>
@@ -2306,19 +2246,6 @@ failures will raise a Python
             </ul>
            </dd>
           </dl>
-          <div class="admonition warning">
-           <p class="admonition-title">
-            Warning
-           </p>
-           <p>
-            If
-            <cite>
-             check
-            </cite>
-            is false and a validation check fails at runtime, will then cause
-a Rust panic.
-           </p>
-          </div>
           <p class="rubric">
            References
           </p>
@@ -2785,17 +2712,6 @@ following the ‘.’ point (if no point then precision zero).
             </span>
            </span>
           </em>
-          ,
-          <em class="sig-param">
-           <span class="n">
-            <span class="pre">
-             bool
-            </span>
-            <span class="pre">
-             check=True
-            </span>
-           </span>
-          </em>
           <span class="sig-paren">
            )
           </span>
@@ -2821,6 +2737,28 @@ or ‘shares’ (securities denominated in whole units) or a decimal value
 containing decimal places for non-share quantity asset classes (securities
 denominated in fractional units).
           </p>
+          <ul class="simple">
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               QUANTITY_MAX
+              </span>
+             </code>
+             = 18_446_744_073
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               QUANTITY_MIN
+              </span>
+             </code>
+             = 0
+            </p>
+           </li>
+          </ul>
           <dl class="field-list simple">
            <dt class="field-odd">
             Parameters
@@ -2855,7 +2793,6 @@ denominated in fractional units).
                 Decimal
                </em>
                ) – The value of the quantity.
-Must be in range [0, 18_446_744_073].
               </p>
              </li>
              <li>
@@ -2868,31 +2805,7 @@ Must be in range [0, 18_446_744_073].
                 uint8
                </em>
                ) – The precision for the quantity. Use a precision of 0 for whole numbers
-(no fractional units).
-Must be in range [0, 9].
-              </p>
-             </li>
-             <li>
-              <p>
-               <strong>
-                check
-               </strong>
-               (
-               <em>
-                bool
-               </em>
-               <em>
-                ,
-               </em>
-               <em>
-                default True
-               </em>
-               ) – If precondition validation checks occur at the Python level, where any
-failures will raise a Python
-               <cite>
-                Exception
-               </cite>
-               as documented.
+(no fractional units). Must be in range [0, 9].
               </p>
              </li>
             </ul>
@@ -2909,10 +2822,6 @@ failures will raise a Python
                </strong>
                – If
                <cite>
-                check
-               </cite>
-               is True and
-               <cite>
                 value
                </cite>
                is negative (&lt; 0).
@@ -2924,10 +2833,6 @@ failures will raise a Python
                 ValueError
                </strong>
                – If
-               <cite>
-                check
-               </cite>
-               is True and
                <cite>
                 value
                </cite>
@@ -2941,13 +2846,9 @@ failures will raise a Python
                </strong>
                – If
                <cite>
-                check
-               </cite>
-               is True and
-               <cite>
                 precision
                </cite>
-               greater than 9.
+               is greater than 9.
               </p>
              </li>
              <li>
@@ -2965,19 +2866,6 @@ failures will raise a Python
             </ul>
            </dd>
           </dl>
-          <div class="admonition warning">
-           <p class="admonition-title">
-            Warning
-           </p>
-           <p>
-            If
-            <cite>
-             check
-            </cite>
-            is false and a validation check fails at runtime, will then cause
-a Rust panic.
-           </p>
-          </div>
           <p class="rubric">
            References
           </p>

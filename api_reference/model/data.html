@@ -840,17 +840,6 @@
              </span>
             </span>
            </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              bool
-             </span>
-             <span class="pre">
-              check=False
-             </span>
-            </span>
-           </em>
            <span class="sig-paren">
             )
            </span>
@@ -984,24 +973,6 @@
                 ) – The UNIX timestamp (nanoseconds) when the data object was initialized.
                </p>
               </li>
-              <li>
-               <p>
-                <strong>
-                 check
-                </strong>
-                (
-                <em>
-                 bool
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 default True
-                </em>
-                ) – If OHLC price arguments are checked for logical correctness.
-               </p>
-              </li>
              </ul>
             </dd>
             <dt class="field-even">
@@ -1015,10 +986,6 @@
                  ValueError
                 </strong>
                 – If
-                <cite>
-                 check
-                </cite>
-                True and the
                 <cite>
                  high
                 </cite>
@@ -1036,10 +1003,6 @@
                 </strong>
                 – If
                 <cite>
-                 check
-                </cite>
-                True and the
-                <cite>
                  high
                 </cite>
                 is not &gt;=
@@ -1055,10 +1018,6 @@
                  ValueError
                 </strong>
                 – If
-                <cite>
-                 check
-                </cite>
-                True and the
                 <cite>
                  low
                 </cite>
