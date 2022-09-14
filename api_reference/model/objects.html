@@ -1695,7 +1695,7 @@
                <cite>
                 value
                </cite>
-               is less than -9_223_372_036.
+               is greater than 9_223_372_036.
               </p>
              </li>
              <li>
@@ -1707,7 +1707,7 @@
                <cite>
                 value
                </cite>
-               is greater than 9_223_372_036.
+               is less than -9_223_372_036.
               </p>
              </li>
             </ul>
@@ -2117,6 +2117,9 @@ whitespace delimiter.
 have negative values. For example, prices for options instruments can be
 negative under certain conditions.
           </p>
+          <p>
+           Handles up to 9 decimals of precision.
+          </p>
           <ul class="simple">
            <li>
             <p>
@@ -2185,7 +2188,7 @@ negative under certain conditions.
                 uint8
                </em>
                ) – The precision for the price. Use a precision of 0 for whole numbers
-(no fractional units). Must be in range [0, 9].
+(no fractional units).
               </p>
              </li>
             </ul>
@@ -2204,7 +2207,7 @@ negative under certain conditions.
                <cite>
                 value
                </cite>
-               is less than -9_223_372_036.
+               is greater than 9_223_372_036.
               </p>
              </li>
              <li>
@@ -2216,7 +2219,7 @@ negative under certain conditions.
                <cite>
                 value
                </cite>
-               is greater than 9_223_372_036.
+               is less than -9_223_372_036.
               </p>
              </li>
              <li>
@@ -2536,6 +2539,9 @@ negative under certain conditions.
             <p>
              Return a price parsed from the given string.
             </p>
+            <p>
+             Handles up to 9 decimals of precision.
+            </p>
             <dl class="field-list simple">
              <dt class="field-odd">
               Parameters
@@ -2737,6 +2743,9 @@ or ‘shares’ (securities denominated in whole units) or a decimal value
 containing decimal places for non-share quantity asset classes (securities
 denominated in fractional units).
           </p>
+          <p>
+           Handles up to 9 decimals of precision.
+          </p>
           <ul class="simple">
            <li>
             <p>
@@ -2805,7 +2814,7 @@ denominated in fractional units).
                 uint8
                </em>
                ) – The precision for the quantity. Use a precision of 0 for whole numbers
-(no fractional units). Must be in range [0, 9].
+(no fractional units).
               </p>
              </li>
             </ul>
@@ -2824,7 +2833,7 @@ denominated in fractional units).
                <cite>
                 value
                </cite>
-               is negative (&lt; 0).
+               is greater than 18_446_744_073.
               </p>
              </li>
              <li>
@@ -2836,7 +2845,7 @@ denominated in fractional units).
                <cite>
                 value
                </cite>
-               is greater than 18_446_744_073.
+               is negative (&lt; 0).
               </p>
              </li>
              <li>
@@ -3155,6 +3164,9 @@ denominated in fractional units).
            <dd>
             <p>
              Return a quantity parsed from the given string.
+            </p>
+            <p>
+             Handles up to 9 decimals of precision.
             </p>
             <dl class="field-list simple">
              <dt class="field-odd">
