@@ -10907,6 +10907,12 @@ to the end of the data.
              modules,
             </span>
             <span class="pre">
+             MessageBus
+            </span>
+            <span class="pre">
+             msgbus,
+            </span>
+            <span class="pre">
              CacheFacade
             </span>
             <span class="pre">
@@ -11114,6 +11120,20 @@ to the end of the data.
                  ]
                 </em>
                 ) – The instrument specific leverage configuration (for margin accounts).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 msgbus
+                </strong>
+                (
+                <a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus">
+                 <em>
+                  MessageBus
+                 </em>
+                </a>
+                ) – The message bus for the exchange.
                </p>
               </li>
               <li>
@@ -12592,6 +12612,35 @@ to the end of the data.
                <p>
                 <cite>
                  list[SimulationModule]
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.msgbus">
+             <span class="sig-name descname">
+              <span class="pre">
+               msgbus
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.msgbus" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message bus wired to the exchange.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 MessageBus
                 </cite>
                </p>
               </dd>
@@ -16784,44 +16833,6 @@ position ID resolution.
                </p>
               </dd>
              </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.handle_order_event">
-             <span class="sig-name descname">
-              <span class="pre">
-               handle_order_event
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                OrderEvent
-               </span>
-               <span class="pre">
-                event
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.handle_order_event" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
             </dd>
            </dl>
            <dl class="py attribute">
