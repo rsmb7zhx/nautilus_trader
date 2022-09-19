@@ -3565,6 +3565,45 @@ internally aggregated.
               </li>
              </ul>
             </dd>
+            <dt class="field-even">
+             Raises
+            </dt>
+            <dd class="field-even">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 bid.precision
+                </cite>
+                !=
+                <cite>
+                 ask.precision
+                </cite>
+                .
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 bid_size.precision
+                </cite>
+                !=
+                <cite>
+                 ask_size.precision
+                </cite>
+                .
+               </p>
+              </li>
+             </ul>
+            </dd>
            </dl>
            <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.data.tick.QuoteTick.ask">
@@ -3992,7 +4031,18 @@ internally aggregated.
                 uint8_t
                </span>
                <span class="pre">
-                price_prec
+                bid_price_prec
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                uint8_t
+               </span>
+               <span class="pre">
+                ask_price_prec
                </span>
               </span>
              </em>
@@ -4025,7 +4075,18 @@ internally aggregated.
                 uint8_t
                </span>
                <span class="pre">
-                size_prec
+                bid_size_prec
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                uint8_t
+               </span>
+               <span class="pre">
+                ask_size_prec
                </span>
               </span>
              </em>
@@ -4121,13 +4182,25 @@ internally aggregated.
                 <li>
                  <p>
                   <strong>
-                   price_prec
+                   bid_price_prec
                   </strong>
                   (
                   <em>
                    uint8_t
                   </em>
-                  ) – The price precision.
+                  ) – The bid price precision.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ask_price_prec
+                  </strong>
+                  (
+                  <em>
+                   uint8_t
+                  </em>
+                  ) – The ask price precision.
                  </p>
                 </li>
                 <li>
@@ -4161,13 +4234,25 @@ internally aggregated.
                 <li>
                  <p>
                   <strong>
-                   size_prec
+                   bid_size_prec
                   </strong>
                   (
                   <em>
                    uint8_t
                   </em>
-                  ) – The size precision.
+                  ) – The bid size precision.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ask_size_prec
+                  </strong>
+                  (
+                  <em>
+                   uint8_t
+                  </em>
+                  ) – The ask size precision.
                  </p>
                 </li>
                 <li>
@@ -4205,6 +4290,45 @@ internally aggregated.
                  QuoteTick
                 </em>
                </p>
+              </dd>
+              <dt class="field-odd">
+               Raises
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   bid_price_prec
+                  </cite>
+                  !=
+                  <cite>
+                   ask_price_prec
+                  </cite>
+                  .
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   bid_size_prec
+                  </cite>
+                  !=
+                  <cite>
+                   ask_size_prec
+                  </cite>
+                  .
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>
