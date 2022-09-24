@@ -21818,6 +21818,76 @@ will be appended with ‘F’.
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.common.logging.LiveLogger.change_clock">
+             <span class="sig-name descname">
+              <span class="pre">
+               change_clock
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Clock
+               </span>
+               <span class="pre">
+                clock
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.common.logging.LiveLogger.change_clock" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Change the loggers internal clock to the given clock.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 clock
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock">
+                 <em>
+                  Clock
+                 </em>
+                </a>
+                ) –
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.common.logging.LiveLogger.get_run_task">
              <span class="sig-name descname">
               <span class="pre">
@@ -21940,7 +22010,7 @@ will be appended with ‘F’.
             </dt>
             <dd>
              <p>
-              Return the loggers component name.
+              Return whether the logger is running.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -21949,7 +22019,7 @@ will be appended with ‘F’.
               <dd class="field-odd">
                <p>
                 <em>
-                 str
+                 bool
                 </em>
                </p>
               </dd>
@@ -22487,6 +22557,76 @@ will be appended with ‘F’.
                </p>
               </li>
              </ul>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.common.logging.Logger.change_clock">
+             <span class="sig-name descname">
+              <span class="pre">
+               change_clock
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Clock
+               </span>
+               <span class="pre">
+                clock
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.common.logging.Logger.change_clock" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Change the loggers internal clock to the given clock.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 clock
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock">
+                 <em>
+                  Clock
+                 </em>
+                </a>
+                ) –
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py attribute">

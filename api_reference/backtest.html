@@ -8229,6 +8229,22 @@ data.
                   </strong>
                   – If
                   <cite>
+                   data
+                  </cite>
+                  contains objects which are not a type of
+                  <cite>
+                   Data
+                  </cite>
+                  .
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
                    instrument_id
                   </cite>
                   for the data is not found in the cache.
@@ -9042,7 +9058,7 @@ generate new position IDs.
             </dt>
             <dd>
              <p>
-              The last backtest run time range end (if run).
+              Return the last backtest run time range end (if run).
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -9077,7 +9093,7 @@ generate new position IDs.
             </dt>
             <dd>
              <p>
-              The last backtest run time range start (if run).
+              Return the last backtest run time range start (if run).
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -9482,7 +9498,10 @@ called after disposal.
             </dt>
             <dd>
              <p>
-              Return the nodes instance ID.
+              Return the engines instance ID.
+             </p>
+             <p>
+              This is a unique identifier per initialized engine.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -9511,7 +9530,7 @@ called after disposal.
             </dt>
             <dd>
              <p>
-              The backtest engine iteration count.
+              Return the backtest engine iteration count.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -9540,7 +9559,7 @@ called after disposal.
             </dt>
             <dd>
              <p>
-              The internal kernel for the engine.
+              Return the internal kernel for the engine.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -9712,7 +9731,7 @@ through a call to
             </dt>
             <dd>
              <p>
-              Return the nodes machine ID.
+              Return the engines machine ID.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -10218,7 +10237,7 @@ to the end of the data.
             </dt>
             <dd>
              <p>
-              The last backtest engine run config ID.
+              Return the last backtest engine run config ID.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -10253,7 +10272,7 @@ to the end of the data.
             </dt>
             <dd>
              <p>
-              When the last backtest run finished (if run).
+              Return when the last backtest run finished (if run).
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -10288,7 +10307,7 @@ to the end of the data.
             </dt>
             <dd>
              <p>
-              The last backtest engine run ID (if run).
+              Return the last backtest engine run ID (if run).
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -10323,7 +10342,7 @@ to the end of the data.
             </dt>
             <dd>
              <p>
-              When the last backtest run started (if run).
+              Return when the last backtest run started (if run).
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -10800,7 +10819,7 @@ to the end of the data.
             </dt>
             <dd>
              <p>
-              Return the nodes trader ID.
+              Return the engines trader ID.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
