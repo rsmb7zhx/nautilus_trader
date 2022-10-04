@@ -6497,16 +6497,38 @@ any other reason that an otherwise valid order is not able to be submitted.
              Raises
             </dt>
             <dd class="field-even">
-             <p>
-              <strong>
-               ValueError
-              </strong>
-              – If
-              <cite>
-               last_qty
-              </cite>
-              is not positive (&gt; 0).
-             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 order_side
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
+                .
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 last_qty
+                </cite>
+                is not positive (&gt; 0).
+               </p>
+              </li>
+             </ul>
             </dd>
            </dl>
            <dl class="py attribute">
@@ -7862,6 +7884,27 @@ contain any arbitrary delimiter if required.
                </p>
               </li>
              </ul>
+            </dd>
+            <dt class="field-even">
+             Raises
+            </dt>
+            <dd class="field-even">
+             <p>
+              <strong>
+               ValueError
+              </strong>
+              – If
+              <cite>
+               order_side
+              </cite>
+              is
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                NONE
+               </span>
+              </code>
+              .
+             </p>
             </dd>
            </dl>
            <dl class="py attribute">
