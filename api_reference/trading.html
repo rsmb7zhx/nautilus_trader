@@ -9849,10 +9849,10 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                ClientId
+                TriggerType
                </span>
                <span class="pre">
-                client_id=None
+                emulation_trigger=TriggerType.NONE
                </span>
               </span>
              </em>
@@ -9860,10 +9860,21 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                bool
+                unicode
                </span>
                <span class="pre">
-                check_position_exists=True
+                execution_algorithm=None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
                </span>
               </span>
              </em>
@@ -9942,6 +9953,44 @@ then the component state will not change, and an error will be logged.
                 <li>
                  <p>
                   <strong>
+                   emulation_trigger
+                  </strong>
+                  (TriggerType, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    NONE
+                   </span>
+                  </code>
+                  ) – The trigger type for order emulation (if
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    NONE
+                   </span>
+                  </code>
+                  then no emulation).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   execution_algorithm
+                  </strong>
+                  (
+                  <em>
+                   str
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The name of the execution algorithm for the order.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
                    client_id
                   </strong>
                   (
@@ -9966,22 +10015,57 @@ If
                   then will be inferred from the venue in the instrument ID.
                  </p>
                 </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <ul class="simple">
                 <li>
                  <p>
                   <strong>
-                   check_position_exists
+                   ValueError
                   </strong>
-                  (
-                  <em>
-                   bool
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   default True
-                  </em>
-                  ) – If a position is checked to exist for any given position ID.
+                  – If
+                  <cite>
+                   emulation_trigger
+                  </cite>
+                  is not
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    NONE
+                   </span>
+                  </code>
+                  and
+                  <cite>
+                   order.order_type
+                  </cite>
+                  ==
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    MARKET
+                   </span>
+                  </code>
+                  .
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   execution_algorithm
+                  </cite>
+                  is not
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  and not a valid string.
                  </p>
                 </li>
                </ul>
