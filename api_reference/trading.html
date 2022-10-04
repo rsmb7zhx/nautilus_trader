@@ -2716,6 +2716,17 @@ per instrument. The position ID will be
              <em class="sig-param">
               <span class="n">
                <span class="pre">
+                OrderSide
+               </span>
+               <span class="pre">
+                order_side=OrderSide.NONE
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
                 ClientId
                </span>
                <span class="pre">
@@ -2762,6 +2773,20 @@ per instrument. The position ID will be
                    </em>
                   </a>
                   ) – The instrument for the orders to cancel.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   order_side
+                  </strong>
+                  (OrderSide, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    NONE
+                   </span>
+                  </code>
+                  (both sides)) – The side of the orders to cancel.
                  </p>
                 </li>
                 <li>
@@ -7711,7 +7736,7 @@ If
             </dt>
             <dd>
              <p>
-              query the given order with optional routing instructions.
+              Query the given order with optional routing instructions.
              </p>
              <p>
               A
