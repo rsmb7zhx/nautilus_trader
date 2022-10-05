@@ -970,6 +970,55 @@
            <em class="sig-param">
             <span class="n">
              <span class="pre">
+              emulator_config
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              Optional
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <a class="reference internal" href="config.html#nautilus_trader.config.common.OrderEmulatorConfig" title="nautilus_trader.config.common.OrderEmulatorConfig">
+              <span class="pre">
+               nautilus_trader.config.common.OrderEmulatorConfig
+              </span>
+             </a>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
               streaming_config
              </span>
             </span>
@@ -1607,6 +1656,37 @@
               <li>
                <p>
                 <strong>
+                 emulator_config
+                </strong>
+                (
+                <em>
+                 Union
+                </em>
+                <em>
+                 [
+                </em>
+                <a class="reference internal" href="config.html#nautilus_trader.config.common.ExecEngineConfig" title="nautilus_trader.config.common.ExecEngineConfig">
+                 <em>
+                  ExecEngineConfig
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <a class="reference internal" href="config.html#nautilus_trader.config.live.LiveExecEngineConfig" title="nautilus_trader.config.live.LiveExecEngineConfig">
+                 <em>
+                  LiveExecEngineConfig
+                 </em>
+                </a>
+                <em>
+                 ]
+                </em>
+                ) – The order emulator configuration for the kernel.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  streaming_config
                 </strong>
                 (
@@ -1914,9 +1994,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  Environment
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -1975,10 +2055,7 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
-                 AbstractEventLoop
-                </cite>
-                or
+                AbstractEventLoop or
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
@@ -2042,10 +2119,7 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
-                 Callable
-                </cite>
-                or
+                Callable or
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
@@ -2109,10 +2183,7 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
-                 ThreadPoolExecutor
-                </cite>
-                or
+                ThreadPoolExecutor or
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
@@ -2163,9 +2234,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  str
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -2213,9 +2284,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  TraderId
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -2261,9 +2332,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  str
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -2311,9 +2382,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  UUID4
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -2359,9 +2430,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  uint64_t
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -2409,9 +2480,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  Clock
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -2459,9 +2530,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  LoggerAdapter
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -2509,9 +2580,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  Logger
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -2559,9 +2630,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  MessageBus
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -2609,9 +2680,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  CacheFacade
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -2659,9 +2730,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  PortfolioFacade
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -2709,9 +2780,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  DataEngine
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -2759,9 +2830,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  RiskEngine
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -2809,9 +2880,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  ExecutionEngine
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -2859,9 +2930,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  Trader
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -2922,10 +2993,7 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
-                 StreamingFeatherWriter
-                </cite>
-                or
+                StreamingFeatherWriter or
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
