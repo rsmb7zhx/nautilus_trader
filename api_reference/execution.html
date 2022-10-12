@@ -10359,10 +10359,10 @@ then the component state will not change, and an error will be logged.
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              unicode
+              dict
              </span>
              <span class="pre">
-              execution_algorithm=None
+              execution=None
              </span>
             </span>
            </em>
@@ -10515,9 +10515,15 @@ then the component state will not change, and an error will be logged.
               <li>
                <p>
                 <strong>
-                 execution_algorithm
+                 execution
                 </strong>
                 (
+                <em>
+                 dict
+                </em>
+                <em>
+                 [
+                </em>
                 <em>
                  str
                 </em>
@@ -10525,9 +10531,18 @@ then the component state will not change, and an error will be logged.
                  ,
                 </em>
                 <em>
+                 Any
+                </em>
+                <em>
+                 ]
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
                  optional
                 </em>
-                ) – The name of the execution algorithm for the order.
+                ) – The execution algorithm parameters for the order.
                </p>
               </li>
               <li>
@@ -10714,19 +10729,19 @@ then the component state will not change, and an error will be logged.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.SubmitOrder.execution_algorithm">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.SubmitOrder.execution">
              <span class="sig-name descname">
               <span class="pre">
-               execution_algorithm
+               execution
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.execution.messages.SubmitOrder.execution_algorithm" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.execution.messages.SubmitOrder.execution" title="Permalink to this definition">
               ¶
              </a>
             </dt>
             <dd>
              <p>
-              The name of the execution algorithm for the order.
+              The execution algorithm parameters for the order.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -10735,7 +10750,7 @@ then the component state will not change, and an error will be logged.
               <dd class="field-odd">
                <p>
                 <cite>
-                 str
+                 dict[str, Any]
                 </cite>
                </p>
               </dd>
