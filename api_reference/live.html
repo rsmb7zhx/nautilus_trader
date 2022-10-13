@@ -10540,10 +10540,10 @@ API which may be presented directly by an exchange, or broker intermediary.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.sync_order_status">
+            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.query_order">
              <span class="sig-name descname">
               <span class="pre">
-               sync_order_status
+               query_order
               </span>
              </span>
              <span class="sig-paren">
@@ -10583,18 +10583,17 @@ API which may be presented directly by an exchange, or broker intermediary.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.sync_order_status" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.query_order" title="Permalink to this definition">
               ¶
              </a>
             </dt>
             <dd>
              <p>
-              Synchronize the order status by generating an
+              Initiate a reconciliation for the queried order which will generate an
               <cite>
                OrderStatusReport
               </cite>
-              and
-sending it back to the execution engine.
+              .
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -10611,7 +10610,7 @@ sending it back to the execution engine.
                   QueryOrder
                  </em>
                 </a>
-                ) – The command for the synchronization.
+                ) – The command to execute.
                </p>
               </dd>
              </dl>
@@ -11848,7 +11847,7 @@ sending it back to the execution engine.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.sync_order_status_async">
+            <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.query_order_async">
              <em class="property">
               <span class="pre">
                async
@@ -11858,7 +11857,7 @@ sending it back to the execution engine.
              </em>
              <span class="sig-name descname">
               <span class="pre">
-               sync_order_status_async
+               query_order_async
               </span>
              </span>
              <span class="sig-paren">
@@ -11898,18 +11897,17 @@ sending it back to the execution engine.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.sync_order_status_async" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.query_order_async" title="Permalink to this definition">
               ¶
              </a>
             </dt>
             <dd>
              <p>
-              Synchronize the order status by generating an
+              Initiate a reconciliation for the queried order which will generate an
               <cite>
                OrderStatusReport
               </cite>
-              and
-sending it back to the execution engine asynchronously.
+              asynchronously.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -11926,7 +11924,7 @@ sending it back to the execution engine asynchronously.
                   QueryOrder
                  </em>
                 </a>
-                ) – The command for the synchronization.
+                ) – The command to execute.
                </p>
               </dd>
              </dl>

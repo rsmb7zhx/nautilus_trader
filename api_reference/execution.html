@@ -4663,6 +4663,80 @@ position ID resolution.
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.query_order">
+             <span class="sig-name descname">
+              <span class="pre">
+               query_order
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                QueryOrder
+               </span>
+               <span class="pre">
+                command
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.query_order" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Initiate a reconciliation for the queried order which will generate an
+              <cite>
+               OrderStatusReport
+              </cite>
+              .
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 command
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.execution.messages.QueryOrder" title="nautilus_trader.execution.messages.QueryOrder">
+                 <em>
+                  QueryOrder
+                 </em>
+                </a>
+                ) – The command to execute.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.reset">
              <span class="sig-name descname">
               <span class="pre">
@@ -5096,60 +5170,6 @@ then the component state will not change, and an error will be logged.
                </p>
               </dd>
              </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.sync_order_status">
-             <span class="sig-name descname">
-              <span class="pre">
-               sync_order_status
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                QueryOrder
-               </span>
-               <span class="pre">
-                command
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                void
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.sync_order_status" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Request a reconciliation for the queried order which will generate an
-              <cite>
-               OrderStatusReport
-              </cite>
-             </p>
             </dd>
            </dl>
            <dl class="py attribute">
@@ -10359,10 +10379,21 @@ then the component state will not change, and an error will be logged.
            <em class="sig-param">
             <span class="n">
              <span class="pre">
+              unicode
+             </span>
+             <span class="pre">
+              execution_algorithm=None
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
               dict
              </span>
              <span class="pre">
-              execution=None
+              execution_params=None
              </span>
             </span>
            </em>
@@ -10515,7 +10546,25 @@ then the component state will not change, and an error will be logged.
               <li>
                <p>
                 <strong>
-                 execution
+                 execution_algorithm
+                </strong>
+                (
+                <em>
+                 str
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The execution algorithm name for the order.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 execution_params
                 </strong>
                 (
                 <em>
@@ -10729,13 +10778,42 @@ then the component state will not change, and an error will be logged.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.SubmitOrder.execution">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.SubmitOrder.execution_algorithm">
              <span class="sig-name descname">
               <span class="pre">
-               execution
+               execution_algorithm
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.execution.messages.SubmitOrder.execution" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.execution.messages.SubmitOrder.execution_algorithm" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The execution algorithm name for the order.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 str
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.SubmitOrder.execution_params">
+             <span class="sig-name descname">
+              <span class="pre">
+               execution_params
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.execution.messages.SubmitOrder.execution_params" title="Permalink to this definition">
               ¶
              </a>
             </dt>

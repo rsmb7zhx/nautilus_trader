@@ -17404,6 +17404,80 @@ position ID resolution.
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.query_order">
+             <span class="sig-name descname">
+              <span class="pre">
+               query_order
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                QueryOrder
+               </span>
+               <span class="pre">
+                command
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.query_order" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Initiate a reconciliation for the queried order which will generate an
+              <cite>
+               OrderStatusReport
+              </cite>
+              .
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 command
+                </strong>
+                (
+                <a class="reference internal" href="execution.html#nautilus_trader.execution.messages.QueryOrder" title="nautilus_trader.execution.messages.QueryOrder">
+                 <em>
+                  QueryOrder
+                 </em>
+                </a>
+                ) – The command to execute.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.reset">
              <span class="sig-name descname">
               <span class="pre">
@@ -17793,60 +17867,6 @@ then the component state will not change, and an error will be logged.
              </a>
             </dt>
             <dd>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.sync_order_status">
-             <span class="sig-name descname">
-              <span class="pre">
-               sync_order_status
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                QueryOrder
-               </span>
-               <span class="pre">
-                command
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                void
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.sync_order_status" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Request a reconciliation for the queried order which will generate an
-              <cite>
-               OrderStatusReport
-              </cite>
-             </p>
             </dd>
            </dl>
            <dl class="py attribute">

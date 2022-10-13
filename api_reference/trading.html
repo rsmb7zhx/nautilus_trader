@@ -9860,10 +9860,21 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
+                unicode
+               </span>
+               <span class="pre">
+                execution_algorithm=None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
                 dict
                </span>
                <span class="pre">
-                execution=None
+                execution_params=None
                </span>
               </span>
              </em>
@@ -9973,11 +9984,44 @@ then the component state will not change, and an error will be logged.
                 <li>
                  <p>
                   <strong>
-                   execution
+                   execution_algorithm
+                  </strong>
+                  (
+                  <em>
+                   str
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The execution algorithm name for the order.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   execution_params
                   </strong>
                   (
                   <em>
                    dict
+                  </em>
+                  <em>
+                   [
+                  </em>
+                  <em>
+                   str
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   Any
+                  </em>
+                  <em>
+                   ]
                   </em>
                   <em>
                    ,
@@ -10057,7 +10101,7 @@ If
                   </strong>
                   – If
                   <cite>
-                   execution_algorithm
+                   execution_params
                   </cite>
                   is not
                   <code class="docutils literal notranslate">
@@ -10065,7 +10109,11 @@ If
                     None
                    </span>
                   </code>
-                  and not a valid string.
+                  and
+                  <cite>
+                   execution_algorithm
+                  </cite>
+                  is not a valid string.
                  </p>
                 </li>
                </ul>

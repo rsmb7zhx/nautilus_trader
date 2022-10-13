@@ -13983,6 +13983,167 @@ position ID resolution.
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.adapters.ftx.execution.FTXExecutionClient.query_order">
+             <span class="sig-name descname">
+              <span class="pre">
+               query_order
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                command
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.QueryOrder" title="nautilus_trader.execution.messages.QueryOrder">
+                <span class="pre">
+                 nautilus_trader.execution.messages.QueryOrder
+                </span>
+               </a>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.query_order" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Initiate a reconciliation for the queried order which will generate an
+              <cite>
+               OrderStatusReport
+              </cite>
+              .
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 command
+                </strong>
+                (
+                <a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.QueryOrder" title="nautilus_trader.execution.messages.QueryOrder">
+                 <em>
+                  QueryOrder
+                 </em>
+                </a>
+                ) – The command to execute.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.adapters.ftx.execution.FTXExecutionClient.query_order_async">
+             <em class="property">
+              <span class="pre">
+               async
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               query_order_async
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                command
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.QueryOrder" title="nautilus_trader.execution.messages.QueryOrder">
+                <span class="pre">
+                 nautilus_trader.execution.messages.QueryOrder
+                </span>
+               </a>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.query_order_async" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Initiate a reconciliation for the queried order which will generate an
+              <cite>
+               OrderStatusReport
+              </cite>
+              asynchronously.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 command
+                </strong>
+                (
+                <a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.QueryOrder" title="nautilus_trader.execution.messages.QueryOrder">
+                 <em>
+                  QueryOrder
+                 </em>
+                </a>
+                ) – The command to execute.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.adapters.ftx.execution.FTXExecutionClient.reset">
              <span class="sig-name descname">
               <span class="pre">
@@ -14276,169 +14437,6 @@ The component will remain in a
 then the component state will not change, and an error will be logged.
               </p>
              </div>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.adapters.ftx.execution.FTXExecutionClient.sync_order_status">
-             <span class="sig-name descname">
-              <span class="pre">
-               sync_order_status
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                command
-               </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.QueryOrder" title="nautilus_trader.execution.messages.QueryOrder">
-                <span class="pre">
-                 nautilus_trader.execution.messages.QueryOrder
-                </span>
-               </a>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.sync_order_status" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Synchronize the order status by generating an
-              <cite>
-               OrderStatusReport
-              </cite>
-              and
-sending it back to the execution engine.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 command
-                </strong>
-                (
-                <a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.QueryOrder" title="nautilus_trader.execution.messages.QueryOrder">
-                 <em>
-                  QueryOrder
-                 </em>
-                </a>
-                ) – The command for the synchronization.
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.adapters.ftx.execution.FTXExecutionClient.sync_order_status_async">
-             <em class="property">
-              <span class="pre">
-               async
-              </span>
-              <span class="w">
-              </span>
-             </em>
-             <span class="sig-name descname">
-              <span class="pre">
-               sync_order_status_async
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                command
-               </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.QueryOrder" title="nautilus_trader.execution.messages.QueryOrder">
-                <span class="pre">
-                 nautilus_trader.execution.messages.QueryOrder
-                </span>
-               </a>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.sync_order_status_async" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Synchronize the order status by generating an
-              <cite>
-               OrderStatusReport
-              </cite>
-              and
-sending it back to the execution engine asynchronously.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 command
-                </strong>
-                (
-                <a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.QueryOrder" title="nautilus_trader.execution.messages.QueryOrder">
-                 <em>
-                  QueryOrder
-                 </em>
-                </a>
-                ) – The command for the synchronization.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py attribute">
