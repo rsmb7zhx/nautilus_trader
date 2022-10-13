@@ -9270,6 +9270,18 @@ then the component state will not change, and an error will be logged.
              <span class="sig-paren">
               )
              </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <a class="reference internal" href="../execution.html#nautilus_trader.execution.reports.ExecutionMassStatus" title="nautilus_trader.execution.reports.ExecutionMassStatus">
+                <span class="pre">
+                 nautilus_trader.execution.reports.ExecutionMassStatus
+                </span>
+               </a>
+              </span>
+             </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.execution.BetfairExecutionClient.generate_mass_status" title="Permalink to this definition">
               ¶
              </a>
@@ -12432,19 +12444,22 @@ then the component state will not change, and an error will be logged.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                QueryOrder
-               </span>
-               <span class="pre">
                 command
                </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.QueryOrder" title="nautilus_trader.execution.messages.QueryOrder">
+                <span class="pre">
+                 nautilus_trader.execution.messages.QueryOrder
+                </span>
+               </a>
               </span>
              </em>
              <span class="sig-paren">
@@ -12456,7 +12471,7 @@ then the component state will not change, and an error will be logged.
               </span>
               <span class="sig-return-typehint">
                <span class="pre">
-                void
+                None
                </span>
               </span>
              </span>
@@ -12466,11 +12481,117 @@ then the component state will not change, and an error will be logged.
             </dt>
             <dd>
              <p>
-              Request a reconciliation for the queried order which will generate an
+              Synchronize the order status by generating an
               <cite>
                OrderStatusReport
               </cite>
+              and
+sending it back to the execution engine.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 command
+                </strong>
+                (
+                <a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.QueryOrder" title="nautilus_trader.execution.messages.QueryOrder">
+                 <em>
+                  QueryOrder
+                 </em>
+                </a>
+                ) – The command for the synchronization.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.adapters.betfair.execution.BetfairExecutionClient.sync_order_status_async">
+             <em class="property">
+              <span class="pre">
+               async
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               sync_order_status_async
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                command
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.QueryOrder" title="nautilus_trader.execution.messages.QueryOrder">
+                <span class="pre">
+                 nautilus_trader.execution.messages.QueryOrder
+                </span>
+               </a>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.adapters.betfair.execution.BetfairExecutionClient.sync_order_status_async" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Synchronize the order status by generating an
+              <cite>
+               OrderStatusReport
+              </cite>
+              and
+sending it back to the execution engine asynchronously.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 command
+                </strong>
+                (
+                <a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.QueryOrder" title="nautilus_trader.execution.messages.QueryOrder">
+                 <em>
+                  QueryOrder
+                 </em>
+                </a>
+                ) – The command for the synchronization.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py attribute">

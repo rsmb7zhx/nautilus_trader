@@ -34105,6 +34105,74 @@ the new model: you should trust this data
            <em class="sig-param">
             <span class="n">
              <span class="pre">
+              inflight_check_interval_ms
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              pydantic.types.NonNegativeInt
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              5000
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              inflight_check_threshold_ms
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              pydantic.types.NonNegativeInt
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              1000
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
               qsize
              </span>
             </span>
@@ -34177,6 +34245,12 @@ the new model: you should trust this data
                 <em>
                  bool
                 </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default True
+                </em>
                 ) – If reconciliation should automatically generate events to align state.
                </p>
               </li>
@@ -34202,11 +34276,55 @@ use the maximum lookback available from the venues.
               <li>
                <p>
                 <strong>
+                 inflight_check_interval_ms
+                </strong>
+                (
+                <em>
+                 NonNegativeInt
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 5000
+                </em>
+                ) – The interval (milliseconds) between checking whether in-flight orders
+have exceeded their time-in-flight threshold.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 inflight_check_threshold_ms
+                </strong>
+                (
+                <em>
+                 NonNegativeInt
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 1000
+                </em>
+                ) – The threshold (milliseconds) beyond which an in-flight orders status
+is checked with the venue.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  qsize
                 </strong>
                 (
                 <em>
                  PositiveInt
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 10000
                 </em>
                 ) – The queue size for the engines internal queue buffers.
                </p>
@@ -40880,6 +40998,12 @@ the new model: you should trust this data
              </span>
              <span class="pre">
               reconciliation_lookback_mins=None,
+             </span>
+             <span class="pre">
+              inflight_check_interval_ms=5000,
+             </span>
+             <span class="pre">
+              inflight_check_threshold_ms=1000,
              </span>
              <span class="pre">
               qsize=10000)
