@@ -885,7 +885,7 @@
                   AccountId
                  </em>
                 </a>
-                ) – The account ID.
+                ) – The account ID (with the venue).
                </p>
               </li>
               <li>
@@ -1588,17 +1588,6 @@
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              AccountId
-             </span>
-             <span class="pre">
-              account_id
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
               InstrumentId
              </span>
              <span class="pre">
@@ -1625,6 +1614,17 @@
              </span>
              <span class="pre">
               venue_order_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              AccountId
+             </span>
+             <span class="pre">
+              account_id
              </span>
             </span>
            </em>
@@ -1738,20 +1738,6 @@ trade reports.
               <li>
                <p>
                 <strong>
-                 account_id
-                </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
-                 <em>
-                  AccountId
-                 </em>
-                </a>
-                ) – The account ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  instrument_id
                 </strong>
                 (
@@ -1789,6 +1775,20 @@ trade reports.
                  </em>
                 </a>
                 ) – The venue order ID (assigned by the venue).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 account_id
+                </strong>
+                (
+                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
+                 <em>
+                  AccountId
+                 </em>
+                </a>
+                ) – The account ID (with the venue).
                </p>
               </li>
               <li>
@@ -2368,12 +2368,6 @@ trade reports.
              strategy_id,
             </span>
             <span class="pre">
-             AccountId
-            </span>
-            <span class="pre">
-             account_id,
-            </span>
-            <span class="pre">
              InstrumentId
             </span>
             <span class="pre">
@@ -2393,6 +2387,15 @@ trade reports.
             </span>
             <span class="pre">
              Optional[VenueOrderId],
+            </span>
+            <span class="pre">
+             AccountId
+            </span>
+            <span class="pre">
+             account_id:
+            </span>
+            <span class="pre">
+             Optional[AccountId],
             </span>
             <span class="pre">
              unicode
@@ -2488,20 +2491,6 @@ trading venue.
               <li>
                <p>
                 <strong>
-                 account_id
-                </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
-                 <em>
-                  AccountId
-                 </em>
-                </a>
-                ) – The account ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  instrument_id
                 </strong>
                 (
@@ -2532,13 +2521,27 @@ trading venue.
                 <strong>
                  venue_order_id
                 </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
-                 <em>
-                  VenueOrderId
-                 </em>
-                </a>
-                ) – The venue order ID (assigned by the venue).
+                (VenueOrderId, optional with no default so
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly) – The venue order ID (assigned by the venue).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 account_id
+                </strong>
+                (AccountId, optional with no default so
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly) – The account ID (with the venue).
                </p>
               </li>
               <li>
@@ -3153,112 +3156,71 @@ trading venue.
             (
            </span>
            <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              TraderId
-             </span>
-             <span class="pre">
-              trader_id
-             </span>
+            <span class="pre">
+             TraderId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              StrategyId
-             </span>
-             <span class="pre">
-              strategy_id
-             </span>
+            <span class="pre">
+             trader_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              AccountId
-             </span>
-             <span class="pre">
-              account_id
-             </span>
+            <span class="pre">
+             StrategyId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              InstrumentId
-             </span>
-             <span class="pre">
-              instrument_id
-             </span>
+            <span class="pre">
+             strategy_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              ClientOrderId
-             </span>
-             <span class="pre">
-              client_order_id
-             </span>
+            <span class="pre">
+             InstrumentId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              VenueOrderId
-             </span>
-             <span class="pre">
-              venue_order_id
-             </span>
+            <span class="pre">
+             instrument_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              UUID4
-             </span>
-             <span class="pre">
-              event_id
-             </span>
+            <span class="pre">
+             ClientOrderId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              uint64_t
-             </span>
-             <span class="pre">
-              ts_event
-             </span>
+            <span class="pre">
+             client_order_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              uint64_t
-             </span>
-             <span class="pre">
-              ts_init
-             </span>
+            <span class="pre">
+             VenueOrderId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              bool
-             </span>
-             <span class="pre">
-              reconciliation=False
-             </span>
+            <span class="pre">
+             venue_order_id:
+            </span>
+            <span class="pre">
+             Optional[VenueOrderId],
+            </span>
+            <span class="pre">
+             AccountId
+            </span>
+            <span class="pre">
+             account_id:
+            </span>
+            <span class="pre">
+             Optional[AccountId],
+            </span>
+            <span class="pre">
+             UUID4
+            </span>
+            <span class="pre">
+             event_id,
+            </span>
+            <span class="pre">
+             uint64_t
+            </span>
+            <span class="pre">
+             ts_event,
+            </span>
+            <span class="pre">
+             uint64_t
+            </span>
+            <span class="pre">
+             ts_init,
+            </span>
+            <span class="pre">
+             bool
+            </span>
+            <span class="pre">
+             reconciliation=False
             </span>
            </em>
            <span class="sig-paren">
@@ -3319,20 +3281,6 @@ trading venue.
               <li>
                <p>
                 <strong>
-                 account_id
-                </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
-                 <em>
-                  AccountId
-                 </em>
-                </a>
-                ) – The account ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  instrument_id
                 </strong>
                 (
@@ -3363,13 +3311,27 @@ trading venue.
                 <strong>
                  venue_order_id
                 </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
-                 <em>
-                  VenueOrderId
-                 </em>
-                </a>
-                ) – The venue order ID (assigned by the venue).
+                (VenueOrderId, optional with no default so
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly) – The venue order ID (assigned by the venue).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 account_id
+                </strong>
+                (AccountId, optional with no default so
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly) – The account ID (with the venue).
                </p>
               </li>
               <li>
@@ -4685,15 +4647,6 @@ any other reason that an otherwise valid order is not able to be submitted.
              strategy_id,
             </span>
             <span class="pre">
-             AccountId
-            </span>
-            <span class="pre">
-             account_id:
-            </span>
-            <span class="pre">
-             Optional[AccountId],
-            </span>
-            <span class="pre">
              InstrumentId
             </span>
             <span class="pre">
@@ -4713,6 +4666,15 @@ any other reason that an otherwise valid order is not able to be submitted.
             </span>
             <span class="pre">
              Optional[VenueOrderId],
+            </span>
+            <span class="pre">
+             AccountId
+            </span>
+            <span class="pre">
+             account_id:
+            </span>
+            <span class="pre">
+             Optional[AccountId],
             </span>
             <span class="pre">
              UUID4
@@ -4797,20 +4759,6 @@ any other reason that an otherwise valid order is not able to be submitted.
               <li>
                <p>
                 <strong>
-                 account_id
-                </strong>
-                (AccountId, optional with no default so
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-                must be passed explicitly) – The account ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  instrument_id
                 </strong>
                 (
@@ -4848,6 +4796,20 @@ any other reason that an otherwise valid order is not able to be submitted.
                  </span>
                 </code>
                 must be passed explicitly) – The venue order ID (assigned by the venue).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 account_id
+                </strong>
+                (AccountId, optional with no default so
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly) – The account ID (with the venue).
                </p>
               </li>
               <li>
@@ -5262,112 +5224,71 @@ any other reason that an otherwise valid order is not able to be submitted.
             (
            </span>
            <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              TraderId
-             </span>
-             <span class="pre">
-              trader_id
-             </span>
+            <span class="pre">
+             TraderId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              StrategyId
-             </span>
-             <span class="pre">
-              strategy_id
-             </span>
+            <span class="pre">
+             trader_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              AccountId
-             </span>
-             <span class="pre">
-              account_id
-             </span>
+            <span class="pre">
+             StrategyId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              InstrumentId
-             </span>
-             <span class="pre">
-              instrument_id
-             </span>
+            <span class="pre">
+             strategy_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              ClientOrderId
-             </span>
-             <span class="pre">
-              client_order_id
-             </span>
+            <span class="pre">
+             InstrumentId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              VenueOrderId
-             </span>
-             <span class="pre">
-              venue_order_id
-             </span>
+            <span class="pre">
+             instrument_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              UUID4
-             </span>
-             <span class="pre">
-              event_id
-             </span>
+            <span class="pre">
+             ClientOrderId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              uint64_t
-             </span>
-             <span class="pre">
-              ts_event
-             </span>
+            <span class="pre">
+             client_order_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              uint64_t
-             </span>
-             <span class="pre">
-              ts_init
-             </span>
+            <span class="pre">
+             VenueOrderId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              bool
-             </span>
-             <span class="pre">
-              reconciliation=False
-             </span>
+            <span class="pre">
+             venue_order_id:
+            </span>
+            <span class="pre">
+             Optional[VenueOrderId],
+            </span>
+            <span class="pre">
+             AccountId
+            </span>
+            <span class="pre">
+             account_id:
+            </span>
+            <span class="pre">
+             Optional[AccountId],
+            </span>
+            <span class="pre">
+             UUID4
+            </span>
+            <span class="pre">
+             event_id,
+            </span>
+            <span class="pre">
+             uint64_t
+            </span>
+            <span class="pre">
+             ts_event,
+            </span>
+            <span class="pre">
+             uint64_t
+            </span>
+            <span class="pre">
+             ts_init,
+            </span>
+            <span class="pre">
+             bool
+            </span>
+            <span class="pre">
+             reconciliation=False
             </span>
            </em>
            <span class="sig-paren">
@@ -5428,20 +5349,6 @@ any other reason that an otherwise valid order is not able to be submitted.
               <li>
                <p>
                 <strong>
-                 account_id
-                </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
-                 <em>
-                  AccountId
-                 </em>
-                </a>
-                ) – The account ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  instrument_id
                 </strong>
                 (
@@ -5472,13 +5379,27 @@ any other reason that an otherwise valid order is not able to be submitted.
                 <strong>
                  venue_order_id
                 </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
-                 <em>
-                  VenueOrderId
-                 </em>
-                </a>
-                ) – The venue order ID (assigned by the venue).
+                (VenueOrderId, optional with no default so
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly) – The venue order ID (assigned by the venue).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 account_id
+                </strong>
+                (AccountId, optional with no default so
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly) – The account ID (with the venue).
                </p>
               </li>
               <li>
@@ -6050,12 +5971,6 @@ any other reason that an otherwise valid order is not able to be submitted.
              strategy_id,
             </span>
             <span class="pre">
-             AccountId
-            </span>
-            <span class="pre">
-             account_id,
-            </span>
-            <span class="pre">
              InstrumentId
             </span>
             <span class="pre">
@@ -6072,6 +5987,12 @@ any other reason that an otherwise valid order is not able to be submitted.
             </span>
             <span class="pre">
              venue_order_id,
+            </span>
+            <span class="pre">
+             AccountId
+            </span>
+            <span class="pre">
+             account_id,
             </span>
             <span class="pre">
              TradeId
@@ -6219,20 +6140,6 @@ any other reason that an otherwise valid order is not able to be submitted.
               <li>
                <p>
                 <strong>
-                 account_id
-                </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
-                 <em>
-                  AccountId
-                 </em>
-                </a>
-                ) – The account ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  instrument_id
                 </strong>
                 (
@@ -6270,6 +6177,20 @@ any other reason that an otherwise valid order is not able to be submitted.
                  </em>
                 </a>
                 ) – The venue order ID (assigned by the venue).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 account_id
+                </strong>
+                (
+                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
+                 <em>
+                  AccountId
+                 </em>
+                </a>
+                ) – The account ID (with the venue).
                </p>
               </li>
               <li>
@@ -8789,12 +8710,6 @@ contain any arbitrary delimiter if required.
              strategy_id,
             </span>
             <span class="pre">
-             AccountId
-            </span>
-            <span class="pre">
-             account_id,
-            </span>
-            <span class="pre">
              InstrumentId
             </span>
             <span class="pre">
@@ -8814,6 +8729,15 @@ contain any arbitrary delimiter if required.
             </span>
             <span class="pre">
              Optional[VenueOrderId],
+            </span>
+            <span class="pre">
+             AccountId
+            </span>
+            <span class="pre">
+             account_id:
+            </span>
+            <span class="pre">
+             Optional[AccountId],
             </span>
             <span class="pre">
              unicode
@@ -8909,20 +8833,6 @@ trading venue.
               <li>
                <p>
                 <strong>
-                 account_id
-                </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
-                 <em>
-                  AccountId
-                 </em>
-                </a>
-                ) – The account ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  instrument_id
                 </strong>
                 (
@@ -8960,6 +8870,20 @@ trading venue.
                  </span>
                 </code>
                 must be passed explicitly) – The venue order ID (assigned by the venue).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 account_id
+                </strong>
+                (AccountId, optional with no default so
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly) – The account ID (with the venue).
                </p>
               </li>
               <li>
@@ -9587,12 +9511,6 @@ trading venue.
              strategy_id,
             </span>
             <span class="pre">
-             AccountId
-            </span>
-            <span class="pre">
-             account_id,
-            </span>
-            <span class="pre">
              InstrumentId
             </span>
             <span class="pre">
@@ -9612,6 +9530,12 @@ trading venue.
             </span>
             <span class="pre">
              Optional[VenueOrderId],
+            </span>
+            <span class="pre">
+             AccountId
+            </span>
+            <span class="pre">
+             account_id,
             </span>
             <span class="pre">
              UUID4
@@ -9701,20 +9625,6 @@ trading venue.
               <li>
                <p>
                 <strong>
-                 account_id
-                </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
-                 <em>
-                  AccountId
-                 </em>
-                </a>
-                ) – The account ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  instrument_id
                 </strong>
                 (
@@ -9752,6 +9662,20 @@ trading venue.
                  </span>
                 </code>
                 must be passed explicitly) – The venue order ID (assigned by the venue).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 account_id
+                </strong>
+                (
+                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
+                 <em>
+                  AccountId
+                 </em>
+                </a>
+                ) – The account ID (with the venue).
                </p>
               </li>
               <li>
@@ -10323,12 +10247,6 @@ trading venue.
              strategy_id,
             </span>
             <span class="pre">
-             AccountId
-            </span>
-            <span class="pre">
-             account_id,
-            </span>
-            <span class="pre">
              InstrumentId
             </span>
             <span class="pre">
@@ -10348,6 +10266,12 @@ trading venue.
             </span>
             <span class="pre">
              Optional[VenueOrderId],
+            </span>
+            <span class="pre">
+             AccountId
+            </span>
+            <span class="pre">
+             account_id,
             </span>
             <span class="pre">
              UUID4
@@ -10437,20 +10361,6 @@ trading venue.
               <li>
                <p>
                 <strong>
-                 account_id
-                </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
-                 <em>
-                  AccountId
-                 </em>
-                </a>
-                ) – The account ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  instrument_id
                 </strong>
                 (
@@ -10488,6 +10398,20 @@ trading venue.
                  </span>
                 </code>
                 must be passed explicitly) – The venue order ID (assigned by the venue).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 account_id
+                </strong>
+                (
+                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
+                 <em>
+                  AccountId
+                 </em>
+                </a>
+                ) – The account ID (with the venue).
                </p>
               </li>
               <li>
@@ -11070,17 +10994,6 @@ trading venue.
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              AccountId
-             </span>
-             <span class="pre">
-              account_id
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
               InstrumentId
              </span>
              <span class="pre">
@@ -11096,6 +11009,17 @@ trading venue.
              </span>
              <span class="pre">
               client_order_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              AccountId
+             </span>
+             <span class="pre">
+              account_id
              </span>
             </span>
            </em>
@@ -11212,20 +11136,6 @@ trading venue.
               <li>
                <p>
                 <strong>
-                 account_id
-                </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
-                 <em>
-                  AccountId
-                 </em>
-                </a>
-                ) – The account ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  instrument_id
                 </strong>
                 (
@@ -11249,6 +11159,20 @@ trading venue.
                  </em>
                 </a>
                 ) – The client order ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 account_id
+                </strong>
+                (
+                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
+                 <em>
+                  AccountId
+                 </em>
+                </a>
+                ) – The account ID (with the venue).
                </p>
               </li>
               <li>
@@ -11887,17 +11811,6 @@ trading venue.
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              AccountId
-             </span>
-             <span class="pre">
-              account_id
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
               InstrumentId
              </span>
              <span class="pre">
@@ -11913,6 +11826,17 @@ trading venue.
              </span>
              <span class="pre">
               client_order_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              AccountId
+             </span>
+             <span class="pre">
+              account_id
              </span>
             </span>
            </em>
@@ -12008,20 +11932,6 @@ trading venue.
               <li>
                <p>
                 <strong>
-                 account_id
-                </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
-                 <em>
-                  AccountId
-                 </em>
-                </a>
-                ) – The account ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  instrument_id
                 </strong>
                 (
@@ -12045,6 +11955,20 @@ trading venue.
                  </em>
                 </a>
                 ) – The client order ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 account_id
+                </strong>
+                (
+                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
+                 <em>
+                  AccountId
+                 </em>
+                </a>
+                ) – The account ID (with the venue).
                </p>
               </li>
               <li>
@@ -12585,112 +12509,71 @@ trading venue.
             (
            </span>
            <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              TraderId
-             </span>
-             <span class="pre">
-              trader_id
-             </span>
+            <span class="pre">
+             TraderId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              StrategyId
-             </span>
-             <span class="pre">
-              strategy_id
-             </span>
+            <span class="pre">
+             trader_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              AccountId
-             </span>
-             <span class="pre">
-              account_id
-             </span>
+            <span class="pre">
+             StrategyId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              InstrumentId
-             </span>
-             <span class="pre">
-              instrument_id
-             </span>
+            <span class="pre">
+             strategy_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              ClientOrderId
-             </span>
-             <span class="pre">
-              client_order_id
-             </span>
+            <span class="pre">
+             InstrumentId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              VenueOrderId
-             </span>
-             <span class="pre">
-              venue_order_id
-             </span>
+            <span class="pre">
+             instrument_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              UUID4
-             </span>
-             <span class="pre">
-              event_id
-             </span>
+            <span class="pre">
+             ClientOrderId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              uint64_t
-             </span>
-             <span class="pre">
-              ts_event
-             </span>
+            <span class="pre">
+             client_order_id,
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              uint64_t
-             </span>
-             <span class="pre">
-              ts_init
-             </span>
+            <span class="pre">
+             VenueOrderId
             </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              bool
-             </span>
-             <span class="pre">
-              reconciliation=False
-             </span>
+            <span class="pre">
+             venue_order_id:
+            </span>
+            <span class="pre">
+             Optional[VenueOrderId],
+            </span>
+            <span class="pre">
+             AccountId
+            </span>
+            <span class="pre">
+             account_id:
+            </span>
+            <span class="pre">
+             Optional[AccountId],
+            </span>
+            <span class="pre">
+             UUID4
+            </span>
+            <span class="pre">
+             event_id,
+            </span>
+            <span class="pre">
+             uint64_t
+            </span>
+            <span class="pre">
+             ts_event,
+            </span>
+            <span class="pre">
+             uint64_t
+            </span>
+            <span class="pre">
+             ts_init,
+            </span>
+            <span class="pre">
+             bool
+            </span>
+            <span class="pre">
+             reconciliation=False
             </span>
            </em>
            <span class="sig-paren">
@@ -12760,20 +12643,6 @@ trading venue.
               <li>
                <p>
                 <strong>
-                 account_id
-                </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
-                 <em>
-                  AccountId
-                 </em>
-                </a>
-                ) – The account ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  instrument_id
                 </strong>
                 (
@@ -12804,13 +12673,27 @@ trading venue.
                 <strong>
                  venue_order_id
                 </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
-                 <em>
-                  VenueOrderId
-                 </em>
-                </a>
-                ) – The venue order ID (assigned by the venue).
+                (VenueOrderId, optional with no default so
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly) – The venue order ID (assigned by the venue).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 account_id
+                </strong>
+                (AccountId, optional with no default so
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly) – The account ID (with the venue).
                </p>
               </li>
               <li>
@@ -13382,12 +13265,6 @@ trading venue.
              strategy_id,
             </span>
             <span class="pre">
-             AccountId
-            </span>
-            <span class="pre">
-             account_id,
-            </span>
-            <span class="pre">
              InstrumentId
             </span>
             <span class="pre">
@@ -13403,7 +13280,19 @@ trading venue.
              VenueOrderId
             </span>
             <span class="pre">
-             venue_order_id,
+             venue_order_id:
+            </span>
+            <span class="pre">
+             Optional[VenueOrderId],
+            </span>
+            <span class="pre">
+             AccountId
+            </span>
+            <span class="pre">
+             account_id:
+            </span>
+            <span class="pre">
+             Optional[AccountId],
             </span>
             <span class="pre">
              Quantity
@@ -13512,20 +13401,6 @@ trading venue.
               <li>
                <p>
                 <strong>
-                 account_id
-                </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId">
-                 <em>
-                  AccountId
-                 </em>
-                </a>
-                ) – The account ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  instrument_id
                 </strong>
                 (
@@ -13556,13 +13431,27 @@ trading venue.
                 <strong>
                  venue_order_id
                 </strong>
-                (
-                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
-                 <em>
-                  VenueOrderId
-                 </em>
-                </a>
-                ) – The venue order ID (assigned by the venue).
+                (VenueOrderId, optional with no default so
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly) – The venue order ID (assigned by the venue).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 account_id
+                </strong>
+                (AccountId, optional with no default so
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly) – The account ID (with the venue).
                </p>
               </li>
               <li>
