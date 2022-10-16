@@ -9950,7 +9950,8 @@ then the component state will not change, and an error will be logged.
                   <em>
                    optional
                   </em>
-                  ) – The position ID to submit the order against.
+                  ) – The position ID to submit the order against. If a position does not
+yet exist, then any position opened will have this identifier assigned.
                  </p>
                 </li>
                 <li>
@@ -9983,6 +9984,20 @@ If
                </ul>
               </dd>
              </dl>
+             <div class="admonition warning">
+              <p class="admonition-title">
+               Warning
+              </p>
+              <p>
+               If a
+               <cite>
+                position_id
+               </cite>
+               is passed and a position does not yet exist, then any
+position opened by the order will have this position ID assigned. This may
+not be what you intended.
+              </p>
+             </div>
             </dd>
            </dl>
            <dl class="py method">
