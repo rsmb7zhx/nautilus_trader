@@ -10368,39 +10368,6 @@ then the component state will not change, and an error will be logged.
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              TriggerType
-             </span>
-             <span class="pre">
-              emulation_trigger=TriggerType.NONE
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              unicode
-             </span>
-             <span class="pre">
-              execution_algorithm=None
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              dict
-             </span>
-             <span class="pre">
-              execution_params=None
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
               ClientId
              </span>
              <span class="pre">
@@ -10526,77 +10493,6 @@ then the component state will not change, and an error will be logged.
               <li>
                <p>
                 <strong>
-                 emulation_trigger
-                </strong>
-                (TriggerType, default
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  NONE
-                 </span>
-                </code>
-                ) – The trigger type for order emulation (if
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  NONE
-                 </span>
-                </code>
-                then no emulation).
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 execution_algorithm
-                </strong>
-                (
-                <em>
-                 str
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The execution algorithm name for the order.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 execution_params
-                </strong>
-                (
-                <em>
-                 dict
-                </em>
-                <em>
-                 [
-                </em>
-                <em>
-                 str
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 Any
-                </em>
-                <em>
-                 ]
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The execution algorithm parameters for the order.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  client_id
                 </strong>
                 (
@@ -10612,59 +10508,6 @@ then the component state will not change, and an error will be logged.
                  optional
                 </em>
                 ) – The execution client ID for the command.
-               </p>
-              </li>
-             </ul>
-            </dd>
-            <dt class="field-even">
-             Raises
-            </dt>
-            <dd class="field-even">
-             <ul class="simple">
-              <li>
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 emulation_trigger
-                </cite>
-                is not
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  NONE
-                 </span>
-                </code>
-                and
-                <cite>
-                 order.order_type
-                </cite>
-                ==
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  MARKET
-                 </span>
-                </code>
-                .
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 execution_algorithm
-                </cite>
-                is not
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-                and not a valid string.
                </p>
               </li>
              </ul>
@@ -10737,99 +10580,6 @@ then the component state will not change, and an error will be logged.
                   None
                  </span>
                 </code>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.SubmitOrder.emulation_trigger">
-             <span class="sig-name descname">
-              <span class="pre">
-               emulation_trigger
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.execution.messages.SubmitOrder.emulation_trigger" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The trigger type for order emulation (if
-              <code class="docutils literal notranslate">
-               <span class="pre">
-                NONE
-               </span>
-              </code>
-              then no emulation).
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 TriggerType
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.SubmitOrder.execution_algorithm">
-             <span class="sig-name descname">
-              <span class="pre">
-               execution_algorithm
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.execution.messages.SubmitOrder.execution_algorithm" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The execution algorithm name for the order.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 str
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.SubmitOrder.execution_params">
-             <span class="sig-name descname">
-              <span class="pre">
-               execution_params
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.execution.messages.SubmitOrder.execution_params" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The execution algorithm parameters for the order.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 dict[str, Any]
-                </cite>
                </p>
               </dd>
              </dl>

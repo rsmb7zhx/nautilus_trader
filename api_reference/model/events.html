@@ -7394,6 +7394,18 @@ any other reason that an otherwise valid order is not able to be submitted.
              options,
             </span>
             <span class="pre">
+             TriggerType
+            </span>
+            <span class="pre">
+             emulation_trigger,
+            </span>
+            <span class="pre">
+             ContingencyType
+            </span>
+            <span class="pre">
+             contingency_type,
+            </span>
+            <span class="pre">
              OrderListId
             </span>
             <span class="pre">
@@ -7401,12 +7413,6 @@ any other reason that an otherwise valid order is not able to be submitted.
             </span>
             <span class="pre">
              Optional[OrderListId],
-            </span>
-            <span class="pre">
-             ContingencyType
-            </span>
-            <span class="pre">
-             contingency_type,
             </span>
             <span class="pre">
              list
@@ -7694,15 +7700,13 @@ order parameters.
               <li>
                <p>
                 <strong>
-                 order_list_id
+                 emulation_trigger
                 </strong>
-                (OrderListId, optional with no default so
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-                must be passed explicitly) – The order list ID associated with the order.
+                (
+                <em>
+                 EmulationTrigger
+                </em>
+                ) – The emulation trigger for the order.
                </p>
               </li>
               <li>
@@ -7715,6 +7719,20 @@ order parameters.
                  ContingencyType
                 </em>
                 ) – The order contingency type.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 order_list_id
+                </strong>
+                (OrderListId, optional with no default so
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                must be passed explicitly) – The order list ID associated with the order.
                </p>
               </li>
               <li>
@@ -7944,6 +7962,35 @@ contain any arbitrary delimiter if required.
                <p>
                 <cite>
                  ContingencyType
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderInitialized.emulation_trigger">
+             <span class="sig-name descname">
+              <span class="pre">
+               emulation_trigger
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.events.order.OrderInitialized.emulation_trigger" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The order emulation trigger type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 TriggerType
                 </cite>
                </p>
               </dd>

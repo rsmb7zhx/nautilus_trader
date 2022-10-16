@@ -891,10 +891,10 @@
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              OrderListId
+              ContingencyType
              </span>
              <span class="pre">
-              order_list_id=None
+              contingency_type=ContingencyType.NONE
              </span>
             </span>
            </em>
@@ -902,10 +902,10 @@
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              ContingencyType
+              OrderListId
              </span>
              <span class="pre">
-              contingency_type=ContingencyType.NONE
+              order_list_id=None
              </span>
             </span>
            </em>
@@ -1192,6 +1192,20 @@
               <li>
                <p>
                 <strong>
+                 contingency_type
+                </strong>
+                (ContingencyType, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
+                ) – The order contingency type.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  order_list_id
                 </strong>
                 (
@@ -1207,20 +1221,6 @@
                  optional
                 </em>
                 ) – The order list ID associated with the order.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 contingency_type
-                </strong>
-                (ContingencyType, default
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  NONE
-                 </span>
-                </code>
-                ) – The order contingency type.
                </p>
               </li>
               <li>
@@ -1724,6 +1724,35 @@ contain any arbitrary delimiter if required.
                <p>
                 <cite>
                  ContingencyType
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.emulation_trigger">
+             <span class="sig-name descname">
+              <span class="pre">
+               emulation_trigger
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.emulation_trigger" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The order emulation trigger type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 TriggerType
                 </cite>
                </p>
               </dd>
@@ -2272,6 +2301,35 @@ The possible statuses of closed orders include;
                </span>
               </code>
               ).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_emulated">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_emulated
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_emulated" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return whether the order is emulated and held in the local system.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -3765,10 +3823,10 @@ The possible statuses of closed orders include;
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              OrderListId
+              TriggerType
              </span>
              <span class="pre">
-              order_list_id=None
+              emulation_trigger=TriggerType.NONE
              </span>
             </span>
            </em>
@@ -3780,6 +3838,17 @@ The possible statuses of closed orders include;
              </span>
              <span class="pre">
               contingency_type=ContingencyType.NONE
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              OrderListId
+             </span>
+             <span class="pre">
+              order_list_id=None
              </span>
             </span>
            </em>
@@ -4151,6 +4220,20 @@ The possible statuses of closed orders include;
               <li>
                <p>
                 <strong>
+                 contingency_type
+                </strong>
+                (ContingencyType, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
+                ) – The order contingency type.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  order_list_id
                 </strong>
                 (
@@ -4166,20 +4249,6 @@ The possible statuses of closed orders include;
                  optional
                 </em>
                 ) – The order list ID associated with the order.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 contingency_type
-                </strong>
-                (ContingencyType, default
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  NONE
-                 </span>
-                </code>
-                ) – The order contingency type.
                </p>
               </li>
               <li>
@@ -4739,6 +4808,35 @@ contain any arbitrary delimiter if required.
                   None
                  </span>
                 </code>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.emulation_trigger">
+             <span class="sig-name descname">
+              <span class="pre">
+               emulation_trigger
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.emulation_trigger" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The order emulation trigger type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 TriggerType
+                </cite>
                </p>
               </dd>
              </dl>
@@ -5347,6 +5445,35 @@ The possible statuses of closed orders include;
                </span>
               </code>
               ).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_emulated">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_emulated
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_emulated" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return whether the order is emulated and held in the local system.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -6858,10 +6985,10 @@ The possible statuses of closed orders include;
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              OrderListId
+              TriggerType
              </span>
              <span class="pre">
-              order_list_id=None
+              emulation_trigger=TriggerType.NONE
              </span>
             </span>
            </em>
@@ -6873,6 +7000,17 @@ The possible statuses of closed orders include;
              </span>
              <span class="pre">
               contingency_type=ContingencyType.NONE
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              OrderListId
+             </span>
+             <span class="pre">
+              order_list_id=None
              </span>
             </span>
            </em>
@@ -7174,6 +7312,34 @@ The possible statuses of closed orders include;
               <li>
                <p>
                 <strong>
+                 emulation_trigger
+                </strong>
+                (TriggerType, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
+                ) – The order emulation trigger.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 contingency_type
+                </strong>
+                (ContingencyType, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
+                ) – The order contingency type.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  order_list_id
                 </strong>
                 (
@@ -7189,20 +7355,6 @@ The possible statuses of closed orders include;
                  optional
                 </em>
                 ) – The order list ID associated with the order.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 contingency_type
-                </strong>
-                (ContingencyType, default
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  NONE
-                 </span>
-                </code>
-                ) – The order contingency type.
                </p>
               </li>
               <li>
@@ -7752,6 +7904,35 @@ contain any arbitrary delimiter if required.
                <p>
                 <cite>
                  ContingencyType
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.emulation_trigger">
+             <span class="sig-name descname">
+              <span class="pre">
+               emulation_trigger
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.emulation_trigger" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The order emulation trigger type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 TriggerType
                 </cite>
                </p>
               </dd>
@@ -8361,6 +8542,35 @@ The possible statuses of closed orders include;
                </span>
               </code>
               ).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_emulated">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_emulated
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_emulated" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return whether the order is emulated and held in the local system.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -9934,10 +10144,10 @@ The possible statuses of closed orders include;
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              OrderListId
+              TriggerType
              </span>
              <span class="pre">
-              order_list_id=None
+              emulation_trigger=TriggerType.NONE
              </span>
             </span>
            </em>
@@ -9949,6 +10159,17 @@ The possible statuses of closed orders include;
              </span>
              <span class="pre">
               contingency_type=ContingencyType.NONE
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              OrderListId
+             </span>
+             <span class="pre">
+              order_list_id=None
              </span>
             </span>
            </em>
@@ -10320,6 +10541,20 @@ The possible statuses of closed orders include;
               <li>
                <p>
                 <strong>
+                 contingency_type
+                </strong>
+                (ContingencyType, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
+                ) – The order contingency type.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  order_list_id
                 </strong>
                 (
@@ -10335,20 +10570,6 @@ The possible statuses of closed orders include;
                  optional
                 </em>
                 ) – The order list ID associated with the order.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 contingency_type
-                </strong>
-                (ContingencyType, default
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  NONE
-                 </span>
-                </code>
-                ) – The order contingency type.
                </p>
               </li>
               <li>
@@ -10962,6 +11183,35 @@ contain any arbitrary delimiter if required.
             </dd>
            </dl>
            <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.emulation_trigger">
+             <span class="sig-name descname">
+              <span class="pre">
+               emulation_trigger
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.emulation_trigger" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The order emulation trigger type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 TriggerType
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.event_count">
              <span class="sig-name descname">
               <span class="pre">
@@ -11564,6 +11814,35 @@ The possible statuses of closed orders include;
                </span>
               </code>
               ).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_emulated">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_emulated
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_emulated" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return whether the order is emulated and held in the local system.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -13180,10 +13459,10 @@ The possible statuses of closed orders include;
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              OrderListId
+              ContingencyType
              </span>
              <span class="pre">
-              order_list_id=None
+              contingency_type=ContingencyType.NONE
              </span>
             </span>
            </em>
@@ -13191,10 +13470,10 @@ The possible statuses of closed orders include;
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              ContingencyType
+              OrderListId
              </span>
              <span class="pre">
-              contingency_type=ContingencyType.NONE
+              order_list_id=None
              </span>
             </span>
            </em>
@@ -13490,6 +13769,20 @@ The possible statuses of closed orders include;
               <li>
                <p>
                 <strong>
+                 contingency_type
+                </strong>
+                (ContingencyType, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
+                ) – The order contingency type.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  order_list_id
                 </strong>
                 (
@@ -13505,20 +13798,6 @@ The possible statuses of closed orders include;
                  optional
                 </em>
                 ) – The order list ID associated with the order.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 contingency_type
-                </strong>
-                (ContingencyType, default
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  NONE
-                 </span>
-                </code>
-                ) – The order contingency type.
                </p>
               </li>
               <li>
@@ -14064,6 +14343,35 @@ contain any arbitrary delimiter if required.
                   None
                  </span>
                 </code>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market_to_limit.MarketToLimitOrder.emulation_trigger">
+             <span class="sig-name descname">
+              <span class="pre">
+               emulation_trigger
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.market_to_limit.MarketToLimitOrder.emulation_trigger" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The order emulation trigger type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 TriggerType
+                </cite>
                </p>
               </dd>
              </dl>
@@ -14672,6 +14980,35 @@ The possible statuses of closed orders include;
                </span>
               </code>
               ).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market_to_limit.MarketToLimitOrder.is_emulated">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_emulated
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.market_to_limit.MarketToLimitOrder.is_emulated" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return whether the order is emulated and held in the local system.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -16189,10 +16526,10 @@ The possible statuses of closed orders include;
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              OrderListId
+              TriggerType
              </span>
              <span class="pre">
-              order_list_id=None
+              emulation_trigger=TriggerType.NONE
              </span>
             </span>
            </em>
@@ -16204,6 +16541,17 @@ The possible statuses of closed orders include;
              </span>
              <span class="pre">
               contingency_type=ContingencyType.NONE
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              OrderListId
+             </span>
+             <span class="pre">
+              order_list_id=None
              </span>
             </span>
            </em>
@@ -16505,6 +16853,20 @@ The possible statuses of closed orders include;
               <li>
                <p>
                 <strong>
+                 contingency_type
+                </strong>
+                (ContingencyType, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
+                ) – The order contingency type.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  order_list_id
                 </strong>
                 (
@@ -16520,20 +16882,6 @@ The possible statuses of closed orders include;
                  optional
                 </em>
                 ) – The order list ID associated with the order.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 contingency_type
-                </strong>
-                (ContingencyType, default
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  NONE
-                 </span>
-                </code>
-                ) – The order contingency type.
                </p>
               </li>
               <li>
@@ -17083,6 +17431,35 @@ contain any arbitrary delimiter if required.
                <p>
                 <cite>
                  ContingencyType
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market_if_touched.MarketIfTouchedOrder.emulation_trigger">
+             <span class="sig-name descname">
+              <span class="pre">
+               emulation_trigger
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.market_if_touched.MarketIfTouchedOrder.emulation_trigger" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The order emulation trigger type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 TriggerType
                 </cite>
                </p>
               </dd>
@@ -17692,6 +18069,35 @@ The possible statuses of closed orders include;
                </span>
               </code>
               ).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market_if_touched.MarketIfTouchedOrder.is_emulated">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_emulated
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.market_if_touched.MarketIfTouchedOrder.is_emulated" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return whether the order is emulated and held in the local system.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -19265,10 +19671,10 @@ The possible statuses of closed orders include;
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              OrderListId
+              TriggerType
              </span>
              <span class="pre">
-              order_list_id=None
+              emulation_trigger=TriggerType.NONE
              </span>
             </span>
            </em>
@@ -19280,6 +19686,17 @@ The possible statuses of closed orders include;
              </span>
              <span class="pre">
               contingency_type=ContingencyType.NONE
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              OrderListId
+             </span>
+             <span class="pre">
+              order_list_id=None
              </span>
             </span>
            </em>
@@ -19651,6 +20068,20 @@ The possible statuses of closed orders include;
               <li>
                <p>
                 <strong>
+                 contingency_type
+                </strong>
+                (ContingencyType, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
+                ) – The order contingency type.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  order_list_id
                 </strong>
                 (
@@ -19666,20 +20097,6 @@ The possible statuses of closed orders include;
                  optional
                 </em>
                 ) – The order list ID associated with the order.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 contingency_type
-                </strong>
-                (ContingencyType, default
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  NONE
-                 </span>
-                </code>
-                ) – The order contingency type.
                </p>
               </li>
               <li>
@@ -20293,6 +20710,35 @@ contain any arbitrary delimiter if required.
             </dd>
            </dl>
            <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit_if_touched.LimitIfTouchedOrder.emulation_trigger">
+             <span class="sig-name descname">
+              <span class="pre">
+               emulation_trigger
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.limit_if_touched.LimitIfTouchedOrder.emulation_trigger" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The order emulation trigger type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 TriggerType
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit_if_touched.LimitIfTouchedOrder.event_count">
              <span class="sig-name descname">
               <span class="pre">
@@ -20895,6 +21341,35 @@ The possible statuses of closed orders include;
                </span>
               </code>
               ).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit_if_touched.LimitIfTouchedOrder.is_emulated">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_emulated
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.limit_if_touched.LimitIfTouchedOrder.is_emulated" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return whether the order is emulated and held in the local system.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -22471,16 +22946,22 @@ The possible statuses of closed orders include;
              reduce_only=False,
             </span>
             <span class="pre">
-             OrderListId
+             TriggerType
             </span>
             <span class="pre">
-             order_list_id=None,
+             emulation_trigger=TriggerType.NONE,
             </span>
             <span class="pre">
              ContingencyType
             </span>
             <span class="pre">
              contingency_type=ContingencyType.NONE,
+            </span>
+            <span class="pre">
+             OrderListId
+            </span>
+            <span class="pre">
+             order_list_id=None,
             </span>
             <span class="pre">
              list
@@ -22801,6 +23282,34 @@ to the delta of market price and
               <li>
                <p>
                 <strong>
+                 emulation_trigger
+                </strong>
+                (TriggerType, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
+                ) – The order emulation trigger.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 contingency_type
+                </strong>
+                (ContingencyType, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
+                ) – The order contingency type.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  order_list_id
                 </strong>
                 (
@@ -22816,20 +23325,6 @@ to the delta of market price and
                  optional
                 </em>
                 ) – The order list ID associated with the order.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 contingency_type
-                </strong>
-                (ContingencyType, default
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  NONE
-                 </span>
-                </code>
-                ) – The order contingency type.
                </p>
               </li>
               <li>
@@ -23397,6 +23892,35 @@ contain any arbitrary delimiter if required.
                <p>
                 <cite>
                  ContingencyType
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.trailing_stop_market.TrailingStopMarketOrder.emulation_trigger">
+             <span class="sig-name descname">
+              <span class="pre">
+               emulation_trigger
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.trailing_stop_market.TrailingStopMarketOrder.emulation_trigger" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The order emulation trigger type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 TriggerType
                 </cite>
                </p>
               </dd>
@@ -24006,6 +24530,35 @@ The possible statuses of closed orders include;
                </span>
               </code>
               ).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.trailing_stop_market.TrailingStopMarketOrder.is_emulated">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_emulated
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.trailing_stop_market.TrailingStopMarketOrder.is_emulated" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return whether the order is emulated and held in the local system.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -25586,16 +26139,22 @@ The possible statuses of closed orders include;
              display_qty=None,
             </span>
             <span class="pre">
-             OrderListId
+             TriggerType
             </span>
             <span class="pre">
-             order_list_id=None,
+             emulation_trigger=TriggerType.NONE,
             </span>
             <span class="pre">
              ContingencyType
             </span>
             <span class="pre">
              contingency_type=ContingencyType.NONE,
+            </span>
+            <span class="pre">
+             OrderListId
+            </span>
+            <span class="pre">
+             order_list_id=None,
             </span>
             <span class="pre">
              list
@@ -26009,6 +26568,34 @@ to the delta of market price and
               <li>
                <p>
                 <strong>
+                 emulation_trigger
+                </strong>
+                (TriggerType, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
+                ) – The order emulation trigger.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 contingency_type
+                </strong>
+                (ContingencyType, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
+                ) – The order contingency type.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  order_list_id
                 </strong>
                 (
@@ -26024,20 +26611,6 @@ to the delta of market price and
                  optional
                 </em>
                 ) – The order list ID associated with the order.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 contingency_type
-                </strong>
-                (ContingencyType, default
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  NONE
-                 </span>
-                </code>
-                ) – The order contingency type.
                </p>
               </li>
               <li>
@@ -26669,6 +27242,35 @@ contain any arbitrary delimiter if required.
             </dd>
            </dl>
            <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.trailing_stop_limit.TrailingStopLimitOrder.emulation_trigger">
+             <span class="sig-name descname">
+              <span class="pre">
+               emulation_trigger
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.trailing_stop_limit.TrailingStopLimitOrder.emulation_trigger" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The order emulation trigger type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 TriggerType
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.trailing_stop_limit.TrailingStopLimitOrder.event_count">
              <span class="sig-name descname">
               <span class="pre">
@@ -27271,6 +27873,35 @@ The possible statuses of closed orders include;
                </span>
               </code>
               ).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.trailing_stop_limit.TrailingStopLimitOrder.is_emulated">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_emulated
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.trailing_stop_limit.TrailingStopLimitOrder.is_emulated" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return whether the order is emulated and held in the local system.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -29584,6 +30215,35 @@ The possible statuses of closed orders include;
             </dd>
            </dl>
            <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.emulation_trigger">
+             <span class="sig-name descname">
+              <span class="pre">
+               emulation_trigger
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.base.Order.emulation_trigger" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The order emulation trigger type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 TriggerType
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.event_count">
              <span class="sig-name descname">
               <span class="pre">
@@ -30125,6 +30785,35 @@ The possible statuses of closed orders include;
                </span>
               </code>
               ).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.is_emulated">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_emulated
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.base.Order.is_emulated" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return whether the order is emulated and held in the local system.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
