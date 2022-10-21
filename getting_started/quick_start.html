@@ -1310,14 +1310,13 @@ parameters or batches of data). We are now ready to run some backtests!
          </p>
          <div class="highlight-python notranslate">
           <div class="highlight">
-           <pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
-<span class="kn">from</span> <span class="nn">nautilus_trader.backtest.node</span> <span class="kn">import</span> <span class="n">BacktestNode</span>
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.node</span> <span class="kn">import</span> <span class="n">BacktestNode</span>
 
 
 <span class="n">node</span> <span class="o">=</span> <span class="n">BacktestNode</span><span class="p">(</span><span class="n">configs</span><span class="o">=</span><span class="p">[</span><span class="n">config</span><span class="p">])</span>
 
  <span class="c1"># Runs one or many configs synchronously</span>
-<span class="n">results</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">BacktestResult</span><span class="p">]</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">results</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">BacktestResult</span><span class="p">]</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre>
           </div>
          </div>
