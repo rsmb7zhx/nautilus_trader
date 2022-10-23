@@ -861,6 +861,17 @@ brokerages, data providers/feeds and other venues or services.
              </span>
             </span>
            </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int
+             </span>
+             <span class="pre">
+              latency_qsize=1000
+             </span>
+            </span>
+           </em>
            <span class="sig-paren">
             )
            </span>
@@ -987,22 +998,113 @@ brokerages, data providers/feeds and other venues or services.
                 ) – The connector key word arguments.
                </p>
               </li>
+              <li>
+               <p>
+                <strong>
+                 latency_qsize
+                </strong>
+                (
+                <em>
+                 int
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 1000
+                </em>
+                ) – The maxlen for the internal latencies deque.
+               </p>
+              </li>
              </ul>
             </dd>
             <dt class="field-even">
              Raises
             </dt>
             <dd class="field-even">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 ttl_dns_cache
+                </cite>
+                is not positive (&gt; 0).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 latency_qsize
+                </cite>
+                is not position (&gt; 0).
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.avg_latency">
+             <span class="sig-name descname">
+              <span class="pre">
+               avg_latency
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                uint64_t
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.network.http.HttpClient.avg_latency" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
              <p>
-              <strong>
-               ValueError
-              </strong>
-              – If
-              <cite>
-               ttl_dns_cache
-              </cite>
-              is not positive (&gt; 0).
+              Return the average round-trip latency (nanoseconds) for this client.
              </p>
+             <p>
+              Many factors will affect latency including which endpoints are hit and
+server side processing time. If no latencies recorded yet, then will
+return zero.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 uint64_t
+                </em>
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -1280,6 +1382,120 @@ brokerages, data providers/feeds and other venues or services.
              </a>
             </dt>
             <dd>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.max_latency">
+             <span class="sig-name descname">
+              <span class="pre">
+               max_latency
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                uint64_t
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.network.http.HttpClient.max_latency" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the maximum round-trip latency (nanoseconds) for this client.
+             </p>
+             <p>
+              Many factors will affect latency including which endpoints are hit and
+server side processing time. If no latencies recorded yet, then will
+return zero.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 uint64_t
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.min_latency">
+             <span class="sig-name descname">
+              <span class="pre">
+               min_latency
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                uint64_t
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.network.http.HttpClient.min_latency" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the minimum round-trip latency (nanoseconds) for this client.
+             </p>
+             <p>
+              Many factors will affect latency including which endpoints are hit and
+server side processing time. If no latencies recorded yet, then will
+return zero.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 uint64_t
+                </em>
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">

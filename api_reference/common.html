@@ -11391,6 +11391,76 @@ the target timezone).
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.set_offset">
+             <span class="sig-name descname">
+              <span class="pre">
+               set_offset
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                int64_t
+               </span>
+               <span class="pre">
+                offset_ns
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.set_offset" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Set the offset (nanoseconds) for the clock.
+             </p>
+             <p>
+              The
+              <cite>
+               offset
+              </cite>
+              will then be
+              <em>
+               added
+              </em>
+              to all subsequent timestamps.
+             </p>
+             <div class="admonition warning">
+              <p class="admonition-title">
+               Warning
+              </p>
+              <p>
+               It shouldn’t be necessary for a user to call this method.
+              </p>
+             </div>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.set_time_alert">
              <span class="sig-name descname">
               <span class="pre">
