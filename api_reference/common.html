@@ -12598,6 +12598,17 @@ then the default handler (if registered) will receive the
                </span>
               </span>
              </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+               <span class="pre">
+                set_time=True
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
              </span>
@@ -12628,16 +12639,36 @@ then the default handler (if registered) will receive the
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 to_time_ns
-                </strong>
-                (
-                <em>
-                 uint64_t
-                </em>
-                ) – The UNIX time (nanoseconds) to advance the clock to.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   to_time_ns
+                  </strong>
+                  (
+                  <em>
+                   uint64_t
+                  </em>
+                  ) – The UNIX time (nanoseconds) to advance the clock to.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   set_time
+                  </strong>
+                  (
+                  <em>
+                   bool
+                  </em>
+                  ) – If the clock should also be set to the given
+                  <cite>
+                   to_time_ns
+                  </cite>
+                  .
+                 </p>
+                </li>
+               </ul>
               </dd>
               <dt class="field-even">
                Returns
