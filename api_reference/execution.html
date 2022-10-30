@@ -8994,9 +8994,9 @@ then the component state will not change, and an error will be logged.
                  client_order_id
                 </strong>
                 (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
                  <em>
-                  VenueOrderId
+                  ClientOrderId
                  </em>
                 </a>
                 ) – The client order ID to update.
@@ -9791,7 +9791,7 @@ then the component state will not change, and an error will be logged.
                   ClientOrderId
                  </em>
                 </a>
-                ) – The client order ID to cancel.
+                ) – The client order ID for the order to query.
                </p>
               </li>
               <li>
@@ -9805,7 +9805,7 @@ then the component state will not change, and an error will be logged.
                   None
                  </span>
                 </code>
-                must be passed explicitly) – The venue order ID (assigned by the venue) to cancel.
+                must be passed explicitly) – The venue order ID (assigned by the venue) to query.
                </p>
               </li>
               <li>
@@ -9934,7 +9934,7 @@ then the component state will not change, and an error will be logged.
             </dt>
             <dd>
              <p>
-              The client order ID associated with the command.
+              The client order ID for the order to query.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -10254,7 +10254,7 @@ then the component state will not change, and an error will be logged.
             </dt>
             <dd>
              <p>
-              The venue order ID associated with the command.
+              The venue order ID for the order to query.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -10366,6 +10366,28 @@ then the component state will not change, and an error will be logged.
              </span>
              <span class="pre">
               None
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              unicode
+             </span>
+             <span class="pre">
+              exec_algorithm_id=None
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              dict
+             </span>
+             <span class="pre">
+              exec_algorithm_params=None
              </span>
             </span>
            </em>
@@ -10498,6 +10520,57 @@ then the component state will not change, and an error will be logged.
               <li>
                <p>
                 <strong>
+                 exec_algorithm_id
+                </strong>
+                (
+                <em>
+                 str
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The execution algorithm ID for the order.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 exec_algorithm_params
+                </strong>
+                (
+                <em>
+                 dict
+                </em>
+                <em>
+                 [
+                </em>
+                <em>
+                 str
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 Any
+                </em>
+                <em>
+                 ]
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The execution algorithm parameters for the order (must be serializable primitives).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  client_id
                 </strong>
                 (
@@ -10513,6 +10586,59 @@ then the component state will not change, and an error will be logged.
                  optional
                 </em>
                 ) – The execution client ID for the command.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Raises
+            </dt>
+            <dd class="field-even">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 exec_algorithm_id
+                </cite>
+                is not
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                and not a valid string.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 exec_algorithm_params
+                </cite>
+                is not
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                and
+                <cite>
+                 exec_algorithm_id
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                .
                </p>
               </li>
              </ul>
@@ -10578,6 +10704,76 @@ then the component state will not change, and an error will be logged.
                <p>
                 <cite>
                  ClientId
+                </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.SubmitOrder.exec_algorithm_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               exec_algorithm_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.execution.messages.SubmitOrder.exec_algorithm_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The execution algorithm ID for the order.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 str
+                </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.SubmitOrder.exec_algorithm_params">
+             <span class="sig-name descname">
+              <span class="pre">
+               exec_algorithm_params
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.execution.messages.SubmitOrder.exec_algorithm_params" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The execution algorithm parameters for the order.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 dict[str, Any]
                 </cite>
                 or
                 <code class="docutils literal notranslate">
@@ -10784,7 +10980,7 @@ then the component state will not change, and an error will be logged.
             </dt>
             <dd>
              <p>
-              The position ID associated with the command.
+              The position ID to associate with the order.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
