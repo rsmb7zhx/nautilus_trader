@@ -2214,6 +2214,76 @@ being released and transformed into another type.
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.add_submit_order_command">
+             <span class="sig-name descname">
+              <span class="pre">
+               add_submit_order_command
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                SubmitOrder
+               </span>
+               <span class="pre">
+                command
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.cache.cache.Cache.add_submit_order_command" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Add the given command to the cache.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 command
+                </strong>
+                (
+                <a class="reference internal" href="execution.html#nautilus_trader.execution.messages.SubmitOrder" title="nautilus_trader.execution.messages.SubmitOrder">
+                 <em>
+                  SubmitOrder
+                 </em>
+                </a>
+                ) – The command to add to the cache.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.add_ticker">
              <span class="sig-name descname">
               <span class="pre">
@@ -2914,8 +2984,49 @@ being released and transformed into another type.
             </dt>
             <dd>
              <p>
-              Clear the current accounts cache and load accounts from the execution
+              Clear the current accounts cache and load accounts from the cache
 database.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.cache_commands">
+             <span class="sig-name descname">
+              <span class="pre">
+               cache_commands
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.cache.cache.Cache.cache_commands" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Clear the current submit order commands cache and load commands from the
+cache database.
              </p>
             </dd>
            </dl>
@@ -2955,7 +3066,7 @@ database.
             </dt>
             <dd>
              <p>
-              Clear the current currencies cache and load currencies from the execution
+              Clear the current currencies cache and load currencies from the cache
 database.
              </p>
             </dd>
@@ -2996,8 +3107,8 @@ database.
             </dt>
             <dd>
              <p>
-              Clear the current instruments cache and load instruments from the
-execution database.
+              Clear the current instruments cache and load instruments from the cache
+database.
              </p>
             </dd>
            </dl>
@@ -3037,8 +3148,7 @@ execution database.
             </dt>
             <dd>
              <p>
-              Clear the current orders cache and load orders from the execution
-database.
+              Clear the current orders cache and load orders from the cache database.
              </p>
             </dd>
            </dl>
@@ -3078,7 +3188,7 @@ database.
             </dt>
             <dd>
              <p>
-              Clear the current positions cache and load positions from the execution
+              Clear the current positions cache and load positions from the cache
 database.
              </p>
             </dd>
@@ -5984,6 +6094,91 @@ and is open.
                  </em>
                 </a>
                 ) – The strategy to load.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.load_submit_order_command">
+             <span class="sig-name descname">
+              <span class="pre">
+               load_submit_order_command
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientOrderId
+               </span>
+               <span class="pre">
+                client_order_id
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <a class="reference internal" href="execution.html#nautilus_trader.execution.messages.SubmitOrder" title="nautilus_trader.execution.messages.SubmitOrder">
+                <span class="pre">
+                 SubmitOrder
+                </span>
+               </a>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.cache.cache.Cache.load_submit_order_command" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Load the command associated with the given client order ID (if found).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 client_order_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
+                 <em>
+                  ClientOrderId
+                 </em>
+                </a>
+                ) – The client order ID for the command to load.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                SubmitOrder or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
                </p>
               </dd>
              </dl>
@@ -12021,6 +12216,57 @@ and is open.
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.cache.database.CacheDatabase.add_submit_order_command">
+             <span class="sig-name descname">
+              <span class="pre">
+               add_submit_order_command
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                SubmitOrder
+               </span>
+               <span class="pre">
+                command
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.cache.database.CacheDatabase.add_submit_order_command" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Abstract method (implement in subclass).
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.cache.database.CacheDatabase.delete_strategy">
              <span class="sig-name descname">
               <span class="pre">
@@ -12616,6 +12862,99 @@ and is open.
               </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.cache.database.CacheDatabase.load_strategy" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Abstract method (implement in subclass).
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.cache.database.CacheDatabase.load_submit_order_command">
+             <span class="sig-name descname">
+              <span class="pre">
+               load_submit_order_command
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientOrderId
+               </span>
+               <span class="pre">
+                client_order_id
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <a class="reference internal" href="execution.html#nautilus_trader.execution.messages.SubmitOrder" title="nautilus_trader.execution.messages.SubmitOrder">
+                <span class="pre">
+                 SubmitOrder
+                </span>
+               </a>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.cache.database.CacheDatabase.load_submit_order_command" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Abstract method (implement in subclass).
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.cache.database.CacheDatabase.load_submit_order_commands">
+             <span class="sig-name descname">
+              <span class="pre">
+               load_submit_order_commands
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                dict
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.cache.database.CacheDatabase.load_submit_order_commands" title="Permalink to this definition">
               ¶
              </a>
             </dt>
