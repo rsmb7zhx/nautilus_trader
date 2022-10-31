@@ -1623,7 +1623,7 @@ contain any arbitrary delimiter if required.
                 PositionSide
                </span>
                <span class="pre">
-                side
+                position_side
                </span>
               </span>
              </em>
@@ -1655,7 +1655,7 @@ contain any arbitrary delimiter if required.
               <dd class="field-odd">
                <p>
                 <strong>
-                 side
+                 position_side
                 </strong>
                 (PositionSide {
                 <code class="docutils literal notranslate">
@@ -1692,7 +1692,7 @@ contain any arbitrary delimiter if required.
                 </strong>
                 – If
                 <cite>
-                 side
+                 position_side
                 </cite>
                 is
                 <code class="docutils literal notranslate">
@@ -3642,6 +3642,128 @@ The possible statuses of closed orders include;
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.would_reduce_only">
+             <span class="sig-name descname">
+              <span class="pre">
+               would_reduce_only
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                position_side
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Quantity
+               </span>
+               <span class="pre">
+                position_qty
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.would_reduce_only" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Whether the current order would only reduce the givien position if applied
+in full.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   position_side
+                  </strong>
+                  (PositionSide {
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FLAT
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    LONG
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    SHORT
+                   </span>
+                  </code>
+                  }) – The side of the position to check against.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   position_qty
+                  </strong>
+                  (
+                  <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+                   <em>
+                    Quantity
+                   </em>
+                  </a>
+                  ) – The quantity of the position to check against.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
           </dd>
          </dl>
         </section>
@@ -4671,7 +4793,7 @@ contain any arbitrary delimiter if required.
                 PositionSide
                </span>
                <span class="pre">
-                side
+                position_side
                </span>
               </span>
              </em>
@@ -4703,7 +4825,7 @@ contain any arbitrary delimiter if required.
               <dd class="field-odd">
                <p>
                 <strong>
-                 side
+                 position_side
                 </strong>
                 (PositionSide {
                 <code class="docutils literal notranslate">
@@ -4740,7 +4862,7 @@ contain any arbitrary delimiter if required.
                 </strong>
                 – If
                 <cite>
-                 side
+                 position_side
                 </cite>
                 is
                 <code class="docutils literal notranslate">
@@ -6815,6 +6937,128 @@ The possible statuses of closed orders include;
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.would_reduce_only">
+             <span class="sig-name descname">
+              <span class="pre">
+               would_reduce_only
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                position_side
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Quantity
+               </span>
+               <span class="pre">
+                position_qty
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.would_reduce_only" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Whether the current order would only reduce the givien position if applied
+in full.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   position_side
+                  </strong>
+                  (PositionSide {
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FLAT
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    LONG
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    SHORT
+                   </span>
+                  </code>
+                  }) – The side of the position to check against.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   position_qty
+                  </strong>
+                  (
+                  <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+                   <em>
+                    Quantity
+                   </em>
+                  </a>
+                  ) – The quantity of the position to check against.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
           </dd>
          </dl>
         </section>
@@ -7803,7 +8047,7 @@ contain any arbitrary delimiter if required.
                 PositionSide
                </span>
                <span class="pre">
-                side
+                position_side
                </span>
               </span>
              </em>
@@ -7835,7 +8079,7 @@ contain any arbitrary delimiter if required.
               <dd class="field-odd">
                <p>
                 <strong>
-                 side
+                 position_side
                 </strong>
                 (PositionSide {
                 <code class="docutils literal notranslate">
@@ -7872,7 +8116,7 @@ contain any arbitrary delimiter if required.
                 </strong>
                 – If
                 <cite>
-                 side
+                 position_side
                 </cite>
                 is
                 <code class="docutils literal notranslate">
@@ -9941,6 +10185,128 @@ The possible statuses of closed orders include;
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.would_reduce_only">
+             <span class="sig-name descname">
+              <span class="pre">
+               would_reduce_only
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                position_side
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Quantity
+               </span>
+               <span class="pre">
+                position_qty
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.would_reduce_only" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Whether the current order would only reduce the givien position if applied
+in full.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   position_side
+                  </strong>
+                  (PositionSide {
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FLAT
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    LONG
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    SHORT
+                   </span>
+                  </code>
+                  }) – The side of the position to check against.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   position_qty
+                  </strong>
+                  (
+                  <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+                   <em>
+                    Quantity
+                   </em>
+                  </a>
+                  ) – The quantity of the position to check against.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
           </dd>
          </dl>
         </section>
@@ -11034,7 +11400,7 @@ contain any arbitrary delimiter if required.
                 PositionSide
                </span>
                <span class="pre">
-                side
+                position_side
                </span>
               </span>
              </em>
@@ -11066,7 +11432,7 @@ contain any arbitrary delimiter if required.
               <dd class="field-odd">
                <p>
                 <strong>
-                 side
+                 position_side
                 </strong>
                 (PositionSide {
                 <code class="docutils literal notranslate">
@@ -11103,7 +11469,7 @@ contain any arbitrary delimiter if required.
                 </strong>
                 – If
                 <cite>
-                 side
+                 position_side
                 </cite>
                 is
                 <code class="docutils literal notranslate">
@@ -13300,6 +13666,128 @@ The possible statuses of closed orders include;
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.would_reduce_only">
+             <span class="sig-name descname">
+              <span class="pre">
+               would_reduce_only
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                position_side
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Quantity
+               </span>
+               <span class="pre">
+                position_qty
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.would_reduce_only" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Whether the current order would only reduce the givien position if applied
+in full.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   position_side
+                  </strong>
+                  (PositionSide {
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FLAT
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    LONG
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    SHORT
+                   </span>
+                  </code>
+                  }) – The side of the position to check against.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   position_qty
+                  </strong>
+                  (
+                  <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+                   <em>
+                    Quantity
+                   </em>
+                  </a>
+                  ) – The quantity of the position to check against.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
           </dd>
          </dl>
         </section>
@@ -14206,7 +14694,7 @@ contain any arbitrary delimiter if required.
                 PositionSide
                </span>
                <span class="pre">
-                side
+                position_side
                </span>
               </span>
              </em>
@@ -14238,7 +14726,7 @@ contain any arbitrary delimiter if required.
               <dd class="field-odd">
                <p>
                 <strong>
-                 side
+                 position_side
                 </strong>
                 (PositionSide {
                 <code class="docutils literal notranslate">
@@ -14275,7 +14763,7 @@ contain any arbitrary delimiter if required.
                 </strong>
                 – If
                 <cite>
-                 side
+                 position_side
                 </cite>
                 is
                 <code class="docutils literal notranslate">
@@ -16356,6 +16844,128 @@ The possible statuses of closed orders include;
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market_to_limit.MarketToLimitOrder.would_reduce_only">
+             <span class="sig-name descname">
+              <span class="pre">
+               would_reduce_only
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                position_side
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Quantity
+               </span>
+               <span class="pre">
+                position_qty
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.market_to_limit.MarketToLimitOrder.would_reduce_only" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Whether the current order would only reduce the givien position if applied
+in full.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   position_side
+                  </strong>
+                  (PositionSide {
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FLAT
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    LONG
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    SHORT
+                   </span>
+                  </code>
+                  }) – The side of the position to check against.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   position_qty
+                  </strong>
+                  (
+                  <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+                   <em>
+                    Quantity
+                   </em>
+                  </a>
+                  ) – The quantity of the position to check against.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
           </dd>
          </dl>
         </section>
@@ -17330,7 +17940,7 @@ contain any arbitrary delimiter if required.
                 PositionSide
                </span>
                <span class="pre">
-                side
+                position_side
                </span>
               </span>
              </em>
@@ -17362,7 +17972,7 @@ contain any arbitrary delimiter if required.
               <dd class="field-odd">
                <p>
                 <strong>
-                 side
+                 position_side
                 </strong>
                 (PositionSide {
                 <code class="docutils literal notranslate">
@@ -17399,7 +18009,7 @@ contain any arbitrary delimiter if required.
                 </strong>
                 – If
                 <cite>
-                 side
+                 position_side
                 </cite>
                 is
                 <code class="docutils literal notranslate">
@@ -19468,6 +20078,128 @@ The possible statuses of closed orders include;
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market_if_touched.MarketIfTouchedOrder.would_reduce_only">
+             <span class="sig-name descname">
+              <span class="pre">
+               would_reduce_only
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                position_side
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Quantity
+               </span>
+               <span class="pre">
+                position_qty
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.market_if_touched.MarketIfTouchedOrder.would_reduce_only" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Whether the current order would only reduce the givien position if applied
+in full.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   position_side
+                  </strong>
+                  (PositionSide {
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FLAT
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    LONG
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    SHORT
+                   </span>
+                  </code>
+                  }) – The side of the position to check against.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   position_qty
+                  </strong>
+                  (
+                  <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+                   <em>
+                    Quantity
+                   </em>
+                  </a>
+                  ) – The quantity of the position to check against.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
           </dd>
          </dl>
         </section>
@@ -20561,7 +21293,7 @@ contain any arbitrary delimiter if required.
                 PositionSide
                </span>
                <span class="pre">
-                side
+                position_side
                </span>
               </span>
              </em>
@@ -20593,7 +21325,7 @@ contain any arbitrary delimiter if required.
               <dd class="field-odd">
                <p>
                 <strong>
-                 side
+                 position_side
                 </strong>
                 (PositionSide {
                 <code class="docutils literal notranslate">
@@ -20630,7 +21362,7 @@ contain any arbitrary delimiter if required.
                 </strong>
                 – If
                 <cite>
-                 side
+                 position_side
                 </cite>
                 is
                 <code class="docutils literal notranslate">
@@ -22827,6 +23559,128 @@ The possible statuses of closed orders include;
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit_if_touched.LimitIfTouchedOrder.would_reduce_only">
+             <span class="sig-name descname">
+              <span class="pre">
+               would_reduce_only
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                position_side
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Quantity
+               </span>
+               <span class="pre">
+                position_qty
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.limit_if_touched.LimitIfTouchedOrder.would_reduce_only" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Whether the current order would only reduce the givien position if applied
+in full.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   position_side
+                  </strong>
+                  (PositionSide {
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FLAT
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    LONG
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    SHORT
+                   </span>
+                  </code>
+                  }) – The side of the position to check against.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   position_qty
+                  </strong>
+                  (
+                  <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+                   <em>
+                    Quantity
+                   </em>
+                  </a>
+                  ) – The quantity of the position to check against.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
           </dd>
          </dl>
         </section>
@@ -23791,7 +24645,7 @@ contain any arbitrary delimiter if required.
                 PositionSide
                </span>
                <span class="pre">
-                side
+                position_side
                </span>
               </span>
              </em>
@@ -23823,7 +24677,7 @@ contain any arbitrary delimiter if required.
               <dd class="field-odd">
                <p>
                 <strong>
-                 side
+                 position_side
                 </strong>
                 (PositionSide {
                 <code class="docutils literal notranslate">
@@ -23860,7 +24714,7 @@ contain any arbitrary delimiter if required.
                 </strong>
                 – If
                 <cite>
-                 side
+                 position_side
                 </cite>
                 is
                 <code class="docutils literal notranslate">
@@ -25993,6 +26847,128 @@ The possible statuses of closed orders include;
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.trailing_stop_market.TrailingStopMarketOrder.would_reduce_only">
+             <span class="sig-name descname">
+              <span class="pre">
+               would_reduce_only
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                position_side
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Quantity
+               </span>
+               <span class="pre">
+                position_qty
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.trailing_stop_market.TrailingStopMarketOrder.would_reduce_only" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Whether the current order would only reduce the givien position if applied
+in full.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   position_side
+                  </strong>
+                  (PositionSide {
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FLAT
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    LONG
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    SHORT
+                   </span>
+                  </code>
+                  }) – The side of the position to check against.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   position_qty
+                  </strong>
+                  (
+                  <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+                   <em>
+                    Quantity
+                   </em>
+                  </a>
+                  ) – The quantity of the position to check against.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
           </dd>
          </dl>
         </section>
@@ -27093,7 +28069,7 @@ contain any arbitrary delimiter if required.
                 PositionSide
                </span>
                <span class="pre">
-                side
+                position_side
                </span>
               </span>
              </em>
@@ -27125,7 +28101,7 @@ contain any arbitrary delimiter if required.
               <dd class="field-odd">
                <p>
                 <strong>
-                 side
+                 position_side
                 </strong>
                 (PositionSide {
                 <code class="docutils literal notranslate">
@@ -27162,7 +28138,7 @@ contain any arbitrary delimiter if required.
                 </strong>
                 – If
                 <cite>
-                 side
+                 position_side
                 </cite>
                 is
                 <code class="docutils literal notranslate">
@@ -29458,6 +30434,128 @@ The possible statuses of closed orders include;
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.trailing_stop_limit.TrailingStopLimitOrder.would_reduce_only">
+             <span class="sig-name descname">
+              <span class="pre">
+               would_reduce_only
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                position_side
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Quantity
+               </span>
+               <span class="pre">
+                position_qty
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.trailing_stop_limit.TrailingStopLimitOrder.would_reduce_only" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Whether the current order would only reduce the givien position if applied
+in full.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   position_side
+                  </strong>
+                  (PositionSide {
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FLAT
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    LONG
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    SHORT
+                   </span>
+                  </code>
+                  }) – The side of the position to check against.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   position_qty
+                  </strong>
+                  (
+                  <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+                   <em>
+                    Quantity
+                   </em>
+                  </a>
+                  ) – The quantity of the position to check against.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
           </dd>
          </dl>
         </section>
@@ -30107,7 +31205,7 @@ The possible statuses of closed orders include;
                 PositionSide
                </span>
                <span class="pre">
-                side
+                position_side
                </span>
               </span>
              </em>
@@ -30139,7 +31237,7 @@ The possible statuses of closed orders include;
               <dd class="field-odd">
                <p>
                 <strong>
-                 side
+                 position_side
                 </strong>
                 (PositionSide {
                 <code class="docutils literal notranslate">
@@ -30176,7 +31274,7 @@ The possible statuses of closed orders include;
                 </strong>
                 – If
                 <cite>
-                 side
+                 position_side
                 </cite>
                 is
                 <code class="docutils literal notranslate">
@@ -32120,6 +33218,128 @@ The possible statuses of closed orders include;
                <p>
                 <em>
                  list[VenueOrderId]
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.would_reduce_only">
+             <span class="sig-name descname">
+              <span class="pre">
+               would_reduce_only
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                position_side
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Quantity
+               </span>
+               <span class="pre">
+                position_qty
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.base.Order.would_reduce_only" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Whether the current order would only reduce the givien position if applied
+in full.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   position_side
+                  </strong>
+                  (PositionSide {
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FLAT
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    LONG
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    SHORT
+                   </span>
+                  </code>
+                  }) – The side of the position to check against.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   position_qty
+                  </strong>
+                  (
+                  <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+                   <em>
+                    Quantity
+                   </em>
+                  </a>
+                  ) – The quantity of the position to check against.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 bool
                 </em>
                </p>
               </dd>
