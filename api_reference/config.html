@@ -34029,7 +34029,7 @@ the new model: you should trust this data
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              reconciliation_auto
+              reconciliation
              </span>
             </span>
             <span class="p">
@@ -34244,7 +34244,7 @@ the new model: you should trust this data
               <li>
                <p>
                 <strong>
-                 reconciliation_auto
+                 reconciliation
                 </strong>
                 (
                 <em>
@@ -34256,7 +34256,7 @@ the new model: you should trust this data
                 <em>
                  default True
                 </em>
-                ) – If reconciliation should automatically generate events to align state.
+                ) – If reconciliation is active at start-up.
                </p>
               </li>
               <li>
@@ -34275,14 +34275,13 @@ the new model: you should trust this data
                  optional
                 </em>
                 ) – The maximum lookback minutes to reconcile state for.
-If 0 then will not performance any lookback or reconciliation.
 If
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
                  </span>
                 </code>
-                then will use the maximum lookback available from the venues.
+                or 0 then will use the maximum lookback available from the venues.
                </p>
               </li>
               <li>
@@ -41006,7 +41005,7 @@ the new model: you should trust this data
               debug=False,
              </span>
              <span class="pre">
-              reconciliation_auto=True,
+              reconciliation=True,
              </span>
              <span class="pre">
               reconciliation_lookback_mins=None,
