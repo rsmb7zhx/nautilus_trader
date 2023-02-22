@@ -14,6 +14,7 @@
 # -------------------------------------------------------------------------------------------------
 
 import logging
+import os
 import warnings
 from enum import IntEnum
 from time import sleep
@@ -58,10 +59,13 @@ class InteractiveBrokersGateway:
         trading_mode: Optional[str] = "paper",
         start: bool = False,
         read_only_api: bool = True,
+        timeout: int = 90,
         logger: Optional[logging.Logger] = None,
     ):
-        assert username is not None, "`username` not set"
-        assert password is not None, "`password` not set"
+        username = username if username is None else os.environ["TWS_USERNAME"]
+        password = password if password is None else os.environ["TWS_PASSWORD"]
+        assert username is not None, "`username` not set nor available in env `TWS_USERNAME`"
+        assert password is not None, "`password` not set nor available in env `TWS_PASSWORD`"
         self.username = username
         self.password = password
         self.trading_mode = trading_mode
@@ -75,7 +79,7 @@ class InteractiveBrokersGateway:
         self._container = None
         self.log = logger or logging.getLogger("nautilus_trader")
         if start:
-            self.start()
+            self.start(timeout)
 
     @classmethod
     def from_container(cls, **kwargs):
