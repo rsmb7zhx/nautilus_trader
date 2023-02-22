@@ -298,6 +298,8 @@ pub enum PriceType {
     Ask = 2,
     Mid = 3,
     Last = 4,
+    HistoricalVolatility = 11,
+    ImpliedVolatility = 12,
 }
 
 #[pyclass]
