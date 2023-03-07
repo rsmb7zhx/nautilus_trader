@@ -21,6 +21,7 @@ from ibapi.contract import ContractDetails
 from nautilus_trader.adapters.interactive_brokers.client import InteractiveBrokersClient
 from nautilus_trader.adapters.interactive_brokers.common import IB_VENUE
 from nautilus_trader.adapters.interactive_brokers.common import IBContract
+from nautilus_trader.adapters.interactive_brokers.common import IBContractDetails
 from nautilus_trader.adapters.interactive_brokers.config import (
     InteractiveBrokersInstrumentProviderConfig,
 )
@@ -275,6 +276,8 @@ class InteractiveBrokersInstrumentProvider(InstrumentProvider):
 
         for details in contract_details:
             self._log.debug(f"Attempting to create instrument from {details}")
+            details.contract = IBContract(**details.contract.__dict__)
+            details = IBContractDetails(**details.__dict__)
             instrument: Instrument = parse_instrument(
                 contract_details=details,
             )

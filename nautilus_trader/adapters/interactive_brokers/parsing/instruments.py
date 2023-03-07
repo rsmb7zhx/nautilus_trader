@@ -19,9 +19,9 @@ import time
 from decimal import Decimal
 
 import msgspec
-from ibapi.contract import ContractDetails
 
 from nautilus_trader.adapters.interactive_brokers.common import IBContract
+from nautilus_trader.adapters.interactive_brokers.common import IBContractDetails
 from nautilus_trader.core.correctness import PyCondition
 from nautilus_trader.model.currency import Currency
 from nautilus_trader.model.enums import AssetClass
@@ -77,7 +77,7 @@ re_fop = re.compile(
 re_crypto = re.compile(r"^(?P<symbol>[A-Z]*)\/(?P<currency>[A-Z]{3})$")
 
 
-def _extract_isin(details: ContractDetails):
+def _extract_isin(details: IBContractDetails):
     for tag_value in details.secIdList:
         if tag_value.tag == "ISIN":
             return tag_value.value
@@ -100,7 +100,7 @@ def sec_type_to_asset_class(sec_type: str):
 
 
 def parse_instrument(
-    contract_details: ContractDetails,
+    contract_details: IBContractDetails,
 ) -> Instrument:
     security_type = contract_details.contract.secType
     if security_type == "STK":
@@ -118,16 +118,16 @@ def parse_instrument(
         raise ValueError(f"Unknown {security_type=}")
 
 
-def contract_details_to_dict(details: ContractDetails) -> dict:
-    dict_details = details.__dict__.copy()
-    dict_details["contract"] = details.contract.__dict__.copy()
+def contract_details_to_dict(details: IBContractDetails) -> dict:
+    dict_details = details.dict().copy()
+    dict_details["contract"] = details.contract.dict().copy()
     return dict_details
 
 
-def parse_equity_contract(details: ContractDetails) -> Equity:
+def parse_equity_contract(details: IBContractDetails) -> Equity:
     price_precision: int = _tick_size_to_precision(details.minTick)
     timestamp = time.time_ns()
-    instrument_id = ib_contract_to_instrument_id(IBContract(**details.contract.__dict__))
+    instrument_id = ib_contract_to_instrument_id(details.contract)
     return Equity(
         instrument_id=instrument_id,
         native_symbol=Symbol(details.contract.localSymbol),
@@ -144,11 +144,11 @@ def parse_equity_contract(details: ContractDetails) -> Equity:
 
 
 def parse_future_contract(
-    details: ContractDetails,
+    details: IBContractDetails,
 ) -> Future:
     price_precision: int = _tick_size_to_precision(details.minTick)
     timestamp = time.time_ns()
-    instrument_id = ib_contract_to_instrument_id(IBContract(**details.contract.__dict__))
+    instrument_id = ib_contract_to_instrument_id(details.contract)
     return Future(
         instrument_id=instrument_id,
         native_symbol=Symbol(details.contract.localSymbol),
@@ -170,11 +170,11 @@ def parse_future_contract(
 
 
 def parse_option_contract(
-    details: ContractDetails,
+    details: IBContractDetails,
 ) -> Option:
     price_precision: int = _tick_size_to_precision(details.minTick)
     timestamp = time.time_ns()
-    instrument_id = ib_contract_to_instrument_id(IBContract(**details.contract.__dict__))
+    instrument_id = ib_contract_to_instrument_id(details.contract)
     asset_class = {
         "STK": AssetClass.EQUITY,
     }[details.underSecType]
@@ -205,11 +205,11 @@ def parse_option_contract(
 
 
 def parse_forex_contract(
-    details: ContractDetails,
+    details: IBContractDetails,
 ) -> CurrencyPair:
     price_precision: int = _tick_size_to_precision(details.minTick)
     timestamp = time.time_ns()
-    instrument_id = ib_contract_to_instrument_id(IBContract(**details.contract.__dict__))
+    instrument_id = ib_contract_to_instrument_id(details.contract)
     return CurrencyPair(
         instrument_id=instrument_id,
         native_symbol=Symbol(details.contract.localSymbol),
@@ -237,12 +237,12 @@ def parse_forex_contract(
 
 
 def parse_crypto_contract(
-    details: ContractDetails,
+    details: IBContractDetails,
 ) -> CryptoPerpetual:
     price_precision: int = _tick_size_to_precision(details.minTick)
-    size_precision: int = _tick_size_to_precision(details.minSize)
+    size_precision: int = _tick_size_to_precision(float(details.minSize))
     timestamp = time.time_ns()
-    instrument_id = ib_contract_to_instrument_id(IBContract(**details.contract.__dict__))
+    instrument_id = ib_contract_to_instrument_id(details.contract)
     return CryptoPerpetual(
         instrument_id=instrument_id,
         native_symbol=Symbol(details.contract.localSymbol),
