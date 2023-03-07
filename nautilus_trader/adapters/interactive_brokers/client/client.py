@@ -1270,6 +1270,36 @@ class InteractiveBrokersClient(Component, EWrapper):
         self.logAnswer(current_fn_name(), vars())
         self._end_request(req_id)
 
+    async def get_matching_contracts(self, pattern: str):
+        name = f"MatchingSymbols-{pattern}"
+        if not (request := self.requests.get(name=name)):
+            req_id = self._next_req_id()
+            request = self.requests.add(
+                req_id=req_id,
+                name=name,
+                handle=self._client.reqMatchingSymbols,
+                kwargs=dict(
+                    reqId=req_id,
+                    pattern=pattern,
+                ),
+            )
+            request.handle(**request.kwargs)
+            return await request.future
+        else:
+            self._log.info(f"Request already exist for {request}")
+
+    def symbolSamples(  # noqa: Override the EWrapper
+        self,
+        req_id: int,
+        contract_descriptions: list,
+    ):
+        self.logAnswer(current_fn_name(), vars())
+
+        if request := self.requests.get(req_id=req_id):
+            for contract_description in contract_descriptions:
+                request.result.append(IBContract(**contract_description.contract.__dict__))
+            self._end_request(req_id)
+
     # -- DATA HANDLERS --------------------------------------------------------------------------------
 
     def _handle_data(self, data: Data):
