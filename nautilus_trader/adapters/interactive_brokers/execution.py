@@ -20,16 +20,25 @@ from typing import Any, Optional
 
 import pandas as pd
 from ibapi.commission_report import CommissionReport
+from ibapi.common import UNSET_DECIMAL
+from ibapi.common import UNSET_DOUBLE
 from ibapi.execution import Execution
 from ibapi.order import Order as IBOrder
 from ibapi.order_state import OrderState as IBOrderState
 
 from nautilus_trader.adapters.interactive_brokers.client import InteractiveBrokersClient
 from nautilus_trader.adapters.interactive_brokers.common import IB_VENUE
+from nautilus_trader.adapters.interactive_brokers.parsing.execution import map_order_action
 from nautilus_trader.adapters.interactive_brokers.parsing.execution import map_order_fields
+from nautilus_trader.adapters.interactive_brokers.parsing.execution import map_order_status
+from nautilus_trader.adapters.interactive_brokers.parsing.execution import map_order_type
+from nautilus_trader.adapters.interactive_brokers.parsing.execution import map_time_in_force
 from nautilus_trader.adapters.interactive_brokers.parsing.execution import map_trigger_method
 from nautilus_trader.adapters.interactive_brokers.parsing.execution import (
     order_side_to_order_action,
+)
+from nautilus_trader.adapters.interactive_brokers.parsing.instruments import (
+    ib_contract_to_instrument_id,
 )
 from nautilus_trader.adapters.interactive_brokers.providers import (
     InteractiveBrokersInstrumentProvider,
@@ -78,6 +87,12 @@ from nautilus_trader.model.orders.trailing_stop_market import TrailingStopMarket
 from nautilus_trader.msgbus.bus import MessageBus
 
 
+ib_to_nautilus_trigger_method = dict(zip(map_trigger_method.values(), map_trigger_method.keys()))
+ib_to_nautilus_time_in_force = dict(zip(map_time_in_force.values(), map_time_in_force.keys()))
+ib_to_nautilus_order_side = dict(zip(map_order_action.values(), map_order_action.keys()))
+ib_to_nautilus_order_type = dict(zip(map_order_type.values(), map_order_type.keys()))
+
+
 class InteractiveBrokersExecutionClient(LiveExecutionClient):
     """
     Provides an execution client for Interactive Brokers TWS API.
@@ -118,7 +133,8 @@ class InteractiveBrokersExecutionClient(LiveExecutionClient):
     ):
         super().__init__(
             loop=loop,
-            client_id=ClientId(IB_VENUE.value),
+            # client_id=ClientId(f"{IB_VENUE.value}-{ibg_client_id:03d}"), # TODO: Fix account_id.get_id()
+            client_id=ClientId(f"{IB_VENUE.value}"),
             venue=IB_VENUE,
             oms_type=OmsType.NETTING,
             instrument_provider=instrument_provider,
@@ -128,10 +144,12 @@ class InteractiveBrokersExecutionClient(LiveExecutionClient):
             cache=cache,
             clock=clock,
             logger=logger,
-            config={"name": f"InteractiveBrokersExecutionClient-{ibg_client_id:03d}"},
+            config={
+                "name": f"{type(self).__name__}-{ibg_client_id:03d}",
+                "client_id": ibg_client_id,
+            },
         )
-        # account_type: check to find automatically
-        self._msgbus = msgbus
+        # TODO: Can we set account_type after connection if Margin or Cash?
         self._client: InteractiveBrokersClient = client
         self._set_account_id(account_id)
         self._account_summary_tags = {
@@ -191,7 +209,7 @@ class InteractiveBrokersExecutionClient(LiveExecutionClient):
     ) -> Optional[OrderStatusReport]:
         self._log.warning("Cannot generate `IBOrderStatusReport`: not yet implemented.")
 
-        return None  # TODO: Implement
+        return None  # TODO: I see single order can return. What if multiple orders for same Instrument?
 
     async def generate_order_status_reports(
         self,
@@ -200,9 +218,53 @@ class InteractiveBrokersExecutionClient(LiveExecutionClient):
         end: Optional[pd.Timestamp] = None,
         open_only: bool = False,
     ) -> list[OrderStatusReport]:
-        self._log.warning("Cannot generate `list[IBOrderStatusReport]`: not yet implemented.")
+        # [ERR] TESTER-001.Portfolio: Cannot update order: no account registered for InteractiveBrokers-
+        # [ERR] TESTER-001.Portfolio: Cannot update initial (order) margin: no account registered for IDEALPRO.
+        report = []
+        orders = await self._client.get_open_orders(self.account_id.get_id())
+        for ib_order in orders.values():
+            instrument_id = ib_contract_to_instrument_id(ib_order.contract)
+            instrument = self._cache.instrument(instrument_id)
 
-        return []  # TODO: Implement
+            total_qty = instrument.make_qty(
+                0 if ib_order.totalQuantity == UNSET_DECIMAL else ib_order.totalQuantity,
+            )
+            filled_qty = instrument.make_qty(
+                0 if ib_order.filledQuantity == UNSET_DECIMAL else ib_order.filledQuantity,
+            )
+            if total_qty > filled_qty > 0:
+                order_status = OrderStatus.PARTIALLY_FILLED
+            else:
+                order_status = map_order_status[ib_order.order_state.status]
+            ts_init = self._clock.timestamp_ns()
+            order_status = OrderStatusReport(
+                account_id=self.account_id,
+                instrument_id=instrument_id,
+                venue_order_id=VenueOrderId(str(ib_order.orderId)),
+                order_side=ib_to_nautilus_order_side[ib_order.action],
+                order_type=ib_to_nautilus_order_type[ib_order.orderType],
+                time_in_force=ib_to_nautilus_time_in_force[ib_order.tif],
+                order_status=order_status,
+                quantity=total_qty,
+                filled_qty=filled_qty,
+                report_id=UUID4(),
+                ts_accepted=ts_init,
+                ts_last=ts_init,
+                ts_init=ts_init,
+                client_order_id=ClientOrderId(ib_order.orderRef),
+                # order_list_id=,
+                # contingency_type=,
+                # expire_time=,
+                price=None
+                if ib_order.lmtPrice == UNSET_DOUBLE
+                else instrument.make_price(ib_order.lmtPrice),
+                # trigger_price=,
+                # trigger_type=,
+                # limit_offset=,
+                # trailing_offset=,
+            )
+            report.append(order_status)
+        return report
 
     async def generate_trade_reports(
         self,
@@ -260,7 +322,7 @@ class InteractiveBrokersExecutionClient(LiveExecutionClient):
         for key, field, fn in map_order_fields:
             if value := getattr(order, key, None):
                 setattr(ib_order, field, fn(value))
-        map_trigger_method
+
         if isinstance(order, TrailingStopLimitOrder) or isinstance(order, TrailingStopMarketOrder):
             ib_order.auxPrice = float(order.trailing_offset)
             if order.trigger_price:

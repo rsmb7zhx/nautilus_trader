@@ -79,14 +79,13 @@ class InteractiveBrokersClient(Component, EWrapper):
         super().__init__(
             clock=clock,
             logger=logger,
-            component_id=ClientId(IB_VENUE.value),
-            component_name=f"InteractiveBrokersClient-{client_id:03d}",
+            component_id=ClientId(f"{IB_VENUE.value}-{client_id:03d}"),
+            component_name=f"{type(self).__name__}-{client_id:03d}",
             msgbus=msgbus,
-            config={},
+            config={"name": f"{type(self).__name__}-{client_id:03d}", "client_id": client_id},
         )
         # Config
         self._loop = loop
-        self._msgbus = msgbus
         self._cache = cache
         # self._clock = clock
         # self._logger = logger
@@ -110,6 +109,7 @@ class InteractiveBrokersClient(Component, EWrapper):
         self.is_ready: asyncio.Event = asyncio.Event()  # Client is fully functional
         self.is_ib_ready: asyncio.Event = asyncio.Event()  # Connectivity between IB and TWS
         self._positions_event: asyncio.Event = asyncio.Event()
+        self._open_orders_event: asyncio.Event = asyncio.Event()
 
         # Hot caches
         self._bar_type_to_last_bar: dict[str, Union[BarData, None]] = {}
@@ -117,6 +117,7 @@ class InteractiveBrokersClient(Component, EWrapper):
         self._event_subscriptions: dict[str, Callable] = {}
         self._order_id_to_order: dict[int, IBOrder] = {}
         self._positions: dict[str, dict[int, dict[str, Union[Decimal, float]]]] = {}
+        self._open_orders: dict[str, dict[str, IBOrder]] = {}
 
         # Temporary caches
         self._exec_id_details: dict[
@@ -271,14 +272,26 @@ class InteractiveBrokersClient(Component, EWrapper):
 
     def _start(self):
         self.is_ready.set()
+        self._msgbus.publish(
+            topic=f"events.system.{self.id}",
+            msg="STARTING",
+        )
 
     def _resume(self):
         self.is_ready.set()
         self._connection_attempt_counter = 0
+        self._msgbus.publish(
+            topic=f"events.system.{self.id}",
+            msg="RESUMING",
+        )
 
     def _degrade(self):
         self.is_ready.clear()
         self._accounts = set()
+        self._msgbus.publish(
+            topic=f"events.system.{self.id}",
+            msg="DEGRADING",
+        )
 
     def _stop(self):
         if not self.registered_nautilus_clients == set():
@@ -449,7 +462,8 @@ class InteractiveBrokersClient(Component, EWrapper):
             self._client.cancelHistoricalData(1)
         elif self.is_running:
             # Connectivity between TWS/Gateway and IB server is broken
-            self.degrade() if self.is_running else None
+            if self.is_running:
+                self.degrade()
 
     async def _handle_socket_connectivity(self):
         self.degrade() if self.is_running else None
@@ -545,7 +559,7 @@ class InteractiveBrokersClient(Component, EWrapper):
         except OSError:
             if self._client.wrapper:
                 self._client.wrapper.error(NO_VALID_ID, CONNECT_FAIL.code(), CONNECT_FAIL.msg())
-            await self._loop.run_in_executor(None, self._client.disconnect)
+            self._client.disconnect()
         except Exception as e:
             self._log.exception("could not connect", e)
 
@@ -564,7 +578,7 @@ class InteractiveBrokersClient(Component, EWrapper):
                     while len(buf) > 0:
                         (size, msg, buf) = comm.read_msg(buf)
                         # self._log.debug(f"resp {buf.decode('ascii')}")
-                        # self._log.debug(f"size:{size} msg.size:{len(msg)} msg:|{str(buf)}| buf:||")
+                        self._log.debug(f"size:{size} msg.size:{len(msg)} msg:|{str(buf)}| buf:||")
                         if msg:
                             self._incoming_msg_queue.put_nowait(msg)
                         else:
@@ -793,6 +807,18 @@ class InteractiveBrokersClient(Component, EWrapper):
         order_state: IBOrderState,
     ):
         self.logAnswer(current_fn_name(), vars())
+
+        if not self._open_orders_event.is_set():
+            print(order.__dict__)
+            print(order_state.__dict__)
+            if not self._open_orders.get(order.account):
+                self._open_orders[order.account] = {}
+            order.contract = IBContract(**contract.__dict__)
+            order.order_state = order_state
+            order.orderRef = order.orderRef.rsplit(":", 1)[0]
+            self._open_orders[order.account][order.orderRef.rsplit(":", 1)[0]] = order
+            return
+
         name = f"openOrder-{order.account}"
         if handler := self._event_subscriptions.get(name, None):
             handler(
@@ -800,6 +826,10 @@ class InteractiveBrokersClient(Component, EWrapper):
                 order=order,
                 order_state=order_state,
             )
+
+    def openOrderEnd(self):
+        self.logAnswer(current_fn_name(), vars())
+        self._open_orders_event.set()
 
     def orderStatus(  # noqa: Override the EWrapper
         self,
@@ -921,7 +951,13 @@ class InteractiveBrokersClient(Component, EWrapper):
         self._positions_event = asyncio.Event()
         self._client.reqPositions()
         await self._positions_event.wait()
-        return self._positions[account]
+        return self._positions.get(account, {})
+
+    async def get_open_orders(self, account: str):
+        self._open_orders_event = asyncio.Event()
+        self._client.reqOpenOrders()
+        await self._open_orders_event.wait()
+        return self._open_orders.get(account, {})
 
     def position(  # noqa: Override the EWrapper
         self,
@@ -937,10 +973,6 @@ class InteractiveBrokersClient(Component, EWrapper):
             self._positions[account][contract.conId] = {}
         self._positions[account][contract.conId]["position"] = position
         self._positions[account][contract.conId]["avg_cost"] = avg_cost
-
-        # name = f"position-{account}"
-        # if handler := self._event_subscriptions.get(name, None):
-        #     handler(contract, position, avg_cost)
 
     def positionEnd(self):  # noqa: Override the EWrapper
         self.logAnswer(current_fn_name(), vars())
@@ -1173,28 +1205,29 @@ class InteractiveBrokersClient(Component, EWrapper):
         use_rth: bool,
     ):
         name = (str(ib_contract_to_instrument_id(contract)), tick_type)
-        if not (request := self.requests.get(name=name)):
-            req_id = self._next_req_id()
-            request = self.requests.add(
-                req_id=req_id,
-                name=name,
-                handle=self._client.reqHistoricalTicks,
-                kwargs=dict(
-                    reqId=req_id,
-                    contract=contract,
-                    startDateTime="",
-                    endDateTime=end_date_time.strftime("%Y%m%d %H:%M:%S %Z"),
-                    numberOfTicks=1000,
-                    whatToShow=tick_type,
-                    useRth=use_rth,
-                    ignoreSize=False,
-                    miscOptions=[],
-                ),
-            )
-            request.handle(**request.kwargs)
-            return await request.future
-        else:
-            self._log.info(f"Request already exist for {request}")
+        if request := self.requests.get(name=name):
+            self._log.info(f"Canceling existing {request}")
+            self._end_request(req_id=request.req_id, success=False)
+
+        req_id = self._next_req_id()
+        request = self.requests.add(
+            req_id=req_id,
+            name=name,
+            handle=self._client.reqHistoricalTicks,
+            kwargs=dict(
+                reqId=req_id,
+                contract=contract,
+                startDateTime="",
+                endDateTime=end_date_time.strftime("%Y%m%d %H:%M:%S %Z"),
+                numberOfTicks=1000,
+                whatToShow=tick_type,
+                useRth=use_rth,
+                ignoreSize=False,
+                miscOptions=[],
+            ),
+        )
+        request.handle(**request.kwargs)
+        return await request.future
 
     def historicalTicksBidAsk(self, req_id: int, ticks: list, done: bool):
         self.logAnswer(current_fn_name(), vars())

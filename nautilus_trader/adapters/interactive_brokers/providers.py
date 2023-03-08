@@ -79,7 +79,7 @@ class InteractiveBrokersInstrumentProvider(InstrumentProvider):
 
         self._client = client
         self.config = config
-        self.contract_details: dict[str, ContractDetails] = {}
+        self.contract_details: dict[str, IBContractDetails] = {}
         self.contract_id_to_instrument_id: dict[int, InstrumentId] = {}
 
     async def load_all_async(self, filters: Optional[dict] = None) -> None:

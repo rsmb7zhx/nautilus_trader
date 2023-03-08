@@ -17,6 +17,7 @@
 from typing import Callable
 
 from nautilus_trader.model.enums import OrderSide
+from nautilus_trader.model.enums import OrderStatus
 from nautilus_trader.model.enums import OrderType
 from nautilus_trader.model.enums import TimeInForce
 from nautilus_trader.model.enums import TriggerType
@@ -80,4 +81,17 @@ map_order_fields: set[tuple[str, str, Callable]] = {
     # ("trigger_price", "auxPrice", lambda x: x.as_double()),
     # ("trigger_type", "triggerMethod", lambda x: map_trigger_method[x]),
     ("parent_order_id", "parentId", lambda x: x.value),
+}
+
+
+map_order_status = {
+    "ApiPending": OrderStatus.SUBMITTED,
+    "PendingSubmit": OrderStatus.SUBMITTED,
+    "PendingCancel": OrderStatus.PENDING_CANCEL,
+    "PreSubmitted": OrderStatus.SUBMITTED,
+    "Submitted": OrderStatus.ACCEPTED,
+    "ApiCancelled": OrderStatus.CANCELED,
+    "Cancelled": OrderStatus.CANCELED,
+    "Filled": OrderStatus.FILLED,
+    "Inactive": OrderStatus.DENIED,
 }

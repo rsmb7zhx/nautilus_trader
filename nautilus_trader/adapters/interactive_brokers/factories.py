@@ -127,7 +127,7 @@ def get_cached_interactive_brokers_instrument_provider(
 
     Parameters
     ----------
-    client : InteractiveBrokersHttpClient
+    client : InteractiveBrokersClient
         The client for the instrument provider.
     config: InteractiveBrokersInstrumentProviderConfig
         The instrument provider config

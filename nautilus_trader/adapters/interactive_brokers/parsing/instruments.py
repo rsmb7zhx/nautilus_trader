@@ -240,7 +240,7 @@ def parse_crypto_contract(
     details: IBContractDetails,
 ) -> CryptoPerpetual:
     price_precision: int = _tick_size_to_precision(details.minTick)
-    size_precision: int = _tick_size_to_precision(float(details.minSize))
+    size_precision = details.minSize.as_tuple().exponent * -1
     timestamp = time.time_ns()
     instrument_id = ib_contract_to_instrument_id(details.contract)
     return CryptoPerpetual(

@@ -87,14 +87,17 @@ class InteractiveBrokersDataClient(LiveMarketDataClient):
         """
         super().__init__(
             loop=loop,
-            client_id=ClientId(IB_VENUE.value),
+            client_id=ClientId(f"{IB_VENUE.value}-{ibg_client_id:03d}"),
             venue=None,
             instrument_provider=instrument_provider,
             msgbus=msgbus,
             cache=cache,
             clock=clock,
             logger=logger,
-            config={"name": f"InteractiveBrokersDataClient-{ibg_client_id:03d}"},
+            config={
+                "name": f"{type(self).__name__}-{ibg_client_id:03d}",
+                "client_id": ibg_client_id,
+            },
         )
         self._client = client
         self._handle_revised_bars = config.handle_revised_bars
@@ -166,7 +169,7 @@ class InteractiveBrokersDataClient(LiveMarketDataClient):
         )
 
     async def _subscribe_quote_ticks(self, instrument_id: InstrumentId) -> None:
-        if not (details := self.instrument_provider.contract_details.get(instrument_id.value)):
+        if not (instrument := self._cache.instrument(instrument_id)):
             self._log.error(
                 f"Cannot subscribe to QuoteTicks for {instrument_id}, Instrument not found.",
             )
@@ -174,12 +177,12 @@ class InteractiveBrokersDataClient(LiveMarketDataClient):
 
         await self._client.subscribe_ticks(
             instrument_id=instrument_id,
-            contract=details.contract,
+            contract=IBContract(**instrument.info["contract"]),
             tick_type="BidAsk",
         )
 
     async def _subscribe_trade_ticks(self, instrument_id: InstrumentId) -> None:
-        if not (details := self.instrument_provider.contract_details.get(instrument_id.value)):
+        if not (instrument := self._cache.instrument(instrument_id)):
             self._log.error(
                 f"Cannot subscribe to TradeTicks for {instrument_id}, Instrument not found.",
             )
@@ -187,27 +190,25 @@ class InteractiveBrokersDataClient(LiveMarketDataClient):
 
         await self._client.subscribe_ticks(
             instrument_id=instrument_id,
-            contract=details.contract,
+            contract=IBContract(**instrument.info["contract"]),
             tick_type="AllLast",
         )
 
     async def _subscribe_bars(self, bar_type: BarType):
-        if not (
-            details := self.instrument_provider.contract_details.get(bar_type.instrument_id.value)
-        ):
+        if not (instrument := self._cache.instrument(bar_type.instrument_id)):
             self._log.error(f"Cannot subscribe to {bar_type}, Instrument not found.")
             return
 
         if bar_type.spec.timedelta.total_seconds() == 5:
             await self._client.subscribe_realtime_bars(
                 bar_type=bar_type,
-                contract=details.contract,
+                contract=IBContract(**instrument.info["contract"]),
                 use_rth=self._use_regular_trading_hours,
             )
         else:
             await self._client.subscribe_historical_bars(
                 bar_type=bar_type,
-                contract=details.contract,
+                contract=IBContract(**instrument.info["contract"]),
                 use_rth=self._use_regular_trading_hours,
                 handle_revised_bars=self._handle_revised_bars,
             )
@@ -272,10 +273,13 @@ class InteractiveBrokersDataClient(LiveMarketDataClient):
         )
 
     async def _request_instrument(self, instrument_id: InstrumentId, correlation_id: UUID4):
-        if not (instrument := self.instrument_provider.find(instrument_id)):
+        if not (instrument := self._cache.instrument(instrument_id)):
             await self.instrument_provider.load(instrument_id)
             if instrument := self.instrument_provider.find(instrument_id):
                 self._handle_data(instrument)
+            else:
+                self._log.warning(f"{instrument_id} not available.")
+                return
         self._handle_instrument(instrument, correlation_id)
 
     async def _request_instruments(self, venue: Venue, correlation_id: UUID4):
@@ -291,13 +295,19 @@ class InteractiveBrokersDataClient(LiveMarketDataClient):
         start: Optional[pd.Timestamp] = None,
         end: Optional[pd.Timestamp] = None,
     ) -> None:
-        if not (details := self.instrument_provider.contract_details.get(instrument_id.value)):
+        if not (instrument := self._cache.instrument(instrument_id)):
             self._log.error(
                 f"Cannot request QuoteTicks for {instrument_id}, Instrument not found.",
             )
             return
 
-        ticks = await self._handle_ticks_request(details.contract, "BID_ASK", limit, start, end)
+        ticks = await self._handle_ticks_request(
+            IBContract(**instrument.info["contract"]),
+            "BID_ASK",
+            limit,
+            start,
+            end,
+        )
         if not ticks:
             self._log.warning(f"QuoteTicks not received for {instrument_id}")
             return
@@ -312,13 +322,19 @@ class InteractiveBrokersDataClient(LiveMarketDataClient):
         start: Optional[pd.Timestamp] = None,
         end: Optional[pd.Timestamp] = None,
     ) -> None:
-        if not (details := self.instrument_provider.contract_details.get(instrument_id.value)):
+        if not (instrument := self._cache.instrument(instrument_id)):
             self._log.error(
                 f"Cannot request TradeTicks for {instrument_id}, Instrument not found.",
             )
             return
 
-        ticks = await self._handle_ticks_request(details.contract, "TRADES", limit, start, end)
+        ticks = await self._handle_ticks_request(
+            IBContract(**instrument.info["contract"]),
+            "TRADES",
+            limit,
+            start,
+            end,
+        )
         if not ticks:
             self._log.warning(f"TradeTicks not received for {instrument_id}")
             return
@@ -341,6 +357,7 @@ class InteractiveBrokersDataClient(LiveMarketDataClient):
 
         ticks: list[Union[QuoteTick, TradeTick]] = []
         while (start and end > start) or (len(ticks) < limit > 0):
+            await self._client.is_running_async()
             ticks_part = await self._client.get_historical_ticks(
                 contract,
                 tick_type,
@@ -363,6 +380,12 @@ class InteractiveBrokersDataClient(LiveMarketDataClient):
         start: Optional[pd.Timestamp] = None,
         end: Optional[pd.Timestamp] = None,
     ) -> None:
+        if not (instrument := self._cache.instrument(bar_type.instrument_id)):
+            self._log.error(
+                f"Cannot request {bar_type}, Instrument not found.",
+            )
+            return
+
         if bar_type.is_internally_aggregated():
             self._log.error(
                 f"Cannot request {bar_type}: "
@@ -390,9 +413,7 @@ class InteractiveBrokersDataClient(LiveMarketDataClient):
             self._log.info(f"{limit=}", LogColor.MAGENTA)
             bars_part = await self._client.get_historical_bars(
                 bar_type=bar_type,
-                contract=self.instrument_provider.contract_details[
-                    bar_type.instrument_id.value
-                ].contract,
+                contract=IBContract(**instrument.info["contract"]),
                 use_rth=self._use_regular_trading_hours,
                 end_date_time=end.strftime("%Y%m%d %H:%M:%S %Z"),
                 duration=duration_str,
