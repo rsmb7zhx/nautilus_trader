@@ -14,25 +14,29 @@
 # -------------------------------------------------------------------------------------------------
 
 import asyncio
-from typing import Any, Optional
+from operator import attrgetter
+from typing import Any, Optional, Union
 
 import pandas as pd
 
 from nautilus_trader.adapters.interactive_brokers.client import InteractiveBrokersClient
 from nautilus_trader.adapters.interactive_brokers.common import IB_VENUE
+from nautilus_trader.adapters.interactive_brokers.common import IBContract
 from nautilus_trader.adapters.interactive_brokers.config import InteractiveBrokersDataClientConfig
-from nautilus_trader.adapters.interactive_brokers.parsing.data import timedelta_to_duration_str
 from nautilus_trader.adapters.interactive_brokers.providers import (
     InteractiveBrokersInstrumentProvider,
 )
 from nautilus_trader.cache.cache import Cache
 from nautilus_trader.common.clock import LiveClock
+from nautilus_trader.common.enums import LogColor
 from nautilus_trader.common.logging import Logger
 from nautilus_trader.core.uuid import UUID4
 from nautilus_trader.live.data_client import LiveMarketDataClient
 from nautilus_trader.model.data.bar import Bar
 from nautilus_trader.model.data.bar import BarType
 from nautilus_trader.model.data.base import DataType
+from nautilus_trader.model.data.tick import QuoteTick
+from nautilus_trader.model.data.tick import TradeTick
 from nautilus_trader.model.enums import BookType
 from nautilus_trader.model.identifiers import ClientId
 from nautilus_trader.model.identifiers import InstrumentId
@@ -268,12 +272,11 @@ class InteractiveBrokersDataClient(LiveMarketDataClient):
         )
 
     async def _request_instrument(self, instrument_id: InstrumentId, correlation_id: UUID4):
-        if instrument := self.instrument_provider.find(instrument_id):
-            self._handle_instrument(instrument, correlation_id)
-        else:
+        if not (instrument := self.instrument_provider.find(instrument_id)):
             await self.instrument_provider.load(instrument_id)
             if instrument := self.instrument_provider.find(instrument_id):
                 self._handle_data(instrument)
+        self._handle_instrument(instrument, correlation_id)
 
     async def _request_instruments(self, venue: Venue, correlation_id: UUID4):
         raise NotImplementedError(  # pragma: no cover
@@ -288,9 +291,18 @@ class InteractiveBrokersDataClient(LiveMarketDataClient):
         start: Optional[pd.Timestamp] = None,
         end: Optional[pd.Timestamp] = None,
     ) -> None:
-        raise NotImplementedError(  # pragma: no cover
-            "implement the `_request_quote_ticks` coroutine",  # pragma: no cover
-        )
+        if not (details := self.instrument_provider.contract_details.get(instrument_id.value)):
+            self._log.error(
+                f"Cannot request QuoteTicks for {instrument_id}, Instrument not found.",
+            )
+            return
+
+        ticks = await self._handle_ticks_request(details.contract, "BID_ASK", limit, start, end)
+        if not ticks:
+            self._log.warning(f"QuoteTicks not received for {instrument_id}")
+            return
+
+        self._handle_quote_ticks(instrument_id, ticks, correlation_id)
 
     async def _request_trade_ticks(
         self,
@@ -300,9 +312,48 @@ class InteractiveBrokersDataClient(LiveMarketDataClient):
         start: Optional[pd.Timestamp] = None,
         end: Optional[pd.Timestamp] = None,
     ) -> None:
-        raise NotImplementedError(  # pragma: no cover
-            "implement the `_request_trade_ticks` coroutine",  # pragma: no cover
-        )
+        if not (details := self.instrument_provider.contract_details.get(instrument_id.value)):
+            self._log.error(
+                f"Cannot request TradeTicks for {instrument_id}, Instrument not found.",
+            )
+            return
+
+        ticks = await self._handle_ticks_request(details.contract, "TRADES", limit, start, end)
+        if not ticks:
+            self._log.warning(f"TradeTicks not received for {instrument_id}")
+            return
+
+        self._handle_trade_ticks(instrument_id, ticks, correlation_id)
+
+    async def _handle_ticks_request(
+        self,
+        contract: IBContract,
+        tick_type: str,
+        limit: int,
+        start: Optional[pd.Timestamp] = None,
+        end: Optional[pd.Timestamp] = None,
+    ):
+        if not start:
+            limit = self._cache.tick_capacity
+
+        if not end:
+            end = pd.Timestamp.utcnow()
+
+        ticks: list[Union[QuoteTick, TradeTick]] = []
+        while (start and end > start) or (len(ticks) < limit > 0):
+            ticks_part = await self._client.get_historical_ticks(
+                contract,
+                tick_type,
+                end,
+                self._use_regular_trading_hours,
+            )
+            if not ticks_part:
+                break
+            end = pd.Timestamp(min(ticks_part, key=attrgetter("ts_init")).ts_init, tz="UTC")
+            ticks.extend(ticks_part)
+
+        ticks.sort(key=lambda x: x.ts_init)
+        return ticks
 
     async def _request_bars(
         self,
@@ -312,9 +363,6 @@ class InteractiveBrokersDataClient(LiveMarketDataClient):
         start: Optional[pd.Timestamp] = None,
         end: Optional[pd.Timestamp] = None,
     ) -> None:
-        if limit == 0 or limit > 1000:
-            limit = 1000
-
         if bar_type.is_internally_aggregated():
             self._log.error(
                 f"Cannot request {bar_type}: "
@@ -328,26 +376,37 @@ class InteractiveBrokersDataClient(LiveMarketDataClient):
             )
             return
 
-        # start_time_ms = None
-        # if start is not None:
-        #     start_time_ms = start.strftime("%Y%m%d %H:%M:%S %Z")
-        #
-        # end_time_ms = None
-        # if end is not None:
-        #     end_time_ms = end.strftime("%Y%m%d %H:%M:%S %Z")
+        if not start:
+            limit = self._cache.tick_capacity
 
-        bars = await self._client.get_historical_bars(
-            bar_type=bar_type,
-            contract=self.instrument_provider.contract_details[
-                bar_type.instrument_id.value
-            ].contract,
-            use_rth=self._use_regular_trading_hours,
-            end_date_time=end.strftime("%Y%m%d %H:%M:%S %Z"),
-            duration=timedelta_to_duration_str(bar_type.spec.timedelta),
-        )
+        if not end:
+            end = pd.Timestamp.utcnow()
 
-        partial: Bar = bars.pop()
-        self._handle_bars(bar_type, bars, partial, correlation_id)
-        raise NotImplementedError(  # pragma: no cover
-            "implement the `_request_bars` coroutine",  # pragma: no cover
-        )
+        duration_str = "7 D"  # TODO: Calculate to avoid too many and too large requests
+        bars: list[Bar] = []
+        while (start and end > start) or (len(bars) < limit):
+            self._log.info(f"{start=}", LogColor.MAGENTA)
+            self._log.info(f"{end=}", LogColor.MAGENTA)
+            self._log.info(f"{limit=}", LogColor.MAGENTA)
+            bars_part = await self._client.get_historical_bars(
+                bar_type=bar_type,
+                contract=self.instrument_provider.contract_details[
+                    bar_type.instrument_id.value
+                ].contract,
+                use_rth=self._use_regular_trading_hours,
+                end_date_time=end.strftime("%Y%m%d %H:%M:%S %Z"),
+                duration=duration_str,
+            )
+            if not bars_part:
+                break
+            bars.extend(bars_part)
+            end = pd.Timestamp(min(bars, key=attrgetter("ts_event")).ts_event, tz="UTC")
+            self._log.info(f"NEW {end=}", LogColor.MAGENTA)
+
+        if not bars:
+            self._log.warning(f"Bar Data not received for {bar_type}")
+            return
+
+        bars = list(set(bars))
+        bars.sort(key=lambda x: x.ts_init)
+        self._handle_bars(bar_type, bars, bars[0], correlation_id)

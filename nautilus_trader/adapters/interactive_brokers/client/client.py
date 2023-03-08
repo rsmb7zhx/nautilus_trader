@@ -41,6 +41,9 @@ from nautilus_trader.adapters.interactive_brokers.parsing.data import bar_spec_t
 from nautilus_trader.adapters.interactive_brokers.parsing.data import generate_trade_id
 from nautilus_trader.adapters.interactive_brokers.parsing.data import timedelta_to_duration_str
 from nautilus_trader.adapters.interactive_brokers.parsing.data import what_to_show
+from nautilus_trader.adapters.interactive_brokers.parsing.instruments import (
+    ib_contract_to_instrument_id,
+)
 from nautilus_trader.cache.cache import Cache
 from nautilus_trader.common.clock import LiveClock
 from nautilus_trader.common.component import Component
@@ -164,6 +167,9 @@ class InteractiveBrokersClient(Component, EWrapper):
         if fnName in [
             "historicalData",
             "historicalDataUpdate",
+            "historicalTicksBidAsk",
+            "historicalTicksLast",
+            "historicalTicks",
             "realtimeBar",
             "tickByTickBidAsk",
             "tickByTickAllLast",
@@ -1158,6 +1164,84 @@ class InteractiveBrokersClient(Component, EWrapper):
             is_revision=not is_new_bar,
         )
         return bar
+
+    async def get_historical_ticks(
+        self,
+        contract: IBContract,
+        tick_type: str,
+        end_date_time: pd.Timestamp,
+        use_rth: bool,
+    ):
+        name = (str(ib_contract_to_instrument_id(contract)), tick_type)
+        if not (request := self.requests.get(name=name)):
+            req_id = self._next_req_id()
+            request = self.requests.add(
+                req_id=req_id,
+                name=name,
+                handle=self._client.reqHistoricalTicks,
+                kwargs=dict(
+                    reqId=req_id,
+                    contract=contract,
+                    startDateTime="",
+                    endDateTime=end_date_time.strftime("%Y%m%d %H:%M:%S %Z"),
+                    numberOfTicks=1000,
+                    whatToShow=tick_type,
+                    useRth=use_rth,
+                    ignoreSize=False,
+                    miscOptions=[],
+                ),
+            )
+            request.handle(**request.kwargs)
+            return await request.future
+        else:
+            self._log.info(f"Request already exist for {request}")
+
+    def historicalTicksBidAsk(self, req_id: int, ticks: list, done: bool):
+        self.logAnswer(current_fn_name(), vars())
+
+        if request := self.requests.get(req_id=req_id):
+            instrument_id = InstrumentId.from_str(request.name[0])
+            instrument = self._cache.instrument(instrument_id)
+            for tick in ticks:
+                ts_event = pd.Timestamp.fromtimestamp(tick.time, "UTC").value
+                quote_tick = QuoteTick(
+                    instrument_id=instrument_id,
+                    bid=instrument.make_price(tick.priceBid),
+                    bid_size=instrument.make_qty(tick.sizeBid),
+                    ask=instrument.make_price(tick.priceAsk),
+                    ask_size=instrument.make_qty(tick.sizeAsk),
+                    ts_event=ts_event,
+                    ts_init=ts_event,
+                )
+                request.result.append(quote_tick)
+            self._end_request(req_id)
+
+    def historicalTicksLast(self, req_id: int, ticks: list, done: bool):
+        self.logAnswer(current_fn_name(), vars())
+        self._process_trade_ticks(req_id, ticks)
+
+    def historicalTicks(self, req_id: int, ticks: list, done: bool):
+        self.logAnswer(current_fn_name(), vars())
+        self._process_trade_ticks(req_id, ticks)
+
+    def _process_trade_ticks(self, req_id: int, ticks: list):
+        if request := self.requests.get(req_id=req_id):
+            instrument_id = InstrumentId.from_str(request.name[0])
+            instrument = self._cache.instrument(instrument_id)
+            for tick in ticks:
+                ts_event = pd.Timestamp.fromtimestamp(tick.time, "UTC").value
+                trade_tick = TradeTick(
+                    instrument_id=instrument_id,
+                    price=instrument.make_price(tick.price),
+                    size=instrument.make_qty(tick.size),
+                    aggressor_side=AggressorSide.NO_AGGRESSOR,
+                    trade_id=generate_trade_id(ts_event=ts_event, price=tick.price, size=tick.size),
+                    ts_event=ts_event,
+                    ts_init=ts_event,
+                )
+                request.result.append(trade_tick)
+
+            self._end_request(req_id)
 
     # -- Market Scanners ---------------------------------------------------------------------------------
 
