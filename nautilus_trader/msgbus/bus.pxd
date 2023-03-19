@@ -24,8 +24,7 @@ from nautilus_trader.msgbus.subscription cimport Subscription
 cdef class MessageBus:
     cdef Clock _clock
     cdef LoggerAdapter _log
-    cdef dict _subscriptions
-    cdef dict _patterns
+    cdef list _subscriptions
     cdef dict _endpoints
     cdef dict _correlation_index
 
@@ -55,7 +54,3 @@ cdef class MessageBus:
     cpdef void unsubscribe(self, str topic, handler)
     cpdef void publish(self, str topic, msg)
     cdef void publish_c(self, str topic, msg)
-    cdef Subscription[:] _resolve_subscriptions(self, str topic)
-
-
-cdef bint is_matching(str topic, str pattern)

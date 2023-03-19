@@ -349,3 +349,21 @@ class TestTrader:
 
         # Assert
         assert len(self.msgbus.subscriptions("events*")) == 5
+
+    def test_msgbus_for_system_events_using_component_id(self):
+        # Arrange
+        subscriber = []
+        self.msgbus.subscribe(topic="events.system.*", handler=subscriber.append)
+
+        topic = f"events.system.{str(TestIdStubs.trader_id())}"
+        existing_subscribers = len(subscriber)
+        existing_pub_count = self.msgbus.pub_count
+
+        # Act
+        self.msgbus.publish("events.system.DUMMY", "DUMMY EVENT")
+        self.msgbus.publish(topic, "TRADER EVENT")
+
+        # Assert
+        assert self.msgbus.pub_count - existing_pub_count == 2
+        assert len(subscriber) - existing_subscribers == 2
+        assert subscriber == ["DUMMY EVENT", "TRADER EVENT"]

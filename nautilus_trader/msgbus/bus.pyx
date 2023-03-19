@@ -26,6 +26,8 @@ from nautilus_trader.core.correctness cimport Condition
 from nautilus_trader.core.uuid cimport UUID4
 from nautilus_trader.model.identifiers cimport TraderId
 
+import re
+
 
 cdef class MessageBus:
     """
@@ -34,21 +36,7 @@ cdef class MessageBus:
     The bus provides both a producer and consumer API for Pub/Sub, Req/Rep, as
     well as direct point-to-point messaging to registered endpoints.
 
-    Pub/Sub wildcard patterns for hierarchical topics are possible:
-     - `*` asterisk represents one or more characters in a pattern.
-     - `?` question mark represents a single character in a pattern.
-
-    Given a topic and pattern potentially containing wildcard characters, i.e.
-    `*` and `?`, where `?` can match any single character in the topic, and `*`
-    can match any number of characters including zero characters.
-
-    The asterisk in a wildcard matches any character zero or more times. For
-    example, `comp*` matches anything beginning with `comp` which means `comp`,
-    `complete`, and `computer` are all matched.
-
-    A question mark matches a single character once. For example, `c?mp` matches
-    `camp` and `comp`. The question mark can also be used more than once.
-    For example, `c??p` would match both of the above examples and `coop`.
+    Pub/Sub uses standard Regular Expression to match the topics: https://regex101.com/
 
     Parameters
     ----------
@@ -89,8 +77,7 @@ cdef class MessageBus:
         self._log = LoggerAdapter(component_name=name, logger=logger)
 
         self._endpoints: dict[str, Callable[[Any], None]] = {}
-        self._patterns: dict[str, Subscription[:]] = {}
-        self._subscriptions: dict[Subscription, list[str]] = {}
+        self._subscriptions: list[Subscription] = []
         self._correlation_index: dict[UUID4, Callable[[Any], None]] = {}
 
         # Counters
@@ -119,7 +106,7 @@ cdef class MessageBus:
         list[str]
 
         """
-        return sorted(set([s.topic for s in self._subscriptions.keys()]))
+        return sorted(set(["*" if s.topic == ".*" else s.topic for s in self._subscriptions]))
 
     cpdef list subscriptions(self, str pattern = None):
         """
@@ -136,11 +123,11 @@ cdef class MessageBus:
         list[Subscription]
 
         """
-        if pattern is None:
-            pattern = "*"  # Wildcard
+        if pattern is None or pattern == "*":
+            pattern = ".*"  # Wildcard
         Condition.valid_string(pattern, "pattern")
 
-        return [s for s in self._subscriptions if is_matching(s.topic, pattern)]
+        return [s for s in self._subscriptions if re.match(pattern, s.topic)]
 
     cpdef bint has_subscribers(self, str pattern = None):
         """
@@ -375,6 +362,8 @@ cdef class MessageBus:
         """
         Condition.valid_string(topic, "topic")
         Condition.callable(handler, "handler")
+        if topic == "*":
+            topic = ".*"  # for backward compatibility
 
         # Create subscription
         cdef Subscription sub = Subscription(
@@ -388,20 +377,7 @@ cdef class MessageBus:
             self._log.debug(f"{sub} already exists.")
             return
 
-        cdef list matches = []
-        cdef list patterns = list(self._patterns.keys())
-
-        cdef str pattern
-        cdef list subs
-        for pattern in patterns:
-            if is_matching(topic, pattern):
-                subs = list(self._patterns[pattern])
-                subs.append(sub)
-                subs = sorted(subs, reverse=True)
-                self._patterns[pattern] = np.ascontiguousarray(subs, dtype=Subscription)
-                matches.append(pattern)
-
-        self._subscriptions[sub] = sorted(matches)
+        self._subscriptions.append(sub)
 
         self._log.debug(f"Added {sub}.")
 
@@ -427,24 +403,17 @@ cdef class MessageBus:
         """
         Condition.valid_string(topic, "topic")
         Condition.callable(handler, "handler")
+        if topic == "*":
+            topic = ".*"  # for backward compatibility
 
-        cdef Subscription sub = Subscription(topic=topic, handler=handler)
+        cdef Subscription sub
+        for sub in self._subscriptions:
+            if re.match(topic, sub.topic):
+                self._subscriptions.remove(sub)
 
-        cdef list patterns = self._subscriptions.get(sub)
-
-        # Check if exists
-        if patterns is None:
-            self._log.warning(f"{sub} not found.")
-            return
-
-        cdef str pattern
-        for pattern in patterns:
-            subs = list(self._patterns[pattern])
-            subs.remove(sub)
-            subs = sorted(subs, reverse=True)
-            self._patterns[pattern] = np.ascontiguousarray(subs, dtype=Subscription)
-
-        del self._subscriptions[sub]
+        sub = Subscription(topic=topic, handler=handler)
+        if sub in self._subscriptions:
+            self._subscriptions.remove(sub)
 
         self._log.debug(f"Removed {sub}.")
 
@@ -471,73 +440,11 @@ cdef class MessageBus:
         Condition.not_none(topic, "topic")
         Condition.not_none(msg, "msg")
 
-        # Get all subscriptions matching topic pattern
-        cdef Subscription[:] subs = self._patterns.get(topic)
-        if subs is None:
-            # Add the topic pattern and get matching subscribers
-            subs = self._resolve_subscriptions(topic)
-
         # Send message to all matched subscribers
-        cdef:
-            int i
-            Subscription sub
-        for i in range(len(subs)):
-            sub = subs[i]
-            sub.handler(msg)
+        cdef Subscription sub
+        cdef list subs = []
+        for sub in self._subscriptions:
+            if re.match(sub.topic, topic):
+                sub.handler(msg)
 
         self.pub_count += 1
-
-    cdef Subscription[:] _resolve_subscriptions(self, str topic):
-        cdef list subs_list = []
-        cdef Subscription existing_sub
-        for existing_sub in self._subscriptions:
-            if is_matching(topic, existing_sub.topic):
-                subs_list.append(existing_sub)
-
-        subs_list = sorted(subs_list, reverse=True)
-        cdef Subscription[:] subs_array = np.ascontiguousarray(subs_list, dtype=Subscription)
-        self._patterns[topic] = subs_array
-
-        cdef list matches
-        for sub in subs_array:
-            matches = self._subscriptions.get(sub, [])
-            if topic not in matches:
-                matches.append(topic)
-            self._subscriptions[sub] = sorted(matches)
-
-        return subs_array
-
-
-cdef inline bint is_matching(str topic, str pattern):
-    # Get length of string and wildcard pattern
-    cdef int n = len(topic)
-    cdef int m = len(pattern)
-
-    # Create a DP lookup table
-    cdef np.ndarray[np.int8_t, ndim=2] t = np.empty((n + 1, m + 1), dtype=np.int8)
-    t.fill(False)
-
-    # If both pattern and string are empty: match
-    t[0, 0] = True
-
-    # Handle empty string case (i == 0)
-    cdef int j
-    for j in range(1, m + 1):
-        if pattern[j - 1] == '*':
-            t[0, j] = t[0, j - 1]
-
-    # Build a matrix in a bottom-up manner
-    cdef int i
-    for i in range(1, n + 1):
-        for j in range(1, m + 1):
-            if pattern[j - 1] == '*':
-                t[i, j] = t[i - 1, j] or t[i, j - 1]
-            elif pattern[j - 1] == '?' or topic[i - 1] == pattern[j - 1]:
-                t[i, j] = t[i - 1, j - 1]
-
-    return t[n, m]
-
-
-# Python wrapper for test access
-def is_matching_py(str topic, str pattern) -> bool:
-    return is_matching(topic, pattern)
