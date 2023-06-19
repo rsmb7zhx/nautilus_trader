@@ -15,6 +15,7 @@
 
 import logging
 import os
+import socket
 import warnings
 from enum import IntEnum
 from time import sleep
@@ -53,12 +54,14 @@ class InteractiveBrokersGateway:
         self,
         username: str,
         password: str,
-        host: Optional[str] = "localhost",
+        host: Optional[str] = "127.0.0.1",
         port: Optional[int] = None,
         trading_mode: Optional[str] = "paper",
         start: bool = False,
         read_only_api: bool = True,
         timeout: int = 90,
+        vnc_port: Optional[int] = None,
+        vnc_password: Optional[str] = None,
         logger: Optional[logging.Logger] = None,
     ):
         username = username if username is not None else os.environ["TWS_USERNAME"]
@@ -71,6 +74,11 @@ class InteractiveBrokersGateway:
         self.read_only_api = read_only_api
         self.host = host
         self.port = port or self.PORTS[trading_mode]
+        self.vnc_port = vnc_port or port + 100
+        self.vnc_password = (
+            vnc_password if vnc_password is not None else os.environ.get("VNC_SERVER_PASSWORD")
+        )
+        self.command_server_port = port + 200
         if docker is None:
             raise RuntimeError("Docker not installed")
         self._docker = docker.from_env()
@@ -145,19 +153,27 @@ class InteractiveBrokersGateway:
             return
 
         self.log.debug("Starting new container")
+        environment = {
+            "TWS_USERID": self.username,
+            "TWS_PASSWORD": self.password,
+            "TRADING_MODE": self.trading_mode,
+            "READ_ONLY_API": {True: "yes", False: "no"}[self.read_only_api],
+        }
+        ports = {
+            str(self.port): self.PORTS[self.trading_mode],  # IBGateway
+            str(self.command_server_port): "7462",  # CommandServer
+        }
+        if self.vnc_password:
+            environment["VNC_SERVER_PASSWORD"] = self.vnc_password
+            ports[str(self.vnc_port)] = "5900"
         self._container = self._docker.containers.run(
             image=self.IMAGE,
             name=f"{self.CONTAINER_NAME}-{self.port}",
             restart_policy={"Name": "always"},
             detach=True,
-            ports={str(self.port): self.PORTS[self.trading_mode], str(self.port + 100): "5900"},
+            ports=ports,
             platform="amd64",
-            environment={
-                "TWS_USERID": self.username,
-                "TWS_PASSWORD": self.password,
-                "TRADING_MODE": self.trading_mode,
-                "READ_ONLY_API": {True: "yes", False: "no"}[self.read_only_api],
-            },
+            environment=environment,
         )
         self.log.info(f"Container `{self.CONTAINER_NAME}-{self.port}` starting, waiting for ready")
 
@@ -185,6 +201,23 @@ class InteractiveBrokersGateway:
         if self.container:
             self.container.stop()
             self.container.remove()
+
+    def soft_restart(self) -> bool:
+        """Restart the Gateway application using IBC"""
+        try:
+            tn = socket.socket()
+            tn.connect((self.host, self.command_server_port))
+            tn.send(b"RESTART\n")
+            result = tn.recv(100).decode("ascii")
+            if "OK Restarting at" in result:
+                return True
+            else:
+                self.log.exception(f"Restart failed. CommandServer returned `{result}`")
+        except OSError as e:
+            self.log.exception(
+                f"Connection failed for CommandServer on {self.host}:{self.command_server_port}, {e}",
+            )
+        return False
 
     def __enter__(self):
         self.start()
