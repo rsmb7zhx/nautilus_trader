@@ -612,6 +612,39 @@ cdef class BacktestEngine:
             f"{type(first).__name__} element{'' if len(data) == 1 else 's'}.",
         )
 
+    def add_sorted_data(self, list data) -> None:
+        """
+        Add the given data to the backtest engine.
+
+        Parameters
+        ----------
+        data : list[Data]
+            The data to add.
+
+        Raises
+        ------
+        ValueError
+            If `data` is empty.
+        ValueError
+            If `data` contains objects which are not a type of `Data`.
+
+        Warnings
+        --------
+        Assumes all data is sorted with `ts_init`. Adding lists of unsorted
+        data could result in incorrect backtest logic.
+
+        """
+        Condition.not_empty(data, "data")
+        Condition.list_type(data, Data, "data")
+
+        # Clear existing data and Add new data
+        self.clear_data()
+        self._data = data
+
+        self._log.info(
+            f"Added {len(data):,} element{'' if len(data) == 1 else 's'}.",
+        )
+
     def dump_pickled_data(self) -> bytes:
         """
         Return the internal data stream pickled.
