@@ -34,6 +34,36 @@ def resolve_path(path: str) -> type:
     return cls
 
 
+def generate_structure_hash(data_structure):
+    """
+    Generate a hash for a complex data structure (like nested dictionaries and lists).
+
+    This function converts the data structure into an immutable, hashable form and
+    then returns its hash. It's particularly useful for creating hashes for structures
+    that contain unhashable types like lists or dictionaries.
+
+    Args:
+    ----
+        data_structure: The data structure to hash. Can be a nested structure containing
+                        dictionaries, lists, and other hashable types.
+
+    Returns:
+    -------
+        int: The hash of the data structure.
+
+    """
+
+    def deep_freeze(obj):
+        if isinstance(obj, dict):
+            return frozenset((key, deep_freeze(value)) for key, value in obj.items())
+        elif isinstance(obj, list) or isinstance(obj, tuple):
+            return tuple(deep_freeze(item) for item in obj)
+        return obj  # For immutable objects
+
+    frozen = deep_freeze(data_structure)
+    return hash(frozen)
+
+
 class NautilusConfig(msgspec.Struct, kw_only=True, frozen=True):
     """
     The base class for all Nautilus configuration objects.
@@ -106,6 +136,9 @@ class NautilusConfig(msgspec.Struct, kw_only=True, frozen=True):
 
         """
         return bool(msgspec.json.decode(self.json(), type=self.__class__))
+
+    def __hash__(self):
+        return generate_structure_hash(self.dict())
 
 
 class CacheConfig(NautilusConfig, frozen=True):
