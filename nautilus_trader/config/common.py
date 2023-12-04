@@ -25,6 +25,8 @@ from nautilus_trader.config.validation import PositiveFloat
 from nautilus_trader.config.validation import PositiveInt
 from nautilus_trader.core.correctness import PyCondition
 from nautilus_trader.persistence.catalog.parquet import ParquetDataCatalog
+from nautilus_trader.serialization.base import msgspec_decoding_hook
+from nautilus_trader.serialization.base import msgspec_encoding_hook
 
 
 def resolve_path(path: str) -> type:
@@ -105,7 +107,7 @@ class NautilusConfig(msgspec.Struct, kw_only=True, frozen=True):
         bytes
 
         """
-        return msgspec.json.encode(self)
+        return msgspec.json.encode(self, enc_hook=msgspec_encoding_hook)
 
     @classmethod
     def parse(cls, raw: bytes) -> Any:
@@ -124,7 +126,7 @@ class NautilusConfig(msgspec.Struct, kw_only=True, frozen=True):
         Any
 
         """
-        return msgspec.json.decode(raw, type=cls)
+        return msgspec.json.decode(raw, type=cls, dec_hook=msgspec_decoding_hook)
 
     def validate(self) -> bool:
         """
@@ -135,7 +137,7 @@ class NautilusConfig(msgspec.Struct, kw_only=True, frozen=True):
         bool
 
         """
-        return bool(msgspec.json.decode(self.json(), type=self.__class__))
+        return bool(self.parse(self.json()))
 
     def __hash__(self):
         return generate_structure_hash(self.dict())

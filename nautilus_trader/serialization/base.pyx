@@ -63,6 +63,9 @@ from nautilus_trader.model.instruments.futures_contract cimport FuturesContract
 from nautilus_trader.model.instruments.options_contract cimport OptionsContract
 from nautilus_trader.model.instruments.synthetic cimport SyntheticInstrument
 
+from nautilus_trader.model.identifiers import Identifier
+from nautilus_trader.model.identifiers import InstrumentId
+
 
 # Default mappings for Nautilus objects
 _OBJECT_TO_DICT_MAP: dict[str, Callable[[None], dict]] = {
@@ -267,3 +270,27 @@ cdef class Serializer:
     cpdef object deserialize(self, bytes obj_bytes):
         """Abstract method (implement in subclass)."""
         raise NotImplementedError("method must be implemented in the subclass")  # pragma: no cover
+
+
+def msgspec_encoding_hook(obj: Any):
+    if isinstance(obj, Identifier):
+        return str(obj)
+    else:
+        obj_to_dict = _OBJECT_TO_DICT_MAP.get(type(obj).__name__)
+        if obj_to_dict:
+            return obj_to_dict(obj)
+        else:
+            raise NotImplementedError
+
+
+def msgspec_decoding_hook(obj_type: type, obj: Any) -> Any:
+    if issubclass(obj_type, InstrumentId):
+        return InstrumentId.from_str(obj)
+    elif issubclass(obj_type, Identifier):
+        return obj_type(obj)
+    else:
+        obj_from_dict = _OBJECT_FROM_DICT_MAP.get(obj_type.__name__)
+        if obj_from_dict and isinstance(obj, dict):
+            return obj_from_dict(obj)
+        else:
+            raise NotImplementedError
